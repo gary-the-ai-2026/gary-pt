@@ -1,42 +1,54 @@
 ---
 name: josh-hancock
-split: PPL
+split: CUSTOM
 days_per_week: 3
 experience: intermediate
+equipment: home_gym_c10
 created: 2026-05-27
+updated: 2026-05-27
 ---
 
 # Josh Hancock — Training Config
 
 ## Split
 
-**Push / Pull / Legs** — 3 days per week, rotating.
+**Chest/Triceps · Back/Biceps · Legs/Shoulders** — 3 days per week, rotating.
 
 | Day | Focus | Primary Muscles |
 |---|---|---|
-| Push | Chest, Shoulders, Triceps | Pecs, anterior/lateral delts, triceps |
-| Pull | Back, Biceps, Rear Delts | Lats, traps, rhomboids, biceps, posterior delts |
-| Legs | Quads, Hamstrings, Calves | Quadriceps, hamstrings, glutes, calves |
+| Chest/Tri | Chest, Triceps | Pecs, triceps (all three heads) |
+| Back/Bi | Back, Biceps, Rear Delts | Lats, traps, rhomboids, biceps |
+| Legs/Shoulders | Quads, Hamstrings, Glutes, Shoulders | Full lower body + anterior/lateral delts |
 
 ## Schedule
 
 Rotating — not tied to specific weekdays. Next session is always the next in rotation.
 
+## Equipment
+
+- **Force USA C10** — Smith machine, dual cable pulley (high + low), pull-up bar
+- **Barbell + plates**
+- **Adjustable dumbbells** — up to 27kg each
+- **Adjustable bench** — flat + incline
+- **Attachments** — lat bar, close-grip handle, rope, ankle strap, straight bar
+
 ## Current Goals
 
-- Progressive overload on compound lifts (bench, squat, deadlift variant)
+- Progressive overload on compound lifts
 - Hypertrophy focus (8–12 rep range) on accessories
-- Avoid muscle complacency via exercise rotation every 4–6 weeks
+- Exercise rotation every 4–6 weeks to avoid complacency
 
 ## Estimated Starting Weights
 
-*To be calibrated from first workout logs. Conservative estimates based on recent MFP data:*
+*Calibrated from recent MFP data. Adjust after first session logs.*
 
 | Lift | Est. Working Weight | Rep Range |
 |---|---|---|
-| Bench Press | 80kg | 8–10 |
-| Incline DB Press | 28kg (per dumbbell) | 10–12 |
-| Tricep Pushdown | 25kg | 12–15 |
+| Barbell Bench Press | 80kg | 8–10 |
+| Incline DB Press | 27kg (max DB) | 10–12 |
+| Tricep Pushdown (Cable) | 25kg | 12–15 |
+| Lat Pulldown | TBD | 8–12 |
+| Barbell Squat | TBD | 8–10 |
 
 ## Progression Rules
 
@@ -44,3 +56,4 @@ Rotating — not tied to specific weekdays. Next session is always the next in r
 - **Missed reps on final set only** → repeat weight
 - **Missed reps on 2+ sets** → drop 5% next session, reassess
 - **2 consecutive stalls** → swap exercise variation
+- **DBs maxed at 27kg** → add reps (up to 15) then add sets (up to 4) before swapping to barbell variant
