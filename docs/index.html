@@ -6,312 +6,413 @@
 <title>PT Gary — Health Hub</title>
 <style>
   :root {
-    --bg-deep: #0A0A0A;
-    --bg-surface: #0E0E10;
-    --bg-card: #18181B;
-    --bg-card-hover: #1F1F23;
-    --border: #27272A;
-    --border-active: rgba(163,230,53,0.25);
-    --text-primary: #FFFFFF;
-    --text-secondary: #A1A1AA;
-    --text-muted: #71717A;
-    --accent: #A3E635;
-    --accent-glow: rgba(163,230,53,0.12);
-    --accent-strong: rgba(163,230,53,0.18);
+    --bg-void: #050505;
+    --bg-glass: rgba(255,255,255,0.025);
+    --bg-glass-hover: rgba(255,255,255,0.05);
+    --border-glass: rgba(255,255,255,0.06);
+    --border-active: rgba(0,210,255,0.25);
+    --text-primary: #f0f0f5;
+    --text-secondary: #9098a8;
+    --text-muted: #505868;
+    --accent: #00D2FF;
+    --accent-glow: rgba(0,210,255,0.15);
+    --accent-strong: rgba(0,210,255,0.25);
+    --alert: #FF4B2B;
+    --alert-glow: rgba(255,75,43,0.15);
     --amber: #f59e0b;
-    --amber-glow: rgba(245,158,11,0.12);
     --green: #22c55e;
-    --green-glow: rgba(34,197,94,0.12);
-    --red: #ef4444;
-    --purple: #a855f7;
-    --radius: 16px;
+    --radius: 14px;
     --radius-sm: 8px;
-    --radius-pill: 9999px;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
     --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
-    --transition: 0.28s cubic-bezier(0.4,0,0.2,1);
-    --transition-slow: 0.45s cubic-bezier(0.4,0,0.2,1);
-    --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2);
-    --shadow-card-hover: 0 2px 4px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.3);
+    --transition: 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    --transition-slow: 0.45s cubic-bezier(0.34,1.56,0.64,1);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  /* ═══════════════ BACKGROUND ═══════════════ */
   body {
-    background: var(--bg-deep);
+    background: var(--bg-void);
     color: var(--text-primary);
     font-family: var(--font-sans);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    position: relative;
   }
 
+  /* Grid pattern */
   body::before {
     content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(circle, rgba(0,210,255,0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 70%);
+  }
+
+  /* Atmospheric glows */
+  body::after {
+    content: '';
     position: fixed;
-    top: -60%; left: -60%;
-    width: 220%; height: 220%;
-    background: radial-gradient(ellipse at 30% 10%, rgba(163,230,53,0.025) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 50%, rgba(163,230,53,0.015) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 85%, rgba(245,158,11,0.012) 0%, transparent 50%);
+    top: -40%; left: -40%;
+    width: 180%; height: 180%;
+    background:
+      radial-gradient(ellipse at 30% 10%, rgba(0,210,255,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, rgba(0,210,255,0.02) 0%, transparent 50%);
     pointer-events: none; z-index: 0;
   }
 
-  /* ── Header ── */
+  /* ═══════════════ SCANLINE OVERLAY ═══════════════ */
+  .scanlines {
+    position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+    opacity: 0.4;
+  }
+  .scanline-beam {
+    position: fixed; top: -2px; left: 0; right: 0; z-index: 9998; pointer-events: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,210,255,0.08), transparent);
+    animation: scanDown 8s linear infinite;
+    opacity: 0.6;
+  }
+  @keyframes scanDown {
+    0% { top: -2px; }
+    100% { top: 100vh; }
+  }
+
+  /* ═══════════════ HEADER ═══════════════ */
   header {
     position: sticky; top: 0; z-index: 20;
-    background: rgba(10,10,10,0.88);
+    background: rgba(5,5,5,0.85);
     backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 24px;
+    border-bottom: 1px solid var(--border-glass);
+    padding: 12px 24px;
     display: flex; align-items: center; justify-content: space-between;
   }
 
   .logo { display: flex; align-items: center; gap: 12px; }
   .logo-icon {
-    width: 38px; height: 38px; border-radius: 11px;
-    background: linear-gradient(135deg, #A3E635, #65a30d);
+    width: 38px; height: 38px; border-radius: 10px;
+    background: linear-gradient(135deg, #00D2FF, #0077aa);
     display: flex; align-items: center; justify-content: center;
-    font-size: 19px;
-    box-shadow: 0 0 24px rgba(163,230,53,0.2);
+    font-size: 18px;
+    box-shadow: 0 0 20px rgba(0,210,255,0.25), inset 0 0 12px rgba(0,210,255,0.08);
   }
-  .logo-text { font-weight: 700; font-size: 18px; letter-spacing: -0.2px; }
+  .logo-text { font-weight: 700; font-size: 17px; letter-spacing: -0.3px; }
   .logo-sub { color: var(--text-muted); font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; font-family: var(--font-mono); }
 
-  nav { display: flex; gap: 2px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 3px; border: 1px solid var(--border); }
+  nav { display: flex; gap: 2px; background: var(--bg-glass); border-radius: 10px; padding: 3px; border: 1px solid var(--border-glass); }
   nav button {
     background: none; border: none; color: var(--text-secondary);
-    padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 500;
+    padding: 7px 16px; border-radius: 8px; font-size: 12px; font-weight: 500;
     font-family: var(--font-sans); cursor: pointer; transition: var(--transition);
+    letter-spacing: 0.2px;
   }
-  nav button.active { background: rgba(163,230,53,0.08); color: var(--accent); }
+  nav button.active { background: rgba(0,210,255,0.08); color: var(--accent); text-shadow: 0 0 8px var(--accent-glow); }
   nav button:hover { color: var(--text-primary); }
 
-  /* ── Main ── */
-  main { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 28px 24px 100px; }
+  /* ═══════════════ MAIN ═══════════════ */
+  main { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 24px 24px 120px; }
   .view { display: none; }
   .view.active { display: block; }
 
-  /* Staggered entrance */
-  .stagger-in {
+  /* Spring stagger */
+  .spring-in {
     opacity: 0;
-    transform: translateY(16px);
-    animation: staggerIn 0.45s cubic-bezier(0.4,0,0.2,1) forwards;
+    transform: translateY(20px) scale(0.97);
+    animation: springIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
   }
-  @keyframes staggerIn {
-    to { opacity: 1; transform: translateY(0); }
+  @keyframes springIn {
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
-  /* ── Health Hub ── */
-  .hub-greeting {
-    font-size: 13px; color: var(--text-muted); margin-bottom: 4px;
-    letter-spacing: 0.3px; font-family: var(--font-mono);
-  }
-  .hub-title { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 28px; }
-  .hub-title span { color: var(--accent); }
-
-  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
-
-  .metric-card {
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px;
+  /* ═══════════════ GLASS CARD ═══════════════ */
+  .glass-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius);
     transition: var(--transition);
-    box-shadow: var(--shadow-card);
     position: relative; overflow: hidden;
   }
-  .metric-card:hover {
+  .glass-card:hover {
+    background: var(--bg-glass-hover);
     border-color: var(--border-active);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-card-hover);
+    box-shadow: 0 0 24px var(--accent-glow), 0 4px 20px rgba(0,0,0,0.4);
+    transform: translateY(-1px);
   }
-  .metric-card::after {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: var(--accent); opacity: 0; transition: var(--transition);
+  .glass-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    opacity: 0; transition: opacity 0.3s;
   }
-  .metric-card:hover::after { opacity: 1; }
+  .glass-card:hover::before { opacity: 1; }
 
-  .metric-icon { font-size: 22px; margin-bottom: 12px; }
-  .metric-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; font-family: var(--font-mono); font-weight: 600; }
-  .metric-value { font-size: 24px; font-weight: 700; font-family: var(--font-mono); }
-  .metric-value.accent { color: var(--accent); }
-  .metric-value.amber { color: var(--amber); }
-  .metric-value.green { color: var(--green); }
-  .metric-sub { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
-
-  /* Progress meter */
-  .progress-section { margin-bottom: 28px; }
-  .section-label {
-    font-size: 11px; color: var(--text-muted); text-transform: uppercase;
-    letter-spacing: 0.8px; margin-bottom: 14px; font-weight: 600;
-    font-family: var(--font-mono);
-  }
-  .progress-meter {
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px 24px;
-    box-shadow: var(--shadow-card);
-  }
-  .meter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-  .meter-title { font-size: 14px; font-weight: 600; }
-  .meter-pct { font-size: 13px; color: var(--accent); font-family: var(--font-mono); }
-  .meter-track {
-    height: 6px; background: rgba(255,255,255,0.04); border-radius: 3px; overflow: hidden;
-  }
-  .meter-fill {
-    height: 100%; border-radius: 3px;
-    background: linear-gradient(90deg, var(--accent), #65a30d);
-    transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
-    box-shadow: 0 0 14px var(--accent-glow);
-  }
-  .meter-steps {
-    display: flex; justify-content: space-between; margin-top: 10px;
-    font-size: 10px; color: var(--text-muted); font-family: var(--font-mono);
-  }
-
-  /* Next Session preview */
-  .next-session-card {
-    background: var(--bg-card); border: 1px solid var(--border-active);
-    border-radius: var(--radius); padding: 24px;
-    box-shadow: 0 0 30px var(--accent-glow), var(--shadow-card);
-    cursor: pointer; transition: var(--transition-slow);
-  }
-  .next-session-card:hover {
-    box-shadow: 0 0 50px var(--accent-strong), var(--shadow-card-hover);
-    transform: translateY(-2px);
-  }
-  .next-badge {
-    display: inline-block; font-size: 10px; color: var(--accent);
-    background: var(--accent-glow); padding: 4px 12px; border-radius: var(--radius-pill);
-    margin-bottom: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
-    font-family: var(--font-mono);
-  }
-  .next-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
-  .next-sub { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
-  .next-exercises {
-    display: flex; flex-wrap: wrap; gap: 6px;
-  }
-  .next-ex-tag {
-    font-size: 11px; padding: 5px 10px; border-radius: var(--radius-sm);
-    background: rgba(255,255,255,0.03); color: var(--text-secondary);
-    border: 1px solid var(--border); font-family: var(--font-mono);
-  }
-
-  /* ── Today's Session ── */
-  .session-header {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 24px;
-  }
-  .session-type-badge {
-    font-size: 12px; font-weight: 600; color: var(--accent);
-    background: var(--accent-glow); padding: 6px 14px; border-radius: var(--radius-pill);
+  /* ═══════════════ HUB ═══════════════ */
+  .hub-greeting {
+    font-size: 12px; color: var(--text-muted); margin-bottom: 6px;
     letter-spacing: 0.4px; font-family: var(--font-mono);
   }
-  .session-date { font-size: 12px; color: var(--text-muted); }
+  .hub-title {
+    font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 28px;
+    text-shadow: 0 0 40px rgba(0,210,255,0.1);
+  }
+  .hub-title span { color: var(--accent); }
 
-  /* Active exercise — blown up */
-  .active-exercise {
-    background: var(--bg-card); border: 1px solid var(--accent);
-    border-radius: var(--radius); padding: 32px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 40px var(--accent-glow), inset 0 0 60px rgba(163,230,53,0.02), var(--shadow-card);
-    position: relative; overflow: hidden;
+  /* Metrics bento */
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+
+  .metric-card {
+    padding: 20px;
   }
-  .active-exercise::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
-    background: var(--accent); border-radius: 4px 0 0 4px;
+  .metric-icon { font-size: 20px; margin-bottom: 10px; opacity: 0.8; }
+  .metric-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 6px; font-family: var(--font-mono); font-weight: 600; }
+  .metric-value {
+    font-size: 26px; font-weight: 700; font-family: var(--font-mono);
+    text-shadow: 0 0 12px rgba(0,210,255,0.15);
+    color: var(--text-primary);
   }
-  .active-ex-num { font-size: 11px; color: var(--accent); letter-spacing: 0.6px; margin-bottom: 6px; text-transform: uppercase; font-family: var(--font-mono); font-weight: 600; }
-  .active-ex-name { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 20px; }
-  .active-ex-meta {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  .metric-value.accent { color: var(--accent); text-shadow: 0 0 16px rgba(0,210,255,0.3); }
+  .metric-value.amber { color: var(--amber); text-shadow: 0 0 12px rgba(245,158,11,0.2); }
+  .metric-sub { font-size: 10px; color: var(--text-secondary); margin-top: 4px; }
+
+  /* ═══════════════ ARC REACTOR RING ═══════════════ */
+  .ring-section {
+    display: flex; align-items: center; gap: 28px;
     margin-bottom: 24px;
+    padding: 24px;
+    flex-wrap: wrap;
+  }
+  .ring-container { position: relative; width: 140px; height: 140px; flex-shrink: 0; }
+  .ring-svg { transform: rotate(-90deg); width: 140px; height: 140px; }
+  .ring-bg {
+    fill: none;
+    stroke: rgba(255,255,255,0.04);
+    stroke-width: 8;
+  }
+  .ring-fill {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1);
+    filter: drop-shadow(0 0 10px rgba(0,210,255,0.4));
+  }
+  .ring-center {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .ring-center-value { font-size: 32px; font-weight: 700; font-family: var(--font-mono); color: var(--accent); text-shadow: 0 0 16px rgba(0,210,255,0.3); }
+  .ring-center-label { font-size: 10px; color: var(--text-muted); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+  .ring-pulse {
+    position: absolute; inset: -8px; border-radius: 50%;
+    border: 1px solid rgba(0,210,255,0.08);
+    animation: ringPulse 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes ringPulse {
+    0%,100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.04); opacity: 0.15; }
+  }
+
+  .ring-info { flex: 1; min-width: 200px; }
+  .ring-info-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .ring-info-sub { font-size: 12px; color: var(--text-secondary); margin-bottom: 14px; }
+  .ring-info-steps {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .ring-step {
+    padding: 6px 14px; border-radius: 20px;
+    background: rgba(0,210,255,0.04);
+    border: 1px solid var(--border-glass);
+    font-size: 11px; font-family: var(--font-mono); color: var(--text-muted);
+  }
+  .ring-step.done { border-color: rgba(0,210,255,0.2); color: var(--accent); }
+
+  /* ═══════════════ NEXT SESSION ═══════════════ */
+  .next-session-card {
+    padding: 22px; cursor: pointer;
+    border-color: var(--border-active);
+    box-shadow: 0 0 30px rgba(0,210,255,0.06);
+  }
+  .next-session-card:hover {
+    box-shadow: 0 0 50px var(--accent-glow), 0 4px 24px rgba(0,0,0,0.5);
+  }
+  .next-badge {
+    display: inline-block; font-size: 9px; color: var(--accent);
+    background: rgba(0,210,255,0.1); padding: 4px 10px; border-radius: 20px;
+    margin-bottom: 10px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase;
+    font-family: var(--font-mono);
+    border: 1px solid rgba(0,210,255,0.15);
+  }
+  .next-title { font-size: 19px; font-weight: 700; margin-bottom: 4px; }
+  .next-sub { font-size: 11px; color: var(--text-secondary); margin-bottom: 14px; }
+  .next-exercises { display: flex; flex-wrap: wrap; gap: 6px; }
+  .next-ex-tag {
+    font-size: 10px; padding: 4px 10px; border-radius: 6px;
+    background: rgba(255,255,255,0.02); color: var(--text-secondary);
+    border: 1px solid var(--border-glass); font-family: var(--font-mono);
+  }
+
+  /* ═══════════════ SESSION VIEW ═══════════════ */
+  .session-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  .session-type-badge {
+    font-size: 11px; font-weight: 600; color: var(--accent);
+    background: rgba(0,210,255,0.08); padding: 6px 14px; border-radius: 20px;
+    letter-spacing: 0.4px; font-family: var(--font-mono);
+    border: 1px solid rgba(0,210,255,0.12);
+    text-shadow: 0 0 6px rgba(0,210,255,0.2);
+  }
+  .session-date { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+
+  /* Active exercise */
+  .active-exercise {
+    padding: 28px; margin-bottom: 18px;
+    border-color: var(--accent);
+    box-shadow: 0 0 40px rgba(0,210,255,0.08), inset 0 0 80px rgba(0,210,255,0.015);
+  }
+  .active-exercise::after {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(0,210,255,0.5);
+  }
+  .active-ex-num { font-size: 10px; color: var(--accent); letter-spacing: 0.7px; margin-bottom: 4px; text-transform: uppercase; font-family: var(--font-mono); font-weight: 600; }
+  .active-ex-name { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 18px; }
+  .active-ex-meta {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px;
   }
   .active-meta-item { text-align: center; }
   .active-meta-value {
-    font-size: 26px; font-weight: 700; font-family: var(--font-mono);
+    font-size: 24px; font-weight: 700; font-family: var(--font-mono);
   }
-  .active-meta-value.accent { color: var(--accent); }
+  .active-meta-value.accent { color: var(--accent); text-shadow: 0 0 12px rgba(0,210,255,0.3); }
   .active-meta-value.amber { color: var(--amber); }
-  .active-meta-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; font-family: var(--font-mono); font-weight: 600; }
+  .active-meta-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; font-family: var(--font-mono); font-weight: 600; }
 
-  .active-set-tracker { display: flex; gap: 12px; justify-content: center; }
+  .active-set-tracker { display: flex; gap: 10px; justify-content: center; }
   .active-set-dot {
-    width: 52px; height: 52px; border-radius: var(--radius-sm);
-    border: 2px solid var(--border); background: rgba(255,255,255,0.02);
+    width: 50px; height: 50px; border-radius: 10px;
+    border: 2px solid var(--border-glass);
+    background: rgba(255,255,255,0.015);
     display: flex; align-items: center; justify-content: center;
     font-size: 14px; font-family: var(--font-mono); color: var(--text-muted);
     transition: var(--transition);
   }
-  .active-set-dot.done { border-color: var(--green); background: var(--green-glow); color: var(--green); }
+  .active-set-dot.done { border-color: var(--green); background: rgba(34,197,94,0.06); color: var(--green); }
   .active-set-dot.active {
     border-color: var(--accent);
-    box-shadow: 0 0 24px var(--accent-glow);
+    box-shadow: 0 0 20px var(--accent-glow), inset 0 0 20px rgba(0,210,255,0.05);
     color: var(--accent);
-    animation: pulse 2s infinite;
+    animation: dotPulse 2s ease-in-out infinite;
   }
-  @keyframes pulse {
-    0%,100% { box-shadow: 0 0 24px var(--accent-glow); }
-    50% { box-shadow: 0 0 40px var(--accent-strong), 0 0 60px rgba(163,230,53,0.08); }
+  @keyframes dotPulse {
+    0%,100% { box-shadow: 0 0 20px var(--accent-glow); }
+    50% { box-shadow: 0 0 35px var(--accent-strong), 0 0 55px rgba(0,210,255,0.12); }
   }
 
-  /* Exercise legend */
-  .exercise-legend {
-    display: grid; gap: 6px;
-  }
+  /* Legend */
+  .exercise-legend { display: grid; gap: 5px; }
   .legend-item {
     display: flex; align-items: center; gap: 12px;
-    padding: 10px 16px; border-radius: var(--radius-sm);
-    background: var(--bg-card); border: 1px solid var(--border);
-    transition: var(--transition); cursor: pointer;
-    font-size: 13px;
-    box-shadow: var(--shadow-card);
+    padding: 9px 14px; border-radius: var(--radius-sm);
+    cursor: pointer; font-size: 12px;
   }
-  .legend-item:hover {
-    border-color: var(--border-active);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-card-hover);
-  }
-  .legend-item.current { border-color: var(--accent); background: var(--accent-glow); }
-  .legend-item.done { opacity: 0.5; }
-  .legend-num { font-size: 10px; color: var(--text-muted); width: 20px; font-weight: 600; font-family: var(--font-mono); }
+  .legend-item:hover { background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.1); }
+  .legend-item.current { border-color: var(--accent); background: rgba(0,210,255,0.04); }
+  .legend-item.done { opacity: 0.4; }
+  .legend-num { font-size: 9px; color: var(--text-muted); width: 18px; font-weight: 600; font-family: var(--font-mono); }
   .legend-name { flex: 1; font-weight: 500; }
-  .legend-target { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
-  .legend-check { color: var(--green); font-size: 14px; }
+  .legend-target { font-size: 10px; color: var(--text-muted); font-family: var(--font-mono); }
+  .legend-check { color: var(--green); font-size: 13px; }
 
-  /* ── Status bar ── */
+  /* ═══════════════ STATUS BAR ═══════════════ */
   .status-bar {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: rgba(10,10,10,0.92); backdrop-filter: blur(20px);
-    border-top: 1px solid var(--border);
-    padding: 10px 24px;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+    background: rgba(5,5,5,0.9); backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-glass);
+    padding: 9px 24px;
     display: flex; align-items: center; justify-content: space-between;
-    font-size: 11px; color: var(--text-muted); z-index: 20;
+    font-size: 10px; color: var(--text-muted);
     font-family: var(--font-mono);
   }
-  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; margin-right: 8px; box-shadow: 0 0 8px rgba(163,230,53,0.5); }
+  .status-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); display: inline-block; margin-right: 8px;
+    box-shadow: 0 0 8px rgba(0,210,255,0.6);
+    animation: statusBlink 2s ease-in-out infinite;
+  }
+  @keyframes statusBlink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
   .status-session { color: var(--accent); }
 
-  /* ── Charts ── */
+  /* ═══════════════ CHARTS (Holographic) ═══════════════ */
   .chart-card {
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px; margin-bottom: 12px;
-    box-shadow: var(--shadow-card);
+    padding: 20px; margin-bottom: 10px;
   }
-  .chart-title { font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 16px; }
-  canvas { width: 100% !important; max-height: 220px; }
+  .chart-title { font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 14px; font-family: var(--font-mono); letter-spacing: 0.3px; }
+  canvas { width: 100% !important; max-height: 200px; }
 
-  /* ── Responsive ── */
+  /* ═══════════════ AI TERMINAL ═══════════════ */
+  .terminal-section { margin-top: 28px; }
+  .terminal-label {
+    font-size: 10px; color: var(--text-muted); text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px; font-weight: 600;
+    font-family: var(--font-mono);
+  }
+  .terminal-box {
+    padding: 16px 20px; border-color: rgba(0,210,255,0.1);
+  }
+  .terminal-header {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+    font-size: 10px; font-family: var(--font-mono); color: var(--text-muted);
+  }
+  .terminal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 6px rgba(0,210,255,0.5); }
+  .terminal-content {
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);
+    line-height: 1.7; min-height: 20px;
+  }
+  .terminal-content .cursor {
+    display: inline-block; width: 8px; height: 15px;
+    background: var(--accent); margin-left: 2px; vertical-align: text-bottom;
+    animation: cursorBlink 0.8s step-end infinite;
+  }
+  @keyframes cursorBlink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .terminal-content .highlight { color: var(--accent); }
+
+  /* ═══════════════ RESPONSIVE ═══════════════ */
   @media (max-width: 768px) {
     .metrics-grid { grid-template-columns: repeat(2, 1fr); }
     .active-ex-meta { grid-template-columns: repeat(2, 1fr); }
-    .active-ex-name { font-size: 22px; }
-    nav button { padding: 8px 12px; font-size: 12px; }
-  }
-  @media (min-width: 1024px) {
-    .active-set-dot { width: 60px; height: 60px; font-size: 16px; }
+    .active-ex-name { font-size: 20px; }
+    .ring-section { flex-direction: column; align-items: center; text-align: center; }
+    nav button { padding: 6px 10px; font-size: 11px; }
   }
 </style>
 </head>
 <body>
+
+<!-- Scanline effects -->
+<div class="scanlines"></div>
+<div class="scanline-beam"></div>
 
 <header>
   <div class="logo">
@@ -332,28 +433,29 @@
   <!-- ═══════════ HEALTH HUB ═══════════ -->
   <div class="view active" id="view-hub">
     <div class="hub-greeting" id="hub-greeting">---</div>
-    <div class="hub-title">Your <span>Health Hub</span></div>
+    <div class="hub-title">Health <span>Hub</span></div>
 
+    <!-- Metrics -->
     <div class="metrics-grid" id="metrics-grid">
-      <div class="metric-card">
+      <div class="metric-card glass-card">
         <div class="metric-icon">⚖️</div>
         <div class="metric-label">Bodyweight</div>
         <div class="metric-value" id="metric-bw">---</div>
         <div class="metric-sub" id="metric-bw-trend">---</div>
       </div>
-      <div class="metric-card">
+      <div class="metric-card glass-card">
         <div class="metric-icon">🔥</div>
         <div class="metric-label">This Week</div>
         <div class="metric-value accent" id="metric-sessions">---</div>
         <div class="metric-sub" id="metric-streak">---</div>
       </div>
-      <div class="metric-card">
+      <div class="metric-card glass-card">
         <div class="metric-icon">🏆</div>
         <div class="metric-label">Est. Bench 1RM</div>
         <div class="metric-value amber" id="metric-bench">---</div>
         <div class="metric-sub" id="metric-bench-delta">---</div>
       </div>
-      <div class="metric-card">
+      <div class="metric-card glass-card">
         <div class="metric-icon">📐</div>
         <div class="metric-label">Est. Squat 1RM</div>
         <div class="metric-value" id="metric-squat">---</div>
@@ -361,26 +463,51 @@
       </div>
     </div>
 
-    <div class="progress-section">
-      <div class="section-label">Cycle Progress</div>
-      <div class="progress-meter">
-        <div class="meter-header">
-          <div class="meter-title">Cycle 1 · Week 1</div>
-          <div class="meter-pct" id="cycle-pct">0%</div>
+    <!-- Arc Reactor Ring + Progress -->
+    <div class="ring-section glass-card">
+      <div class="ring-container">
+        <svg class="ring-svg" viewBox="0 0 140 140">
+          <circle class="ring-bg" cx="70" cy="70" r="62"/>
+          <circle class="ring-fill" id="ring-fill" cx="70" cy="70" r="62"
+            stroke-dasharray="389.56" stroke-dashoffset="389.56"/>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-center-value" id="ring-pct">0%</div>
+          <div class="ring-center-label">Cycle</div>
         </div>
-        <div class="meter-track"><div class="meter-fill" id="cycle-fill" style="width:0%"></div></div>
-        <div class="meter-steps">
-          <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span>
+        <div class="ring-pulse"></div>
+      </div>
+      <div class="ring-info">
+        <div class="ring-info-title">Cycle 1 · Week 1</div>
+        <div class="ring-info-sub" id="ring-sub">0 of 18 sessions complete</div>
+        <div class="ring-info-steps">
+          <span class="ring-step">W1</span><span class="ring-step">W2</span>
+          <span class="ring-step">W3</span><span class="ring-step">W4</span>
+          <span class="ring-step">W5</span><span class="ring-step">W6</span>
         </div>
       </div>
     </div>
 
-    <div class="section-label" style="margin-bottom:14px">Next Session</div>
-    <div class="next-session-card" onclick="switchView('session')" id="next-session-card">
+    <!-- Next Session -->
+    <div class="next-session-card glass-card" onclick="switchView('session')" id="next-session-card">
       <div class="next-badge" id="next-badge">---</div>
       <div class="next-title" id="next-title">---</div>
       <div class="next-sub" id="next-sub">---</div>
       <div class="next-exercises" id="next-exercises"></div>
+    </div>
+
+    <!-- AI Terminal -->
+    <div class="terminal-section">
+      <div class="terminal-label">G.A.R.Y Intelligence</div>
+      <div class="terminal-box glass-card">
+        <div class="terminal-header">
+          <span class="terminal-dot"></span>
+          <span>gary@health-hub ~ $</span>
+        </div>
+        <div class="terminal-content" id="terminal-content">
+          <span class="cursor"></span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -394,7 +521,7 @@
     </div>
 
     <div id="active-exercise-container">
-      <div class="active-exercise">
+      <div class="active-exercise glass-card">
         <div class="active-ex-num" id="active-num">---</div>
         <div class="active-ex-name" id="active-name">---</div>
         <div class="active-ex-meta">
@@ -404,7 +531,7 @@
           </div>
           <div class="active-meta-item">
             <div class="active-meta-value amber" id="active-weight">---</div>
-            <div class="active-meta-label">Weight</div>
+            <div class="active-meta-label">Weight (kg)</div>
           </div>
           <div class="active-meta-item">
             <div class="active-meta-value" id="active-reps">---</div>
@@ -412,29 +539,29 @@
           </div>
           <div class="active-meta-item">
             <div class="active-meta-value" id="active-rest">---</div>
-            <div class="active-meta-label">Rest</div>
+            <div class="active-meta-label">Rest (s)</div>
           </div>
         </div>
         <div class="active-set-tracker" id="active-sets-display"></div>
       </div>
     </div>
 
-    <div class="section-label" style="margin: 20px 0 10px">Session Overview</div>
+    <div class="terminal-label" style="margin: 18px 0 8px">Protocol</div>
     <div class="exercise-legend" id="exercise-legend"></div>
   </div>
 
   <!-- ═══════════ PROGRESS ═══════════ -->
   <div class="view" id="view-progress">
-    <div class="section-label" style="margin-bottom:16px">Strength Progression</div>
-    <div class="chart-card">
+    <div class="terminal-label" style="margin-bottom:14px">Strength Telemetry</div>
+    <div class="chart-card glass-card">
       <div class="chart-title">Bench Press — Estimated 1RM (kg)</div>
       <canvas id="chart-bench"></canvas>
     </div>
-    <div class="chart-card">
+    <div class="chart-card glass-card">
       <div class="chart-title">Squat — Estimated 1RM (kg)</div>
       <canvas id="chart-squat"></canvas>
     </div>
-    <div class="chart-card">
+    <div class="chart-card glass-card">
       <div class="chart-title">Session Volume (kg)</div>
       <canvas id="chart-volume"></canvas>
     </div>
@@ -442,7 +569,7 @@
 </main>
 
 <div class="status-bar">
-  <div><span class="status-dot"></span> PT Gary · Active</div>
+  <div><span class="status-dot"></span> PT Gary · Systems Nominal</div>
   <div class="status-session" id="status-session">---</div>
   <div id="last-updated">---</div>
 </div>
@@ -463,6 +590,7 @@ const SESSION_NAMES = {
   'legs-shoulders': 'Legs / Shoulders',
 };
 
+const TOTAL_CYCLE_SESSIONS = 18; // 3 sessions × 6 weeks
 let currentSession = null;
 let allLogs = [];
 let programData = null;
@@ -505,16 +633,12 @@ async function determineNextSession() {
   try {
     const files = await fetchJSON(REPO_API + '/logs');
     allLogs = files.filter(f => f.name.endsWith('.md') && !f.name.startsWith('_')).reverse();
-
     if (allLogs.length === 0) return 'chest-tri';
-
     const lastFile = allLogs[0].name.replace('.md', '');
     const parts = lastFile.split('-');
     const lastType = parts.slice(3).join('-');
-
     const idx = SESSION_ROTATION.indexOf(lastType);
     if (idx >= 0) return SESSION_ROTATION[(idx + 1) % SESSION_ROTATION.length];
-
     return 'chest-tri';
   } catch (e) {
     console.error('Failed to determine session:', e);
@@ -530,17 +654,14 @@ async function loadProgram() {
   try {
     const md = await fetchText(`${REPO_RAW}/programs/cycle-1-week-1.md`);
     programData = md;
-
     const sections = md.split('## ');
     const exercises = [];
-
     const sectionMap = {
       'chest-tri': 'Chest / Triceps',
       'back-bi': 'Back / Biceps',
       'legs-shoulders': 'Legs / Shoulders',
     };
     const targetSection = sectionMap[currentSession];
-
     for (const section of sections) {
       const name = section.split('\n')[0].trim();
       if (name === targetSection) {
@@ -560,17 +681,12 @@ async function loadProgram() {
         break;
       }
     }
-
     return exercises;
   } catch (e) {
     console.error('Failed to load program:', e);
     return [];
   }
 }
-
-// ══════════════════════════════════════════════════════════════════════════
-// ESTIMATED 1RM (Brzycki formula)
-// ══════════════════════════════════════════════════════════════════════════
 
 function estimate1RM(weight, reps) {
   if (!weight || !reps || reps <= 0) return null;
@@ -579,16 +695,84 @@ function estimate1RM(weight, reps) {
 }
 
 // ══════════════════════════════════════════════════════════════════════════
-// STAGGERED ENTRANCE
+// SPRING STAGGER
 // ══════════════════════════════════════════════════════════════════════════
 
-function animateStagger(container, delayMs = 80) {
+function animateSpring(container, delayMs = 70) {
   if (!container) return;
-  const children = container.querySelectorAll('.metric-card, .progress-section, .next-session-card, .chart-card, .legend-item');
-  children.forEach((el, i) => {
+  const targets = container.querySelectorAll('.glass-card, .metric-card, .legend-item, .chart-card');
+  targets.forEach((el, i) => {
     el.style.animationDelay = `${i * delayMs}ms`;
-    el.classList.add('stagger-in');
+    el.classList.add('spring-in');
   });
+}
+
+function resetAnimations(view) {
+  view.querySelectorAll('.spring-in').forEach(el => {
+    el.classList.remove('spring-in');
+    el.style.animationDelay = '';
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// AI TERMINAL — typing effect
+// ══════════════════════════════════════════════════════════════════════════
+
+function typeTerminal(text) {
+  const el = document.getElementById('terminal-content');
+  el.innerHTML = '<span class="cursor"></span>';
+  let i = 0;
+  const speed = 25;
+
+  function tick() {
+    if (i < text.length) {
+      // Process inline markdown-like highlights
+      const remaining = text.substring(i);
+      if (remaining.startsWith('**')) {
+        const end = text.indexOf('**', i + 2);
+        if (end > i) {
+          const hl = text.substring(i + 2, end);
+          el.insertBefore(span('highlight', hl), el.querySelector('.cursor'));
+          i = end + 2;
+        } else { i++; }
+      } else {
+        el.insertBefore(document.createTextNode(text[i]), el.querySelector('.cursor'));
+        i++;
+      }
+      setTimeout(tick, speed + Math.random() * 20);
+    }
+  }
+
+  function span(cls, txt) {
+    const s = document.createElement('span');
+    s.className = cls; s.textContent = txt; return s;
+  }
+
+  tick();
+}
+
+function generateInsight(sessionsThisWeek, bench1RM, exercises) {
+  const lines = [];
+  if (sessionsThisWeek === 0) {
+    lines.push('> No sessions logged this week.');
+    lines.push('> Ready to begin **Cycle 1**. Say "/voice on" in the PT group.');
+  } else if (sessionsThisWeek === 1) {
+    lines.push(`> **${sessionsThisWeek}/3** sessions this week. On track.`);
+    lines.push(`> Next: **${SESSION_NAMES[currentSession]}** — ${exercises.length} exercises.`);
+  } else if (sessionsThisWeek === 2) {
+    lines.push(`> **${sessionsThisWeek}/3** sessions this week.`);
+    lines.push(`> One session remaining. Current protocol: **${SESSION_NAMES[currentSession]}**.`);
+  } else {
+    lines.push(`> **${sessionsThisWeek}/3** sessions complete. Target hit.`);
+    lines.push('> Progression engine will evaluate weights after next session log.');
+  }
+
+  if (bench1RM) {
+    lines.push(`> Estimated Bench 1RM: **${bench1RM} kg**.`);
+  }
+
+  lines.push(`> System nominal. ${new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'short' })}.`);
+  return lines.join('\n');
 }
 
 // ══════════════════════════════════════════════════════════════════════════
@@ -598,36 +782,48 @@ function animateStagger(container, delayMs = 80) {
 async function renderHub() {
   const exercises = await loadProgram();
 
-  // Greeting
   const hour = new Date().getHours();
-  const greeting = hour < 12 ? 'Morning' : hour < 17 ? 'Afternoon' : 'Evening';
-  document.getElementById('hub-greeting').textContent = `Good ${greeting}, Josh`;
+  const greeting = hour < 12 ? 'Morning' : hour < 18 ? 'Afternoon' : 'Evening';
+  document.getElementById('hub-greeting').textContent = `${greeting}, Josh — Systems Ready`;
 
   // Metrics
-  document.getElementById('metric-bw').textContent = '--- kg';
-  document.getElementById('metric-bw-trend').textContent = 'Log your first weigh-in';
+  document.getElementById('metric-bw').textContent = '---';
+  document.getElementById('metric-bw-trend').textContent = 'Awaiting data';
 
   const sessionsThisWeek = countSessionsThisWeek();
   document.getElementById('metric-sessions').textContent = `${sessionsThisWeek}/3`;
-  document.getElementById('metric-streak').textContent = sessionsThisWeek > 0 ? `${sessionsThisWeek} session${sessionsThisWeek>1?'s':''} this week` : 'Start your first session';
+  document.getElementById('metric-streak').textContent = sessionsThisWeek > 0
+    ? `${TOTAL_CYCLE_SESSIONS - countTotalSessions()} sessions remaining`
+    : 'Start your first session';
 
-  const bench1RM = await getBest1RM('bench press', 'Barbell Bench Press');
-  document.getElementById('metric-bench').textContent = bench1RM ? `${bench1RM} kg` : '--- kg';
-  document.getElementById('metric-bench-delta').textContent = bench1RM ? 'From session logs' : 'Awaiting data';
+  const bench1RM = await getBest1RM('bench', 'Barbell Bench Press');
+  document.getElementById('metric-bench').textContent = bench1RM ? `${bench1RM}` : '---';
+  document.getElementById('metric-bench-delta').textContent = bench1RM ? 'kg · estimated 1RM' : 'Awaiting data';
 
   const squat1RM = await getBest1RM('squat', 'Barbell Back Squat');
-  document.getElementById('metric-squat').textContent = squat1RM ? `${squat1RM} kg` : '--- kg';
-  document.getElementById('metric-squat-delta').textContent = squat1RM ? 'From session logs' : 'Awaiting data';
+  document.getElementById('metric-squat').textContent = squat1RM ? `${squat1RM}` : '---';
+  document.getElementById('metric-squat-delta').textContent = squat1RM ? 'kg · estimated 1RM' : 'Awaiting data';
 
-  // Cycle progress
-  const pct = Math.min(Math.round((sessionsThisWeek / 18) * 100), 100);
-  document.getElementById('cycle-pct').textContent = `${pct}%`;
-  document.getElementById('cycle-fill').style.width = `${pct}%`;
+  // Arc Reactor ring
+  const totalSessions = countTotalSessions();
+  const pct = Math.min(Math.round((totalSessions / TOTAL_CYCLE_SESSIONS) * 100), 100);
+  const circumference = 389.56; // 2π × 62
+  const offset = circumference - (pct / 100) * circumference;
 
-  // Next session card
+  document.getElementById('ring-pct').textContent = `${pct}%`;
+  document.getElementById('ring-sub').textContent = `${totalSessions} of ${TOTAL_CYCLE_SESSIONS} sessions complete`;
+  document.getElementById('ring-fill').style.strokeDashoffset = offset;
+
+  // Week indicators
+  const currentWeek = Math.min(Math.floor(totalSessions / 3) + 1, 6);
+  document.querySelectorAll('.ring-step').forEach((el, i) => {
+    el.classList.toggle('done', i < currentWeek);
+  });
+
+  // Next session
   document.getElementById('next-badge').textContent = `NEXT · ${SESSION_NAMES[currentSession]}`;
   document.getElementById('next-title').textContent = `${exercises.length} exercises`;
-  document.getElementById('next-sub').textContent = `Cycle 1, Week 1 — estimated ${estimateDuration(exercises)}`;
+  document.getElementById('next-sub').textContent = `Cycle 1, Week ${currentWeek} — ${estimateDuration(exercises)}`;
   document.getElementById('next-exercises').innerHTML = exercises.map(e =>
     `<span class="next-ex-tag">${e.name}</span>`
   ).join('');
@@ -635,8 +831,11 @@ async function renderHub() {
   // Status bar
   document.getElementById('status-session').textContent = `Next: ${SESSION_NAMES[currentSession]}`;
 
-  // Stagger animation
-  animateStagger(document.getElementById('view-hub'));
+  // AI Terminal
+  typeTerminal(generateInsight(sessionsThisWeek, bench1RM, exercises));
+
+  // Animation
+  animateSpring(document.getElementById('view-hub'));
 }
 
 function countSessionsThisWeek() {
@@ -644,7 +843,6 @@ function countSessionsThisWeek() {
   const weekStart = new Date(now);
   weekStart.setDate(now.getDate() - now.getDay());
   weekStart.setHours(0,0,0,0);
-
   let count = 0;
   for (const log of allLogs) {
     const dateStr = log.name.substring(0, 10);
@@ -652,6 +850,10 @@ function countSessionsThisWeek() {
     if (logDate >= weekStart) count++;
   }
   return count;
+}
+
+function countTotalSessions() {
+  return allLogs.length;
 }
 
 function estimateDuration(exercises) {
@@ -664,7 +866,7 @@ function estimateDuration(exercises) {
   return `~${Math.round(total)} min`;
 }
 
-async function getBest1RM(nameMatch, fullName) {
+async function getBest1RM(match, fullName) {
   let best = null;
   for (const log of allLogs.slice(0, 20)) {
     try {
@@ -682,7 +884,7 @@ async function getBest1RM(nameMatch, fullName) {
           }
         }
       }
-    } catch(e) { /* skip */ }
+    } catch(e) {}
   }
   return best;
 }
@@ -695,10 +897,13 @@ async function renderSession() {
   const exercises = await loadProgram();
 
   document.getElementById('session-badge').textContent = SESSION_NAMES[currentSession];
-  document.getElementById('session-date').textContent = new Date().toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' });
+  document.getElementById('session-date').textContent = new Date().toLocaleDateString('en-AU', {
+    weekday: 'long', day: 'numeric', month: 'long'
+  });
 
   if (exercises.length === 0) {
-    document.getElementById('active-exercise-container').innerHTML = '<div style="text-align:center;padding:60px;color:var(--text-muted)">Program loading...</div>';
+    document.getElementById('active-exercise-container').innerHTML =
+      '<div style="text-align:center;padding:60px;color:var(--text-muted);font-family:var(--font-mono)">Program loading...</div>';
     return;
   }
 
@@ -716,7 +921,7 @@ async function renderSession() {
   ).join('');
 
   document.getElementById('exercise-legend').innerHTML = exercises.map((ex, i) => `
-    <div class="legend-item${i===0?' current':''}" onclick="highlightExercise(${i})">
+    <div class="legend-item glass-card${i===0?' current':''}" onclick="highlightExercise(${i})">
       <div class="legend-num">${ex.num || i+1}</div>
       <div class="legend-name">${ex.name}</div>
       <div class="legend-target">${ex.sets} · ${ex.weight} · ${ex.reps}</div>
@@ -724,24 +929,22 @@ async function renderSession() {
   `).join('');
 
   document.getElementById('status-session').textContent = `Today: ${SESSION_NAMES[currentSession]}`;
-
-  // Stagger animation for legend items
-  animateStagger(document.getElementById('exercise-legend'), 60);
+  animateSpring(document.getElementById('view-session'), 50);
 }
 
 function highlightExercise(idx) {}
 
 // ══════════════════════════════════════════════════════════════════════════
-// RENDER — PROGRESS
+// RENDER — PROGRESS (Holographic charts)
 // ══════════════════════════════════════════════════════════════════════════
 
 let charts = {};
 
 async function renderProgress() {
   const configs = [
-    { id: 'chart-bench', label: 'Bench Press 1RM', data: [80,82.5,85,85,87.5,90], labels: ['W1','W2','W3','W4','W5','W6'], color: '#A3E635' },
+    { id: 'chart-bench', label: 'Bench 1RM', data: [80,82.5,85,85,87.5,90], labels: ['W1','W2','W3','W4','W5','W6'], color: '#00D2FF' },
     { id: 'chart-squat', label: 'Squat 1RM', data: [null,null,null,null,null,null], labels: ['W1','W2','W3','W4','W5','W6'], color: '#f59e0b' },
-    { id: 'chart-volume', label: 'Volume (kg)', data: [null,null,null,null,null,null], labels: ['W1','W2','W3','W4','W5','W6'], color: '#22c55e' },
+    { id: 'chart-volume', label: 'Volume', data: [null,null,null,null,null,null], labels: ['W1','W2','W3','W4','W5','W6'], color: '#22c55e' },
   ];
 
   for (const cfg of configs) {
@@ -757,11 +960,16 @@ async function renderProgress() {
           label: cfg.label,
           data: cfg.data,
           borderColor: cfg.color,
-          backgroundColor: cfg.color + '18',
-          borderWidth: 2,
-          pointRadius: 5,
+          backgroundColor: cfg.color + '10',
+          borderWidth: 1.5,
+          pointRadius: 4,
           pointBackgroundColor: cfg.color,
-          tension: 0.35,
+          pointBorderColor: 'transparent',
+          pointHoverRadius: 8,
+          pointHoverBackgroundColor: cfg.color,
+          pointHoverBorderColor: '#fff',
+          pointHoverBorderWidth: 1,
+          tension: 0.4,
           fill: true,
         }]
       },
@@ -769,8 +977,21 @@ async function renderProgress() {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          x: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#71717A', font: { size: 10, family: 'JetBrains Mono' } } },
-          y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#71717A', font: { size: 10, family: 'JetBrains Mono' } }, beginAtZero: false },
+          x: {
+            grid: { color: 'rgba(255,255,255,0.02)' },
+            ticks: { color: '#505868', font: { size: 10, family: 'JetBrains Mono' } },
+            border: { display: false }
+          },
+          y: {
+            grid: { color: 'rgba(255,255,255,0.02)' },
+            ticks: { color: '#505868', font: { size: 10, family: 'JetBrains Mono' } },
+            border: { display: false },
+            beginAtZero: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index'
         }
       }
     });
@@ -786,20 +1007,16 @@ function switchView(view) {
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
 
   const targetView = document.getElementById(`view-${view}`);
+  resetAnimations(targetView);
   targetView.classList.add('active');
   document.getElementById(`nav-${view}`).classList.add('active');
-
-  // Reset stagger animations for fresh entrance
-  targetView.querySelectorAll('.stagger-in').forEach(el => {
-    el.classList.remove('stagger-in');
-    el.style.animationDelay = '';
-  });
 
   if (view === 'hub') renderHub();
   if (view === 'session') renderSession();
   if (view === 'progress') renderProgress();
 
-  document.getElementById('last-updated').textContent = `Updated ${new Date().toLocaleTimeString()}`;
+  document.getElementById('last-updated').textContent =
+    new Date().toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }
 
 // ══════════════════════════════════════════════════════════════════════════
@@ -809,12 +1026,13 @@ function switchView(view) {
 async function init() {
   currentSession = await determineNextSession();
   await renderHub();
-  document.getElementById('last-updated').textContent = `Updated ${new Date().toLocaleTimeString()}`;
+  document.getElementById('last-updated').textContent =
+    new Date().toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   setInterval(async () => {
     currentSession = await determineNextSession();
     const activeView = document.querySelector('.view.active');
-    if (activeView.id === 'view-hub') await renderHub();
+    if (activeView && activeView.id === 'view-hub') await renderHub();
   }, 120000);
 }
 
