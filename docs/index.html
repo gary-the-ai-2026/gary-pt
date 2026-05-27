@@ -398,6 +398,28 @@
   }
   .terminal-content .highlight { color: var(--accent); }
 
+  /* ═══════════════ SYSTEM PING RIPPLE ═══════════════ */
+  .ping-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,210,255,0.3) 0%, transparent 70%);
+    transform: scale(0);
+    animation: pingExpand 0.6s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+  @keyframes pingExpand {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+  .ping-flash {
+    animation: pingFlash 0.15s ease-out;
+  }
+  @keyframes pingFlash {
+    0% { box-shadow: 0 0 0 0 rgba(0,210,255,0.5), var(--shadow-card); }
+    100% { box-shadow: 0 0 0 12px transparent, var(--shadow-card); }
+  }
+
   /* ═══════════════ RESPONSIVE ═══════════════ */
   @media (max-width: 768px) {
     .metrics-grid { grid-template-columns: repeat(2, 1fr); }
@@ -444,13 +466,13 @@
         <div class="metric-sub" id="metric-bw-trend">---</div>
       </div>
       <div class="metric-card glass-card">
-        <div class="metric-icon">🔥</div>
+        <div class="metric-icon">⚡</div>
         <div class="metric-label">This Week</div>
         <div class="metric-value accent" id="metric-sessions">---</div>
         <div class="metric-sub" id="metric-streak">---</div>
       </div>
       <div class="metric-card glass-card">
-        <div class="metric-icon">🏆</div>
+        <div class="metric-icon">🎯</div>
         <div class="metric-label">Est. Bench 1RM</div>
         <div class="metric-value amber" id="metric-bench">---</div>
         <div class="metric-sub" id="metric-bench-delta">---</div>
@@ -1037,6 +1059,36 @@ async function init() {
 }
 
 init();
+
+// ══════════════════════════════════════════════════════════════════════════
+// SYSTEM PING — ripple + flash on click
+// ══════════════════════════════════════════════════════════════════════════
+
+document.addEventListener('click', function(e) {
+  const target = e.target.closest('.glass-card, nav button, .metric-card');
+  if (!target) return;
+
+  // Flash the card
+  target.classList.add('ping-flash');
+  setTimeout(() => target.classList.remove('ping-flash'), 150);
+
+  // Ripple from click point
+  const ripple = document.createElement('div');
+  ripple.className = 'ping-ripple';
+  const size = Math.max(target.offsetWidth, target.offsetHeight);
+  ripple.style.width = ripple.style.height = size + 'px';
+
+  const rect = target.getBoundingClientRect();
+  ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+  ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+
+  // Ensure parent has relative positioning
+  const computed = getComputedStyle(target);
+  if (computed.position === 'static') target.style.position = 'relative';
+
+  target.appendChild(ripple);
+  ripple.addEventListener('animationend', () => ripple.remove());
+});
 </script>
 </body>
 </html>
