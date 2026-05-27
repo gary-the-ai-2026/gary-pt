@@ -20,8 +20,6 @@ next_session: chest-tri
 | 5 | Overhead Cable Extension | 3 × 12–15 | TBD | 60 sec |
 | 6 | Close-Grip Bench Press | 2 × 10–12 | TBD | 90 sec |
 
-**Notes:** Bench is your primary strength movement. Cable flye uses C10 high pulleys set to low position — squeeze at peak. Close-grip bench as tricep finisher.
-
 ---
 
 ## Back / Biceps
@@ -33,9 +31,7 @@ next_session: chest-tri
 | 3 | Seated Cable Row (Close) | 3 × 10–12 | TBD | 90 sec |
 | 4 | Face Pull | 3 × 12–15 | TBD | 60 sec |
 | 5 | Barbell Curl | 3 × 10–12 | TBD | 60 sec |
-| 6 | Dumbbell Hammer Curl | 3 × 10–12 | TBD | 60 sec |
-
-**Notes:** Pull-up bar available for warm-up hangs or when pulldowns get heavy enough that bodyweight pull-ups become viable. Face pulls for shoulder health — don't skip.
+| 6 | Preacher Curl | 3 × 10–12 | TBD | 60 sec |
 
 ---
 
@@ -44,13 +40,12 @@ next_session: chest-tri
 | # | Exercise | Sets × Reps | Target Weight | Rest |
 |---|---|---|---|---|
 | 1 | Barbell Back Squat | 3 × 8–10 | TBD | 2–3 min |
-| 2 | Dumbbell Romanian Deadlift | 3 × 10–12 | 27kg/side | 90 sec |
-| 3 | Bulgarian Split Squat | 3 × 10–12 | TBD | 90 sec |
-| 4 | Dumbbell Shoulder Press | 3 × 8–12 | TBD | 90 sec |
-| 5 | Dumbbell Lateral Raise | 3 × 12–15 | TBD | 60 sec |
-| 6 | Standing Calf Raise | 3 × 15–20 | TBD | 45 sec |
-
-**Notes:** Squat depth over weight — start conservative and build. DBs max at 27kg so RDLs and split squats will eventually need barbell variants. Shoulder press after legs lets your delts work hard without pre-fatiguing your legs.
+| 2 | Romanian Deadlift (BB) | 3 × 8–12 | TBD | 2 min |
+| 3 | Leg Extension | 3 × 12–15 | TBD | 60 sec |
+| 4 | Leg Curl | 3 × 12–15 | TBD | 60 sec |
+| 5 | Dumbbell Shoulder Press | 3 × 8–12 | TBD | 90 sec |
+| 6 | Dumbbell Lateral Raise | 3 × 12–15 | TBD | 60 sec |
+| 7 | Standing Calf Raise | 3 × 15–20 | TBD | 45 sec |
 
 ---
 
@@ -66,4 +61,4 @@ next_session: chest-tri
 
 ## Calibration
 
-`TBD` weights auto-populate after your first session log. Log the actual weight you used — even if it's a guess — and the system calibrates from there.
+`TBD` weights auto-populate after your first session log.

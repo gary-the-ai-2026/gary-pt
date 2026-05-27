@@ -30,25 +30,16 @@ Rotating — not tied to specific weekdays. Next session is always the next in r
 - **Barbell + plates**
 - **Adjustable dumbbells** — up to 27kg each
 - **Adjustable bench** — flat + incline
-- **Attachments** — lat bar, close-grip handle, rope, ankle strap, straight bar
+- **Plate-loaded leg extension** — bench attachment
+- **Leg curl attachment** — bench attachment
+- **Preacher curl attachment** — bench attachment
+- **Cable attachments** — lat bar, close-grip handle, rope, ankle strap, straight bar
 
 ## Current Goals
 
 - Progressive overload on compound lifts
 - Hypertrophy focus (8–12 rep range) on accessories
 - Exercise rotation every 4–6 weeks to avoid complacency
-
-## Estimated Starting Weights
-
-*Calibrated from recent MFP data. Adjust after first session logs.*
-
-| Lift | Est. Working Weight | Rep Range |
-|---|---|---|
-| Barbell Bench Press | 80kg | 8–10 |
-| Incline DB Press | 27kg (max DB) | 10–12 |
-| Tricep Pushdown (Cable) | 25kg | 12–15 |
-| Lat Pulldown | TBD | 8–12 |
-| Barbell Squat | TBD | 8–10 |
 
 ## Progression Rules
 
