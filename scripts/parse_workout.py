@@ -67,15 +67,21 @@ EXERCISE_ALIASES = {
     "skulls": "Skull Crusher",
     "dips": "Dips",
     "kickback": "Single-Arm Cable Kickback",
+    "bench dip": "Bench Dip",
+    "db overhead extension": "Dumbbell Overhead Extension",
     "close grip": "Close-Grip Bench Press",
     # Squat
     "squat": "Barbell Back Squat",
     "back squat": "Barbell Back Squat",
     "front squat": "Front Squat",
     "goblet squat": "Goblet Squat",
+    "goblet": "Goblet Squat",
     "bulgarian": "Bulgarian Split Squat",
     "split squat": "Bulgarian Split Squat",
     "bss": "Bulgarian Split Squat",
+    "lunge": "Walking Lunge",
+    "lunges": "Walking Lunge",
+    "smith squat": "Smith Machine Squat",
     # Deadlift
     "deadlift": "Conventional Deadlift",
     "rdl": "Romanian Deadlift (DB)",
@@ -270,12 +276,21 @@ def parse_message(text: str) -> dict:
 
     # Check for session declaration
     session_lower = text.lower()
-    for s in ["push", "pull", "legs"]:
+    for s in ["chest", "back", "legs", "push", "pull"]:
         if re.search(rf'\b{s}\b', session_lower):
-            result["session"] = s
+            if s == "chest":
+                result["session"] = "chest-tri"
+            elif s == "back":
+                result["session"] = "back-bi"
+            elif s == "legs":
+                result["session"] = "legs-shoulders"
+            elif s == "push":
+                result["session"] = "chest-tri"
+            elif s == "pull":
+                result["session"] = "back-bi"
             break
 
-    if text.lower() in ["push", "pull", "legs"]:
+    if text.lower() in ["chest", "back", "legs", "push", "pull", "chest-tri", "back-bi", "legs-shoulders", "chest/tri", "back/bi", "legs/shoulders"]:
         result["type"] = "session_start"
         return result
 
