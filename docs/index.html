@@ -905,7 +905,7 @@ async function renderSession() {
 
   document.getElementById('proto-body').innerHTML = exs.map((e,i) => {
     const l = live[e.name];
-    const logText = l ? l.map(s => `${s.reps}`).join(' · ') : '—';
+    const logText = l ? l.map(s => `${s.weight}×${s.reps}`).join(' · ') : '—';
     const cls = i===activeIdx ? 'current' : (l && l.length >= parseInt(e.sets?.split('×')[0]||3) ? 'done' : '');
     return `<tr class="${cls}"><td>${e.num||i+1}</td><td>${e.name}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
   }).join('');
