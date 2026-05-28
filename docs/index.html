@@ -994,11 +994,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     btn.addEventListener('click', () => switchView(btn.dataset.view));
   });
 
+  // Session view: 15s refresh for near-real-time tracking
   setInterval(async () => {
     currentSession = await determineNextSession();
-    if (document.getElementById('view-hub').classList.contains('active')) await renderHub();
     if (document.getElementById('view-session').classList.contains('active')) await renderSession();
-  }, 30000);
+  }, 15000);
+
+  // Hub view: 120s refresh for general monitoring
+  setInterval(async () => {
+    if (document.getElementById('view-hub').classList.contains('active')) await renderHub();
+  }, 120000);
 });
 </script>
 </body>
