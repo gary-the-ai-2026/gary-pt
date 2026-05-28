@@ -691,6 +691,17 @@ async function determineNextSession() {
     const files = await fetchJSON(REPO_API + '/logs');
     allLogs = files.filter(f => f.name.endsWith('.md') && !f.name.startsWith('_')).reverse();
     if (!allLogs.length) return 'chest-tri';
+
+    // Check if most recent log is still in progress — if so, that's the current session
+    try {
+      const latestContent = await fetchText(allLogs[0].download_url);
+      if (latestContent.includes('**Status:** In progress')) {
+        const parts = allLogs[0].name.replace('.md', '').split('-');
+        const lastType = parts.slice(3).join('-');
+        if (SESSION_ROTATION.includes(lastType)) return lastType;
+      }
+    } catch (e) { /* fall through to rotation */ }
+
     const parts = allLogs[0].name.replace('.md', '').split('-');
     const lastType = parts.slice(3).join('-');
     const idx = SESSION_ROTATION.indexOf(lastType);
