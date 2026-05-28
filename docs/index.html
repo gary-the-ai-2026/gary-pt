@@ -327,6 +327,39 @@
   }
   @keyframes cursorBlink { 0%,100%{opacity:1} 50%{opacity:0} }
 
+  /* ── Session History ── */
+  .history-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--space-lg); }
+  .history-card {
+    background: var(--canvas); border: 1px solid var(--hairline);
+    border-radius: var(--radius-sm); padding: 12px 14px;
+    display: flex; align-items: center; gap: 12px;
+    cursor: default; transition: border-color 0.2s ease;
+  }
+  .history-card:hover { border-color: var(--coral); }
+  .history-date {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--muted); min-width: 42px; text-align: center;
+    line-height: 1.3;
+  }
+  .history-date .day { font-size: 20px; font-weight: 700; color: var(--ink); display: block; }
+  .history-badge {
+    font-family: var(--font-body); font-size: 10px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 3px 8px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .badge-back-bi { background: #e8e0d2; color: #6b5e4e; }
+  .badge-chest-tri { background: #f0dbd3; color: #a9583e; }
+  .badge-legs-shoulders { background: #dce8e0; color: #4a7c5c; }
+  .history-info { flex: 1; min-width: 0; }
+  .history-info .title { font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--ink); }
+  .history-info .sub { font-family: var(--font-mono); font-size: 11px; color: var(--muted-soft); margin-top: 2px; }
+  .history-stat {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--muted); text-align: right; line-height: 1.4;
+    white-space: nowrap;
+  }
+
   /* ═══════════════ TODAY'S SESSION ═══════════════ */
   .session-header-row {
     display: flex; align-items: center; justify-content: space-between;
@@ -609,6 +642,11 @@
         <span class="cursor-blink"></span>
       </div>
     </div>
+
+    <div class="section-label">Session History</div>
+    <div class="history-list" id="history-list">
+      <div class="history-card" style="justify-content:center;color:var(--muted-soft);font-size:12px;">Loading…</div>
+    </div>
   </div>
 
   <!-- ═══════════ SESSION VIEW ═══════════ -->
@@ -866,6 +904,8 @@ async function renderHub() {
   if (bench) lines.push(`Bench 1RM: <span class="hl-coral">${bench} kg</span>.`);
   lines.push(`System nominal. ${new Date().toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'short'})}.`);
   typeInsight(lines.join('<br>'));
+
+  renderHistory();
 }
 
 function typeInsight(html) {
@@ -893,6 +933,49 @@ function typeInsight(html) {
     }
   }
   tick();
+}
+
+async function renderHistory() {
+  const el = document.getElementById('history-list');
+  if (!allLogs.length) { el.innerHTML = '<div class="history-card" style="justify-content:center;color:var(--muted-soft);font-size:12px;">No sessions yet</div>'; return; }
+
+  const BADGES = { 'back-bi': 'badge-back-bi', 'chest-tri': 'badge-chest-tri', 'legs-shoulders': 'badge-legs-shoulders' };
+  const NAMES = { 'back-bi': 'Back/Bi', 'chest-tri': 'Chest/Tri', 'legs-shoulders': 'Legs/Shldrs' };
+
+  const recent = allLogs.slice(0, 10);
+  const cards = [];
+
+  for (const log of recent) {
+    try {
+      const parts = log.name.replace('.md','').split('-');
+      const raw = await fetchText(log.download_url);
+      const dayNum = parseInt(parts[2]);
+      const month = new Date(parseInt(parts[0]), parseInt(parts[1])-1).toLocaleDateString('en-AU',{month:'short'});
+      const sessionType = parts.slice(3).join('-');
+
+      const durMatch = raw.match(/\*\*Duration:\*\*\s*(.+)/);
+      const duration = durMatch ? durMatch[1] : '—';
+
+      const exCount = (raw.match(/\| \d+ \|/g) || []).length;
+      const skipped = (raw.match(/Skipped/g) || []).length;
+      const completed = exCount - skipped;
+
+      cards.push({ dayNum, month, sessionType, duration, completed, skipped });
+    } catch (e) {}
+  }
+
+  el.innerHTML = cards.length
+    ? cards.map(c => `
+      <div class="history-card">
+        <div class="history-date"><span class="day">${c.dayNum}</span>${c.month}</div>
+        <span class="history-badge ${BADGES[c.sessionType] || ''}">${NAMES[c.sessionType] || c.sessionType}</span>
+        <div class="history-info">
+          <div class="title">${c.completed} exercises</div>
+          <div class="sub">${c.skipped ? c.skipped + ' skipped' : 'All complete'}</div>
+        </div>
+        <div class="history-stat">${c.duration}</div>
+      </div>`).join('')
+    : '<div class="history-card" style="justify-content:center;color:var(--muted-soft);font-size:12px;">No sessions yet</div>';
 }
 
 // ═══════════════════════════════════════════════════
