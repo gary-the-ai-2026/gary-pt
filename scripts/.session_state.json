@@ -3,16 +3,17 @@
   "session_type": "back-bi",
   "session_name": "Back / Biceps",
   "current_exercise": 1,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {"name": "Lat Pulldown (Wide)", "sets": 3, "target_reps": "8–12", "target_weight": "41kg", "rest": "90 sec"},
-    {"name": "Barbell Row", "sets": 3, "target_reps": "8–10", "target_weight": "TBD", "rest": "2 min"},
+    {"name": "Barbell Row", "sets": 3, "target_reps": "8–10", "target_weight": "10kg", "rest": "2 min"},
     {"name": "Seated Cable Row (Close)", "sets": 3, "target_reps": "10–12", "target_weight": "TBD", "rest": "90 sec"},
     {"name": "Face Pull", "sets": 3, "target_reps": "12–15", "target_weight": "TBD", "rest": "60 sec"},
     {"name": "Barbell Curl", "sets": 3, "target_reps": "10–12", "target_weight": "TBD", "rest": "60 sec"},
     {"name": "Preacher Curl", "sets": 3, "target_reps": "10–12", "target_weight": "TBD", "rest": "60 sec"}
   ],
   "log": {
-    "Lat Pulldown (Wide)": [{"weight": 32, "reps": 12}, {"weight": 36, "reps": 12}, {"weight": 41, "reps": 10}]
+    "Lat Pulldown (Wide)": [{"weight": 32, "reps": 12}, {"weight": 36, "reps": 12}, {"weight": 41, "reps": 10}],
+    "Barbell Row": [{"weight": 10, "reps": 12}]
   }
 }
