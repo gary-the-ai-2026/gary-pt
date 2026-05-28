@@ -380,6 +380,7 @@
   }
 
   /* Protocol table */
+  .proto-wrap { }
   .proto-table {
     width: 100%; border-collapse: collapse;
   }
@@ -434,13 +435,48 @@
 
   /* ═══════════════ RESPONSIVE ═══════════════ */
   @media (max-width: 768px) {
-    .app { padding: var(--space-lg) var(--space-md) 100px; }
-    .header h1 { font-size: 32px; letter-spacing: -0.5px; }
+    .app { padding: var(--space-md) var(--space-sm) 100px; }
+    .header { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+    .header h1 { font-size: 28px; letter-spacing: -0.5px; }
+    .nav-group { align-self: flex-start; }
+    .nav-group button { padding: 6px 12px; font-size: 12px; }
     .metrics-row { grid-template-columns: repeat(2, 1fr); }
-    .cycle-row { flex-direction: column; align-items: flex-start; }
+    .metric-card { padding: var(--space-md); }
+    .metric-card .metric-value { font-size: 22px; }
+    .cycle-row { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+    .cycle-ring-cont { width: 90px; height: 90px; }
+    .cycle-ring-svg { width: 90px; height: 90px; }
+    .cycle-ring-center .val { font-size: 20px; }
+    .cycle-info .title { font-size: 18px; }
     .active-ex-grid { grid-template-columns: repeat(2, 1fr); }
-    .active-ex-name { font-size: 22px; }
+    .active-ex-name { font-size: 20px; }
+    .active-ex-stat .val { font-size: 18px; }
     .session-header-row { flex-direction: column; align-items: flex-start; }
+    .set-dot { width: 36px; height: 36px; font-size: 12px; }
+    .proto-table { font-size: 12px; }
+    .proto-table th, .proto-table td { padding: 8px 6px; font-size: 11px; }
+    .proto-table td.log-col { font-size: 10px; }
+    .card-cream, .card-dark, .card-coral { padding: var(--space-md); border-radius: var(--radius-md); }
+    .section-label { font-size: 11px; margin-bottom: var(--space-sm); }
+    .chart-wrap { height: 160px; }
+    .status-bar { height: 36px; font-size: 11px; padding: 0 var(--space-md); }
+  }
+
+  @media (max-width: 480px) {
+    .header h1 { font-size: 24px; }
+    .nav-group button { padding: 5px 10px; font-size: 11px; }
+    .metric-card { padding: var(--space-sm); }
+    .metric-card .metric-value { font-size: 18px; }
+    .metric-card .metric-label { font-size: 10px; }
+    .cycle-ring-cont { width: 70px; height: 70px; }
+    .cycle-ring-svg { width: 70px; height: 70px; }
+    .active-ex-name { font-size: 18px; }
+    .active-ex-stat .val { font-size: 16px; }
+    .active-ex-stat .lbl { font-size: 9px; }
+    .set-dot { width: 32px; height: 32px; font-size: 11px; }
+    .card-cream, .card-dark, .card-coral { padding: var(--space-sm); }
+    .proto-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .proto-table { min-width: 480px; }
   }
 </style>
 </head>
@@ -584,7 +620,7 @@
     </div>
 
     <div class="section-label">Protocol</div>
-    <div class="card-cream">
+    <div class="card-cream proto-wrap">
       <table class="proto-table">
         <thead><tr>
           <th>#</th><th>Exercise</th><th>Sets</th><th>Weight</th><th>Reps</th><th>Log</th>
