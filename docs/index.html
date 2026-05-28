@@ -669,12 +669,12 @@ async function determineNextSession() {
   try {
     const files = await fetchJSON(REPO_API + '/logs');
     allLogs = files.filter(f => f.name.endsWith('.md') && !f.name.startsWith('_')).reverse();
-    if (!allLogs.length) return 'back-bi';
+    if (!allLogs.length) return 'chest-tri';
     const parts = allLogs[0].name.replace('.md', '').split('-');
     const lastType = parts.slice(3).join('-');
     const idx = SESSION_ROTATION.indexOf(lastType);
-    return idx >= 0 ? SESSION_ROTATION[(idx + 1) % 3] : 'back-bi';
-  } catch (e) { return 'back-bi'; }
+    return idx >= 0 ? SESSION_ROTATION[(idx + 1) % 3] : 'chest-tri';
+  } catch (e) { return 'chest-tri'; }
 }
 
 async function loadProgram() {
