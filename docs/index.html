@@ -718,7 +718,10 @@ async function loadProgram() {
     for (const s of sections) {
       if (s.split('\n')[0].trim() === target) {
         const t = parseMDTable(s);
-        if (t[0]) return t[0].rows.map(r => ({ num: r[0]||'', name: r[1]||'', sets: r[2]||'', reps: r[3]||'', weight: r[4]||'', rest: r[5]||'' }));
+        if (t[0]) return t[0].rows.map(r => {
+          const sp = (r[2]||'').split('×').map(s => s.trim());
+          return { num: r[0]||'', name: r[1]||'', sets: sp[0]||r[2]||'', weight: r[3]||'', reps: sp[1]||'', rest: r[4]||'' };
+        });
       }
     }
     return [];
