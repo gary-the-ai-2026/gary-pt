@@ -1,0 +1,16 @@
+{
+  "chat_id": "-1003949502327",
+  "session_type": "back-bi",
+  "session_name": "Back / Biceps",
+  "current_exercise": 0,
+  "current_set": 1,
+  "exercises": [
+    {"name": "Lat Pulldown (Wide)", "sets": 3, "target_reps": "8–12", "target_weight": "TBD", "rest": "90 sec"},
+    {"name": "Barbell Row", "sets": 3, "target_reps": "8–10", "target_weight": "TBD", "rest": "2 min"},
+    {"name": "Seated Cable Row (Close)", "sets": 3, "target_reps": "10–12", "target_weight": "TBD", "rest": "90 sec"},
+    {"name": "Face Pull", "sets": 3, "target_reps": "12–15", "target_weight": "TBD", "rest": "60 sec"},
+    {"name": "Barbell Curl", "sets": 3, "target_reps": "10–12", "target_weight": "TBD", "rest": "60 sec"},
+    {"name": "Preacher Curl", "sets": 3, "target_reps": "10–12", "target_weight": "TBD", "rest": "60 sec"}
+  ],
+  "log": {}
+}
