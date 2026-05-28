@@ -124,6 +124,25 @@
     color: var(--ink);
   }
 
+  /* ── Refresh button ── */
+  .refresh-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-sm);
+    background: var(--canvas);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 8px;
+    flex-shrink: 0;
+  }
+  .refresh-btn:hover { color: var(--coral); border-color: var(--coral); }
+  .refresh-btn:active { background: var(--surface-card); }
+  .refresh-btn.spinning svg { animation: spin 0.6s ease; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .refresh-btn svg { width: 18px; height: 18px; }
+
   /* ═══════════════ VIEWS ═══════════════ */
   .view { display: none; animation: fadeIn 0.35s ease; }
   .view.active { display: block; }
@@ -440,6 +459,7 @@
     .header h1 { font-size: 28px; letter-spacing: -0.5px; }
     .nav-group { align-self: flex-start; }
     .nav-group button { padding: 6px 12px; font-size: 12px; }
+    .refresh-btn { width: 36px; height: 36px; }
     .metrics-row { grid-template-columns: repeat(2, 1fr); }
     .metric-card { padding: var(--space-md); }
     .metric-card .metric-value { font-size: 22px; }
@@ -504,6 +524,12 @@
       <button data-view="session">Session</button>
       <button data-view="progress">Progress</button>
     </div>
+    <button class="refresh-btn" id="refresh-btn" title="Refresh" onclick="refreshView()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 4 23 10 17 10"/>
+        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+      </svg>
+    </button>
   </div>
 
   <!-- ═══════════ HUB VIEW ═══════════ -->
@@ -980,6 +1006,20 @@ function switchView(v) {
 
   document.getElementById('status-right').textContent =
     `Updated ${new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'})}`;
+}
+
+async function refreshView() {
+  const btn = document.getElementById('refresh-btn');
+  btn.classList.add('spinning');
+  currentSession = await determineNextSession();
+  const active = document.querySelector('.view.active');
+  if (active.id === 'view-hub') await renderHub();
+  if (active.id === 'view-session') await renderSession();
+  if (active.id === 'view-progress') await renderProgress();
+  document.getElementById('status-left').textContent = 'PT Gary · Systems Nominal';
+  document.getElementById('status-right').textContent =
+    `Refreshed ${new Date().toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit'})}`;
+  setTimeout(() => btn.classList.remove('spinning'), 600);
 }
 
 // ═══════════════════════════════════════════════════
