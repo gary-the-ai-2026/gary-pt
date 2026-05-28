@@ -398,6 +398,8 @@
   .proto-table tr:last-child td { border-bottom: none; }
   .proto-table tr.current { background: rgba(204,120,92,0.04); }
   .proto-table tr.current td:first-child { color: var(--coral); }
+  .proto-table tr.done td { color: var(--muted); }
+  .proto-table td.log-col { font-size: 12px; color: var(--success); text-align: right; }
 
   /* ═══════════════ PROGRESS ═══════════════ */
   .chart-card {
@@ -585,7 +587,7 @@
     <div class="card-cream">
       <table class="proto-table">
         <thead><tr>
-          <th>#</th><th>Exercise</th><th>Sets</th><th>Weight</th><th>Reps</th>
+          <th>#</th><th>Exercise</th><th>Sets</th><th>Weight</th><th>Reps</th><th>Log</th>
         </tr></thead>
         <tbody id="proto-body"></tbody>
       </table>
@@ -663,6 +665,25 @@ function parseMDTable(md) {
 function estimate1RM(w, r) {
   if (!w || !r || r <= 0) return null;
   return r === 1 ? w : Math.round(w * (36 / (37 - r)));
+}
+
+async function fetchLiveLog(sessionType) {
+  try {
+    const d = new Date();
+    const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    const md = await fetchText(`${REPO_RAW}/logs/${ds}-${sessionType}.md`);
+    const tables = parseMDTable(md);
+    const logCol = tables[0] && tables[0].header && tables[0].header.includes('Log') ? tables[0].header.indexOf('Log') : -1;
+    if (logCol < 0) return {};
+    const map = {};
+    for (const row of tables[0].rows) {
+      const name = row[1] || '';
+      const log = row[logCol] || '';
+      const sets = [...log.matchAll(/Set\s*(\d+):\s*(\d+\.?\d*)kg\s*[×x]\s*(\d+)/gi)].map(m => ({set: parseInt(m[1]), weight: parseFloat(m[2]), reps: parseInt(m[3])}));
+      if (sets.length) map[name] = sets;
+    }
+    return map;
+  } catch (e) { return {}; }
 }
 
 async function determineNextSession() {
@@ -803,13 +824,23 @@ function typeInsight(html) {
 
 async function renderSession() {
   const exs = await loadProgram();
+  const live = await fetchLiveLog(currentSession);
   document.getElementById('session-badge').textContent = SESSION_NAMES[currentSession];
   document.getElementById('session-date').textContent = new Date().toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long'});
 
   if (!exs.length) { document.getElementById('active-name').textContent = 'Loading...'; return; }
 
-  const a = exs[0];
-  document.getElementById('active-num').textContent = `Exercise 1 of ${exs.length}`;
+  // Find first exercise without logged sets, or last exercise if all logged
+  let activeIdx = 0;
+  for (let i = 0; i < exs.length; i++) {
+    if (!live[exs[i].name] || live[exs[i].name].length < parseInt(exs[i].sets?.split('×')[0] || '3')) {
+      activeIdx = i; break;
+    }
+    activeIdx = i;
+  }
+
+  const a = exs[activeIdx];
+  document.getElementById('active-num').textContent = `Exercise ${activeIdx+1} of ${exs.length}`;
   document.getElementById('active-name').textContent = a.name;
   document.getElementById('active-sets').textContent = a.sets;
   document.getElementById('active-weight').textContent = a.weight;
@@ -817,13 +848,17 @@ async function renderSession() {
   document.getElementById('active-rest').textContent = a.rest;
 
   const sc = parseInt(a.sets?.split('×')[0] || '3');
+  const done = live[a.name] ? live[a.name].length : 0;
   document.getElementById('set-dots').innerHTML = Array.from({length: sc}, (_,i) =>
-    `<div class="set-dot${i===0?' active':''}">${i+1}</div>`
+    `<div class="set-dot${i<done?' done':''}${i===done?' active':''}">${i<done?'✓':i+1}</div>`
   ).join('');
 
-  document.getElementById('proto-body').innerHTML = exs.map((e,i) =>
-    `<tr class="${i===0?'current':''}"><td>${e.num||i+1}</td><td>${e.name}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td></tr>`
-  ).join('');
+  document.getElementById('proto-body').innerHTML = exs.map((e,i) => {
+    const l = live[e.name];
+    const logText = l ? l.map(s => `${s.reps}`).join(' · ') : '—';
+    const cls = i===activeIdx ? 'current' : (l && l.length >= parseInt(e.sets?.split('×')[0]||3) ? 'done' : '');
+    return `<tr class="${cls}"><td>${e.num||i+1}</td><td>${e.name}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
+  }).join('');
 
   document.getElementById('status-right').textContent = `Today: ${SESSION_NAMES[currentSession]}`;
 }
@@ -912,7 +947,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   setInterval(async () => {
     currentSession = await determineNextSession();
     if (document.getElementById('view-hub').classList.contains('active')) await renderHub();
-  }, 120000);
+    if (document.getElementById('view-session').classList.contains('active')) await renderSession();
+  }, 30000);
 });
 </script>
 </body>
