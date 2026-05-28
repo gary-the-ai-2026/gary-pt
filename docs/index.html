@@ -743,6 +743,7 @@ async function fetchLiveLog(sessionType) {
       const log = row[logCol] || '';
       const sets = [...log.matchAll(/Set\s*(\d+):\s*(\d+\.?\d*)kg\s*[×x]\s*(\d+)/gi)].map(m => ({set: parseInt(m[1]), weight: parseFloat(m[2]), reps: parseInt(m[3])}));
       if (sets.length) map[name] = sets;
+      else if (/skipped/i.test(log)) map[name] = '__skipped__';
     }
     return map;
   } catch (e) { return {}; }
@@ -906,10 +907,12 @@ async function renderSession() {
 
   if (!exs.length) { document.getElementById('active-name').textContent = 'Loading...'; return; }
 
-  // Find first exercise without logged sets, or last exercise if all logged
+  // Find first exercise without logged sets, skipping skipped exercises
   let activeIdx = 0;
   for (let i = 0; i < exs.length; i++) {
-    if (!live[exs[i].name] || live[exs[i].name].length < parseInt(exs[i].sets?.split('×')[0] || '3')) {
+    const l = live[exs[i].name];
+    if (l === '__skipped__') continue;
+    if (!l || l.length < parseInt(exs[i].sets?.split('×')[0] || '3')) {
       activeIdx = i; break;
     }
     activeIdx = i;
@@ -931,9 +934,11 @@ async function renderSession() {
 
   document.getElementById('proto-body').innerHTML = exs.map((e,i) => {
     const l = live[e.name];
-    const logText = l ? l.map(s => `${s.weight}×${s.reps}`).join(' · ') : '—';
-    const cls = i===activeIdx ? 'current' : (l && l.length >= parseInt(e.sets?.split('×')[0]||3) ? 'done' : '');
-    return `<tr class="${cls}"><td>${e.num||i+1}</td><td>${e.name}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
+    const isSkipped = l === '__skipped__';
+    const logText = isSkipped ? 'Skipped' : (l ? l.map(s => `${s.weight}×${s.reps}`).join(' · ') : '—');
+    const isDone = isSkipped || (l && l.length >= parseInt(e.sets?.split('×')[0]||3));
+    const cls = i===activeIdx ? 'current' : (isDone ? 'done' : '');
+    return `<tr class=\"${cls}\"><td>${e.num||i+1}</td><td>${e.name}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
   }).join('');
 
   document.getElementById('status-right').textContent = `Today: ${SESSION_NAMES[currentSession]}`;
