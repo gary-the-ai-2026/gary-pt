@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-05-27
 status: active
-next_session: chest-tri
+next_session: legs-shoulders
 ---
 
 # Cycle 1 — Week 1
@@ -26,11 +26,11 @@ next_session: chest-tri
 
 | # | Exercise | Sets × Reps | Target Weight | Rest |
 |---|---|---|---|---|
-| 1 | Lat Pulldown (Wide) | 3 × 8–12 | TBD | 90 sec |
-| 2 | Barbell Row | 3 × 8–10 | TBD | 2 min |
-| 3 | Seated Cable Row (Close) | 3 × 10–12 | TBD | 90 sec |
+| 1 | Lat Pulldown (Wide) | 3 × 8–12 | 38.5kg | 90 sec |
+| 2 | Barbell Row | 3 × 8–10 | 17.5kg | 2 min |
+| 3 | Seated Cable Row (Close) | 3 × 10–12 | 29.5kg | 90 sec |
 | 4 | Face Pull | 3 × 12–15 | TBD | 60 sec |
-| 5 | Barbell Curl | 3 × 10–12 | TBD | 60 sec |
+| 5 | Barbell Curl | 3 × 10–12 | 10kg | 60 sec |
 | 6 | Preacher Curl | 3 × 10–12 | TBD | 60 sec |
 
 ---
