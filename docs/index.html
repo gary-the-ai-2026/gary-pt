@@ -1031,10 +1031,49 @@ async function renderSession() {
 // ═══════════════════════════════════════════════════
 
 async function renderProgress() {
+  // Build weekly data structures from actual logs
+  const weekData = {};  // { 1: { bench: null, squat: null, volume: 0 }, ... }
+  for (let w = 1; w <= 6; w++) weekData[w] = { bench: null, squat: null, volume: 0 };
+
+  for (const log of allLogs) {
+    try {
+      const data = await fetchJSON(log.download_url);
+      if (!data || !data.exercises) continue;
+      const wk = data.week || 1;
+      if (wk < 1 || wk > 6) continue;
+
+      for (const ex of data.exercises) {
+        if (ex.skipped || !ex.sets || !ex.sets.length) continue;
+
+        // Volume: sum of weight × reps for every set
+        for (const s of ex.sets) {
+          weekData[wk].volume += (s.weight_kg || 0) * (s.reps || 0);
+        }
+
+        // 1RM: best set's estimated 1RM for bench and squat
+        const isBench = ex.name.toLowerCase().includes('bench press') && !ex.name.toLowerCase().includes('dumbbell');
+        const isSquat = ex.name.toLowerCase().includes('squat');
+        if (!isBench && !isSquat) continue;
+
+        const bestIdx = ex.sets.reduce((best, s, i, arr) => s.reps > arr[best].reps ? i : best, 0);
+        const e1rm = estimate1RM(ex.sets[bestIdx].weight_kg, ex.sets[bestIdx].reps);
+        if (!e1rm) continue;
+
+        if (isBench && (weekData[wk].bench === null || e1rm > weekData[wk].bench)) weekData[wk].bench = e1rm;
+        if (isSquat && (weekData[wk].squat === null || e1rm > weekData[wk].squat)) weekData[wk].squat = e1rm;
+      }
+    } catch(e) {}
+  }
+
+  const weeks = [1,2,3,4,5,6];
+  const benchData = weeks.map(w => weekData[w].bench);
+  const squatData = weeks.map(w => weekData[w].squat);
+  const volumeData = weeks.map(w => weekData[w].volume > 0 ? Math.round(weekData[w].volume / 1000) : null);
+
   const configs = [
-    { id: 'chart-bench', data: [80,82.5,85,85,87.5,90], labels: ['W1','W2','W3','W4','W5','W6'], color: '#cc785c' },
-    { id: 'chart-squat', data: [null,null,null,null,null,null], labels: ['W1','W2','W3','W4','W5','W6'], color: '#e8a55a' },
-    { id: 'chart-volume', data: [null,null,null,null,null,null], labels: ['W1','W2','W3','W4','W5','W6'], color: '#5db8a6' },
+    { id: 'chart-bench', data: benchData, labels: weeks.map(w => `W${w}`), color: '#cc785c' },
+    { id: 'chart-squat', data: squatData, labels: weeks.map(w => `W${w}`), color: '#e8a55a' },
+    { id: 'chart-volume', data: volumeData, labels: weeks.map(w => `W${w}`), color: '#5db8a6' },
   ];
 
   for (const cfg of configs) {
@@ -1046,12 +1085,17 @@ async function renderProgress() {
     g.addColorStop(0, cfg.color + '20');
     g.addColorStop(1, cfg.color + '00');
 
+    // Only show weeks that have data
+    const lastDataIdx = cfg.data.reduce((best, v, i) => v !== null ? i : best, -1);
+    const displayLabels = lastDataIdx >= 0 ? cfg.labels.slice(0, lastDataIdx + 1) : cfg.labels;
+    const displayData = lastDataIdx >= 0 ? cfg.data.slice(0, lastDataIdx + 1) : [];
+
     charts[cfg.id] = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: cfg.labels,
+        labels: displayLabels,
         datasets: [{
-          data: cfg.data,
+          data: displayData,
           borderColor: cfg.color,
           backgroundColor: g,
           borderWidth: 2,
@@ -1062,6 +1106,7 @@ async function renderProgress() {
           pointHoverRadius: 7,
           tension: 0.4,
           fill: true,
+          spanGaps: false,
         }]
       },
       options: {
