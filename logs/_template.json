@@ -1,0 +1,13 @@
+{
+  "session_id": "YYYY-MM-DD-{type}",
+  "date": "YYYY-MM-DD",
+  "type": "chest-tri | back-bi | legs-shoulders",
+  "status": "complete",
+  "started": "",
+  "finished": "",
+  "duration_min": 0,
+  "cycle": 1,
+  "week": 1,
+  "exercises": [],
+  "notes": ""
+}

@@ -771,17 +771,14 @@ async function fetchLiveLog(sessionType) {
   try {
     const d = new Date();
     const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-    const md = await fetchText(`${REPO_RAW}/logs/${ds}-${sessionType}.md`);
-    const tables = parseMDTable(md);
-    const logCol = tables[0] && tables[0].header && tables[0].header.includes('Log') ? tables[0].header.indexOf('Log') : -1;
-    if (logCol < 0) return {};
+    const log = await fetchJSON(`${REPO_RAW}/logs/${ds}-${sessionType}.json`);
+    if (!log || !log.exercises) return {};
     const map = {};
-    for (const row of tables[0].rows) {
-      const name = row[1] || '';
-      const log = row[logCol] || '';
-      const sets = [...log.matchAll(/Set\s*(\d+):\s*(\d+\.?\d*)kg\s*[×x]\s*(\d+)/gi)].map(m => ({set: parseInt(m[1]), weight: parseFloat(m[2]), reps: parseInt(m[3])}));
-      if (sets.length) map[name] = sets;
-      else if (/skipped/i.test(log)) map[name] = '__skipped__';
+    for (const ex of log.exercises) {
+      if (ex.skipped) { map[ex.name] = '__skipped__'; continue; }
+      if (ex.sets && ex.sets.length) {
+        map[ex.name] = ex.sets.map(s => ({set: s.set, weight: s.weight_kg, reps: s.reps}));
+      }
     }
     return map;
   } catch (e) { return {}; }
@@ -790,20 +787,19 @@ async function fetchLiveLog(sessionType) {
 async function determineNextSession() {
   try {
     const files = await fetchJSON(REPO_API + '/logs');
-    allLogs = files.filter(f => f.name.endsWith('.md') && !f.name.startsWith('_')).reverse();
+    allLogs = files.filter(f => f.name.endsWith('.json') && !f.name.startsWith('_')).reverse();
     if (!allLogs.length) return 'chest-tri';
 
     // Check if most recent log is still in progress — if so, that's the current session
     try {
-      const latestContent = await fetchText(allLogs[0].download_url);
-      if (latestContent.includes('**Status:** In progress')) {
-        const parts = allLogs[0].name.replace('.md', '').split('-');
-        const lastType = parts.slice(3).join('-');
-        if (SESSION_ROTATION.includes(lastType)) return lastType;
+      const latestLog = await fetchJSON(allLogs[0].download_url);
+      if (latestLog && latestLog.status === 'in_progress') {
+        const inProgressType = latestLog.type;
+        if (SESSION_ROTATION.includes(inProgressType)) return inProgressType;
       }
     } catch (e) { /* fall through to rotation */ }
 
-    const parts = allLogs[0].name.replace('.md', '').split('-');
+    const parts = allLogs[0].name.replace('.json', '').split('-');
     const lastType = parts.slice(3).join('-');
     const idx = SESSION_ROTATION.indexOf(lastType);
     return idx >= 0 ? SESSION_ROTATION[(idx + 1) % 3] : 'chest-tri';
@@ -844,13 +840,16 @@ async function getBest1RM(name) {
   let best = null;
   for (const log of allLogs.slice(0,30)) {
     try {
-      const c = await fetchText(log.download_url);
-      for (const line of c.split('\n')) {
-        if (line.includes(name) && line.includes('×')) {
-          const reps = [...line.matchAll(/×(\d+)/g)].map(m=>parseInt(m[1]));
-          const wts = [...line.matchAll(/(\d+)kg×/g)].map(m=>parseInt(m[1]));
+      const c = await fetchJSON(log.download_url);
+      if (!c || !c.exercises) continue;
+      for (const ex of c.exercises) {
+        if (ex.name !== name || ex.skipped) continue;
+        if (ex.sets && ex.sets.length) {
+          const reps = ex.sets.map(s => s.reps).filter(r => r > 0);
+          const wts = ex.sets.map(s => s.weight_kg).filter(w => w > 0);
           if (reps.length && wts.length) {
-            const e1rm = estimate1RM(Math.round(wts.reduce((a,b)=>a+b,0)/wts.length), Math.max(...reps));
+            const avgWt = wts.reduce((a,b) => a + b, 0) / wts.length;
+            const e1rm = estimate1RM(avgWt, Math.max(...reps));
             if (e1rm && (!best || e1rm > best)) best = e1rm;
           }
         }
@@ -897,7 +896,7 @@ async function renderHub() {
 
   // AI insight
   const lines = [];
-  if (wks === 0) lines.push('No sessions this week. Say <span class="hl-teal">/voice on</span> to begin.');
+  if (wks === 0) lines.push('No sessions this week. Say <span class="hl-teal">start session</span> to begin.');
   else if (wks < 3) lines.push(`<span class="hl-teal">${wks}/3</span> sessions this week. ${3-wks} remaining.`);
   else lines.push('<span class="hl-teal">3/3</span> sessions. Target met.');
   lines.push(`Next: <span class="hl-coral">${SESSION_NAMES[currentSession]}</span> — ${exs.length} exercises.`);
@@ -947,17 +946,17 @@ async function renderHistory() {
 
   for (const log of recent) {
     try {
-      const parts = log.name.replace('.md','').split('-');
-      const raw = await fetchText(log.download_url);
+      const parts = log.name.replace('.json','').split('-');
+      const raw = await fetchJSON(log.download_url);
+      if (!raw || !raw.exercises) continue;
       const dayNum = parseInt(parts[2]);
       const month = new Date(parseInt(parts[0]), parseInt(parts[1])-1).toLocaleDateString('en-AU',{month:'short'});
       const sessionType = parts.slice(3).join('-');
 
-      const durMatch = raw.match(/\*\*Duration:\*\*\s*(.+)/);
-      const duration = durMatch ? durMatch[1] : '—';
+      const duration = raw.duration_min ? `${raw.duration_min} min` : '—';
 
-      const exCount = (raw.match(/\| \d+ \|/g) || []).length;
-      const skipped = (raw.match(/Skipped/g) || []).length;
+      const exCount = raw.exercises.length;
+      const skipped = raw.exercises.filter(e => e.skipped).length;
       const completed = exCount - skipped;
 
       cards.push({ dayNum, month, sessionType, duration, completed, skipped });

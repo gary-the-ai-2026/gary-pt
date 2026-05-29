@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 PT Gary — Progression Engine
-Reads completed session logs, applies progression rules, updates program weights.
+Reads completed session logs (JSON), applies progression rules, updates program weights.
 
 Rules:
   - All sets hit top of rep range → +2.5kg (upper) or +5kg (lower)
@@ -11,11 +11,12 @@ Rules:
   - DBs maxed at 27kg → add reps, then add set, then swap
 
 Usage:
-  python3 progression_engine.py
-  (called automatically after each voice session completes)
+  python3 progression_engine.py [path/to/session.json]
+  (called automatically after each session completes)
 """
 
 import re
+import json
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 
@@ -25,83 +26,45 @@ PROGRAM_FILE = REPO / "programs" / "cycle-1-week-1.md"
 CONFIG_FILE = REPO / "config" / "josh-hancock.md"
 STALL_FILE = REPO / "programs" / ".stall_tracker.json"
 
+
 # ── Parse Helpers ────────────────────────────────────────────────────────────
 
 def parse_log_file(filepath: Path) -> dict:
-    """Parse a completed session log into structured data."""
-    content = filepath.read_text()
-    lines = content.split('\n')
+    """Parse a completed session JSON log into structured data."""
+    return json.loads(filepath.read_text())
 
-    # Extract metadata from frontmatter
-    frontmatter = {}
-    in_frontmatter = False
-    for line in lines:
-        if line.strip() == '---':
-            if not in_frontmatter:
-                in_frontmatter = True
-                continue
-            else:
-                break
-        if in_frontmatter and ':' in line:
-            key, val = line.split(':', 1)
-            frontmatter[key.strip()] = val.strip()
 
-    # Parse exercise table
-    exercises = {}
-    in_table = False
-    for line in lines:
-        if line.startswith('| # | Exercise'):
-            in_table = True
-            continue
-        if in_table and line.startswith('|'):
-            cells = [c.strip() for c in line.split('|') if c.strip()]
-            if len(cells) >= 4 and cells[0] and cells[0].isdigit():
-                name = cells[1]
-                target = cells[2]
-                actual = cells[3]
-                exercises[name] = {
-                    "target": target,
-                    "actual": actual,
-                }
+def parse_target_from_exercise(exercise: dict) -> dict:
+    """Parse exercise JSON into target dict: {weight, rep_low, rep_high}.
 
-    return {
-        "session_type": frontmatter.get("type", ""),
-        "date": frontmatter.get("date", ""),
-        "exercises": exercises,
+    Uses the structured fields from the JSON log format:
+      target_weight_kg, target_reps, target_sets
+    """
+    t = {
+        "weight": exercise.get("target_weight_kg"),
+        "rep_low": 8,
+        "rep_high": 12,
     }
 
+    reps_str = exercise.get("target_reps", "")
+    if reps_str and '-' in reps_str:
+        parts = reps_str.split('-')
+        t["rep_low"] = int(parts[0].strip())
+        t["rep_high"] = int(parts[1].strip())
+    elif reps_str:
+        v = int(reps_str.strip())
+        t["rep_low"] = v
+        t["rep_high"] = v
 
-def parse_target(target: str) -> dict:
-    """Parse '80kg × 8–10' → {weight: 80, rep_low: 8, rep_high: 10}"""
-    result = {"weight": None, "rep_low": 8, "rep_high": 12}
-    # Extract weight — the first number before 'kg'
-    w = re.search(r'([\d.]+)\s*kg', target)
-    if w:
-        result["weight"] = float(w.group(1))
-
-    # Extract rep range — numbers after the '×' or from the latter part
-    # Split on '×' and parse the right side
-    if '×' in target:
-        rep_part = target.split('×')[-1]
-    else:
-        rep_part = target
-
-    reps = re.findall(r'(\d+)', rep_part)
-    if len(reps) >= 2:
-        result["rep_low"] = int(reps[0])
-        result["rep_high"] = int(reps[1])
-    elif len(reps) == 1:
-        result["rep_low"] = int(reps[0])
-        result["rep_high"] = int(reps[0])
-    return result
+    return t
 
 
-def parse_actual_sets(actual: str) -> list[int]:
-    """Parse '80kg×10 / 80kg×10 / 80kg×9' → [10, 10, 9] or 'Skipped' → []"""
-    if not actual or actual.lower() == 'skipped':
+def actual_reps_from_exercise(exercise: dict) -> list[int]:
+    """Extract reps from exercise's sets array."""
+    if exercise.get("skipped"):
         return []
-    reps = re.findall(r'×(\d+)', actual)
-    return [int(r) for r in reps]
+    sets = exercise.get("sets") or []
+    return [s["reps"] for s in sets if "reps" in s]
 
 
 # ── Progression Logic ─────────────────────────────────────────────────────────
@@ -109,6 +72,7 @@ def parse_actual_sets(actual: str) -> list[int]:
 LOWER_BODY = {"squat", "deadlift", "rdl", "romanian", "leg press", "leg extension",
               "leg curl", "bulgarian", "split squat", "lunge", "calf raise",
               "hip thrust", "glute bridge"}
+
 
 def is_lower(exercise_name: str) -> bool:
     """Check if an exercise is lower body (deserves +5kg bumps)."""
@@ -158,7 +122,6 @@ def check_stalls(exercise_name: str, action: str) -> bool:
     """Track stall history and flag if 2 consecutive stalls on same exercise."""
     stalls = {}
     if STALL_FILE.exists():
-        import json
         stalls = json.loads(STALL_FILE.read_text())
 
     if action in ["repeat", "drop"]:
@@ -166,7 +129,6 @@ def check_stalls(exercise_name: str, action: str) -> bool:
     else:
         stalls[exercise_name] = 0
 
-    import json
     STALL_FILE.write_text(json.dumps(stalls, indent=2))
 
     return stalls[exercise_name] >= 2
@@ -183,7 +145,7 @@ def update_program_weights(progression_results: dict):
             new_weight_str = f"{result['new_weight']}kg"
 
             # Find and replace the weight for this exercise in the program
-            # Pattern: | # | Exercise Name | Sets × Reps | OldWeight | Rest |
+            # Pattern: full cell containing exercise name followed by weight
             escaped = re.escape(ex_name)
             pattern = rf'(\|.*?{escaped}.*?\|\s*[\d.]+kg)'
             replacement = lambda m: m.group(0).replace(
@@ -209,7 +171,7 @@ def run_progression(latest_log_path: Path = None):
     if latest_log_path:
         log_file = latest_log_path
     else:
-        log_files = sorted(logs_dir.glob("*.md"))
+        log_files = sorted(logs_dir.glob("*.json"))
         log_files = [f for f in log_files if not f.name.startswith('_')]
         if not log_files:
             print("No session logs found.")
@@ -218,16 +180,19 @@ def run_progression(latest_log_path: Path = None):
 
     # Parse log
     session = parse_log_file(log_file)
-    print(f"📊 Processing: {session['date']} — {session['session_type']}")
+    session_type = session.get("type", "")
+    session_date = session.get("date", "")
+    print(f"📊 Processing: {session_date} — {session_type}")
 
     results = {}
-    for ex_name, data in session["exercises"].items():
-        if not data["actual"] or data["actual"].lower() == "skipped":
+    for ex in session.get("exercises", []):
+        ex_name = ex["name"]
+        if ex.get("skipped"):
             results[ex_name] = {"action": "skip", "new_weight": None, "reason": "Skipped"}
             continue
 
-        target = parse_target(data["target"])
-        actual_reps = parse_actual_sets(data["actual"])
+        target = parse_target_from_exercise(ex)
+        actual_reps = actual_reps_from_exercise(ex)
 
         if not actual_reps:
             continue
@@ -252,9 +217,7 @@ def run_progression(latest_log_path: Path = None):
     import os
     os.chdir(REPO)
     os.system("git add programs/cycle-1-week-1.md programs/.stall_tracker.json 2>/dev/null")
-    date_str = session["date"]
-    type_str = session["session_type"]
-    os.system(f"git commit -m 'progression: {date_str} {type_str}' 2>&1")
+    os.system(f"git commit -m 'progression: {session_date} {session_type}' 2>&1")
     os.system("git push origin main 2>&1")
 
     return results
