@@ -2,8 +2,10 @@
   "session_id": "2026-06-02-legs-shoulders",
   "date": "2026-06-02",
   "type": "legs-shoulders",
-  "status": "in_progress",
-  "started": "",
+  "status": "complete",
+  "started": "07:05",
+  "finished": "07:45",
+  "duration_min": 40,
   "cycle": 1,
   "week": 1,
   "ad_hoc": true,
@@ -82,7 +84,8 @@
       "skipped": false,
       "sets": [
         {"set": 1, "weight_kg": 20, "reps": 12},
-        {"set": 2, "weight_kg": 20, "reps": 7}
+        {"set": 2, "weight_kg": 20, "reps": 7},
+        {"set": 3, "weight_kg": 20, "reps": 7}
       ]
     },
     {
@@ -106,5 +109,5 @@
       "sets": null
     }
   ],
-  "notes": "Hotel gym ad hoc session. No barbell — DB substitutions. Leg press + leg ext/curl are selectorized machines. Short session — skipped isolation work."
+  "notes": "Hotel gym ad hoc session. No barbell — DB substitutions. Leg press + leg ext/curl are selectorized machines. Short session — skipped isolation due to time."
 }
