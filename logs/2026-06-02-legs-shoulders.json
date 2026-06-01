@@ -47,7 +47,8 @@
       "skipped": false,
       "sets": [
         {"set": 1, "weight_kg": 73, "reps": 15},
-        {"set": 2, "weight_kg": 93, "reps": 12}
+        {"set": 2, "weight_kg": 93, "reps": 12},
+        {"set": 3, "weight_kg": 93, "reps": 12}
       ],
       "notes": "selectorized — calibrated at 73kg, bumped to 93kg"
     },
