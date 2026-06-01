@@ -15,6 +15,7 @@
       "target_sets": 3,
       "target_reps": "8-12",
       "target_weight_kg": 25,
+      "rest": "2–3 min",
       "skipped": false,
       "sets": []
     },
@@ -24,6 +25,7 @@
       "target_sets": 3,
       "target_reps": "10-12",
       "target_weight_kg": 22.5,
+      "rest": "2 min",
       "skipped": false,
       "sets": []
     },
@@ -33,6 +35,7 @@
       "target_sets": 3,
       "target_reps": "10-12",
       "target_weight_kg": null,
+      "rest": "2 min",
       "skipped": false,
       "sets": [],
       "notes": "selectorized — calibrate"
@@ -43,6 +46,7 @@
       "target_sets": 3,
       "target_reps": "12-15",
       "target_weight_kg": null,
+      "rest": "60 sec",
       "skipped": false,
       "sets": [],
       "notes": "selectorized — calibrate"
@@ -53,6 +57,7 @@
       "target_sets": 3,
       "target_reps": "12-15",
       "target_weight_kg": null,
+      "rest": "60 sec",
       "skipped": false,
       "sets": [],
       "notes": "selectorized — calibrate"
@@ -63,6 +68,7 @@
       "target_sets": 3,
       "target_reps": "8-12",
       "target_weight_kg": 20,
+      "rest": "90 sec",
       "skipped": false,
       "sets": []
     },
@@ -72,6 +78,7 @@
       "target_sets": 3,
       "target_reps": "12-15",
       "target_weight_kg": 8,
+      "rest": "60 sec",
       "skipped": false,
       "sets": []
     },
@@ -81,6 +88,7 @@
       "target_sets": 3,
       "target_reps": "15-20",
       "target_weight_kg": null,
+      "rest": "45 sec",
       "skipped": false,
       "sets": [],
       "notes": "selectorized — calibrate"
