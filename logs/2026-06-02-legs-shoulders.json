@@ -33,7 +33,8 @@
       "skipped": false,
       "sets": [
         {"set": 1, "weight_kg": 20, "reps": 15},
-        {"set": 2, "weight_kg": 20, "reps": 15}
+        {"set": 2, "weight_kg": 20, "reps": 15},
+        {"set": 3, "weight_kg": 20, "reps": 16}
       ]
     },
     {
