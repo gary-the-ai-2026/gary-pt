@@ -809,22 +809,20 @@ async function determineNextSession() {
 async function loadProgram() {
   try {
     // Check for ad hoc session first — use log exercises if present
+    // Uses raw.githubusercontent.com to avoid GitHub API rate limits (60/hr on mobile)
     const today = new Date().toISOString().split('T')[0];
     try {
-      const logsList = await fetchJSON(REPO_API + '/logs');
-      const todayLog = logsList.find(f => f.name.startsWith(today));
-      if (todayLog) {
-        const logData = await fetchJSON(todayLog.download_url);
-        if (logData && logData.ad_hoc && logData.exercises && logData.exercises.length) {
-          return logData.exercises.map(e => ({
-            num: String(e.num || ''),
-            name: e.name || '',
-            sets: String(e.target_sets || 3),
-            weight: e.target_weight_kg != null ? String(e.target_weight_kg) + 'kg' : 'TBD',
-            reps: e.target_reps || '',
-            rest: e.rest || '—'
-          }));
-        }
+      const logUrl = `${REPO_RAW}/logs/${today}-${currentSession}.json`;
+      const logData = await fetchJSON(logUrl);
+      if (logData && logData.ad_hoc && logData.exercises && logData.exercises.length) {
+        return logData.exercises.map(e => ({
+          num: String(e.num || ''),
+          name: e.name || '',
+          sets: String(e.target_sets || 3),
+          weight: e.target_weight_kg != null ? String(e.target_weight_kg) + 'kg' : 'TBD',
+          reps: e.target_reps || '',
+          rest: e.rest || '—'
+        }));
       }
     } catch (e) { /* fall through to MD parser */ }
 
