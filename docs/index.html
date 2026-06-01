@@ -362,6 +362,33 @@
     color: var(--muted); text-align: right; line-height: 1.4;
     white-space: nowrap;
   }
+  .history-chevron {
+    font-size: 14px; color: var(--muted-soft); transition: transform 0.2s ease;
+    user-select: none; flex-shrink: 0;
+  }
+  .history-card.expanded .history-chevron { transform: rotate(90deg); }
+  .history-detail {
+    display: none; width: 100%; margin-top: 10px;
+    padding-top: 10px; border-top: 1px solid var(--hairline);
+  }
+  .history-card.expanded .history-detail { display: block; }
+  .history-card.expanded {
+    flex-wrap: wrap; cursor: pointer;
+  }
+  .history-card { cursor: pointer; }
+  .history-detail .ex-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 4px 0; font-size: 12px;
+  }
+  .history-detail .ex-row .ex-name {
+    font-family: var(--font-body); color: var(--ink); font-weight: 500;
+  }
+  .history-detail .ex-row .ex-log {
+    font-family: var(--font-mono); font-size: 11px; color: var(--muted);
+    text-align: right; white-space: nowrap;
+  }
+  .history-detail .ex-row.skipped .ex-name { color: var(--muted-soft); }
+  .history-detail .ex-row.skipped .ex-log { color: var(--muted-soft); font-style: italic; }
 
   /* ═══════════════ TODAY'S SESSION ═══════════════ */
   .session-header-row {
@@ -981,13 +1008,20 @@ async function renderHistory() {
       const skipped = raw.exercises.filter(e => e.skipped).length;
       const completed = exCount - skipped;
 
-      cards.push({ dayNum, month, sessionType, duration, completed, skipped });
+      // Build exercise detail rows
+      const exRows = raw.exercises.map(e => {
+        const logText = e.skipped ? 'Skipped'
+          : (e.sets && e.sets.length ? e.sets.map(s => `${s.weight_kg}×${s.reps}`).join(' · ') : '—');
+        return `<div class="ex-row${e.skipped?' skipped':''}"><span class="ex-name">${e.name}</span><span class="ex-log">${logText}</span></div>`;
+      }).join('');
+
+      cards.push({ dayNum, month, sessionType, duration, completed, skipped, exRows });
     } catch (e) {}
   }
 
   el.innerHTML = cards.length
     ? cards.map(c => `
-      <div class="history-card">
+      <div class="history-card" onclick="this.classList.toggle('expanded')">
         <div class="history-date"><span class="day">${c.dayNum}</span>${c.month}</div>
         <span class="history-badge ${BADGES[c.sessionType] || ''}">${NAMES[c.sessionType] || c.sessionType}</span>
         <div class="history-info">
@@ -995,6 +1029,8 @@ async function renderHistory() {
           <div class="sub">${c.skipped ? c.skipped + ' skipped' : 'All complete'}</div>
         </div>
         <div class="history-stat">${c.duration}</div>
+        <div class="history-chevron">›</div>
+        <div class="history-detail">${c.exRows}</div>
       </div>`).join('')
     : '<div class="history-card" style="justify-content:center;color:var(--muted-soft);font-size:12px;">No sessions yet</div>';
 }
