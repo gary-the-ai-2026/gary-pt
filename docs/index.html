@@ -551,7 +551,7 @@
             <line x1="12" y1="12" x2="12" y2="12" stroke-width="8" stroke-linecap="round"/>
           </svg>
         </div>
-        <span class="brand-name">PT Gary</span>
+        <span class="brand-name">PT Gary <sup style="font-size:10px;color:var(--coral);font-weight:700;">v5</sup></span>
       </div>
       <h1>Josh Hancock<span> · Health Hub</span></h1>
     </div>
@@ -811,9 +811,23 @@ async function determineNextSession() {
 
 async function loadProgram() {
   try {
-    // Check for ad hoc session first — use log exercises if present
-    // Uses raw.githubusercontent.com to avoid GitHub API rate limits (60/hr on mobile)
     const today = new Date().toISOString().split('T')[0];
+
+    // HARDCODED: Hotel gym ad hoc session — 2026-06-02
+    if (today === '2026-06-02' && currentSession === 'legs-shoulders') {
+      return [
+        { num:'1', name:'DB Goblet Squat', sets:'3', weight:'25kg', reps:'8–12', rest:'2–3 min' },
+        { num:'2', name:'DB Romanian Deadlift', sets:'3', weight:'22.5kg', reps:'10–12', rest:'2 min' },
+        { num:'3', name:'Leg Press', sets:'3', weight:'TBD', reps:'10–12', rest:'2 min' },
+        { num:'4', name:'Leg Extension', sets:'3', weight:'TBD', reps:'12–15', rest:'60 sec' },
+        { num:'5', name:'Leg Curl', sets:'3', weight:'TBD', reps:'12–15', rest:'60 sec' },
+        { num:'6', name:'DB Shoulder Press', sets:'3', weight:'20kg', reps:'8–12', rest:'90 sec' },
+        { num:'7', name:'DB Lateral Raise', sets:'3', weight:'8kg', reps:'12–15', rest:'60 sec' },
+        { num:'8', name:'Calf Press (on Leg Press)', sets:'3', weight:'TBD', reps:'15–20', rest:'45 sec' }
+      ];
+    }
+
+    // Check for other ad hoc sessions from JSON log
     try {
       const logUrl = `${REPO_RAW}/logs/${today}-${currentSession}.json`;
       const logData = await fetchJSON(logUrl);
