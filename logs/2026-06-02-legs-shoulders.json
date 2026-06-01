@@ -42,11 +42,13 @@
       "name": "Leg Press",
       "target_sets": 3,
       "target_reps": "10-12",
-      "target_weight_kg": null,
+      "target_weight_kg": 73,
       "rest": "2 min",
       "skipped": false,
-      "sets": [],
-      "notes": "selectorized — calibrate"
+      "sets": [
+        {"set": 1, "weight_kg": 73, "reps": 15}
+      ],
+      "notes": "selectorized — calibrated at 73kg"
     },
     {
       "num": 4,
