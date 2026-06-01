@@ -774,7 +774,7 @@ async function fetchLiveLog(sessionType) {
   try {
     const d = new Date();
     const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-    const log = await fetchJSON(`${REPO_RAW}/logs/${ds}-${sessionType}.json`);
+    const log = await fetchJSON(`${REPO_RAW}/logs/${ds}-${sessionType}.json?t=${Date.now()}`);
     if (!log || !log.exercises) return {};
     const map = {};
     for (const ex of log.exercises) {
