@@ -1011,7 +1011,7 @@ async function renderHistory() {
       // Build exercise detail rows
       const exRows = raw.exercises.map(e => {
         const logText = e.skipped ? 'Skipped'
-          : (e.sets && e.sets.length ? e.sets.map(s => `${s.weight_kg}×${s.reps}`).join(' · ') : '—');
+          : (e.sets && e.sets.length ? e.sets.map(s => `${s.weight_kg}kg × ${s.reps}`).join(' · ') : '—');
         return `<div class="ex-row${e.skipped?' skipped':''}"><span class="ex-name">${e.name}</span><span class="ex-log">${logText}</span></div>`;
       }).join('');
 
@@ -1075,7 +1075,7 @@ async function renderSession() {
   document.getElementById('proto-body').innerHTML = exs.map((e,i) => {
     const l = live[e.name];
     const isSkipped = l === '__skipped__';
-    const logText = isSkipped ? 'Skipped' : (l ? l.map(s => `${s.weight}×${s.reps}`).join(' · ') : '—');
+    const logText = isSkipped ? 'Skipped' : (l ? l.map(s => `${s.weight}kg × ${s.reps}`).join(' · ') : '—');
     const isDone = isSkipped || (l && l.length >= parseInt(e.sets?.split('×')[0]||3));
     const cls = i===activeIdx ? 'current' : (isDone ? 'done' : '');
     return `<tr class=\"${cls}\"><td>${e.num||i+1}</td><td>${e.name}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
