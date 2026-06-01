@@ -1192,7 +1192,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setInterval(async () => {
     currentSession = await determineNextSession();
     if (document.getElementById('view-session').classList.contains('active')) await renderSession();
-  }, 5000);
+  }, 10000);
 
   // Hub view: 120s refresh for general monitoring
   setInterval(async () => {
