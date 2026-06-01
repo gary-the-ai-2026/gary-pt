@@ -81,7 +81,8 @@
       "rest": "90 sec",
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 20, "reps": 12}
+        {"set": 1, "weight_kg": 20, "reps": 12},
+        {"set": 2, "weight_kg": 20, "reps": 7}
       ]
     },
     {
