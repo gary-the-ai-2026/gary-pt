@@ -1188,11 +1188,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     btn.addEventListener('click', () => switchView(btn.dataset.view));
   });
 
-  // Session view: 15s refresh for near-real-time tracking
+  // Session view: 5s refresh for near-real-time tracking
   setInterval(async () => {
     currentSession = await determineNextSession();
     if (document.getElementById('view-session').classList.contains('active')) await renderSession();
-  }, 15000);
+  }, 5000);
 
   // Hub view: 120s refresh for general monitoring
   setInterval(async () => {
