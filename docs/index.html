@@ -748,7 +748,7 @@ async function fetchText(url) {
   return r.text();
 }
 async function fetchJSON(url) {
-  const r = await fetch(url);
+  const r = await fetch(url, {cache: 'no-store'});
   return r.ok ? r.json() : [];
 }
 function parseMDTable(md) {
