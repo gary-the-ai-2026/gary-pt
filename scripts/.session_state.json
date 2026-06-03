@@ -4,8 +4,8 @@
   "session_name": "Chest / Triceps",
   "cycle": 1,
   "week": 1,
-  "current_exercise": 0,
-  "current_set": 3,
+  "current_exercise": 1,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -24,6 +24,11 @@
           "set": 2,
           "weight_kg": 50,
           "reps": 11
+        },
+        {
+          "set": 3,
+          "weight_kg": 55,
+          "reps": 7
         }
       ]
     },
