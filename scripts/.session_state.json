@@ -5,7 +5,7 @@
   "cycle": 1,
   "week": 1,
   "current_exercise": 2,
-  "current_set": 2,
+  "current_set": 3,
   "exercises": [
     {
       "num": 1,
@@ -69,6 +69,11 @@
           "set": 1,
           "weight_kg": 18,
           "reps": 10
+        },
+        {
+          "set": 2,
+          "weight_kg": 14,
+          "reps": 12
         }
       ]
     },
