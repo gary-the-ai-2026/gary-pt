@@ -2,7 +2,7 @@
   "session_id": "2026-06-03-chest-tri",
   "date": "2026-06-03",
   "type": "chest-tri",
-  "status": "in_progress",
+  "status": "complete",
   "started": "18:30",
   "cycle": 1,
   "week": 1,
@@ -74,6 +74,11 @@
           "set": 2,
           "weight_kg": 14,
           "reps": 12
+        },
+        {
+          "set": 3,
+          "weight_kg": 14,
+          "reps": 12
         }
       ]
     },
@@ -83,8 +88,8 @@
       "target_sets": 3,
       "target_reps": "12-15",
       "target_weight_kg": 25,
-      "skipped": false,
-      "sets": []
+      "skipped": true,
+      "sets": null
     },
     {
       "num": 5,
@@ -92,8 +97,8 @@
       "target_sets": 3,
       "target_reps": "12-15",
       "target_weight_kg": null,
-      "skipped": false,
-      "sets": []
+      "skipped": true,
+      "sets": null
     },
     {
       "num": 6,
@@ -101,9 +106,11 @@
       "target_sets": 2,
       "target_reps": "10-12",
       "target_weight_kg": null,
-      "skipped": false,
-      "sets": []
+      "skipped": true,
+      "sets": null
     }
   ],
-  "notes": ""
+  "notes": "Time-constrained. Exercises 4-6 skipped. Smith bench used \u2014 weights logged as plate weight only.",
+  "finished": "19:08",
+  "duration_min": 38
 }

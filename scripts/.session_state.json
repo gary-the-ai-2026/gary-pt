@@ -74,6 +74,11 @@
           "set": 2,
           "weight_kg": 14,
           "reps": 12
+        },
+        {
+          "set": 3,
+          "weight_kg": 14,
+          "reps": 12
         }
       ]
     },
@@ -83,7 +88,7 @@
       "target_sets": 3,
       "target_reps": "12-15",
       "target_weight_kg": 25,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     },
     {
@@ -92,7 +97,7 @@
       "target_sets": 3,
       "target_reps": "12-15",
       "target_weight_kg": null,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     },
     {
@@ -101,7 +106,7 @@
       "target_sets": 2,
       "target_reps": "10-12",
       "target_weight_kg": null,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     }
   ],
