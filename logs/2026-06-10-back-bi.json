@@ -17,10 +17,12 @@
       {"set": 2, "weight_kg": 45, "reps": 15},
       {"set": 3, "weight_kg": 52, "reps": 9}
     ]},
-    {"num": 3, "name": "Seated Cable Row (Close)", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 29.5, "rest": "90 sec", "skipped": false, "sets": []},
-    {"num": 4, "name": "Face Pull", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []},
-    {"num": 5, "name": "Barbell Curl", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 10, "rest": "60 sec", "skipped": false, "sets": []},
+    {"num": 3, "name": "Hammer Curl", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 15, "rest": "60 sec", "skipped": false, "substitution_for": "Barbell Curl", "sets": [
+      {"set": 1, "weight_kg": 15, "reps": 12}
+    ]},
+    {"num": 4, "name": "Seated Cable Row (Close)", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 29.5, "rest": "90 sec", "skipped": false, "sets": []},
+    {"num": 5, "name": "Face Pull", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []},
     {"num": 6, "name": "Preacher Curl", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []}
   ],
-  "notes": ""
+  "notes": "Hammer Curl substituted for Barbell Curl per Josh's preference."
 }
