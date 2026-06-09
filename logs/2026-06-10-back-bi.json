@@ -2,9 +2,11 @@
   "session_id": "2026-06-10-back-bi",
   "date": "2026-06-10",
   "type": "back-bi",
-  "status": "in_progress",
+  "status": "complete",
   "ad_hoc": true,
   "started": "19:00",
+  "finished": "19:35",
+  "duration_min": 35,
   "cycle": 1,
   "week": 1,
   "exercises": [
@@ -28,9 +30,9 @@
       {"set": 2, "weight_kg": 15, "reps": 12},
       {"set": 3, "weight_kg": 18, "reps": 10}
     ]},
-    {"num": 5, "name": "Seated Cable Row (Close)", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 29.5, "rest": "90 sec", "skipped": false, "sets": []},
-    {"num": 6, "name": "Face Pull", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []},
-    {"num": 7, "name": "Preacher Curl", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []}
+    {"num": 5, "name": "Seated Cable Row (Close)", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 29.5, "rest": "90 sec", "skipped": true, "sets": null},
+    {"num": 6, "name": "Face Pull", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": true, "sets": null},
+    {"num": 7, "name": "Preacher Curl", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": null, "rest": "60 sec", "skipped": true, "sets": null}
   ],
-  "notes": "Hammer Curl substituted for Barbell Curl. Renegade Row added ad hoc."
+  "notes": "Hammer Curl substituted for Barbell Curl. Renegade Row added ad hoc. Session cut short — cable row, face pull, preacher curl skipped."
 }
