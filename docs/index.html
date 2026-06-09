@@ -863,7 +863,7 @@ async function loadProgram() {
 
     // Check for ad hoc session from JSON log
     try {
-      const logUrl = `${REPO_RAW}/logs/${today}-${currentSession}.json`;
+      const logUrl = `${REPO_RAW}/logs/${today}-${currentSession}.json?t=${Date.now()}`;
       const logData = await fetchJSON(logUrl);
       if (logData && logData.ad_hoc && logData.exercises && logData.exercises.length) {
         return logData.exercises.map(e => ({
