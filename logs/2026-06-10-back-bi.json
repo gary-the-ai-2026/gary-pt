@@ -7,7 +7,9 @@
   "cycle": 1,
   "week": 1,
   "exercises": [
-    {"num": 1, "name": "Lat Pulldown (Wide)", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": 38.5, "rest": "90 sec", "skipped": false, "sets": []},
+    {"num": 1, "name": "Lat Pulldown (Wide)", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": 38.5, "rest": "90 sec", "skipped": false, "sets": [
+      {"set": 1, "weight_kg": 45, "reps": 12}
+    ]},
     {"num": 2, "name": "Barbell Row", "target_sets": 3, "target_reps": "8-10", "target_weight_kg": 17.5, "rest": "2 min", "skipped": false, "sets": []},
     {"num": 3, "name": "Seated Cable Row (Close)", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 29.5, "rest": "90 sec", "skipped": false, "sets": []},
     {"num": 4, "name": "Face Pull", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []},
