@@ -1,0 +1,92 @@
+{
+  "_description": "YouTube Shorts technique demos for exercise library. Primary source: Renaissance Periodization (Dr. Mike Israetel). Fallback: Jeff Nippard, Squat University. TBD = not yet curated.",
+  "_updated": "2026-06-10",
+  "source_priority": ["Renaissance Periodization", "Jeff Nippard", "Squat University"],
+  "exercises": {
+    "Barbell Bench Press": {
+      "url": "https://www.youtube.com/shorts/hWbUlkb5Ms4",
+      "source": "Renaissance Periodization",
+      "title": "How To Bench Press With Perfect Technique (5 Steps)"
+    },
+    "Incline Dumbbell Press": {
+      "url": "https://www.youtube.com/shorts/6C1A0aQQrjo",
+      "source": "Renaissance Periodization",
+      "title": "How To Get STRONG On Dumbbell Presses"
+    },
+    "Cable Flye (Low-to-High)": {
+      "url": "https://www.youtube.com/shorts/hd_pA-b5puI",
+      "source": "Renaissance Periodization",
+      "title": "Best Way to do a Low to High Cable Flye"
+    },
+    "Tricep Pushdown (Rope)": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Overhead Cable Extension": {
+      "url": "https://www.youtube.com/shorts/sah-sHCZDS0",
+      "source": "Renaissance Periodization",
+      "title": "The BEST Exercises For Bigger Triceps"
+    },
+    "Close-Grip Bench Press": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Lat Pulldown (Wide)": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Barbell Row": {
+      "url": "https://www.youtube.com/shorts/p9RihhjmJsw",
+      "source": "Renaissance Periodization",
+      "title": "How to Execute a Bent Over Row"
+    },
+    "Seated Cable Row (Close)": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Face Pull": {
+      "url": "https://www.youtube.com/shorts/r4uM4JSvu8M",
+      "source": "Renaissance Periodization",
+      "title": "Cable Seated Face Pull"
+    },
+    "Barbell Curl": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Preacher Curl": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Barbell Back Squat": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Romanian Deadlift (BB)": {
+      "url": "https://www.youtube.com/shorts/d-hn_0sEpRQ",
+      "source": "Renaissance Periodization",
+      "title": "Romanian Deadlift Technique"
+    },
+    "Leg Extension": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Leg Curl": {
+      "url": null,
+      "source": "TBD"
+    },
+    "Dumbbell Shoulder Press": {
+      "url": "https://www.youtube.com/shorts/kCjqPA27Cqg",
+      "source": "Renaissance Periodization",
+      "title": "Dumbbell Shoulder Press Technique"
+    },
+    "Dumbbell Lateral Raise": {
+      "url": "https://www.youtube.com/shorts/xjtuX6PtLUY",
+      "source": "Renaissance Periodization",
+      "title": "Do LATERAL RAISES like THIS!"
+    },
+    "Standing Calf Raise": {
+      "url": null,
+      "source": "TBD"
+    }
+  }
+}

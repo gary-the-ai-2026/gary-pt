@@ -483,6 +483,17 @@
   .proto-table tr.current td:first-child { color: var(--coral); }
   .proto-table tr.done td { color: var(--muted); }
   .proto-table td.log-col { font-size: 12px; color: var(--success); text-align: right; }
+  .exe-demo {
+    display: inline-block;
+    margin-left: 5px;
+    color: var(--coral);
+    text-decoration: none;
+    font-size: 11px;
+    opacity: 0.55;
+    transition: opacity 0.2s;
+    vertical-align: middle;
+  }
+  .exe-demo:hover { opacity: 1; }
 
   /* ═══════════════ PROGRESS ═══════════════ */
   .chart-card {
@@ -797,6 +808,8 @@ function estimate1RM(w, r) {
   return r === 1 ? w : Math.round(w * (36 / (37 - r)));
 }
 
+let youtubeShorts = {};
+
 async function fetchLiveLog(sessionType) {
   try {
     const d = new Date();
@@ -812,6 +825,13 @@ async function fetchLiveLog(sessionType) {
     }
     return map;
   } catch (e) { return {}; }
+}
+
+async function fetchYouTubeShorts() {
+  try {
+    const data = await fetchJSON(`${REPO_RAW}/library/youtube-shorts.json?t=${Date.now()}`);
+    if (data && data.exercises) youtubeShorts = data.exercises;
+  } catch(e) { youtubeShorts = {}; }
 }
 
 async function determineNextSession() {
@@ -1042,6 +1062,7 @@ async function renderHistory() {
 async function renderSession() {
   const exs = await loadProgram();
   const live = await fetchLiveLog(currentSession);
+  await fetchYouTubeShorts();
   document.getElementById('session-badge').textContent = SESSION_NAMES[currentSession];
   document.getElementById('session-date').textContent = new Date().toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long'});
 
@@ -1078,7 +1099,9 @@ async function renderSession() {
     const logText = isSkipped ? 'Skipped' : (l ? l.map(s => `${s.weight}kg × ${s.reps}`).join(' · ') : '—');
     const isDone = isSkipped || (l && l.length >= parseInt(e.sets?.split('×')[0]||3));
     const cls = i===activeIdx ? 'current' : (isDone ? 'done' : '');
-    return `<tr class=\"${cls}\"><td>${e.num||i+1}</td><td>${e.name}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
+    const yt = youtubeShorts[e.name];
+    const demoLink = yt && yt.url ? ` <a href=\"${yt.url}\" target=\"_blank\" class=\"exe-demo\" title=\"${yt.source}: ${yt.title||'Technique demo'}\">▶</a>` : '';
+    return `<tr class=\"${cls}\"><td>${e.num||i+1}</td><td>${e.name}${demoLink}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
   }).join('');
 
   document.getElementById('status-right').textContent = `Today: ${SESSION_NAMES[currentSession]}`;
