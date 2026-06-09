@@ -25,7 +25,8 @@
     ]},
     {"num": 4, "name": "Renegade Row", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 15, "rest": "60 sec", "skipped": false, "added_ad_hoc": true, "sets": [
       {"set": 1, "weight_kg": 15, "reps": 12},
-      {"set": 2, "weight_kg": 15, "reps": 12}
+      {"set": 2, "weight_kg": 15, "reps": 12},
+      {"set": 3, "weight_kg": 18, "reps": 10}
     ]},
     {"num": 5, "name": "Seated Cable Row (Close)", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": 29.5, "rest": "90 sec", "skipped": false, "sets": []},
     {"num": 6, "name": "Face Pull", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []},
