@@ -4,7 +4,7 @@
   "session_name": "Back / Biceps",
   "started": "2026-06-10T19:00:00+09:30",
   "current_exercise": 1,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {"num": 1, "name": "Lat Pulldown (Wide)", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": 38.5, "rest": "90 sec"},
     {"num": 2, "name": "Barbell Row", "target_sets": 3, "target_reps": "8-10", "target_weight_kg": 17.5, "rest": "2 min"},
@@ -14,6 +14,7 @@
     {"num": 6, "name": "Preacher Curl", "target_sets": 3, "target_reps": "10-12", "target_weight_kg": null, "rest": "60 sec"}
   ],
   "log": {
-    "Lat Pulldown (Wide)": [{"weight": 45, "reps": 12}, {"weight": 59, "reps": 6}, {"weight": 52, "reps": 8}]
+    "Lat Pulldown (Wide)": [{"weight": 45, "reps": 12}, {"weight": 59, "reps": 6}, {"weight": 52, "reps": 8}],
+    "Barbell Row": [{"weight": 39, "reps": 15}]
   }
 }
