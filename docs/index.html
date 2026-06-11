@@ -485,15 +485,34 @@
   .proto-table td.log-col { font-size: 12px; color: var(--success); text-align: right; }
   .exe-demo {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 6px;
+    padding: 0 4px;
     color: var(--coral);
     text-decoration: none;
-    font-size: 11px;
-    opacity: 0.55;
-    transition: opacity 0.2s;
+    font-size: 13px;
+    opacity: 0.75;
+    transition: opacity 0.2s, transform 0.2s;
     vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
   }
-  .exe-demo:hover { opacity: 1; }
+  .exe-demo:hover { opacity: 1; transform: scale(1.2); }
+  .exe-demo.open { opacity: 1; }
+
+  .embed-row { display: none; }
+  .embed-row.open { display: table-row; }
+  .embed-row td {
+    padding: 6px 12px 12px 12px;
+    text-align: center;
+  }
+  .embed-row iframe {
+    border: none;
+    border-radius: 0;
+    max-width: 280px;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: var(--near-black);
+  }
 
   /* ═══════════════ PROGRESS ═══════════════ */
   .chart-card {
@@ -809,6 +828,7 @@ function estimate1RM(w, r) {
 }
 
 let youtubeShorts = {};
+let activeEmbed = null;  // index of currently expanded embed
 
 async function fetchLiveLog(sessionType) {
   try {
@@ -830,8 +850,59 @@ async function fetchLiveLog(sessionType) {
 async function fetchYouTubeShorts() {
   try {
     const data = await fetchJSON(`${REPO_RAW}/library/youtube-shorts.json?t=${Date.now()}`);
-    if (data && data.exercises) youtubeShorts = data.exercises;
+    if (data && data.exercises) {
+      youtubeShorts = {};
+      // Copy direct entries
+      for (const [name, entry] of Object.entries(data.exercises)) {
+        if (entry && entry.url) youtubeShorts[name] = entry;
+      }
+      // Resolve aliases
+      if (data.aliases) {
+        for (const [alias, target] of Object.entries(data.aliases)) {
+          if (data.exercises[target] && data.exercises[target].url) {
+            youtubeShorts[alias] = data.exercises[target];
+          }
+        }
+      }
+    }
   } catch(e) { youtubeShorts = {}; }
+}
+
+function extractVideoId(url) {
+  // Handle shorts/VIDEO_ID and watch?v=VIDEO_ID formats
+  const shortsMatch = url.match(/shorts\/([a-zA-Z0-9_-]+)/);
+  if (shortsMatch) return shortsMatch[1];
+  const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]+)/);
+  if (watchMatch) return watchMatch[1];
+  const embedMatch = url.match(/embed\/([a-zA-Z0-9_-]+)/);
+  if (embedMatch) return embedMatch[1];
+  return null;
+}
+
+function toggleEmbed(idx, url) {
+  const row = document.getElementById(`embed-${idx}`);
+  const btn = document.getElementById(`demo-${idx}`);
+  if (!row || !btn) return;
+
+  // Close previously open embed
+  if (activeEmbed !== null && activeEmbed !== idx) {
+    const prevRow = document.getElementById(`embed-${activeEmbed}`);
+    const prevBtn = document.getElementById(`demo-${activeEmbed}`);
+    if (prevRow) prevRow.classList.remove('open');
+    if (prevBtn) prevBtn.classList.remove('open');
+  }
+
+  const isOpen = row.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  activeEmbed = isOpen ? idx : null;
+
+  // Lazy-load iframe on first open
+  if (isOpen && !row.querySelector('iframe')) {
+    const vid = extractVideoId(url);
+    if (vid) {
+      row.querySelector('td').innerHTML = `<iframe src="https://www.youtube.com/embed/${vid}?playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    }
+  }
 }
 
 async function determineNextSession() {
@@ -1093,15 +1164,19 @@ async function renderSession() {
     `<div class="set-dot${i<done?' done':''}${i===done?' active':''}">${i<done?'✓':i+1}</div>`
   ).join('');
 
-  document.getElementById('proto-body').innerHTML = exs.map((e,i) => {
+  document.getElementById('proto-body').innerHTML = exs.flatMap((e,i) => {
     const l = live[e.name];
     const isSkipped = l === '__skipped__';
     const logText = isSkipped ? 'Skipped' : (l ? l.map(s => `${s.weight}kg × ${s.reps}`).join(' · ') : '—');
     const isDone = isSkipped || (l && l.length >= parseInt(e.sets?.split('×')[0]||3));
     const cls = i===activeIdx ? 'current' : (isDone ? 'done' : '');
     const yt = youtubeShorts[e.name];
-    const demoLink = yt && yt.url ? ` <a href=\"${yt.url}\" target=\"_blank\" class=\"exe-demo\" title=\"${yt.source}: ${yt.title||'Technique demo'}\">▶</a>` : '';
-    return `<tr class=\"${cls}\"><td>${e.num||i+1}</td><td>${e.name}${demoLink}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
+    const demoLink = yt && yt.url
+      ? ` <span id=\"demo-${i}\" class=\"exe-demo\" title=\"${yt.source}: ${yt.title||'Technique demo'}\" onclick=\"toggleEmbed(${i},'${yt.url}')\">▶</span>`
+      : '';
+    const exRow = `<tr class=\"${cls}\"><td>${e.num||i+1}</td><td>${e.name}${demoLink}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
+    const embedRow = `<tr id=\"embed-${i}\" class=\"embed-row\"><td colspan=\"6\"></td></tr>`;
+    return [exRow, embedRow];
   }).join('');
 
   document.getElementById('status-right').textContent = `Today: ${SESSION_NAMES[currentSession]}`;

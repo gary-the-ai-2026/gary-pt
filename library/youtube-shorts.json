@@ -1,7 +1,18 @@
 {
   "_description": "YouTube Shorts technique demos for exercise library. Primary source: Renaissance Periodization (Dr. Mike Israetel). Fallback: Jeff Nippard, Squat University. TBD = not yet curated.",
-  "_updated": "2026-06-10",
+  "_updated": "2026-06-11",
+  "_embed_note": "Dashboard now supports inline expand/collapse embed — click ▶ to watch below the exercise row.",
   "source_priority": ["Renaissance Periodization", "Jeff Nippard", "Squat University"],
+  "aliases": {
+    "DB Goblet Squat": "Barbell Back Squat",
+    "KB/DB Goblet Squat": "Barbell Back Squat",
+    "KB Goblet Squat": "Barbell Back Squat",
+    "DB Romanian Deadlift": "Romanian Deadlift (BB)",
+    "Leg Extension (Machine)": "Leg Extension",
+    "Leg Curl (Machine)": "Leg Curl",
+    "DB Standing Calf Raise": "Standing Calf Raise",
+    "DB Calf Raise": "Standing Calf Raise"
+  },
   "exercises": {
     "Barbell Bench Press": {
       "url": "https://www.youtube.com/shorts/hWbUlkb5Ms4",
