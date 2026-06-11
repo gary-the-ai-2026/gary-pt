@@ -3,9 +3,9 @@
   "date": "2026-06-11",
   "type": "legs-shoulders",
   "status": "complete",
-  "started": "now",
-  "finished": "now",
-  "duration_min": null,
+  "started": "11:08",
+  "finished": "12:04",
+  "duration_min": 56,
   "cycle": 1,
   "week": 1,
   "ad_hoc": true,
@@ -28,5 +28,5 @@
     ]},
     {"num": 7, "name": "DB Standing Calf Raise", "target_sets": 3, "target_reps": "15-20", "target_weight_kg": null, "rest": "45 sec", "skipped": true, "sets": null}
   ],
-  "notes": "Short session. Skipped leg curls, DB shoulder press, and calf raises. First calibration for leg extension (single leg) and lateral raises. Lateral raises: 9kg × 12/15/15 — hit top of range on sets 2-3, bump to 10kg next time."
+  "notes": "Short session. Skipped leg curls, DB shoulder press, and calf raises. First calibration for leg extension (single leg) and lateral raises. Lateral raises: 9kg × 12/15/15 — bump to 10kg next time."
 }
