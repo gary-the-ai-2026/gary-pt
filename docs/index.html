@@ -1166,7 +1166,7 @@ async function renderSession() {
     `<div class="set-dot${i<done?' done':''}${i===done?' active':''}">${i<done?'✓':i+1}</div>`
   ).join('');
 
-  document.getElementById('proto-body').innerHTML = exs.flatMap((e,i) => {
+  document.getElementById('proto-body').innerHTML = exs.map((e,i) => {
     const l = live[e.name];
     const isSkipped = l === '__skipped__';
     const logText = isSkipped ? 'Skipped' : (l ? l.map(s => `${s.weight}kg × ${s.reps}`).join(' · ') : '—');
@@ -1174,11 +1174,9 @@ async function renderSession() {
     const cls = i===activeIdx ? 'current' : (isDone ? 'done' : '');
     const yt = youtubeShorts[e.name];
     const demoLink = yt && yt.url
-      ? ` <span id=\"demo-${i}\" class=\"exe-demo\" title=\"${yt.source}: ${yt.title||'Technique demo'}\" onclick=\"toggleEmbed(${i},'${yt.url}')\">▶</span>`
+      ? ` <a href="${yt.url}" target="_blank" class="exe-demo" title="${yt.source}: ${yt.title||'Technique demo'}">▶</a>`
       : '';
-    const exRow = `<tr class=\"${cls}\"><td>${e.num||i+1}</td><td>${e.name}${demoLink}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class=\"log-col\">${logText}</td></tr>`;
-    const embedRow = `<tr id=\"embed-${i}\" class=\"embed-row\"><td colspan=\"6\"></td></tr>`;
-    return [exRow, embedRow];
+    return `<tr class="${cls}"><td>${e.num||i+1}</td><td>${e.name}${demoLink}</td><td>${e.sets}</td><td>${e.weight}</td><td>${e.reps}</td><td class="log-col">${logText}</td></tr>`;
   }).join('');
 
   document.getElementById('status-right').textContent = `Today: ${SESSION_NAMES[currentSession]}`;
