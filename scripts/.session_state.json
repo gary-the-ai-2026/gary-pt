@@ -3,7 +3,7 @@
   "session_type": "legs-shoulders",
   "session_name": "Legs / Shoulders",
   "current_exercise": 2,
-  "current_set": 2,
+  "current_set": 3,
   "ad_hoc": true,
   "location": "hotel_gym",
   "exercises": [
@@ -18,6 +18,6 @@
   "log": {
     "KB/DB Goblet Squat": [{"weight": 22.5, "reps": 12}, {"weight": 22.5, "reps": 15}, {"weight": 22.5, "reps": 15}],
     "DB Romanian Deadlift": [{"weight": 18, "reps": 20}, {"weight": 22.5, "reps": 20}, {"weight": 22.5, "reps": 12}],
-    "Leg Extension (Machine)": [{"weight": 39, "reps": 10, "notes": "single leg"}]
+    "Leg Extension (Machine)": [{"weight": 39, "reps": 10, "notes": "single leg"}, {"weight": 39, "reps": 12, "notes": "single leg"}]
   }
 }
