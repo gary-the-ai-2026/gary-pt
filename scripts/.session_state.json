@@ -1,1 +1,18 @@
-null
+{
+  "chat_id": "-1003949502327",
+  "session_type": "legs-shoulders",
+  "session_name": "Legs / Shoulders",
+  "current_exercise": 0,
+  "current_set": 1,
+  "ad_hoc": false,
+  "exercises": [
+    {"num": 1, "name": "Barbell Back Squat", "target_sets": 3, "target_reps": "8-10", "target_weight_kg": null, "rest": "2-3 min"},
+    {"num": 2, "name": "Romanian Deadlift (BB)", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": null, "rest": "2 min"},
+    {"num": 3, "name": "Leg Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec"},
+    {"num": 4, "name": "Leg Curl", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec"},
+    {"num": 5, "name": "Dumbbell Shoulder Press", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": 20, "rest": "90 sec"},
+    {"num": 6, "name": "Dumbbell Lateral Raise", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec"},
+    {"num": 7, "name": "Standing Calf Raise", "target_sets": 3, "target_reps": "15-20", "target_weight_kg": null, "rest": "45 sec"}
+  ],
+  "log": {}
+}
