@@ -3,15 +3,19 @@
   "_updated": "2026-06-11",
   "_embed_note": "Dashboard now supports inline expand/collapse embed — click ▶ to watch below the exercise row.",
   "source_priority": ["Renaissance Periodization", "Jeff Nippard", "Squat University"],
+  "_coverage": "16/19 exercises linked. 3 missing: Goblet Squat, Seated Cable Row (Close), Preacher Curl — no technique Shorts found from RP or Nippard.",
   "aliases": {
-    "DB Goblet Squat": "Barbell Back Squat",
-    "KB/DB Goblet Squat": "Barbell Back Squat",
-    "KB Goblet Squat": "Barbell Back Squat",
+    "DB Goblet Squat": "Goblet Squat",
+    "KB/DB Goblet Squat": "Goblet Squat",
+    "KB Goblet Squat": "Goblet Squat",
     "DB Romanian Deadlift": "Romanian Deadlift (BB)",
     "Leg Extension (Machine)": "Leg Extension",
     "Leg Curl (Machine)": "Leg Curl",
     "DB Standing Calf Raise": "Standing Calf Raise",
-    "DB Calf Raise": "Standing Calf Raise"
+    "DB Calf Raise": "Standing Calf Raise",
+    "DB Bench Press": "Barbell Bench Press",
+    "DB Shoulder Press": "Dumbbell Shoulder Press",
+    "DB Incline Press": "Incline Dumbbell Press"
   },
   "exercises": {
     "Barbell Bench Press": {
@@ -30,8 +34,9 @@
       "title": "Best Way to do a Low to High Cable Flye"
     },
     "Tricep Pushdown (Rope)": {
-      "url": null,
-      "source": "TBD"
+      "url": "https://www.youtube.com/shorts/CWqIOiAsjYY",
+      "source": "Renaissance Periodization",
+      "title": "Guaranteed Tricep GROWTH Superset"
     },
     "Overhead Cable Extension": {
       "url": "https://www.youtube.com/shorts/sah-sHCZDS0",
@@ -39,12 +44,14 @@
       "title": "The BEST Exercises For Bigger Triceps"
     },
     "Close-Grip Bench Press": {
-      "url": null,
-      "source": "TBD"
+      "url": "https://www.youtube.com/shorts/NKHhj7SJsQA",
+      "source": "Renaissance Periodization",
+      "title": "Close Grip Bench Grip For HUGE Triceps"
     },
     "Lat Pulldown (Wide)": {
-      "url": null,
-      "source": "TBD"
+      "url": "https://www.youtube.com/shorts/jhnxJEzX8rY",
+      "source": "Renaissance Periodization",
+      "title": "How To Do a PERFECT Lat Pulldown"
     },
     "Barbell Row": {
       "url": "https://www.youtube.com/shorts/p9RihhjmJsw",
@@ -53,7 +60,8 @@
     },
     "Seated Cable Row (Close)": {
       "url": null,
-      "source": "TBD"
+      "source": "TBD",
+      "_note": "No RP or Nippard technique Short found. RP has a regular video (not Shorts format)."
     },
     "Face Pull": {
       "url": "https://www.youtube.com/shorts/r4uM4JSvu8M",
@@ -61,16 +69,24 @@
       "title": "Cable Seated Face Pull"
     },
     "Barbell Curl": {
-      "url": null,
-      "source": "TBD"
+      "url": "https://www.youtube.com/shorts/DXTDJbPRl-A",
+      "source": "Renaissance Periodization",
+      "title": "Bicep Curl Training Tip #shorts"
     },
     "Preacher Curl": {
       "url": null,
-      "source": "TBD"
+      "source": "TBD",
+      "_note": "No RP or Nippard technique Short found. RP has regular videos (pre-Shorts era)."
     },
     "Barbell Back Squat": {
+      "url": "https://www.youtube.com/shorts/PPmvh7gBTi0",
+      "source": "Jeff Nippard",
+      "title": "Do You Have A Perfect Squat? (Find Out)"
+    },
+    "Goblet Squat": {
       "url": null,
-      "source": "TBD"
+      "source": "TBD",
+      "_note": "No technique Short from RP or Nippard. RP has long-form 'Why Goblet Squats May Be Bad' but no Short."
     },
     "Romanian Deadlift (BB)": {
       "url": "https://www.youtube.com/shorts/d-hn_0sEpRQ",
@@ -78,12 +94,14 @@
       "title": "Romanian Deadlift Technique"
     },
     "Leg Extension": {
-      "url": null,
-      "source": "TBD"
+      "url": "https://www.youtube.com/shorts/ztNBgrGy6FQ",
+      "source": "Jeff Nippard",
+      "title": "A Better Way To Do Leg Extensions"
     },
     "Leg Curl": {
-      "url": null,
-      "source": "TBD"
+      "url": "https://www.youtube.com/shorts/XIsfDHGwAW0",
+      "source": "Renaissance Periodization",
+      "title": "Improve YOUR Leg Curl!!"
     },
     "Dumbbell Shoulder Press": {
       "url": "https://www.youtube.com/shorts/kCjqPA27Cqg",
@@ -96,8 +114,9 @@
       "title": "Do LATERAL RAISES like THIS!"
     },
     "Standing Calf Raise": {
-      "url": null,
-      "source": "TBD"
+      "url": "https://www.youtube.com/shorts/x41IWlX4Rqo",
+      "source": "Renaissance Periodization",
+      "title": "You're Doing Calf Raises WRONG"
     }
   }
 }
