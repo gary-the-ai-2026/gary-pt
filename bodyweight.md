@@ -8,6 +8,7 @@ updated: 2026-05-27
 | Date | Weight (kg) | Notes |
 |---|---|---|
 | 2026-05-27 | — | Initial — log first weigh-in |
+| 2026-06-14 | 75.55 | — |
 
 ## Target
 
