@@ -17,7 +17,9 @@
       {"set": 2, "weight_kg": 26, "reps": 5},
       {"set": 3, "weight_kg": 26, "reps": 5}
     ]},
-    {"num": 3, "name": "Cable Flye (Low-to-High)", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "skipped": false, "sets": []},
+    {"num": 3, "name": "Cable Flye (Low-to-High)", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "skipped": false, "sets": [
+      {"set": 1, "weight_kg": 14, "reps": 13}
+    ]},
     {"num": 4, "name": "Tricep Pushdown (Rope)", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": 25, "skipped": false, "sets": []},
     {"num": 5, "name": "Overhead Cable Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "skipped": false, "sets": []},
     {"num": 6, "name": "Close-Grip Bench Press", "target_sets": 2, "target_reps": "10-12", "target_weight_kg": null, "skipped": false, "sets": []}
