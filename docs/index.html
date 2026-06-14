@@ -911,7 +911,7 @@ async function determineNextSession() {
   try {
     const files = await fetchJSON(REPO_API + '/logs');
     allLogs = files.filter(f => f.name.endsWith('.json') && !f.name.startsWith('_')).reverse();
-    if (!allLogs.length) return 'back-bi';
+    if (!allLogs.length) return 'legs-shoulders';
 
     // Check if most recent log is still in progress — if so, that's the current session
     try {
@@ -926,7 +926,7 @@ async function determineNextSession() {
     const lastType = parts.slice(3).join('-');
     const idx = SESSION_ROTATION.indexOf(lastType);
     return idx >= 0 ? SESSION_ROTATION[(idx + 1) % 3] : 'chest-tri';
-  } catch (e) { return 'back-bi'; }
+  } catch (e) { return 'legs-shoulders'; }
 }
 
 async function loadProgram() {
