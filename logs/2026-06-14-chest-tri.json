@@ -24,7 +24,8 @@
     ]},
     {"num": 4, "name": "Tricep Pushdown (Rope)", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": 25, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 36, "reps": 12},
-      {"set": 2, "weight_kg": 45, "reps": 12}
+      {"set": 2, "weight_kg": 45, "reps": 12},
+      {"set": 3, "weight_kg": 50, "reps": 12}
     ]},
     {"num": 5, "name": "Overhead Cable Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "skipped": false, "sets": []},
     {"num": 6, "name": "Close-Grip Bench Press", "target_sets": 2, "target_reps": "10-12", "target_weight_kg": null, "skipped": false, "sets": []}
