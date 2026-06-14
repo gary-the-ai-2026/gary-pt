@@ -1005,16 +1005,40 @@ async function getBest1RM(name) {
 // RENDER — HUB
 // ═══════════════════════════════════════════════════
 
+async function fetchBodyweight() {
+  try {
+    const md = await fetchText(`${REPO_RAW}/bodyweight.md?t=${Date.now()}`);
+    const lines = md.split('\n');
+    let latest = null, latestDate = null;
+    for (const line of lines) {
+      const m = line.match(/^\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d.]+)\s*\|/);
+      if (m) {
+        const d = m[1], w = parseFloat(m[2]);
+        if (!isNaN(w) && (!latestDate || d > latestDate)) {
+          latestDate = d; latest = w;
+        }
+      }
+    }
+    return { weight: latest, date: latestDate };
+  } catch (e) { return { weight: null, date: null }; }
+}
+
 async function renderHub() {
   const exs = await loadProgram();
   const wks = countThisWeek();
   const total = countTotal();
   const bench = await getBest1RM('Barbell Bench Press');
   const squat = await getBest1RM('Barbell Back Squat');
+  const bw = await fetchBodyweight();
   const cw = Math.min(Math.floor(total/3)+1, 6);
 
-  document.getElementById('metric-bw').textContent = '--.-';
-  document.getElementById('metric-bw-sub').textContent = 'Awaiting weigh-in';
+  if (bw.weight) {
+    document.getElementById('metric-bw').textContent = bw.weight.toFixed(1);
+    document.getElementById('metric-bw-sub').textContent = `kg · ${bw.date}`;
+  } else {
+    document.getElementById('metric-bw').textContent = '--.-';
+    document.getElementById('metric-bw-sub').textContent = 'Awaiting weigh-in';
+  }
   document.getElementById('metric-sessions').textContent = `${wks}/3`;
   document.getElementById('metric-sessions-sub').textContent = `${TOTAL_CYCLE - total} sessions remaining`;
   document.getElementById('metric-bench').textContent = bench || '---';
