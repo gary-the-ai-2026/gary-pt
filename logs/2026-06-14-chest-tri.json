@@ -32,7 +32,9 @@
       {"set": 2, "weight_kg": 23, "reps": 15},
       {"set": 3, "weight_kg": 27, "reps": 15}
     ]},
-    {"num": 6, "name": "Close-Grip Bench Press", "target_sets": 2, "target_reps": "10-12", "target_weight_kg": null, "skipped": false, "sets": []}
+    {"num": 6, "name": "Close-Grip Bench Press", "target_sets": 2, "target_reps": "10-12", "target_weight_kg": null, "skipped": false, "sets": [
+      {"set": 1, "weight_kg": 15, "reps": 8}
+    ]}
   ],
   "notes": ""
 }
