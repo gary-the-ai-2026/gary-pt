@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-05-27
 status: active
-next_session: legs-shoulders
+next_session: chest-tri
 ---
 
 # Cycle 1 — Week 1
@@ -39,8 +39,8 @@ next_session: legs-shoulders
 
 | # | Exercise | Sets × Reps | Target Weight | Rest |
 |---|---|---|---|---|
-| 1 | Barbell Back Squat | 3 × 8–10 | TBD | 2–3 min |
-| 2 | Romanian Deadlift (BB) | 3 × 8–12 | TBD | 2 min |
+| 1 | Barbell Back Squat | 3 × 8–10 | 65.0kg | 2–3 min |
+| 2 | Romanian Deadlift (BB) | 3 × 8–12 | 50.0kg | 2 min |
 | 3 | Leg Extension | 3 × 12–15 | TBD | 60 sec |
 | 4 | Leg Curl | 3 × 12–15 | TBD | 60 sec |
 | 5 | Dumbbell Shoulder Press | 3 × 8–12 | TBD | 90 sec |

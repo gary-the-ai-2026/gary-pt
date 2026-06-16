@@ -2,26 +2,28 @@
   "session_id": "2026-06-16-legs-shoulders",
   "date": "2026-06-16",
   "type": "legs-shoulders",
-  "status": "in_progress",
+  "status": "complete",
   "started": "15:00",
+  "finished": "15:30",
+  "duration_min": 30,
   "cycle": 1,
   "week": 1,
   "exercises": [
-    {"num": 1, "name": "Barbell Back Squat", "target_sets": 3, "target_reps": "8-10", "target_weight_kg": "TBD", "skipped": false, "sets": [
+    {"num": 1, "name": "Barbell Back Squat", "target_sets": 3, "target_reps": "8-10", "target_weight_kg": null, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 60, "reps": 10},
       {"set": 2, "weight_kg": 60, "reps": 10},
       {"set": 3, "weight_kg": 60, "reps": 10}
     ]},
-    {"num": 2, "name": "Romanian Deadlift (BB)", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": "TBD", "skipped": false, "sets": [
+    {"num": 2, "name": "Romanian Deadlift (BB)", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": null, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 50, "reps": 12},
       {"set": 2, "weight_kg": 50, "reps": 10},
       {"set": 3, "weight_kg": 50, "reps": 10}
     ]},
-    {"num": 3, "name": "Leg Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": "TBD", "skipped": false, "sets": []},
-    {"num": 4, "name": "Leg Curl", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": "TBD", "skipped": false, "sets": []},
-    {"num": 5, "name": "Dumbbell Shoulder Press", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": "TBD", "skipped": false, "sets": []},
-    {"num": 6, "name": "Dumbbell Lateral Raise", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": "TBD", "skipped": false, "sets": []},
-    {"num": 7, "name": "Standing Calf Raise", "target_sets": 3, "target_reps": "15-20", "target_weight_kg": "TBD", "skipped": false, "sets": []}
+    {"num": 3, "name": "Leg Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "skipped": true, "sets": null},
+    {"num": 4, "name": "Leg Curl", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "skipped": true, "sets": null},
+    {"num": 5, "name": "Dumbbell Shoulder Press", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": null, "skipped": true, "sets": null},
+    {"num": 6, "name": "Dumbbell Lateral Raise", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "skipped": true, "sets": null},
+    {"num": 7, "name": "Standing Calf Raise", "target_sets": 3, "target_reps": "15-20", "target_weight_kg": null, "skipped": true, "sets": null}
   ],
-  "notes": ""
+  "notes": "Interrupted by work meeting. Partial session — Squat and RDL only. Remaining exercises skipped. Squat calibrated at 60kg (3×10 at top of range), RDL at 50kg (12/10/10)."
 }
