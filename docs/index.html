@@ -411,10 +411,16 @@
     border-radius: var(--radius-sm);
     padding: var(--space-md) var(--space-lg);
     margin-bottom: var(--space-lg);
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: var(--space-sm);
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    align-items: center; gap: var(--space-md);
   }
   .timer-block { }
+  .timer-block.rest-block {
+    text-align: center;
+    border-left: 1px solid rgba(255,255,255,0.06);
+    border-right: 1px solid rgba(255,255,255,0.06);
+    padding: 0 var(--space-lg);
+  }
   .timer-label {
     font-family: var(--font-body); font-size: 10px;
     text-transform: uppercase; letter-spacing: 0.1em;
@@ -432,6 +438,29 @@
     color: var(--muted-soft); font-weight: 400;
     font-variant-numeric: tabular-nums;
   }
+  .timer-rest-display {
+    font-family: var(--font-mono); font-size: 48px;
+    font-weight: 500; font-variant-numeric: tabular-nums;
+    color: var(--on-dark); letter-spacing: -1px;
+    line-height: 1; margin-bottom: 6px;
+    cursor: pointer; user-select: none;
+    transition: color 0.2s;
+  }
+  .timer-rest-display:hover { color: var(--coral); }
+  .timer-rest-display.running { color: var(--accent-teal); }
+  .timer-rest-btns {
+    display: flex; gap: 8px; justify-content: center;
+  }
+  .timer-btn {
+    background: none; border: 1px solid rgba(255,255,255,0.12);
+    color: var(--on-dark-soft); border-radius: var(--radius-sm);
+    font-family: var(--font-body); font-size: 11px; font-weight: 500;
+    padding: 4px 12px; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .timer-btn:hover { border-color: var(--coral); color: var(--coral); }
+  .timer-btn:active { background: rgba(204,120,92,0.1); }
+  .timer-btn.reset-btn { font-family: var(--font-mono); font-size: 14px; padding: 4px 8px; }
   .timer-clock {
     font-family: var(--font-mono); font-size: 20px;
     font-weight: 400; font-variant-numeric: tabular-nums;
@@ -439,8 +468,10 @@
   }
   @media (max-width: 640px) {
     .timer-elapsed { font-size: 40px; }
+    .timer-rest-display { font-size: 36px; }
     .timer-clock { font-size: 16px; }
-    .timer-card { flex-direction: column; align-items: flex-start; }
+    .timer-card { grid-template-columns: 1fr; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); }
+    .timer-block.rest-block { border-left: none; border-right: none; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: var(--space-sm) 0; }
   }
 
   /* Active exercise — dark product card */
@@ -765,6 +796,14 @@
         <div class="timer-elapsed" id="timer-elapsed">—:—</div>
         <div class="timer-seconds" id="timer-seconds">—s</div>
       </div>
+      <div class="timer-block rest-block">
+        <div class="timer-label">Rest Timer</div>
+        <div class="timer-rest-display" id="timer-rest" onclick="toggleRestTimer()">00:00</div>
+        <div class="timer-rest-btns">
+          <button class="timer-btn" id="rest-start-btn" onclick="toggleRestTimer()">▶ Start</button>
+          <button class="timer-btn reset-btn" onclick="resetRestTimer()" title="Reset">↺</button>
+        </div>
+      </div>
       <div class="timer-block">
         <div class="timer-label">Adelaide</div>
         <div class="timer-clock" id="timer-clock">--:--:--</div>
@@ -884,6 +923,9 @@ let activeEmbed = null;  // index of currently expanded embed
 let sessionStartTime = null;  // Date object for session start
 let sessionStartType = null;  // which session type the timer is for
 let timerInterval = null;  // 1-second timer interval ID
+let restTimerRunning = false;
+let restTimerStart = null;    // timestamp when current run started
+let restTimerAccum = 0;       // accumulated ms from prior runs
 
 // ═══════════════════════════════════════════════════
 // SESSION TIMER
@@ -938,10 +980,49 @@ function updateTimerDisplay() {
   const es = elapsed % 60;
   document.getElementById('timer-elapsed').textContent = `${String(em).padStart(2,'0')}:${String(es).padStart(2,'0')}`;
   document.getElementById('timer-seconds').textContent = `${elapsed}s`;
+  updateRestDisplay();
 }
 
 // Start the clock immediately (runs regardless of active session)
 startTimer();
+
+// ── Rest timer (start/stop/reset) ──
+
+function toggleRestTimer() {
+  if (!restTimerRunning) {
+    // Start
+    restTimerRunning = true;
+    restTimerStart = Date.now();
+    document.getElementById('timer-rest').classList.add('running');
+    document.getElementById('rest-start-btn').textContent = '⏸ Stop';
+  } else {
+    // Pause
+    restTimerRunning = false;
+    restTimerAccum += Date.now() - restTimerStart;
+    restTimerStart = null;
+    document.getElementById('timer-rest').classList.remove('running');
+    document.getElementById('rest-start-btn').textContent = '▶ Start';
+  }
+  updateRestDisplay();
+}
+
+function resetRestTimer() {
+  restTimerRunning = false;
+  restTimerStart = null;
+  restTimerAccum = 0;
+  document.getElementById('timer-rest').classList.remove('running');
+  document.getElementById('rest-start-btn').textContent = '▶ Start';
+  updateRestDisplay();
+}
+
+function updateRestDisplay() {
+  let total = restTimerAccum;
+  if (restTimerRunning && restTimerStart) total += Date.now() - restTimerStart;
+  const sec = Math.floor(total / 1000);
+  const m = String(Math.floor(sec / 60)).padStart(2,'0');
+  const s = String(sec % 60).padStart(2,'0');
+  document.getElementById('timer-rest').textContent = `${m}:${s}`;
+}
 
 async function fetchLiveLog(sessionType) {
   try {
