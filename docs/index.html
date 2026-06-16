@@ -405,6 +405,44 @@
     margin-bottom: 6px;
   }
 
+  /* ── Session timer ── */
+  .timer-card {
+    background: var(--surface-dark);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md) var(--space-lg);
+    margin-bottom: var(--space-lg);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: var(--space-sm);
+  }
+  .timer-block { }
+  .timer-label {
+    font-family: var(--font-body); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--muted-soft); font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .timer-elapsed {
+    font-family: var(--font-mono); font-size: 52px;
+    font-weight: 500; font-variant-numeric: tabular-nums;
+    color: var(--on-dark); letter-spacing: -1px;
+    line-height: 1; margin-bottom: 2px;
+  }
+  .timer-seconds {
+    font-family: var(--font-mono); font-size: 14px;
+    color: var(--muted-soft); font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+  .timer-clock {
+    font-family: var(--font-mono); font-size: 20px;
+    font-weight: 400; font-variant-numeric: tabular-nums;
+    color: var(--on-dark-soft); text-align: right;
+  }
+  @media (max-width: 640px) {
+    .timer-elapsed { font-size: 40px; }
+    .timer-clock { font-size: 16px; }
+    .timer-card { flex-direction: column; align-items: flex-start; }
+  }
+
   /* Active exercise — dark product card */
   .active-ex-card {
     margin-bottom: var(--space-lg);
@@ -721,6 +759,18 @@
       <span style="font-size:13px;color:var(--muted)" id="session-date">---</span>
     </div>
 
+    <div class="timer-card" id="session-timer">
+      <div class="timer-block">
+        <div class="timer-label">Session Time</div>
+        <div class="timer-elapsed" id="timer-elapsed">—:—</div>
+        <div class="timer-seconds" id="timer-seconds">—s</div>
+      </div>
+      <div class="timer-block">
+        <div class="timer-label">Adelaide</div>
+        <div class="timer-clock" id="timer-clock">--:--:--</div>
+      </div>
+    </div>
+
     <div class="card-dark active-ex-card" id="active-ex-container">
       <div class="active-ex-num" id="active-num">---</div>
       <div class="active-ex-name" id="active-name">---</div>
@@ -831,6 +881,67 @@ function estimate1RM(w, r) {
 
 let youtubeShorts = {};
 let activeEmbed = null;  // index of currently expanded embed
+let sessionStartTime = null;  // Date object for session start
+let sessionStartType = null;  // which session type the timer is for
+let timerInterval = null;  // 1-second timer interval ID
+
+// ═══════════════════════════════════════════════════
+// SESSION TIMER
+// ═══════════════════════════════════════════════════
+
+async function fetchSessionMeta(sessionType) {
+  try {
+    const d = new Date();
+    const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    const log = await fetchJSON(`${REPO_RAW}/logs/${ds}-${sessionType}.json?t=${Date.now()}`);
+    if (log && log.started) return { started: log.started, status: log.status };
+    return null;
+  } catch(e) { return null; }
+}
+
+function parseStartedTime(timeStr) {
+  // Parses "HH:MM" in Adelaide timezone
+  const [h, m] = timeStr.split(':').map(Number);
+  const d = new Date();
+  // Use local time (Adelaide) — set hours/minutes on today
+  d.setHours(h, m, 0, 0);
+  return d;
+}
+
+function startTimer() {
+  if (timerInterval) clearInterval(timerInterval);
+  timerInterval = setInterval(updateTimerDisplay, 1000);
+  updateTimerDisplay(); // immediate
+}
+
+function updateTimerDisplay() {
+  // Adelaide clock
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2,'0');
+  const mi = String(now.getMinutes()).padStart(2,'0');
+  const s = String(now.getSeconds()).padStart(2,'0');
+  document.getElementById('timer-clock').textContent = `${h}:${mi}:${s}`;
+
+  // Elapsed session time
+  if (!sessionStartTime) {
+    document.getElementById('timer-elapsed').textContent = '—:—';
+    document.getElementById('timer-seconds').textContent = '—s';
+    return;
+  }
+  const elapsed = Math.floor((now - sessionStartTime) / 1000);
+  if (elapsed < 0) {
+    document.getElementById('timer-elapsed').textContent = '00:00';
+    document.getElementById('timer-seconds').textContent = '0s';
+    return;
+  }
+  const em = Math.floor(elapsed / 60);
+  const es = elapsed % 60;
+  document.getElementById('timer-elapsed').textContent = `${String(em).padStart(2,'0')}:${String(es).padStart(2,'0')}`;
+  document.getElementById('timer-seconds').textContent = `${elapsed}s`;
+}
+
+// Start the clock immediately (runs regardless of active session)
+startTimer();
 
 async function fetchLiveLog(sessionType) {
   try {
@@ -1162,6 +1273,18 @@ async function renderSession() {
   await fetchYouTubeShorts();
   document.getElementById('session-badge').textContent = SESSION_NAMES[currentSession];
   document.getElementById('session-date').textContent = new Date().toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long'});
+
+  // Fetch session start time for the timer (once per session type per day)
+  if (!sessionStartTime || sessionStartType !== currentSession) {
+    const meta = await fetchSessionMeta(currentSession);
+    if (meta && meta.started) {
+      sessionStartTime = parseStartedTime(meta.started);
+      sessionStartType = currentSession;
+    } else {
+      sessionStartTime = null;
+      sessionStartType = null;
+    }
+  }
 
   if (!exs.length) { document.getElementById('active-name').textContent = 'Loading...'; return; }
 
