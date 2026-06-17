@@ -3,17 +3,20 @@
   "session_type": "legs-shoulders",
   "session_name": "Legs / Shoulders (resumed)",
   "current_exercise": 0,
-  "current_set": 2,
+  "current_set": 3,
   "ad_hoc": false,
   "resumed_from": "2026-06-16",
   "exercises": [
-    {"num": 3, "name": "Leg Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec"},
+    {"num": 3, "name": "Leg Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": 25, "rest": "60 sec"},
     {"num": 4, "name": "Leg Curl", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec"},
     {"num": 5, "name": "Dumbbell Shoulder Press", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": 20, "rest": "90 sec"},
     {"num": 6, "name": "Dumbbell Lateral Raise", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": 10, "rest": "60 sec"},
     {"num": 7, "name": "Standing Calf Raise", "target_sets": 3, "target_reps": "15-20", "target_weight_kg": null, "rest": "45 sec"}
   ],
   "log": {
-    "Leg Extension": [{"set": 1, "weight_kg": 15, "reps": 20}]
+    "Leg Extension": [
+      {"set": 1, "weight_kg": 15, "reps": 20},
+      {"set": 2, "weight_kg": 25, "reps": 15}
+    ]
   }
 }
