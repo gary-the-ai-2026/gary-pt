@@ -3,7 +3,7 @@
   "session_type": "legs-shoulders",
   "session_name": "Legs / Shoulders (resumed)",
   "current_exercise": 4,
-  "current_set": 2,
+  "current_set": 3,
   "ad_hoc": false,
   "resumed_from": "2026-06-16",
   "exercises": [
@@ -35,7 +35,8 @@
       {"set": 3, "weight_kg": 10, "reps": 15}
     ],
     "Standing Calf Raise": [
-      {"set": 1, "weight_kg": 40, "reps": 20}
+      {"set": 1, "weight_kg": 40, "reps": 20},
+      {"set": 2, "weight_kg": 40, "reps": 20}
     ]
   }
 }

@@ -17,9 +17,21 @@
       "rest": "60 sec",
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 15, "reps": 20},
-        {"set": 2, "weight_kg": 25, "reps": 15},
-        {"set": 3, "weight_kg": 25, "reps": 15}
+        {
+          "set": 1,
+          "weight_kg": 15,
+          "reps": 20
+        },
+        {
+          "set": 2,
+          "weight_kg": 25,
+          "reps": 15
+        },
+        {
+          "set": 3,
+          "weight_kg": 25,
+          "reps": 15
+        }
       ]
     },
     {
@@ -31,9 +43,21 @@
       "rest": "60 sec",
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 15, "reps": 12},
-        {"set": 2, "weight_kg": 15, "reps": 13},
-        {"set": 3, "weight_kg": 15, "reps": 13}
+        {
+          "set": 1,
+          "weight_kg": 15,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 15,
+          "reps": 13
+        },
+        {
+          "set": 3,
+          "weight_kg": 15,
+          "reps": 13
+        }
       ]
     },
     {
@@ -45,9 +69,21 @@
       "rest": "90 sec",
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 20, "reps": 12},
-        {"set": 2, "weight_kg": 20, "reps": 12},
-        {"set": 3, "weight_kg": 20, "reps": 12}
+        {
+          "set": 1,
+          "weight_kg": 20,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 20,
+          "reps": 12
+        },
+        {
+          "set": 3,
+          "weight_kg": 20,
+          "reps": 12
+        }
       ]
     },
     {
@@ -59,9 +95,21 @@
       "rest": "60 sec",
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 10, "reps": 12},
-        {"set": 2, "weight_kg": 10, "reps": 15},
-        {"set": 3, "weight_kg": 10, "reps": 15}
+        {
+          "set": 1,
+          "weight_kg": 10,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 10,
+          "reps": 15
+        },
+        {
+          "set": 3,
+          "weight_kg": 10,
+          "reps": 15
+        }
       ]
     },
     {
@@ -73,9 +121,18 @@
       "rest": "45 sec",
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 40, "reps": 20}
+        {
+          "set": 1,
+          "weight_kg": 40,
+          "reps": 20
+        },
+        {
+          "set": 2,
+          "weight_kg": 40,
+          "reps": 20
+        }
       ]
     }
   ],
-  "notes": "Continuation of June 16 session (interrupted by work meeting). Squat and RDL completed Mon — picking up from Leg Extension."
+  "notes": "Continuation of June 16 session (interrupted by work meeting). Squat and RDL completed Mon \u2014 picking up from Leg Extension."
 }
