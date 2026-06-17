@@ -11,5 +11,10 @@
   "Close-Grip Bench Press": 1,
   "Barbell Curl": 1,
   "Barbell Back Squat": 0,
-  "Romanian Deadlift (BB)": 1
+  "Romanian Deadlift (BB)": 1,
+  "Leg Extension": 0,
+  "Leg Curl": 1,
+  "Dumbbell Shoulder Press": 0,
+  "Dumbbell Lateral Raise": 1,
+  "Standing Calf Raise": 0
 }
