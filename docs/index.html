@@ -1126,19 +1126,23 @@ async function loadProgram() {
     const d = new Date();
     const today = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
 
-    // Check for ad hoc session from JSON log
+    // Check for today's session JSON — use its exercise list if it exists (handles ad hoc, resumed, and in-progress sessions)
     try {
       const logUrl = `${REPO_RAW}/logs/${today}-${currentSession}.json?t=${Date.now()}`;
       const logData = await fetchJSON(logUrl);
-      if (logData && logData.ad_hoc && logData.exercises && logData.exercises.length) {
-        return logData.exercises.map(e => ({
-          num: String(e.num || ''),
-          name: e.name || '',
-          sets: String(e.target_sets || 3),
-          weight: e.target_weight_kg != null ? String(e.target_weight_kg) + 'kg' : 'TBD',
-          reps: e.target_reps || '',
-          rest: e.rest || '—'
-        }));
+      if (logData && logData.exercises && logData.exercises.length) {
+        // Use JSON exercises for: ad hoc sessions, resumed/continuation sessions, or any in-progress session
+        const useJSON = logData.ad_hoc || logData.resumed_from || logData.status === 'in_progress';
+        if (useJSON) {
+          return logData.exercises.map(e => ({
+            num: String(e.num || ''),
+            name: e.name || '',
+            sets: String(e.target_sets || 3),
+            weight: e.target_weight_kg != null ? String(e.target_weight_kg) + 'kg' : 'TBD',
+            reps: e.target_reps || '',
+            rest: e.rest || '—'
+          }));
+        }
       }
     } catch (e) { /* fall through to MD parser */ }
 
