@@ -220,7 +220,37 @@ def run_progression(latest_log_path: Path = None):
     os.system(f"git commit -m 'progression: {session_date} {session_type}' 2>&1")
     os.system("git push origin main 2>&1")
 
+    # Rebuild logs/index.json for dashboard
+    rebuild_log_index()
+    os.system("git add logs/index.json && git commit -m 'chore: rebuild logs index' && git push origin main 2>&1")
+
     return results
+
+
+def rebuild_log_index():
+    """Rebuild logs/index.json with metadata for all session logs."""
+    import json
+    logs_dir = REPO / "logs"
+    index = []
+    for f in sorted(logs_dir.glob("*.json"), reverse=True):
+        if f.name.startswith("_") or f.name == "index.json":
+            continue
+        try:
+            data = json.loads(f.read_text())
+            index.append({
+                "name": f.name,
+                "date": data.get("date", ""),
+                "type": data.get("type", ""),
+                "status": data.get("status", "complete"),
+                "duration_min": data.get("duration_min", 0),
+                "ad_hoc": data.get("ad_hoc", False),
+                "resumed_from": data.get("resumed_from", None),
+                "exercise_count": len(data.get("exercises", [])),
+                "skipped_count": sum(1 for e in data.get("exercises", []) if e.get("skipped"))
+            })
+        except Exception:
+            pass
+    (logs_dir / "index.json").write_text(json.dumps(index, indent=2))
 
 
 if __name__ == "__main__":

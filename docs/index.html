@@ -1101,15 +1101,20 @@ function toggleEmbed(idx, url) {
 
 async function determineNextSession() {
   try {
-    const files = await fetchJSON(REPO_API + '/logs');
-    allLogs = files.filter(f => f.name.endsWith('.json') && !f.name.startsWith('_')).reverse();
+    const index = await fetchJSON(`${REPO_RAW}/logs/index.json?t=${Date.now()}`);
+    // Build allLogs array from index (compatible with existing code)
+    allLogs = (index || []).filter(e => e.name && !e.name.startsWith('_')).map(e => ({
+      name: e.name,
+      download_url: `${REPO_RAW}/logs/${e.name}`,
+      _index: e
+    }));
     if (!allLogs.length) return 'chest-tri';
 
     // Check if most recent log is still in progress — if so, that's the current session
     try {
-      const latestLog = await fetchJSON(allLogs[0].download_url);
-      if (latestLog && latestLog.status === 'in_progress') {
-        const inProgressType = latestLog.type;
+      const latest = allLogs[0]._index;
+      if (latest && latest.status === 'in_progress') {
+        const inProgressType = latest.type;
         if (SESSION_ROTATION.includes(inProgressType)) return inProgressType;
       }
     } catch (e) { /* fall through to rotation */ }
