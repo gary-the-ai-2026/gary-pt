@@ -8,7 +8,9 @@
   "cycle": 1,
   "week": 1,
   "exercises": [
-    {"num": 3, "name": "Leg Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []},
+    {"num": 3, "name": "Leg Extension", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": [
+      {"set": 1, "weight_kg": 15, "reps": 20}
+    ]},
     {"num": 4, "name": "Leg Curl", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": null, "rest": "60 sec", "skipped": false, "sets": []},
     {"num": 5, "name": "Dumbbell Shoulder Press", "target_sets": 3, "target_reps": "8-12", "target_weight_kg": 20, "rest": "90 sec", "skipped": false, "sets": []},
     {"num": 6, "name": "Dumbbell Lateral Raise", "target_sets": 3, "target_reps": "12-15", "target_weight_kg": 10, "rest": "60 sec", "skipped": false, "sets": []},
