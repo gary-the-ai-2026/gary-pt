@@ -2,9 +2,11 @@
   "session_id": "2026-06-17-legs-shoulders",
   "date": "2026-06-17",
   "type": "legs-shoulders",
-  "status": "in_progress",
+  "status": "complete",
   "resumed_from": "2026-06-16",
   "started": "19:42",
+  "finished": "20:49",
+  "duration_min": 67,
   "cycle": 1,
   "week": 1,
   "exercises": [
@@ -130,9 +132,14 @@
           "set": 2,
           "weight_kg": 40,
           "reps": 20
+        },
+        {
+          "set": 3,
+          "weight_kg": 40,
+          "reps": 20
         }
       ]
     }
   ],
-  "notes": "Continuation of June 16 session (interrupted by work meeting). Squat and RDL completed Mon \u2014 picking up from Leg Extension."
+  "notes": "Continuation of June 16 session (interrupted by work meeting). Squat (60kg\u00d710/10/10) and RDL (50kg\u00d712/10/10) completed Mon. All remaining exercises calibrated today. Combined: 35 sets across 7 exercises, 97 min total across two days."
 }
