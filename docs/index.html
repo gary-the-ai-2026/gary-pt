@@ -1029,6 +1029,9 @@ function updateTimerDisplay() {
   const s = String(now.getSeconds()).padStart(2,'0');
   document.getElementById('timer-clock').textContent = `${h}:${mi}:${s}`;
 
+  // Rest timer always updates regardless of session state
+  updateRestDisplay();
+
   // Elapsed session time
   if (!sessionStartTime) {
     document.getElementById('timer-elapsed').textContent = '—:—';
@@ -1045,7 +1048,6 @@ function updateTimerDisplay() {
   const es = elapsed % 60;
   document.getElementById('timer-elapsed').textContent = `${String(em).padStart(2,'0')}:${String(es).padStart(2,'0')}`;
   document.getElementById('timer-seconds').textContent = `${elapsed}s`;
-  updateRestDisplay();
 }
 
 // Start the clock immediately (runs regardless of active session)
