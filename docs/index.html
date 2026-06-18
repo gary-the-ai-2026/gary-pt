@@ -309,7 +309,7 @@
     border-bottom: 1px solid var(--hairline);
     cursor: pointer; transition: background 0.15s;
   }
-  .protocol-row:last-child { border-bottom: none; }
+  .protocol-row:last-of-type { border-bottom: none; }
   .protocol-row:hover { background: var(--surface-card); }
   .protocol-row.is-next { background: var(--surface-strong); }
   .protocol-row .p-dot {
@@ -329,6 +329,34 @@
   .protocol-row .p-duration {
     font-family: var(--font-mono); font-size: 10px;
     color: var(--muted-soft); white-space: nowrap;
+    margin-right: 2px;
+  }
+  .protocol-row .p-chevron {
+    font-size: 14px; color: var(--muted-soft);
+    transition: transform 0.2s; flex-shrink: 0;
+  }
+  .protocol-row.open .p-chevron { transform: rotate(90deg); }
+  .protocol-detail {
+    display: none;
+    padding: 6px var(--space-md) var(--space-sm);
+    border-bottom: 1px solid var(--hairline);
+    background: var(--canvas);
+  }
+  .protocol-detail.open { display: block; }
+  .protocol-detail .pd-exercise {
+    display: flex; gap: var(--space-sm); align-items: baseline;
+    padding: 3px 0; font-size: 12px;
+  }
+  .protocol-detail .pd-num {
+    font-family: var(--font-mono); font-size: 10px; color: var(--muted-soft);
+    min-width: 18px; text-align: right;
+  }
+  .protocol-detail .pd-name {
+    flex: 1; color: var(--body);
+  }
+  .protocol-detail .pd-prescription {
+    font-family: var(--font-mono); font-size: 11px; color: var(--muted);
+    white-space: nowrap;
   }
 
   /* ═══════════════ INSIGHT — DARK CARD ═══════════════ */
@@ -1136,6 +1164,22 @@ function toggleEmbed(idx, url) {
   }
 }
 
+let activeProtocol = null;
+function toggleProtocol(idx) {
+  const row = document.querySelectorAll('.protocol-row')[idx];
+  const detail = document.getElementById(`proto-detail-${idx}`);
+  if (!row || !detail) return;
+  if (activeProtocol !== null && activeProtocol !== idx) {
+    const prevRow = document.querySelectorAll('.protocol-row')[activeProtocol];
+    const prevDetail = document.getElementById(`proto-detail-${activeProtocol}`);
+    if (prevRow) prevRow.classList.remove('open');
+    if (prevDetail) prevDetail.classList.remove('open');
+  }
+  const isOpen = detail.classList.toggle('open');
+  row.classList.toggle('open', isOpen);
+  activeProtocol = isOpen ? idx : null;
+}
+
 async function determineNextSession() {
   try {
     const index = await fetchJSON(`${REPO_RAW}/logs/index.json?t=${Date.now()}`);
@@ -1335,14 +1379,20 @@ async function renderHub() {
   const protocols = await loadAllProtocols();
   const protoEl = document.getElementById('cycle-protocols');
   if (protocols.length) {
-    protoEl.innerHTML = protocols.map(p => {
+    protoEl.innerHTML = protocols.map((p, i) => {
       const isNext = p.type === currentSession;
-      return `<div class="protocol-row${isNext ? ' is-next' : ''}" onclick="currentSession='${p.type}';switchView('session')">
+      const exRows = p.exercises.map(e => {
+        const rx = `${e.sets}×${e.reps}` + (e.weight ? ` @ ${e.weight}` : '');
+        return `<div class="pd-exercise"><span class="pd-num">${e.num}</span><span class="pd-name">${e.name}</span><span class="pd-prescription">${rx}</span></div>`;
+      }).join('');
+      return `<div class="protocol-row${isNext ? ' is-next' : ''}" onclick="toggleProtocol(${i})">
         <div class="p-dot dot-${p.type}"></div>
         <div class="p-name">${p.name}</div>
-        <div class="p-ex-count">${p.count} exercises</div>
+        <div class="p-ex-count">${p.count} ex</div>
         <div class="p-duration">~${p.duration}m</div>
-      </div>`;
+        <div class="p-chevron">›</div>
+      </div>
+      <div class="protocol-detail" id="proto-detail-${i}">${exRows}</div>`;
     }).join('');
   } else {
     protoEl.innerHTML = '<div class="protocol-row" style="justify-content:center;color:var(--muted-soft);font-size:12px;">No protocols loaded</div>';
