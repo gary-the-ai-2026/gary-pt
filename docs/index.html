@@ -299,6 +299,38 @@
     color: var(--on-coral);
   }
 
+  /* ═══════════════ PROTOCOLS IN CYCLE ═══════════════ */
+  .cycle-protocols-card {
+    margin-bottom: var(--space-lg);
+  }
+  .protocol-row {
+    display: flex; align-items: center; gap: var(--space-sm);
+    padding: 9px var(--space-md);
+    border-bottom: 1px solid var(--hairline);
+    cursor: pointer; transition: background 0.15s;
+  }
+  .protocol-row:last-child { border-bottom: none; }
+  .protocol-row:hover { background: var(--surface-card); }
+  .protocol-row.is-next { background: var(--surface-strong); }
+  .protocol-row .p-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  }
+  .protocol-row .p-dot.dot-chest-tri { background: var(--coral); }
+  .protocol-row .p-dot.dot-back-bi { background: #6b5e4e; }
+  .protocol-row .p-dot.dot-legs-shoulders { background: var(--success); }
+  .protocol-row .p-name {
+    font-size: 13px; font-weight: 500; flex: 1;
+    color: var(--ink);
+  }
+  .protocol-row .p-ex-count {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--muted); white-space: nowrap;
+  }
+  .protocol-row .p-duration {
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--muted-soft); white-space: nowrap;
+  }
+
   /* ═══════════════ INSIGHT — DARK CARD ═══════════════ */
   .insight-card {
     margin-bottom: var(--space-lg);
@@ -762,6 +794,11 @@
       <div class="tag-row" id="next-tags"></div>
     </div>
 
+    <div class="section-label">Protocols in the Cycle</div>
+    <div class="card-cream cycle-protocols-card" id="cycle-protocols">
+      <div class="protocol-row" style="justify-content:center;color:var(--muted-soft);font-size:12px;">Loading…</div>
+    </div>
+
     <div class="section-label">Intelligence</div>
 
     <div class="card-dark insight-card">
@@ -1168,6 +1205,41 @@ async function loadProgram() {
   } catch (e) { return []; }
 }
 
+async function loadAllProtocols() {
+  // Parse the program MD to extract all session types and their exercise lists
+  try {
+    const md = await fetchText(`${REPO_RAW}/programs/cycle-1-week-1.md?t=${Date.now()}`);
+    const sections = md.split('## ');
+    const mapTarget = { 'chest-tri': 'Chest / Triceps', 'back-bi': 'Back / Biceps', 'legs-shoulders': 'Legs / Shoulders' };
+    const protocols = [];
+
+    for (const type of SESSION_ROTATION) {
+      const header = mapTarget[type];
+
+      for (const s of sections) {
+        if (s.split('\n')[0].trim() === header) {
+          const t = parseMDTable(s);
+          if (t[0]) {
+            const exs = t[0].rows.map(r => {
+              const sp = (r[2]||'').split('×').map(s => s.trim());
+              return { num: r[0]||'', name: r[1]||'', sets: sp[0]||r[2]||'', weight: r[3]||'', reps: sp[1]||'', rest: r[4]||'' };
+            });
+            protocols.push({
+              type: type,
+              name: SESSION_NAMES[type],
+              exercises: exs,
+              count: exs.length,
+              duration: estDuration(exs)
+            });
+          }
+          break;
+        }
+      }
+    }
+    return protocols;
+  } catch (e) { return []; }
+}
+
 function countThisWeek() {
   const ws = new Date(); ws.setDate(ws.getDate() - ws.getDay()); ws.setHours(0,0,0,0);
   return allLogs.filter(l => new Date(l.name.substring(0,10)) >= ws).length;
@@ -1258,6 +1330,23 @@ async function renderHub() {
   document.getElementById('next-title').textContent = `${exs.length} exercises`;
   document.getElementById('next-sub').textContent = `Cycle 1, Week ${cw} · ~${estDuration(exs)} min`;
   document.getElementById('next-tags').innerHTML = exs.map(e => `<span class="tag">${e.name}</span>`).join('');
+
+  // Cycle protocols overview
+  const protocols = await loadAllProtocols();
+  const protoEl = document.getElementById('cycle-protocols');
+  if (protocols.length) {
+    protoEl.innerHTML = protocols.map(p => {
+      const isNext = p.type === currentSession;
+      return `<div class="protocol-row${isNext ? ' is-next' : ''}" onclick="currentSession='${p.type}';switchView('session')">
+        <div class="p-dot dot-${p.type}"></div>
+        <div class="p-name">${p.name}</div>
+        <div class="p-ex-count">${p.count} exercises</div>
+        <div class="p-duration">~${p.duration}m</div>
+      </div>`;
+    }).join('');
+  } else {
+    protoEl.innerHTML = '<div class="protocol-row" style="justify-content:center;color:var(--muted-soft);font-size:12px;">No protocols loaded</div>';
+  }
 
   document.getElementById('status-right').textContent = `Next: ${SESSION_NAMES[currentSession]}`;
 
