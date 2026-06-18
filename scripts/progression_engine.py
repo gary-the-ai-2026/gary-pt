@@ -216,7 +216,7 @@ def run_progression(latest_log_path: Path = None):
     # Commit
     import os
     os.chdir(REPO)
-    os.system("git add programs/cycle-1-week-1.md programs/.stall_tracker.json 2>/dev/null")
+    os.system(f"git add programs/cycle-1-week-1.md programs/.stall_tracker.json logs/{log_file.name} 2>/dev/null")
     os.system(f"git commit -m 'progression: {session_date} {session_type}' 2>&1")
     os.system("git push origin main 2>&1")
 
