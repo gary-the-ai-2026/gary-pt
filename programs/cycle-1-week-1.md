@@ -14,11 +14,11 @@ next_session: chest-tri
 | # | Exercise | Sets × Reps | Target Weight | Rest |
 |---|---|---|---|---|
 | 1 | Barbell Bench Press | 3 × 8–10 | 60.0kg | 2–3 min |
-| 2 | Incline Dumbbell Press | 3 × 10–12 | 25.6kg/side | 90 sec |
-| 3 | Cable Flye (Low-to-High) | 3 × 12–15 | TBD | 60 sec |
-| 4 | Tricep Pushdown (Rope) | 3 × 12–15 | 25kg | 60 sec |
-| 5 | Overhead Cable Extension | 3 × 12–15 | TBD | 60 sec |
-| 6 | Close-Grip Bench Press | 2 × 10–12 | TBD | 90 sec |
+| 2 | Incline Dumbbell Press | 3 × 10–12 | 26.0kg/side | 90 sec |
+| 3 | Cable Flye (Low-to-High) | 3 × 12–15 | 14.0kg | 60 sec |
+| 4 | Tricep Pushdown (Rope) | 3 × 12–15 | 50.0kg | 60 sec |
+| 5 | Overhead Cable Extension | 3 × 12–15 | 27.0kg | 60 sec |
+| 6 | Close-Grip Bench Press | 2 × 10–12 | 15.0kg | 90 sec |
 
 ---
 
