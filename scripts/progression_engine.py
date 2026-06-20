@@ -47,6 +47,8 @@ def parse_target_from_exercise(exercise: dict) -> dict:
     }
 
     reps_str = exercise.get("target_reps", "")
+    # Normalize en-dash and em-dash to hyphen
+    reps_str = reps_str.replace('\u2013', '-').replace('\u2014', '-')
     if reps_str and '-' in reps_str:
         parts = reps_str.split('-')
         t["rep_low"] = int(parts[0].strip())
