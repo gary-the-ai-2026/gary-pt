@@ -13,11 +13,12 @@
   "Barbell Back Squat": 0,
   "Romanian Deadlift (BB)": 1,
   "Leg Extension": 0,
-  "Leg Curl": 1,
-  "Dumbbell Shoulder Press": 0,
-  "Dumbbell Lateral Raise": 1,
+  "Leg Curl": 2,
+  "Dumbbell Shoulder Press": 1,
+  "Dumbbell Lateral Raise": 2,
   "Standing Calf Raise": 0,
   "Seated Cable Row (Close)": 1,
   "Face Pull": 1,
-  "Cable Barbell Curl": 1
+  "Cable Barbell Curl": 1,
+  "Leg Extension (Single Leg)": 0
 }

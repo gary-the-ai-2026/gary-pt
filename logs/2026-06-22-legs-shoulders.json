@@ -2,32 +2,42 @@
   "session_id": "2026-06-22-legs-shoulders",
   "date": "2026-06-22",
   "type": "legs-shoulders",
-  "status": "in_progress",
+  "status": "complete",
   "started": "05:53",
+  "finished": "06:30",
+  "duration_min": 37,
   "cycle": 1,
   "week": 1,
   "exercises": [
     {"num": 1, "name": "Barbell Back Squat", "target_sets": 3, "target_reps": "8–10", "target_weight_kg": 65.0, "skipped": false, "sets": [
-    {"set": 1, "weight_kg": 60, "reps": 10},
-    {"set": 2, "weight_kg": 65, "reps": 10},
-    {"set": 3, "weight_kg": 65, "reps": 10}
-  ]},
+      {"set": 1, "weight_kg": 60, "reps": 10},
+      {"set": 2, "weight_kg": 65, "reps": 10},
+      {"set": 3, "weight_kg": 65, "reps": 10}
+    ]},
     {"num": 2, "name": "Romanian Deadlift (BB)", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 50.0, "skipped": true, "sets": null},
     {"num": 3, "name": "Leg Extension (Single Leg)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 25.0, "skipped": false, "sets": [
-    {"set": 1, "weight_kg": 25, "reps": 15, "notes": "single leg"},
-    {"set": 2, "weight_kg": 25, "reps": 15, "notes": "single leg"},
-    {"set": 3, "weight_kg": 25, "reps": 15, "notes": "single leg"}
-  ]},
+      {"set": 1, "weight_kg": 25, "reps": 15, "notes": "single leg"},
+      {"set": 2, "weight_kg": 25, "reps": 15, "notes": "single leg"},
+      {"set": 3, "weight_kg": 25, "reps": 15, "notes": "single leg"}
+    ]},
     {"num": 4, "name": "Leg Curl", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 15.0, "skipped": false, "sets": [
-    {"set": 1, "weight_kg": 15, "reps": 15},
-    {"set": 2, "weight_kg": 15, "reps": 15},
-    {"set": 3, "weight_kg": 15, "reps": 12}
-  ]},
+      {"set": 1, "weight_kg": 15, "reps": 15},
+      {"set": 2, "weight_kg": 15, "reps": 15},
+      {"set": 3, "weight_kg": 15, "reps": 12}
+    ]},
     {"num": 5, "name": "Dumbbell Shoulder Press", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 22.5, "skipped": false, "sets": [
-    {"set": 1, "weight_kg": 22, "reps": 6}
-  ]},
-    {"num": 6, "name": "Dumbbell Lateral Raise", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": []},
-    {"num": 7, "name": "Standing Calf Raise", "target_sets": 3, "target_reps": "15–20", "target_weight_kg": 40.0, "skipped": false, "sets": []}
+      {"set": 1, "weight_kg": 22, "reps": 6}
+    ]},
+    {"num": 6, "name": "Dumbbell Lateral Raise", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": [
+      {"set": 1, "weight_kg": 10, "reps": 12},
+      {"set": 2, "weight_kg": 10, "reps": 12},
+      {"set": 3, "weight_kg": 10, "reps": 12}
+    ]},
+    {"num": 7, "name": "Standing Calf Raise", "target_sets": 3, "target_reps": "15–20", "target_weight_kg": 40.0, "skipped": false, "sets": [
+      {"set": 1, "weight_kg": 40, "reps": 20},
+      {"set": 2, "weight_kg": 40, "reps": 20},
+      {"set": 3, "weight_kg": 40, "reps": 20}
+    ]}
   ],
-  "notes": "5 of 7 exercises calibrated from June 16-17 resumed session. Squat: 65kg (progression from 60kg×3×10). RDL: 50kg (repeat)."
+  "notes": "Truncated at DB Shoulder Press (1 set only). RDL skipped. DB Lateral Raise + Calf Raise done back-to-back at end, logged in bulk. DB Shoulder Press: 22kg (DBs adjust in 1kg steps, 22.5kg rounded down). Calibration fix: DB Shoulder Press 20→22.5kg mid-session per progression rules (3×12 top of range last session)."
 }
