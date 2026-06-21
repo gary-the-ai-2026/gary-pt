@@ -43,7 +43,7 @@ next_session: legs-shoulders
 | 2 | Romanian Deadlift (BB) | 3 × 8–12 | 50.0kg | 2 min |
 | 3 | Leg Extension (Single Leg) | 3 × 12–15 | 25.0kg | 60 sec |
 | 4 | Leg Curl | 3 × 12–15 | 15.0kg | 60 sec |
-| 5 | Dumbbell Shoulder Press | 3 × 8–12 | 20.0kg | 90 sec |
+| 5 | Dumbbell Shoulder Press | 3 × 8–12 | 22.5kg | 90 sec |
 | 6 | Dumbbell Lateral Raise | 3 × 12–15 | 10.0kg | 60 sec |
 | 7 | Standing Calf Raise | 3 × 15–20 | 40.0kg | 45 sec |
 
