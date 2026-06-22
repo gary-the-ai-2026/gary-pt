@@ -1,0 +1,66 @@
+{
+  "session_id": "2026-06-23-chest-tri",
+  "date": "2026-06-23",
+  "type": "chest-tri",
+  "status": "in_progress",
+  "started": "05:55",
+  "cycle": 1,
+  "week": 1,
+  "exercises": [
+    {
+      "num": 1,
+      "name": "Barbell Bench Press",
+      "target_sets": 3,
+      "target_reps": "8\u201310",
+      "target_weight_kg": 60.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 2,
+      "name": "Incline Dumbbell Press",
+      "target_sets": 3,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 26.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 3,
+      "name": "Cable Flye (Low-to-High)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 14.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 4,
+      "name": "Tricep Pushdown (Rope)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 47.5,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 5,
+      "name": "Overhead Cable Extension",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 27.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 6,
+      "name": "Close-Grip Bench Press",
+      "target_sets": 2,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 15.0,
+      "skipped": false,
+      "sets": []
+    }
+  ],
+  "notes": ""
+}
