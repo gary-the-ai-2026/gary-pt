@@ -2,7 +2,7 @@
   "session_id": "2026-06-23-chest-tri",
   "date": "2026-06-23",
   "type": "chest-tri",
-  "status": "in_progress",
+  "status": "complete",
   "started": "05:55",
   "cycle": 1,
   "week": 1,
@@ -83,6 +83,11 @@
           "set": 2,
           "weight_kg": 45,
           "reps": 8
+        },
+        {
+          "set": 3,
+          "weight_kg": 45,
+          "reps": 9
         }
       ]
     },
@@ -92,8 +97,8 @@
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 27.0,
-      "skipped": false,
-      "sets": []
+      "skipped": true,
+      "sets": null
     },
     {
       "num": 6,
@@ -101,9 +106,11 @@
       "target_sets": 2,
       "target_reps": "10\u201312",
       "target_weight_kg": 15.0,
-      "skipped": false,
-      "sets": []
+      "skipped": true,
+      "sets": null
     }
   ],
-  "notes": ""
+  "notes": "Time-constrained \u2014 O/H cable extension and CGBP skipped.",
+  "finished": "06:30",
+  "duration_min": 35
 }

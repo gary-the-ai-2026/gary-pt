@@ -77,6 +77,11 @@
           "set": 2,
           "weight_kg": 45,
           "reps": 8
+        },
+        {
+          "set": 3,
+          "weight_kg": 45,
+          "reps": 9
         }
       ]
     },
@@ -86,7 +91,7 @@
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 27.0,
-      "sets": []
+      "sets": null
     },
     {
       "num": 6,
@@ -94,7 +99,7 @@
       "target_sets": 2,
       "target_reps": "10\u201312",
       "target_weight_kg": 15.0,
-      "sets": []
+      "sets": null
     }
   ],
   "log": {}
