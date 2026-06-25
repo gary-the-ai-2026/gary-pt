@@ -2,7 +2,7 @@
   "Barbell Bench Press": 4,
   "Incline Dumbbell Press": 3,
   "Cable Flye (Low-to-High)": 4,
-  "Lat Pulldown (Wide)": 3,
+  "Lat Pulldown (Wide)": 4,
   "Barbell Row": 0,
   "Hammer Curl": 1,
   "Renegade Row": 1,
@@ -17,8 +17,8 @@
   "Dumbbell Shoulder Press": 1,
   "Dumbbell Lateral Raise": 2,
   "Standing Calf Raise": 0,
-  "Seated Cable Row (Close)": 1,
-  "Face Pull": 1,
-  "Cable Barbell Curl": 1,
+  "Seated Cable Row (Close)": 0,
+  "Face Pull": 0,
+  "Cable Barbell Curl": 0,
   "Leg Extension (Single Leg)": 0
 }
