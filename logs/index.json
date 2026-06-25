@@ -1,5 +1,16 @@
 [
   {
+    "name": "2026-06-25-back-bi.json",
+    "date": "2026-06-25",
+    "type": "back-bi",
+    "status": "complete",
+    "duration_min": 40,
+    "ad_hoc": false,
+    "resumed_from": null,
+    "exercise_count": 6,
+    "skipped_count": 1
+  },
+  {
     "name": "2026-06-23-chest-tri.json",
     "date": "2026-06-23",
     "type": "chest-tri",
