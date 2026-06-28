@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-05-27
 status: active
-next_session: legs-shoulders
+next_session: chest-tri
 ---
 
 # Cycle 1 — Week 1
@@ -45,7 +45,7 @@ next_session: legs-shoulders
 | 4 | Leg Curl | 3 × 12–15 | 15.0kg | 60 sec |
 | 5 | Dumbbell Shoulder Press | 3 × 8–12 | 22.5kg | 90 sec |
 | 6 | Dumbbell Lateral Raise | 3 × 12–15 | 10.0kg | 60 sec |
-| 7 | Standing Calf Raise | 3 × 15–20 | 45.0kg | 45 sec |
+| 7 | Standing Calf Raise (Single Leg) | 3 × 15–20 | 31.0kg | 45 sec |
 
 ---
 
