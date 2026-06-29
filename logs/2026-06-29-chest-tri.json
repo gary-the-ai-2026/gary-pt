@@ -2,8 +2,10 @@
   "session_id": "2026-06-29-chest-tri",
   "date": "2026-06-29",
   "type": "chest-tri",
-  "status": "in_progress",
+  "status": "complete",
   "started": "13:48",
+  "finished": "14:27",
+  "duration_min": 39,
   "cycle": 1,
   "week": 1,
   "exercises": [
@@ -19,11 +21,12 @@
     ]},
     {"num": 3, "name": "Cable Flye (Low-to-High)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 13.3, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 14, "reps": 15},
-      {"set": 2, "weight_kg": 14, "reps": 14}
+      {"set": 2, "weight_kg": 14, "reps": 14},
+      {"set": 3, "weight_kg": 14, "reps": 15}
     ]},
-    {"num": 4, "name": "Tricep Pushdown (Rope)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 42.5, "skipped": false, "sets": []},
-    {"num": 5, "name": "Overhead Cable Extension", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 27.0, "skipped": false, "sets": []},
-    {"num": 6, "name": "Close-Grip Bench Press", "target_sets": 2, "target_reps": "10–12", "target_weight_kg": 15.0, "skipped": false, "sets": []}
+    {"num": 4, "name": "Tricep Pushdown (Rope)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 42.5, "skipped": true, "sets": null},
+    {"num": 5, "name": "Overhead Cable Extension", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 27.0, "skipped": true, "sets": null},
+    {"num": 6, "name": "Close-Grip Bench Press", "target_sets": 2, "target_reps": "10–12", "target_weight_kg": 15.0, "skipped": true, "sets": null}
   ],
-  "notes": ""
+  "notes": "Time-constrained — pushdown, O/H cable ext, and CGBP skipped."
 }
