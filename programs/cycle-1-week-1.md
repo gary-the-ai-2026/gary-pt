@@ -14,7 +14,7 @@ next_session: back-bi
 | # | Exercise | Sets × Reps | Target Weight | Rest |
 |---|---|---|---|---|
 | 1 | Barbell Bench Press | 3 × 8–10 | 60.0kg | 2–3 min |
-| 2 | Incline Dumbbell Press | 3 × 10–12 | 26.0kg/side | 90 sec |
+| 2 | Incline Dumbbell Press | 3 × 10–12 | 24.7kg/side | 90 sec |
 | 3 | Cable Flye (Low-to-High) | 3 × 12–15 | 13.3kg | 60 sec |
 | 4 | Tricep Pushdown (Rope) | 3 × 12–15 | 42.5kg | 60 sec |
 | 5 | Overhead Cable Extension | 3 × 12–15 | 27.0kg | 60 sec |
