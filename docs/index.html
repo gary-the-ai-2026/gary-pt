@@ -652,7 +652,12 @@
   .chart-card .chart-title {
     font-family: var(--font-body); font-size: 11px; font-weight: 500;
     text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--muted); margin-bottom: 14px;
+    color: var(--muted); margin-bottom: 4px;
+  }
+  .chart-card .chart-desc {
+    font-family: var(--font-body); font-size: 9px;
+    color: var(--muted); opacity: 0.6;
+    margin-bottom: 12px; line-height: 1.4;
   }
   .chart-wrap { height: 200px; }
   canvas { width: 100% !important; }
@@ -916,14 +921,17 @@
 
     <div class="card-cream chart-card">
       <div class="chart-title">Bench Press · Estimated 1RM (kg)</div>
+      <div class="chart-desc">Best barbell bench set per session → Epley formula (w × (1 + r/30))</div>
       <div class="chart-wrap"><canvas id="chart-bench"></canvas></div>
     </div>
     <div class="card-cream chart-card">
       <div class="chart-title">Squat · Estimated 1RM (kg)</div>
+      <div class="chart-desc">Best squat set per session → Epley formula (w × (1 + r/30))</div>
       <div class="chart-wrap"><canvas id="chart-squat"></canvas></div>
     </div>
     <div class="card-cream chart-card">
       <div class="chart-title">Session Volume (kg)</div>
+      <div class="chart-desc">Sum of weight × reps across all exercises · thousands of kg</div>
       <div class="chart-wrap"><canvas id="chart-volume"></canvas></div>
     </div>
   </div>
