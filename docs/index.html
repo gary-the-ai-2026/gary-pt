@@ -1565,49 +1565,48 @@ async function renderSession() {
 // ═══════════════════════════════════════════════════
 
 async function renderProgress() {
-  // Build weekly data structures from actual logs
-  const weekData = {};  // { 1: { bench: null, squat: null, volume: 0 }, ... }
-  for (let w = 1; w <= 6; w++) weekData[w] = { bench: null, squat: null, volume: 0 };
+  // Build per-session data from actual logs, sorted by date
+  const benchPoints = [];   // [{label, e1rm}]
+  const squatPoints = [];   // [{label, e1rm}]
+  const volumePoints = [];  // [{label, volume}]
 
-  for (const log of allLogs) {
+  const completed = [...allLogs].filter(l => l.status === 'complete').sort((a,b) => a.date.localeCompare(b.date));
+
+  for (const log of completed) {
     try {
       const data = await fetchJSON(log.download_url);
       if (!data || !data.exercises) continue;
-      const wk = data.week || 1;
-      if (wk < 1 || wk > 6) continue;
+
+      const label = log.date.slice(5); // MM-DD
+      let sessionVolume = 0;
 
       for (const ex of data.exercises) {
         if (ex.skipped || !ex.sets || !ex.sets.length) continue;
 
-        // Volume: sum of weight × reps for every set
         for (const s of ex.sets) {
-          weekData[wk].volume += (s.weight_kg || 0) * (s.reps || 0);
+          sessionVolume += (s.weight_kg || 0) * (s.reps || 0);
         }
 
-        // 1RM: best set's estimated 1RM for bench and squat
         const isBench = ex.name.toLowerCase().includes('bench press') && !ex.name.toLowerCase().includes('dumbbell');
         const isSquat = ex.name.toLowerCase().includes('squat');
         if (!isBench && !isSquat) continue;
 
-        const bestIdx = ex.sets.reduce((best, s, i, arr) => s.reps > arr[best].reps ? i : best, 0);
-        const e1rm = estimate1RM(ex.sets[bestIdx].weight_kg, ex.sets[bestIdx].reps);
+        const best = ex.sets.reduce((a, s) => s.reps > a.reps ? s : a, ex.sets[0]);
+        const e1rm = estimate1RM(best.weight_kg, best.reps);
         if (!e1rm) continue;
 
-        if (isBench && (weekData[wk].bench === null || e1rm > weekData[wk].bench)) weekData[wk].bench = e1rm;
-        if (isSquat && (weekData[wk].squat === null || e1rm > weekData[wk].squat)) weekData[wk].squat = e1rm;
+        if (isBench) benchPoints.push({ label, e1rm: Math.round(e1rm) });
+        if (isSquat) squatPoints.push({ label, e1rm: Math.round(e1rm) });
       }
+
+      if (sessionVolume > 0) volumePoints.push({ label, volume: Math.round(sessionVolume / 1000) });
     } catch(e) {}
   }
 
-  const weeks = [1,2,3,4,5,6];
-  const benchData = weeks.map(w => weekData[w].bench);
-  const squatData = weeks.map(w => weekData[w].squat);
-  const volumeData = weeks.map(w => weekData[w].volume > 0 ? Math.round(weekData[w].volume / 1000) : null);
-
   const configs = [
-    { id: 'chart-bench', data: benchData, labels: weeks.map(w => `W${w}`), color: '#cc785c' },
-    { id: 'chart-squat', data: squatData, labels: weeks.map(w => `W${w}`), color: '#e8a55a' },
-    { id: 'chart-volume', data: volumeData, labels: weeks.map(w => `W${w}`), color: '#5db8a6' },
+    { id: 'chart-bench', points: benchPoints, color: '#cc785c' },
+    { id: 'chart-squat', points: squatPoints, color: '#e8a55a' },
+    { id: 'chart-volume', points: volumePoints, color: '#5db8a6' },
   ];
 
   for (const cfg of configs) {
@@ -1615,21 +1614,22 @@ async function renderProgress() {
     if (!ctx) continue;
     if (charts[cfg.id]) charts[cfg.id].destroy();
 
+    const valKey = cfg.id === 'chart-volume' ? 'volume' : 'e1rm';
+    const labels = cfg.points.map(p => p.label);
+    const values = cfg.points.map(p => p[valKey]);
+
+    if (!labels.length) continue;
+
     const g = ctx.getContext('2d').createLinearGradient(0,0,0,200);
     g.addColorStop(0, cfg.color + '20');
     g.addColorStop(1, cfg.color + '00');
 
-    // Only show weeks that have data
-    const lastDataIdx = cfg.data.reduce((best, v, i) => v !== null ? i : best, -1);
-    const displayLabels = lastDataIdx >= 0 ? cfg.labels.slice(0, lastDataIdx + 1) : cfg.labels;
-    const displayData = lastDataIdx >= 0 ? cfg.data.slice(0, lastDataIdx + 1) : [];
-
     charts[cfg.id] = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: displayLabels,
+        labels,
         datasets: [{
-          data: displayData,
+          data: values,
           borderColor: cfg.color,
           backgroundColor: g,
           borderWidth: 2,
