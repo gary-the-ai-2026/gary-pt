@@ -2,8 +2,10 @@
   "session_id": "2026-07-01-back-bi",
   "date": "2026-07-01",
   "type": "back-bi",
-  "status": "in_progress",
+  "status": "complete",
   "started": "16:47",
+  "finished": "17:28",
+  "duration_min": 41,
   "cycle": 1,
   "week": 1,
   "exercises": [
@@ -12,7 +14,7 @@
     {"num": 3, "name": "Seated Cable Row (Close)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 29.5, "skipped": false, "sets": [{"set": 1, "weight_kg": 27, "reps": 12}, {"set": 2, "weight_kg": 32, "reps": 7}, {"set": 3, "weight_kg": 32, "reps": 7}]},
     {"num": 4, "name": "Face Pull", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 29.5, "skipped": false, "sets": [{"set": 1, "weight_kg": 32, "reps": 15}, {"set": 2, "weight_kg": 32, "reps": 20}, {"set": 3, "weight_kg": 36, "reps": 15}]},
     {"num": 5, "name": "Cable Barbell Curl", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 25.5, "skipped": false, "sets": [{"set": 1, "weight_kg": 27, "reps": 10}, {"set": 2, "weight_kg": 27, "reps": 8}, {"set": 3, "weight_kg": 27, "reps": 6}]},
-    {"num": 6, "name": "Preacher Curl", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": null, "skipped": false, "sets": []}
+    {"num": 6, "name": "Preacher Curl", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": null, "skipped": true, "sets": null}
   ],
-  "notes": ""
+  "notes": "Skipped Preacher Curl. Back work very strong — Lat Pulldown 41→45, Row 35 across, Face Pull 32→36. Curls faded: 27×10/8/6."
 }
