@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-05-27
 status: active
-next_session: back-bi
+next_session: legs-shoulders
 ---
 
 # Cycle 1 — Week 1
@@ -26,7 +26,7 @@ next_session: back-bi
 
 | # | Exercise | Sets × Reps | Target Weight | Rest |
 |---|---|---|---|---|
-| 1 | Lat Pulldown (Wide) | 3 × 8–12 | 36.0kg | 90 sec |
+| 1 | Lat Pulldown (Wide) | 3 × 8–12 | 41.0kg | 90 sec |
 | 2 | Barbell Row | 3 × 8–10 | 35.0kg | 2 min |
 | 3 | Seated Cable Row (Close) | 3 × 10–12 | 28.0kg | 90 sec |
 | 4 | Face Pull | 3 × 12–15 | 32.0kg | 60 sec |
