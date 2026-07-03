@@ -1,5 +1,16 @@
 [
   {
+    "name": "2026-07-03-legs-shoulders.json",
+    "date": "2026-07-03",
+    "type": "legs-shoulders",
+    "status": "complete",
+    "duration_min": 57,
+    "ad_hoc": false,
+    "resumed_from": null,
+    "exercise_count": 7,
+    "skipped_count": 1
+  },
+  {
     "name": "2026-07-01-back-bi.json",
     "date": "2026-07-01",
     "type": "back-bi",
