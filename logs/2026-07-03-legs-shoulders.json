@@ -16,7 +16,8 @@
     {"num": 2, "name": "Romanian Deadlift (BB)", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 50.0, "skipped": true, "sets": null},
     {"num": 3, "name": "Leg Extension (Single Leg)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 30.0, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 30, "reps": 12, "notes": "single leg"},
-      {"set": 2, "weight_kg": 30, "reps": 12, "notes": "single leg"}
+      {"set": 2, "weight_kg": 30, "reps": 12, "notes": "single leg"},
+      {"set": 3, "weight_kg": 30, "reps": 12, "notes": "single leg"}
     ]},
     {"num": 4, "name": "Leg Curl", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 15.0, "skipped": false, "sets": []},
     {"num": 5, "name": "Dumbbell Shoulder Press", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 22.5, "skipped": false, "sets": []},
