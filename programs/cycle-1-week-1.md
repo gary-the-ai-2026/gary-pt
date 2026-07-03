@@ -39,13 +39,13 @@ next_session: legs-shoulders
 
 | # | Exercise | Sets × Reps | Target Weight | Rest |
 |---|---|---|---|---|
-| 1 | Barbell Back Squat | 3 × 8–10 | 70.0kg | 2–3 min |
+| 1 | Barbell Back Squat | 3 × 8–10 | 75.0kg | 2–3 min |
 | 2 | Romanian Deadlift (BB) | 3 × 8–12 | 50.0kg | 2 min |
 | 3 | Leg Extension (Single Leg) | 3 × 12–15 | 30.0kg | 60 sec |
 | 4 | Leg Curl | 3 × 12–15 | 15.0kg | 60 sec |
-| 5 | Dumbbell Shoulder Press | 3 × 8–12 | 22.5kg | 90 sec |
-| 6 | Dumbbell Lateral Raise | 3 × 12–15 | 10.0kg | 60 sec |
-| 7 | Standing Calf Raise (Single Leg) | 3 × 15–20 | 31.0kg | 45 sec |
+| 5 | Dumbbell Shoulder Press | 3 × 8–12 | 21.4kg | 90 sec |
+| 6 | Dumbbell Lateral Raise | 3 × 12–15 | 12.5kg | 60 sec |
+| 7 | Standing Calf Raise (Single Leg) | 3 × 15–20 | 36.0kg | 45 sec |
 
 ---
 
