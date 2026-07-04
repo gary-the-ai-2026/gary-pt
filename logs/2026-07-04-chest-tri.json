@@ -22,9 +22,9 @@
       {"set": 2, "weight_kg": 14, "reps": 15},
       {"set": 3, "weight_kg": 14, "reps": 15}
     ]},
-    {"num": 4, "name": "Tricep Pushdown (Straight Bar)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 42.5, "skipped": false, "sets": []},
+    {"num": 4, "name": "Tricep Pushdown (EZ Bar)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 42.5, "skipped": false, "sets": []},
     {"num": 5, "name": "Overhead Dumbbell Extension", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 10.0, "skipped": false, "sets": []},
     {"num": 6, "name": "Bench Dip (Weighted)", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": []}
   ],
-  "notes": "Cycle 2 start. Incline Bench: 50×12 / 55×6 / 55×8 → calibrate ~52.5kg. Flat DB Press: 24×10/10/10 → repeat weight. Cable Flye: 14×15/15/15 → bump to 16.5kg."
+  "notes": "Cycle 2 start. Incline Bench: 50×12 / 55×6 / 55×8 → calibrate ~52.5kg. Flat DB Press: 24×10/10/10 → repeat weight. Cable Flye: 14×15/15/15 → bump to 16.5kg. Pushdown: Straight bar unavailable — using EZ curl bar on cable."
 }

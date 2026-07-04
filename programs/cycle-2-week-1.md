@@ -16,7 +16,7 @@ next_session: chest-tri
 | 1 | Incline Barbell Bench Press | 3 | 50.0kg | 8–10 |
 | 2 | Flat Dumbbell Press | 3 | 24.0kg | 10–12 |
 | 3 | Cable Flye (High-to-Low) | 3 | 14.0kg | 12–15 |
-| 4 | Tricep Pushdown (Straight Bar) | 3 | 42.5kg | 12–15 |
+| 4 | Tricep Pushdown (EZ Bar) | 3 | 42.5kg | 12–15 |
 | 5 | Overhead Dumbbell Extension | 3 | 10.0kg | 10–12 |
 | 6 | Bench Dip (Weighted) | 2 | 10.0kg | 12–15 |
 
@@ -56,7 +56,7 @@ next_session: chest-tri
 | Incline Barbell Bench | 50kg | Flat Bench 60kg | ~85% of flat, typical incline deficit |
 | Flat Dumbbell Press | 24kg | Incline DB 26kg | Flat slightly easier, being conservative |
 | Cable Flye (High-to-Low) | 14kg | Low-to-High 14kg | Same loading, different angle |
-| Tricep Pushdown (Straight Bar) | 42.5kg | Rope Pushdown 42.5kg | Straight bar slightly heavier, same stack |
+| Tricep Pushdown (EZ Bar) | 42.5kg | Rope Pushdown 42.5kg | EZ curl bar on cable — same movement pattern |
 | Overhead DB Extension | 10kg | O/H Cable Ext 27kg | Free weight, single DB — very different loading |
 | Bench Dip (Weighted) | 10kg | CGBP 17.5kg | New movement, plate on lap — start light |
 | Pull-Up | BW (~84kg) | Lat Pulldown 41–45kg | Bodyweight vs cable, may need assistance |
