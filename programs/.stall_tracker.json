@@ -21,5 +21,10 @@
   "Face Pull": 0,
   "Cable Barbell Curl": 1,
   "Leg Extension (Single Leg)": 1,
-  "Standing Calf Raise (Single Leg)": 0
+  "Standing Calf Raise (Single Leg)": 0,
+  "Incline Barbell Bench Press": 1,
+  "Flat Dumbbell Press": 1,
+  "Cable Flye (High-to-Low)": 0,
+  "Tricep Pushdown (EZ Bar)": 1,
+  "Bench Dip": 0
 }
