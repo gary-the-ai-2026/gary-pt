@@ -1,5 +1,16 @@
 [
   {
+    "name": "2026-07-04-chest-tri.json",
+    "date": "2026-07-04",
+    "type": "chest-tri",
+    "status": "complete",
+    "duration_min": 61,
+    "ad_hoc": false,
+    "resumed_from": null,
+    "exercise_count": 6,
+    "skipped_count": 1
+  },
+  {
     "name": "2026-07-03-legs-shoulders.json",
     "date": "2026-07-03",
     "type": "legs-shoulders",
