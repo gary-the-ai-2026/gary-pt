@@ -1,21 +1,26 @@
 {
-  "_description": "YouTube Shorts technique demos for exercise library. Primary source: Renaissance Periodization (Dr. Mike Israetel). Fallback: Jeff Nippard, Squat University. TBD = not yet curated.",
-  "_updated": "2026-06-11",
-  "_embed_note": "Dashboard now supports inline expand/collapse embed — click ▶ to watch below the exercise row.",
+  "_description": "YouTube Shorts technique demos for exercise library. Primary source: Renaissance Periodization (Dr. Mike Israetel). Fallback: Jeff Nippard, Squat University.",
+  "_updated": "2026-07-04",
+  "_coverage": "Cycle 2 — 15/19 exercises linked. 4 missing: Flat Dumbbell Press, Bench Dip, Dumbbell Row (Single Arm), Cable Rear Delt Flye.",
   "source_priority": ["Renaissance Periodization", "Jeff Nippard", "Squat University"],
-  "_coverage": "16/19 exercises linked. 3 missing: Goblet Squat, Seated Cable Row (Close), Preacher Curl — no technique Shorts found from RP or Nippard.",
   "aliases": {
     "DB Goblet Squat": "Goblet Squat",
     "KB/DB Goblet Squat": "Goblet Squat",
     "KB Goblet Squat": "Goblet Squat",
     "DB Romanian Deadlift": "Romanian Deadlift (BB)",
     "Leg Extension (Machine)": "Leg Extension",
+    "Leg Extension (Single Leg)": "Leg Extension",
     "Leg Curl (Machine)": "Leg Curl",
     "DB Standing Calf Raise": "Standing Calf Raise",
     "DB Calf Raise": "Standing Calf Raise",
     "DB Bench Press": "Barbell Bench Press",
     "DB Shoulder Press": "Dumbbell Shoulder Press",
-    "DB Incline Press": "Incline Dumbbell Press"
+    "DB Incline Press": "Incline Dumbbell Press",
+    "Cable Flye (High-to-Low)": "Cable Flye (Low-to-High)",
+    "Tricep Pushdown (Straight Bar)": "Tricep Pushdown (Rope)",
+    "Lat Pulldown (Close Grip)": "Lat Pulldown (Wide)",
+    "Flat Dumbbell Press": "Incline Dumbbell Press",
+    "Seated Calf Raise": "Standing Calf Raise"
   },
   "exercises": {
     "Barbell Bench Press": {
@@ -23,10 +28,20 @@
       "source": "Renaissance Periodization",
       "title": "How To Bench Press With Perfect Technique (5 Steps)"
     },
+    "Incline Barbell Bench Press": {
+      "url": "https://www.youtube.com/shorts/lJ2o89kcnxY",
+      "source": "Renaissance Periodization",
+      "title": "Incline Medium Grip Bench Press"
+    },
     "Incline Dumbbell Press": {
       "url": "https://www.youtube.com/shorts/6C1A0aQQrjo",
       "source": "Renaissance Periodization",
       "title": "How To Get STRONG On Dumbbell Presses"
+    },
+    "Flat Dumbbell Press": {
+      "url": null,
+      "source": "TBD",
+      "_note": "No RP Short specifically for flat DB press. Aliased to Incline Dumbbell Press — technique is similar."
     },
     "Cable Flye (Low-to-High)": {
       "url": "https://www.youtube.com/shorts/hd_pA-b5puI",
@@ -43,50 +58,85 @@
       "source": "Renaissance Periodization",
       "title": "The BEST Exercises For Bigger Triceps"
     },
+    "Overhead Dumbbell Extension": {
+      "url": "https://www.youtube.com/shorts/iKX6vEhrGxw",
+      "source": "Renaissance Periodization",
+      "title": "Fixing Jeff Nippard's Overhead Tricep Extension"
+    },
     "Close-Grip Bench Press": {
       "url": "https://www.youtube.com/shorts/NKHhj7SJsQA",
       "source": "Renaissance Periodization",
       "title": "Close Grip Bench Grip For HUGE Triceps"
+    },
+    "Bench Dip (Weighted)": {
+      "url": null,
+      "source": "TBD",
+      "_note": "No RP or Nippard technique Short found for bench dips."
     },
     "Lat Pulldown (Wide)": {
       "url": "https://www.youtube.com/shorts/jhnxJEzX8rY",
       "source": "Renaissance Periodization",
       "title": "How To Do a PERFECT Lat Pulldown"
     },
+    "Pull-Up": {
+      "url": "https://www.youtube.com/shorts/BYEYTskNcjA",
+      "source": "Renaissance Periodization",
+      "title": "Fewer Exercises Are BETTER"
+    },
     "Barbell Row": {
       "url": "https://www.youtube.com/shorts/p9RihhjmJsw",
       "source": "Renaissance Periodization",
       "title": "How to Execute a Bent Over Row"
     },
+    "Dumbbell Row (Single Arm)": {
+      "url": null,
+      "source": "TBD",
+      "_note": "No RP technique Short found for single-arm DB row."
+    },
     "Seated Cable Row (Close)": {
       "url": null,
       "source": "TBD",
-      "_note": "No RP or Nippard technique Short found. RP has a regular video (not Shorts format)."
+      "_note": "No RP or Nippard technique Short found."
     },
     "Face Pull": {
       "url": "https://www.youtube.com/shorts/r4uM4JSvu8M",
       "source": "Renaissance Periodization",
       "title": "Cable Seated Face Pull"
     },
+    "Cable Rear Delt Flye": {
+      "url": null,
+      "source": "TBD",
+      "_note": "No RP technique Short found. Similar movement to Face Pull but isolated."
+    },
     "Barbell Curl": {
       "url": "https://www.youtube.com/shorts/DXTDJbPRl-A",
       "source": "Renaissance Periodization",
       "title": "Bicep Curl Training Tip #shorts"
     },
+    "Hammer Curl": {
+      "url": "https://www.youtube.com/shorts/NBOvJuekEfo",
+      "source": "Renaissance Periodization",
+      "title": "Do These Curls Actually Grow Your Biceps?"
+    },
     "Preacher Curl": {
       "url": null,
       "source": "TBD",
-      "_note": "No RP or Nippard technique Short found. RP has regular videos (pre-Shorts era)."
+      "_note": "No RP or Nippard technique Short found."
     },
     "Barbell Back Squat": {
       "url": "https://www.youtube.com/shorts/PPmvh7gBTi0",
       "source": "Jeff Nippard",
       "title": "Do You Have A Perfect Squat? (Find Out)"
     },
+    "Smith Machine Squat": {
+      "url": "https://www.youtube.com/shorts/-eO_VydErV0",
+      "source": "Renaissance Periodization",
+      "title": "Feet Forward Smith Squat"
+    },
     "Goblet Squat": {
       "url": null,
       "source": "TBD",
-      "_note": "No technique Short from RP or Nippard. RP has long-form 'Why Goblet Squats May Be Bad' but no Short."
+      "_note": "No technique Short from RP or Nippard."
     },
     "Romanian Deadlift (BB)": {
       "url": "https://www.youtube.com/shorts/d-hn_0sEpRQ",
@@ -108,10 +158,20 @@
       "source": "Renaissance Periodization",
       "title": "Dumbbell Shoulder Press Technique"
     },
+    "Barbell Overhead Press": {
+      "url": "https://www.youtube.com/shorts/G2qpTG1Eh40",
+      "source": "Renaissance Periodization",
+      "title": "Standing Barbell Shoulder Press"
+    },
     "Dumbbell Lateral Raise": {
       "url": "https://www.youtube.com/shorts/xjtuX6PtLUY",
       "source": "Renaissance Periodization",
       "title": "Do LATERAL RAISES like THIS!"
+    },
+    "Cable Lateral Raise": {
+      "url": "https://www.youtube.com/shorts/lq7eLC30b9w",
+      "source": "Renaissance Periodization",
+      "title": "Leaning Cable Lateral Raise"
     },
     "Standing Calf Raise": {
       "url": "https://www.youtube.com/shorts/x41IWlX4Rqo",
