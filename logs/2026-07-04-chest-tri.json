@@ -27,8 +27,8 @@
       {"set": 2, "weight_kg": 32, "reps": 7},
       {"set": 3, "weight_kg": 27, "reps": 13}
     ]},
-    {"num": 5, "name": "Overhead Dumbbell Extension", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 10.0, "skipped": false, "sets": []},
-    {"num": 6, "name": "Bench Dip (Weighted)", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": []}
+    {"num": 5, "name": "Overhead Dumbbell Extension", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 10.0, "skipped": true, "sets": null},
+    {"num": 6, "name": "Bench Dip", "target_sets": 2, "target_reps": "15", "target_weight_kg": 0.0, "skipped": false, "sets": []}
   ],
-  "notes": "Cycle 2 start. Pushdown (EZ Bar): 23×15 / 32×7 / 27×13 → calibrate to 27kg. Different cable stack from Cycle 1 rope pushdown (42.5kg)."
+  "notes": "Cycle 2 start. Overhead DB Extension removed from cycle per Josh. Bench Dip at bodyweight only."
 }
