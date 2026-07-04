@@ -781,13 +781,13 @@
       </div>
       <div class="card-cream metric-card">
         <div class="metric-icon">🎯</div>
-        <div class="metric-label">Bench 1RM</div>
+        <div class="metric-label">Incline Bench 1RM</div>
         <div class="metric-value coral" id="metric-bench">---</div>
         <div class="metric-sub" id="metric-bench-sub">kg · estimated</div>
       </div>
       <div class="card-cream metric-card">
         <div class="metric-icon">📐</div>
-        <div class="metric-label">Squat 1RM</div>
+        <div class="metric-label">Smith Squat 1RM</div>
         <div class="metric-value amber" id="metric-squat">---</div>
         <div class="metric-sub" id="metric-squat-sub">kg · estimated</div>
       </div>
@@ -808,7 +808,7 @@
         </div>
       </div>
       <div class="cycle-info">
-        <div class="title">Cycle 1</div>
+        <div class="title">Cycle 2</div>
         <div class="sub" id="cycle-sub">0 of 18 sessions</div>
         <div class="week-dots" id="week-dots">
           <span class="week-dot">W1</span><span class="week-dot">W2</span>
@@ -920,13 +920,13 @@
     <div class="section-label">Strength Telemetry</div>
 
     <div class="card-cream chart-card">
-      <div class="chart-title">Bench Press · Estimated 1RM (kg)</div>
-      <div class="chart-desc">Best barbell bench set per session → Epley formula (w × (1 + r/30))</div>
+      <div class="chart-title">Incline Bench Press · Estimated 1RM (kg)</div>
+      <div class="chart-desc">Best incline bench set per session → Epley formula (w × (1 + r/30))</div>
       <div class="chart-wrap"><canvas id="chart-bench"></canvas></div>
     </div>
     <div class="card-cream chart-card">
-      <div class="chart-title">Squat · Estimated 1RM (kg)</div>
-      <div class="chart-desc">Best squat set per session → Epley formula (w × (1 + r/30))</div>
+      <div class="chart-title">Smith Squat · Estimated 1RM (kg)</div>
+      <div class="chart-desc">Best Smith squat set per session → Epley formula (w × (1 + r/30))</div>
       <div class="chart-wrap"><canvas id="chart-squat"></canvas></div>
     </div>
     <div class="card-cream chart-card">
@@ -1354,8 +1354,8 @@ async function renderHub() {
   const exs = await loadProgram();
   const wks = countThisWeek();
   const total = countTotal();
-  const bench = await getBest1RM('Barbell Bench Press');
-  const squat = await getBest1RM('Barbell Back Squat');
+  const bench = await getBest1RM('Incline Barbell Bench Press');
+  const squat = await getBest1RM('Smith Machine Squat');
   const bw = await fetchBodyweight();
   const cw = Math.min(Math.floor(total/3)+1, 6);
 
@@ -1382,7 +1382,7 @@ async function renderHub() {
 
   document.getElementById('next-badge').textContent = `NEXT · ${SESSION_NAMES[currentSession]}`;
   document.getElementById('next-title').textContent = `${exs.length} exercises`;
-  document.getElementById('next-sub').textContent = `Cycle 1, Week ${cw} · ~${estDuration(exs)} min`;
+  document.getElementById('next-sub').textContent = `Cycle 2, Week ${cw} · ~${estDuration(exs)} min`;
   document.getElementById('next-tags').innerHTML = exs.map(e => `<span class="tag">${e.name}</span>`).join('');
 
   // Cycle protocols overview
@@ -1416,7 +1416,7 @@ async function renderHub() {
   else if (wks < 3) lines.push(`<span class="hl-teal">${wks}/3</span> sessions this week. ${3-wks} remaining.`);
   else lines.push('<span class="hl-teal">3/3</span> sessions. Target met.');
   lines.push(`Next: <span class="hl-coral">${SESSION_NAMES[currentSession]}</span> — ${exs.length} exercises.`);
-  if (bench) lines.push(`Bench 1RM: <span class="hl-coral">${bench} kg</span>.`);
+  if (bench) lines.push(`Incline Bench 1RM: <span class="hl-coral">${bench} kg</span>.`);
   lines.push(`System nominal. ${new Date().toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'short'})}.`);
   typeInsight(lines.join('<br>'));
 
