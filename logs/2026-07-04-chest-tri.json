@@ -24,10 +24,11 @@
     ]},
     {"num": 4, "name": "Tricep Pushdown (EZ Bar)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 42.5, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 23, "reps": 15},
-      {"set": 2, "weight_kg": 32, "reps": 7}
+      {"set": 2, "weight_kg": 32, "reps": 7},
+      {"set": 3, "weight_kg": 27, "reps": 13}
     ]},
     {"num": 5, "name": "Overhead Dumbbell Extension", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 10.0, "skipped": false, "sets": []},
     {"num": 6, "name": "Bench Dip (Weighted)", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": []}
   ],
-  "notes": "Cycle 2 start. Pushdown estimated at 42.5kg from Cycle 1 rope — EZ bar on different cable stack at 23kg. Calibrating from actuals."
+  "notes": "Cycle 2 start. Pushdown (EZ Bar): 23×15 / 32×7 / 27×13 → calibrate to 27kg. Different cable stack from Cycle 1 rope pushdown (42.5kg)."
 }
