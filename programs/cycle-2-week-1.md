@@ -13,12 +13,12 @@ next_session: chest-tri
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Incline Barbell Bench Press | 3 | TBD | 8–10 |
-| 2 | Flat Dumbbell Press | 3 | TBD | 10–12 |
-| 3 | Cable Flye (High-to-Low) | 3 | TBD | 12–15 |
-| 4 | Tricep Pushdown (Straight Bar) | 3 | TBD | 12–15 |
-| 5 | Overhead Dumbbell Extension | 3 | TBD | 10–12 |
-| 6 | Bench Dip (Weighted) | 2 | TBD | 12–15 |
+| 1 | Incline Barbell Bench Press | 3 | 50.0kg | 8–10 |
+| 2 | Flat Dumbbell Press | 3 | 24.0kg | 10–12 |
+| 3 | Cable Flye (High-to-Low) | 3 | 14.0kg | 12–15 |
+| 4 | Tricep Pushdown (Straight Bar) | 3 | 42.5kg | 12–15 |
+| 5 | Overhead Dumbbell Extension | 3 | 10.0kg | 10–12 |
+| 6 | Bench Dip (Weighted) | 2 | 10.0kg | 12–15 |
 
 ---
 
@@ -26,12 +26,12 @@ next_session: chest-tri
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Pull-Up | 3 | TBD | 8–12 |
-| 2 | Dumbbell Row (Single Arm) | 3 | TBD | 8–12 |
-| 3 | Lat Pulldown (Close Grip) | 3 | TBD | 10–12 |
-| 4 | Cable Rear Delt Flye | 3 | TBD | 12–15 |
-| 5 | Barbell Curl | 3 | TBD | 10–12 |
-| 6 | Hammer Curl | 2 | TBD | 12–15 |
+| 1 | Pull-Up | 3 | BW | 8–12 |
+| 2 | Dumbbell Row (Single Arm) | 3 | 24.0kg | 8–12 |
+| 3 | Lat Pulldown (Close Grip) | 3 | 41.0kg | 10–12 |
+| 4 | Cable Rear Delt Flye | 3 | 10.0kg | 12–15 |
+| 5 | Barbell Curl | 3 | 20.0kg | 10–12 |
+| 6 | Hammer Curl | 2 | 10.0kg | 12–15 |
 
 ---
 
@@ -39,36 +39,39 @@ next_session: chest-tri
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Smith Machine Squat | 3 | TBD | 8–10 |
-| 2 | Romanian Deadlift (BB) | 3 | TBD | 8–12 |
-| 3 | Leg Extension (Single Leg) | 3 | TBD | 12–15 |
-| 4 | Leg Curl | 3 | TBD | 12–15 |
-| 5 | Barbell Overhead Press | 3 | TBD | 8–12 |
-| 6 | Cable Lateral Raise | 3 | TBD | 12–15 |
-| 7 | Seated Calf Raise | 3 | TBD | 15–20 |
+| 1 | Smith Machine Squat | 3 | 60.0kg | 8–10 |
+| 2 | Romanian Deadlift (BB) | 3 | 50.0kg | 8–12 |
+| 3 | Leg Extension (Single Leg) | 3 | 30.0kg | 12–15 |
+| 4 | Leg Curl | 3 | 15.0kg | 12–15 |
+| 5 | Barbell Overhead Press | 3 | 35.0kg | 8–12 |
+| 6 | Cable Lateral Raise | 3 | 5.0kg | 12–15 |
+| 7 | Seated Calf Raise | 3 | 40.0kg | 15–20 |
 
 ---
 
-## Exercise Changes from Cycle 1
+## How These Were Estimated
 
-| Cycle 1 | → | Cycle 2 | Rationale |
+| Cycle 2 Exercise | Est. Weight | Based On | Logic |
 |---|---|---|---|
-| Barbell Bench Press | → | Incline Barbell Bench | Upper chest emphasis, fresh angle |
-| Incline Dumbbell Press | → | Flat Dumbbell Press | Mid-chest hypertrophy, deeper stretch |
-| Cable Flye (Low-to-High) | → | Cable Flye (High-to-Low) | Lower pec emphasis |
-| Tricep Pushdown (Rope) | → | Tricep Pushdown (Straight Bar) | Different grip stimulus |
-| Overhead Cable Extension | → | Overhead Dumbbell Extension | Free weight stability, long head |
-| Close-Grip Bench Press | → | Bench Dip (Weighted) | Compound tricep finisher, different plane |
-| Lat Pulldown (Wide) | → | Pull-Up | Fresh vertical pull, BW → weighted |
-| Barbell Row | → | Dumbbell Row (Single Arm) | Unilateral, more ROM |
-| Seated Cable Row (Close) | → | Lat Pulldown (Close Grip) | Vertical instead of horizontal pull |
-| Face Pull | → | Cable Rear Delt Flye | Isolated rear delt, different angle |
-| Cable Barbell Curl | → | Barbell Curl | Free weight, bicep peak |
-| Preacher Curl | → | Hammer Curl | Brachialis + brachioradialis |
-| Barbell Back Squat | → | Smith Machine Squat | Different stability demand, quad focus |
-| Dumbbell Shoulder Press | → | Barbell Overhead Press | Bilateral, heavier loading |
-| Dumbbell Lateral Raise | → | Cable Lateral Raise | Constant tension |
-| Standing Calf Raise | → | Seated Calf Raise | Soleus emphasis |
+| Incline Barbell Bench | 50kg | Flat Bench 60kg | ~85% of flat, typical incline deficit |
+| Flat Dumbbell Press | 24kg | Incline DB 26kg | Flat slightly easier, being conservative |
+| Cable Flye (High-to-Low) | 14kg | Low-to-High 14kg | Same loading, different angle |
+| Tricep Pushdown (Straight Bar) | 42.5kg | Rope Pushdown 42.5kg | Straight bar slightly heavier, same stack |
+| Overhead DB Extension | 10kg | O/H Cable Ext 27kg | Free weight, single DB — very different loading |
+| Bench Dip (Weighted) | 10kg | CGBP 17.5kg | New movement, plate on lap — start light |
+| Pull-Up | BW (~84kg) | Lat Pulldown 41–45kg | Bodyweight vs cable, may need assistance |
+| DB Row (Single Arm) | 24kg | BB Row 35kg | ~70% of bilateral barbell weight per arm |
+| Lat Pulldown (Close Grip) | 41kg | Wide Pulldown 41kg | Close grip similar to wide |
+| Cable Rear Delt Flye | 10kg/side | Face Pull 32–36kg | Isolation, much lighter than face pull |
+| Barbell Curl | 20kg | Cable Curl 27kg | Free weight harder, ~75% of cable — watch wrist |
+| Hammer Curl | 10kg/side | New movement | No direct C1 data — start conservative |
+| Smith Machine Squat | 60kg | BB Squat 70kg | ~85% of free squat — verify bar counterbalance |
+| Romanian Deadlift (BB) | 50kg | RDL 50kg | Same exercise |
+| Leg Extension (Single Leg) | 30kg | Same exercise | Same exercise |
+| Leg Curl | 15kg | Same exercise | Same exercise |
+| Barbell OHP | 35kg | DB Press 22kg/side | ~80% of total DB load (44kg) |
+| Cable Lateral Raise | 5kg/side | DB Lateral Raise 10kg | Constant tension = lighter, ~50% of DB |
+| Seated Calf Raise | 40kg | Standing Calf 26kg SL | Both legs seated vs single leg standing |
 
 ---
 
@@ -84,4 +87,4 @@ next_session: chest-tri
 
 ## Calibration
 
-All weights `TBD` — first session of each exercise calibrates from actuals. Expect most to land 10–15% below their Cycle 1 equivalents due to new movement patterns.
+All weights are estimates from Cycle 1 data. Treat these as starting points — the first session of each exercise calibrates from actuals. Expect some to land ±5–10% after your first pass.
