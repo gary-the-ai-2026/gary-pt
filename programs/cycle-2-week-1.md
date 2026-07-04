@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-07-04
 status: active
-next_session: chest-tri
+next_session: back-bi
 ---
 
 # Cycle 2 — Week 1
@@ -13,11 +13,11 @@ next_session: chest-tri
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Incline Barbell Bench Press | 3 | 50.0kg | 8–10 |
+| 1 | Incline Barbell Bench Press | 3 | 52.5kg | 8–10 |
 | 2 | Flat Dumbbell Press | 3 | 24.0kg | 10–12 |
-| 3 | Cable Flye (High-to-Low) | 3 | 14.0kg | 12–15 |
-| 4 | Tricep Pushdown (EZ Bar) | 3 | 42.5kg | 12–15 |
-| 5 | Bench Dip | 2 | BW | 15 |
+| 3 | Cable Flye (High-to-Low) | 3 | 16.5kg | 12–15 |
+| 4 | Tricep Pushdown (EZ Bar) | 3 | 27.0kg | 12–15 |
+| 5 | Bench Dip | 2 | 2.5kg | 15 |
 
 ---
 
