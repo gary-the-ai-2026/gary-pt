@@ -993,7 +993,7 @@ function parseMDTable(md) {
   return tables;
 }
 function estimate1RM(w, r) {
-  if (!w || !r || r <= 0) return null;
+  if (!w || !r || r <= 0 || r >= 37) return null;
   return r === 1 ? w : Math.round(w * (36 / (37 - r)));
 }
 
