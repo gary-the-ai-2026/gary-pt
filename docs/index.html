@@ -1581,6 +1581,17 @@ async function renderSession() {
 async function renderProgress() {
   const completed = [...allLogs].filter(l => l._index && l._index.status === 'complete').sort((a,b) => a._index.date.localeCompare(b._index.date));
 
+  // Normalize exercise name variants into canonical names
+  const NAME_NORM = {
+    'DB Romanian Deadlift': 'Romanian Deadlift (BB)',
+    'DB Shoulder Press': 'Dumbbell Shoulder Press',
+    'DB Lateral Raise': 'Dumbbell Lateral Raise',
+    'DB Goblet Squat': 'KB/DB Goblet Squat',
+    'Leg Extension (Machine)': 'Leg Extension',
+    'Leg Extension (Single Leg)': 'Leg Extension',
+    'Leg Curl (Machine)': 'Leg Curl',
+  };
+
   // Group: exercise name → [{label, e1rm}, ...]
   const exerciseData = {};
   const volumePoints = [];
@@ -1608,7 +1619,7 @@ async function renderProgress() {
         const e1rm = estimate1RM(best.weight_kg, best.reps);
         if (!e1rm) continue;
 
-        const name = ex.name;
+        const name = NAME_NORM[ex.name] || ex.name;
         if (!exerciseData[name]) exerciseData[name] = [];
         exerciseData[name].push({ label, e1rm: Math.round(e1rm) });
       }
