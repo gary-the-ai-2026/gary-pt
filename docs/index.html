@@ -646,6 +646,11 @@
   }
 
   /* ═══════════════ PROGRESS ═══════════════ */
+  .progress-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
   .chart-card {
     margin-bottom: var(--space-sm);
   }
@@ -659,7 +664,17 @@
     color: var(--muted); opacity: 0.6;
     margin-bottom: 12px; line-height: 1.4;
   }
+  .chart-card-sm { margin-bottom: 0; }
+  .chart-card-sm .chart-title { font-size: 10px; }
+  .chart-card-sm .chart-desc { font-size: 8px; margin-bottom: 8px; }
   .chart-wrap { height: 200px; }
+  .chart-wrap-sm { height: 140px; }
+  .single-point {
+    display: flex; align-items: baseline; justify-content: center; gap: 4px;
+    font-family: var(--font-mono); font-size: 28px; font-weight: 600;
+    color: var(--coral); height: 100%;
+  }
+  .single-point span { font-size: 14px; font-weight: 400; opacity: 0.6; }
   canvas { width: 100% !important; }
 
   /* ═══════════════ STATUS BAR — DARK ═══════════════ */
@@ -918,17 +933,7 @@
   <!-- ═══════════ PROGRESS VIEW ═══════════ -->
   <div class="view" id="view-progress">
     <div class="section-label">Strength Telemetry</div>
-
-    <div class="card-cream chart-card">
-      <div class="chart-title">Incline Bench Press · Estimated 1RM (kg)</div>
-      <div class="chart-desc">Best incline bench set per session → Epley formula (w × (1 + r/30))</div>
-      <div class="chart-wrap"><canvas id="chart-bench"></canvas></div>
-    </div>
-    <div class="card-cream chart-card">
-      <div class="chart-title">Smith Squat · Estimated 1RM (kg)</div>
-      <div class="chart-desc">Best Smith squat set per session → Epley formula (w × (1 + r/30))</div>
-      <div class="chart-wrap"><canvas id="chart-squat"></canvas></div>
-    </div>
+    <div class="progress-grid" id="progress-grid"></div>
     <div class="card-cream chart-card">
       <div class="chart-title">Session Volume (kg)</div>
       <div class="chart-desc">Sum of weight × reps across all exercises · thousands of kg</div>
@@ -1574,12 +1579,11 @@ async function renderSession() {
 // ═══════════════════════════════════════════════════
 
 async function renderProgress() {
-  // Build per-session data from actual logs, sorted by date
-  const benchPoints = [];   // [{label, e1rm}]
-  const squatPoints = [];   // [{label, e1rm}]
-  const volumePoints = [];  // [{label, volume}]
-
   const completed = [...allLogs].filter(l => l._index && l._index.status === 'complete').sort((a,b) => a._index.date.localeCompare(b._index.date));
+
+  // Group: exercise name → [{label, e1rm}, ...]
+  const exerciseData = {};
+  const volumePoints = [];
 
   for (const log of completed) {
     try {
@@ -1596,54 +1600,128 @@ async function renderProgress() {
           sessionVolume += (s.weight_kg || 0) * (s.reps || 0);
         }
 
-        const isBench = ex.name.toLowerCase().includes('bench press') && !ex.name.toLowerCase().includes('dumbbell');
-        const isSquat = ex.name.toLowerCase().includes('squat');
-        if (!isBench && !isSquat) continue;
+        // Skip exercises with no weight data (bodyweight only)
+        const hasWeight = ex.sets.some(s => s.weight_kg !== null && s.weight_kg !== undefined && s.weight_kg > 0);
+        if (!hasWeight) continue;
 
-        const best = ex.sets.reduce((a, s) => s.reps > a.reps ? s : a, ex.sets[0]);
+        const best = ex.sets.reduce((a, s) => (s.weight_kg || 0) * (s.reps || 0) > (a.weight_kg || 0) * (a.reps || 0) ? s : a, ex.sets[0]);
         const e1rm = estimate1RM(best.weight_kg, best.reps);
         if (!e1rm) continue;
 
-        if (isBench) benchPoints.push({ label, e1rm: Math.round(e1rm) });
-        if (isSquat) squatPoints.push({ label, e1rm: Math.round(e1rm) });
+        const name = ex.name;
+        if (!exerciseData[name]) exerciseData[name] = [];
+        exerciseData[name].push({ label, e1rm: Math.round(e1rm) });
       }
 
       if (sessionVolume > 0) volumePoints.push({ label, volume: Math.round(sessionVolume / 1000) });
     } catch(e) {}
   }
 
-  const configs = [
-    { id: 'chart-bench', points: benchPoints, color: '#cc785c' },
-    { id: 'chart-squat', points: squatPoints, color: '#e8a55a' },
-    { id: 'chart-volume', points: volumePoints, color: '#5db8a6' },
-  ];
+  // Sort exercises by most recent e1rm (descending), then alphabetically
+  const names = Object.keys(exerciseData).sort((a,b) => {
+    const aLast = exerciseData[a][exerciseData[a].length-1];
+    const bLast = exerciseData[b][exerciseData[b].length-1];
+    if (aLast && bLast) return bLast.e1rm - aLast.e1rm;
+    return a.localeCompare(b);
+  });
 
-  for (const cfg of configs) {
-    const ctx = document.getElementById(cfg.id);
-    if (!ctx) continue;
-    if (charts[cfg.id]) charts[cfg.id].destroy();
+  // Color palette for exercise charts (4 rotating warm tones)
+  const palette = ['#cc785c', '#5db8a6', '#e8a55a', '#8e8b82'];
+  const grid = document.getElementById('progress-grid');
+  let html = '';
 
-    const valKey = cfg.id === 'chart-volume' ? 'volume' : 'e1rm';
-    const labels = cfg.points.map(p => p.label);
-    const values = cfg.points.map(p => p[valKey]);
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i];
+    const points = exerciseData[name];
+    const color = palette[i % palette.length];
 
-    if (!labels.length) continue;
+    if (points.length < 2) {
+      html += `<div class="card-cream chart-card chart-card-sm">
+        <div class="chart-title">${name}</div>
+        <div class="chart-desc">Est. 1RM · 1 session only</div>
+        <div class="chart-wrap-sm"><div class="single-point">${points[0].e1rm}<span>kg</span></div></div>
+      </div>`;
+    } else {
+      html += `<div class="card-cream chart-card chart-card-sm">
+        <div class="chart-title">${name}</div>
+        <div class="chart-desc">Est. 1RM · ${points.length} sessions · last: ${points[points.length-1].e1rm}kg</div>
+        <div class="chart-wrap-sm"><canvas id="chart-ex-${i}"></canvas></div>
+      </div>`;
+    }
+  }
+  grid.innerHTML = html;
 
-    const g = ctx.getContext('2d').createLinearGradient(0,0,0,200);
-    g.addColorStop(0, cfg.color + '20');
-    g.addColorStop(1, cfg.color + '00');
+  // Render charts for multi-session exercises
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i];
+    const points = exerciseData[name];
+    if (points.length < 2) continue;
 
-    charts[cfg.id] = new Chart(ctx, {
+    const canvas = document.getElementById(`chart-ex-${i}`);
+    if (!canvas) continue;
+    const color = palette[i % palette.length];
+
+    if (charts[`chart-ex-${i}`]) charts[`chart-ex-${i}`].destroy();
+
+    const labels = points.map(p => p.label);
+    const values = points.map(p => p.e1rm);
+
+    const ctx = canvas.getContext('2d');
+    const g = ctx.createLinearGradient(0,0,0,140);
+    g.addColorStop(0, color + '20');
+    g.addColorStop(1, color + '00');
+
+    charts[`chart-ex-${i}`] = new Chart(ctx, {
       type: 'line',
       data: {
         labels,
         datasets: [{
           data: values,
-          borderColor: cfg.color,
+          borderColor: color,
+          backgroundColor: g,
+          borderWidth: 1.5,
+          pointRadius: 3,
+          pointBackgroundColor: color,
+          pointBorderColor: '#faf9f5',
+          pointBorderWidth: 1.5,
+          pointHoverRadius: 5,
+          tension: 0.4,
+          fill: true,
+          spanGaps: false,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { color: '#e6dfd8' }, ticks: { color: '#8e8b82', font: { size: 8, family: 'JetBrains Mono' }, maxTicksLimit: 6, maxRotation: 0 }, border: { display: false } },
+          y: { grid: { color: '#e6dfd8' }, ticks: { color: '#8e8b82', font: { size: 8, family: 'JetBrains Mono' }, maxTicksLimit: 4 }, border: { display: false }, beginAtZero: false },
+        },
+        interaction: { intersect: false, mode: 'index' }
+      }
+    });
+  }
+
+  // Volume chart
+  const volCanvas = document.getElementById('chart-volume');
+  if (volCanvas && volumePoints.length) {
+    if (charts['chart-volume']) charts['chart-volume'].destroy();
+    const ctx = volCanvas.getContext('2d');
+    const g = ctx.createLinearGradient(0,0,0,200);
+    g.addColorStop(0, '#5db8a620');
+    g.addColorStop(1, '#5db8a600');
+
+    charts['chart-volume'] = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: volumePoints.map(p => p.label),
+        datasets: [{
+          data: volumePoints.map(p => p.volume),
+          borderColor: '#5db8a6',
           backgroundColor: g,
           borderWidth: 2,
           pointRadius: 4,
-          pointBackgroundColor: cfg.color,
+          pointBackgroundColor: '#5db8a6',
           pointBorderColor: '#faf9f5',
           pointBorderWidth: 2,
           pointHoverRadius: 7,
