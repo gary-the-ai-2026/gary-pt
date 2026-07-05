@@ -1579,7 +1579,7 @@ async function renderSession() {
 // ═══════════════════════════════════════════════════
 
 async function renderProgress() {
-  const completed = [...allLogs].filter(l => l._index && l._index.status === 'complete').sort((a,b) => a._index.date.localeCompare(b._index.date));
+  const completed = [...allLogs].filter(l => l._index && l._index.status === 'complete' && !l._index.ad_hoc).sort((a,b) => a._index.date.localeCompare(b._index.date));
 
   // Normalize exercise name variants into canonical names
   const NAME_NORM = {
