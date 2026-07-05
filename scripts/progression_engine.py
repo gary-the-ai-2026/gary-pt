@@ -244,6 +244,7 @@ def rebuild_log_index():
                 "date": data.get("date", ""),
                 "type": data.get("type", ""),
                 "status": data.get("status", "complete"),
+                "cycle": data.get("cycle", 1),
                 "duration_min": data.get("duration_min", 0),
                 "ad_hoc": data.get("ad_hoc", False),
                 "resumed_from": data.get("resumed_from", None),

@@ -957,6 +957,7 @@ const SESSION_NAMES = {
   'back-bi': 'Back / Biceps',
   'legs-shoulders': 'Legs / Shoulders',
 };
+const CURRENT_CYCLE = 2;
 const TOTAL_CYCLE = 18;
 
 let currentSession = null;
@@ -1298,7 +1299,7 @@ function countThisWeek() {
   const ws = new Date(); ws.setDate(ws.getDate() - ((ws.getDay() + 6) % 7)); ws.setHours(0,0,0,0);
   return allLogs.filter(l => new Date(l.name.substring(0,10)) >= ws).length;
 }
-function countTotal() { return allLogs.length; }
+function countTotal() { return allLogs.filter(l => l._index && l._index.cycle === CURRENT_CYCLE).length; }
 function estDuration(exs) {
   let t = 0;
   for (const e of exs) { const s = parseInt(e.sets)||3, r = parseInt(e.rest)||60; t += s*2 + r*(s-1)/60; }
