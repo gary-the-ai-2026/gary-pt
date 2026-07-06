@@ -3,13 +3,13 @@
     "name": "2026-07-06-back-bi.json",
     "date": "2026-07-06",
     "type": "back-bi",
-    "status": "in_progress",
+    "status": "complete",
     "cycle": 2,
-    "duration_min": 0,
+    "duration_min": null,
     "ad_hoc": false,
     "resumed_from": null,
     "exercise_count": 6,
-    "skipped_count": 0
+    "skipped_count": 1
   },
   {
     "name": "2026-07-04-chest-tri.json",
