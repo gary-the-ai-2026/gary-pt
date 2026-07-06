@@ -2,8 +2,10 @@
   "session_id": "2026-07-06-back-bi",
   "date": "2026-07-06",
   "type": "back-bi",
-  "status": "in_progress",
+  "status": "complete",
   "started": "",
+  "finished": "",
+  "duration_min": null,
   "cycle": 2,
   "week": 1,
   "exercises": [
@@ -11,8 +13,8 @@
     {"num": 2, "name": "Dumbbell Row (Single Arm)", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 24.0, "skipped": false, "sets": [{"set": 1, "weight_kg": 24, "reps": 10}, {"set": 2, "weight_kg": 24, "reps": 12}, {"set": 3, "weight_kg": 24, "reps": 10}]},
     {"num": 3, "name": "Lat Pulldown (Close Grip)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 41.0, "skipped": false, "sets": [{"set": 1, "weight_kg": 41, "reps": 12}, {"set": 2, "weight_kg": 41, "reps": 12}, {"set": 3, "weight_kg": 41, "reps": 12}]},
     {"num": 4, "name": "Cable Rear Delt Flye", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": [{"set": 1, "weight_kg": 9, "reps": 15}, {"set": 2, "weight_kg": 9, "reps": 15}, {"set": 3, "weight_kg": 9, "reps": 15}]},
-    {"num": 5, "name": "Cable Barbell Curl (EZ Bar)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": null, "skipped": false, "sets": [{"set": 1, "weight_kg": 27, "reps": 10}, {"set": 2, "weight_kg": 27, "reps": 10}], "substitution_for": "Barbell Curl"},
-    {"num": 6, "name": "Hammer Curl", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": []}
+    {"num": 5, "name": "Cable Barbell Curl (EZ Bar)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": null, "skipped": false, "sets": [{"set": 1, "weight_kg": 27, "reps": 10}, {"set": 2, "weight_kg": 27, "reps": 10}, {"set": 3, "weight_kg": 27, "reps": 10}], "substitution_for": "Barbell Curl"},
+    {"num": 6, "name": "Hammer Curl", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": true, "sets": null}
   ],
-  "notes": "First Cycle 2 back-bi. Subbed Barbell Curl → Cable Barbell Curl (EZ Bar) due to wrist pain."
+  "notes": "First Cycle 2 back-bi. Subbed Barbell Curl → Cable Barbell Curl (EZ Bar) due to wrist pain. Skipped Hammer Curl. Back work very strong — Pull-Ups 10/7/5, DB Row 24×10/12/10, Pulldown 41×12/12/12."
 }
