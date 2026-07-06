@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-07-04
 status: active
-next_session: back-bi
+next_session: chest-tri
 ---
 
 # Cycle 2 — Week 1
@@ -27,9 +27,9 @@ next_session: back-bi
 |---|---|---|---|---|
 | 1 | Pull-Up | 3 | BW | 8–12 |
 | 2 | Dumbbell Row (Single Arm) | 3 | 24.0kg | 8–12 |
-| 3 | Lat Pulldown (Close Grip) | 3 | 41.0kg | 10–12 |
-| 4 | Cable Rear Delt Flye | 3 | 10.0kg | 12–15 |
-| 5 | Barbell Curl | 3 | 20.0kg | 10–12 |
+| 3 | Lat Pulldown (Close Grip) | 3 | 43.5kg | 10–12 |
+| 4 | Cable Rear Delt Flye | 3 | 11.5kg | 12–15 |
+| 5 | Cable Barbell Curl (EZ Bar) | 3 | 27.0kg | 10–12 |
 | 6 | Hammer Curl | 2 | 10.0kg | 12–15 |
 
 ---
@@ -61,7 +61,7 @@ next_session: back-bi
 | DB Row (Single Arm) | 24kg | BB Row 35kg | ~70% of bilateral barbell weight per arm |
 | Lat Pulldown (Close Grip) | 41kg | Wide Pulldown 41kg | Close grip similar to wide |
 | Cable Rear Delt Flye | 10kg/side | Face Pull 32–36kg | Isolation, much lighter than face pull |
-| Barbell Curl | 20kg | Cable Curl 27kg | Free weight harder, ~75% of cable — watch wrist |
+| Cable Barbell Curl (EZ Bar) | 27kg | Cable Curl 27kg | Same exercise — EZ bar for wrist comfort |
 | Hammer Curl | 10kg/side | New movement | No direct C1 data — start conservative |
 | Smith Machine Squat | 60kg | BB Squat 70kg | ~85% of free squat — verify bar counterbalance |
 | Romanian Deadlift (BB) | 50kg | RDL 50kg | Same exercise |
