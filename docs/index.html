@@ -1733,6 +1733,13 @@ async function renderProgress() {
     'Leg Extension (Machine)': 'Leg Extension',
     'Leg Extension (Single Leg)': 'Leg Extension',
     'Leg Curl (Machine)': 'Leg Curl',
+    'Cable Flye (Low-to-High)': 'Cable Fly (Low-to-High)',
+    'Cable Barbell Curl': 'Cable Barbell Curl (EZ Bar)',
+    'Lat Pulldown (Wide)': 'Lat Pulldown',
+    'Seated Cable Row (Close)': 'Seated Cable Row',
+    'Standing Calf Raise (Single Leg)': 'Standing Calf Raise',
+    'DB Standing Calf Raise': 'Standing Calf Raise',
+    'Calf Press (on Leg Press)': 'Calf Press',
   };
 
   // Group: exercise name → [{label, e1rm}, ...]
@@ -1784,6 +1791,10 @@ async function renderProgress() {
     'Bench Dip': 'Chest / Triceps',
     'Pec Deck': 'Chest / Triceps',
     'Close-Grip Bench Press': 'Chest / Triceps',
+    'Incline Dumbbell Press': 'Chest / Triceps',
+    'Smith Machine Bench Press': 'Chest / Triceps',
+    'Overhead Cable Extension': 'Chest / Triceps',
+    'Overhead Dumbbell Extension': 'Chest / Triceps',
     'Pull-Up': 'Back / Biceps',
     'Dumbbell Row (Single Arm)': 'Back / Biceps',
     'Lat Pulldown (Close Grip)': 'Back / Biceps',
@@ -1797,6 +1808,9 @@ async function renderProgress() {
     'Cable Curl': 'Back / Biceps',
     'Face Pull': 'Back / Biceps',
     'Barbell Row': 'Back / Biceps',
+    'Barbell Curl': 'Back / Biceps',
+    'Renegade Row': 'Back / Biceps',
+    'Preacher Curl': 'Back / Biceps',
     'Smith Machine Squat': 'Legs / Shoulders',
     'Romanian Deadlift (BB)': 'Legs / Shoulders',
     'Leg Extension (Single Leg)': 'Legs / Shoulders',
@@ -1809,8 +1823,10 @@ async function renderProgress() {
     'Dumbbell Lateral Raise': 'Legs / Shoulders',
     'KB/DB Goblet Squat': 'Legs / Shoulders',
     'Standing Calf Raise': 'Legs / Shoulders',
+    'Leg Press': 'Legs / Shoulders',
+    'Calf Press': 'Legs / Shoulders',
   };
-  const GROUP_ORDER = ['Chest / Triceps', 'Back / Biceps', 'Legs / Shoulders'];
+  const GROUP_ORDER = ['Chest / Triceps', 'Back / Biceps', 'Legs / Shoulders', 'Other'];
 
   // Group exercises
   const groups = {};
