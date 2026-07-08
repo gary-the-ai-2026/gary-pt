@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-07-04
 status: active
-next_session: legs-shoulders
+next_session: chest-tri
 ---
 
 # Cycle 2 — Week 1
@@ -38,11 +38,11 @@ next_session: legs-shoulders
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Smith Machine Squat | 3 | 75.0kg | 8–10 |
+| 1 | Smith Machine Squat | 3 | 80.0kg | 8–10 |
 | 2 | Romanian Deadlift (BB) | 3 | 70.0kg | 8–12 |
 | 3 | Leg Extension (Single Leg) | 3 | 30.0kg | 12–15 |
-| 4 | Leg Curl | 3 | 15.0kg | 12–15 |
-| 5 | Barbell Overhead Press | 3 | 35.0kg | 8–12 |
+| 4 | Leg Curl | 3 | 14.2kg | 12–15 |
+| 5 | Barbell Overhead Press | 3 | 33.2kg | 8–12 |
 | 6 | Cable Lateral Raise | 3 | 5.0kg | 12–15 |
 | 7 | Seated Calf Raise | 3 | 40.0kg | 15–20 |
 

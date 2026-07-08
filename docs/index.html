@@ -1205,7 +1205,7 @@ async function determineNextSession() {
       download_url: `${REPO_RAW}/logs/${e.name}`,
       _index: e
     }));
-    if (!allLogs.length) return 'legs-shoulders';
+    if (!allLogs.length) return 'chest-tri';
 
     // Check if most recent log is still in progress — if so, that's the current session
     try {
@@ -1220,7 +1220,7 @@ async function determineNextSession() {
     const lastType = parts.slice(3).join('-');
     const idx = SESSION_ROTATION.indexOf(lastType);
     return idx >= 0 ? SESSION_ROTATION[(idx + 1) % 3] : 'back-bi';
-  } catch (e) { return 'legs-shoulders'; }
+  } catch (e) { return 'chest-tri'; }
 }
 
 async function loadProgram() {

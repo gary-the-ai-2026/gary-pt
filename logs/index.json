@@ -1,254 +1,191 @@
 [
   {
-    "name": "2026-07-08-legs-shoulders.json",
-    "date": "2026-07-08",
-    "type": "legs-shoulders",
-    "status": "complete",
-    "cycle": 2,
-    "duration_min": 67,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 7,
-    "skipped_count": 2
-  },
-  {
-    "name": "2026-07-06-back-bi.json",
-    "date": "2026-07-06",
+    "name": "2026-05-28-back-bi.json",
+    "date": "2026-05-28",
     "type": "back-bi",
     "status": "complete",
-    "cycle": 2,
-    "duration_min": null,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 1
-  },
-  {
-    "name": "2026-07-04-chest-tri.json",
-    "date": "2026-07-04",
-    "type": "chest-tri",
-    "status": "complete",
-    "cycle": 2,
-    "duration_min": 61,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 1
-  },
-  {
-    "name": "2026-07-03-legs-shoulders.json",
-    "date": "2026-07-03",
-    "type": "legs-shoulders",
-    "status": "complete",
+    "duration_min": 48,
     "cycle": 1,
-    "duration_min": 57,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 7,
-    "skipped_count": 1
-  },
-  {
-    "name": "2026-07-01-back-bi.json",
-    "date": "2026-07-01",
-    "type": "back-bi",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 41,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 1
-  },
-  {
-    "name": "2026-06-29-chest-tri.json",
-    "date": "2026-06-29",
-    "type": "chest-tri",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 39,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 3
-  },
-  {
-    "name": "2026-06-28-legs-shoulders.json",
-    "date": "2026-06-28",
-    "type": "legs-shoulders",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 51,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 7,
-    "skipped_count": 3
-  },
-  {
-    "name": "2026-06-25-back-bi.json",
-    "date": "2026-06-25",
-    "type": "back-bi",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 40,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 1
-  },
-  {
-    "name": "2026-06-23-chest-tri.json",
-    "date": "2026-06-23",
-    "type": "chest-tri",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 35,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 3
-  },
-  {
-    "name": "2026-06-22-legs-shoulders.json",
-    "date": "2026-06-22",
-    "type": "legs-shoulders",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 37,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 7,
-    "skipped_count": 1
-  },
-  {
-    "name": "2026-06-20-back-bi.json",
-    "date": "2026-06-20",
-    "type": "back-bi",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 44,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 1
-  },
-  {
-    "name": "2026-06-19-chest-tri.json",
-    "date": "2026-06-19",
-    "type": "chest-tri",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 55,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 1
-  },
-  {
-    "name": "2026-06-17-legs-shoulders.json",
-    "date": "2026-06-17",
-    "type": "legs-shoulders",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 67,
-    "ad_hoc": false,
-    "resumed_from": "2026-06-16",
-    "exercise_count": 5,
-    "skipped_count": 0
-  },
-  {
-    "name": "2026-06-16-legs-shoulders.json",
-    "date": "2026-06-16",
-    "type": "legs-shoulders",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 30,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 7,
-    "skipped_count": 5
-  },
-  {
-    "name": "2026-06-15-back-bi.json",
-    "date": "2026-06-15",
-    "type": "back-bi",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 36,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 3
-  },
-  {
-    "name": "2026-06-14-chest-tri.json",
-    "date": "2026-06-14",
-    "type": "chest-tri",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 70,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 0
-  },
-  {
-    "name": "2026-06-11-legs-shoulders.json",
-    "date": "2026-06-11",
-    "type": "legs-shoulders",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 56,
-    "ad_hoc": true,
-    "resumed_from": null,
-    "exercise_count": 7,
-    "skipped_count": 3
-  },
-  {
-    "name": "2026-06-10-back-bi.json",
-    "date": "2026-06-10",
-    "type": "back-bi",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 35,
-    "ad_hoc": true,
-    "resumed_from": null,
-    "exercise_count": 7,
-    "skipped_count": 3
-  },
-  {
-    "name": "2026-06-03-chest-tri.json",
-    "date": "2026-06-03",
-    "type": "chest-tri",
-    "status": "complete",
-    "cycle": 1,
-    "duration_min": 38,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 3
+    "ad_hoc": false
   },
   {
     "name": "2026-06-02-legs-shoulders.json",
     "date": "2026-06-02",
     "type": "legs-shoulders",
     "status": "complete",
-    "cycle": 1,
     "duration_min": 40,
-    "ad_hoc": true,
-    "resumed_from": null,
-    "exercise_count": 8,
-    "skipped_count": 4
+    "cycle": 1,
+    "ad_hoc": true
   },
   {
-    "name": "2026-05-28-back-bi.json",
-    "date": "2026-05-28",
+    "name": "2026-06-03-chest-tri.json",
+    "date": "2026-06-03",
+    "type": "chest-tri",
+    "status": "complete",
+    "duration_min": 38,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-10-back-bi.json",
+    "date": "2026-06-10",
     "type": "back-bi",
     "status": "complete",
+    "duration_min": 35,
     "cycle": 1,
-    "duration_min": 48,
-    "ad_hoc": false,
-    "resumed_from": null,
-    "exercise_count": 6,
-    "skipped_count": 2
+    "ad_hoc": true
+  },
+  {
+    "name": "2026-06-11-legs-shoulders.json",
+    "date": "2026-06-11",
+    "type": "legs-shoulders",
+    "status": "complete",
+    "duration_min": 56,
+    "cycle": 1,
+    "ad_hoc": true
+  },
+  {
+    "name": "2026-06-14-chest-tri.json",
+    "date": "2026-06-14",
+    "type": "chest-tri",
+    "status": "complete",
+    "duration_min": 70,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-15-back-bi.json",
+    "date": "2026-06-15",
+    "type": "back-bi",
+    "status": "complete",
+    "duration_min": 36,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-16-legs-shoulders.json",
+    "date": "2026-06-16",
+    "type": "legs-shoulders",
+    "status": "complete",
+    "duration_min": 30,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-17-legs-shoulders.json",
+    "date": "2026-06-17",
+    "type": "legs-shoulders",
+    "status": "complete",
+    "duration_min": 67,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-19-chest-tri.json",
+    "date": "2026-06-19",
+    "type": "chest-tri",
+    "status": "complete",
+    "duration_min": 55,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-20-back-bi.json",
+    "date": "2026-06-20",
+    "type": "back-bi",
+    "status": "complete",
+    "duration_min": 44,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-22-legs-shoulders.json",
+    "date": "2026-06-22",
+    "type": "legs-shoulders",
+    "status": "complete",
+    "duration_min": 37,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-23-chest-tri.json",
+    "date": "2026-06-23",
+    "type": "chest-tri",
+    "status": "complete",
+    "duration_min": 35,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-25-back-bi.json",
+    "date": "2026-06-25",
+    "type": "back-bi",
+    "status": "complete",
+    "duration_min": 40,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-28-legs-shoulders.json",
+    "date": "2026-06-28",
+    "type": "legs-shoulders",
+    "status": "complete",
+    "duration_min": 51,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-06-29-chest-tri.json",
+    "date": "2026-06-29",
+    "type": "chest-tri",
+    "status": "complete",
+    "duration_min": 39,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-07-01-back-bi.json",
+    "date": "2026-07-01",
+    "type": "back-bi",
+    "status": "complete",
+    "duration_min": 41,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-07-03-legs-shoulders.json",
+    "date": "2026-07-03",
+    "type": "legs-shoulders",
+    "status": "complete",
+    "duration_min": 57,
+    "cycle": 1,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-07-04-chest-tri.json",
+    "date": "2026-07-04",
+    "type": "chest-tri",
+    "status": "complete",
+    "duration_min": 61,
+    "cycle": 2,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-07-06-back-bi.json",
+    "date": "2026-07-06",
+    "type": "back-bi",
+    "status": "complete",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-07-08-legs-shoulders.json",
+    "date": "2026-07-08",
+    "type": "legs-shoulders",
+    "status": "complete",
+    "duration_min": 67,
+    "cycle": 2,
+    "ad_hoc": false
   }
 ]
