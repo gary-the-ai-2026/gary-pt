@@ -651,6 +651,32 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--space-sm);
   }
+  .accordion {
+    margin-bottom: var(--space-sm);
+  }
+  .accordion-header {
+    width: 100%; text-align: left; padding: 10px 14px;
+    background: var(--surface); border: 1px solid var(--hairline);
+    border-radius: var(--radius-sm); cursor: pointer;
+    font-family: var(--font-display); font-size: 16px;
+    color: var(--ink); display: flex; align-items: center; gap: 8px;
+    transition: background 0.15s;
+  }
+  .accordion-header:hover { background: var(--surface-alt); }
+  .accordion-header .accordion-icon {
+    font-size: 10px; transition: transform 0.2s;
+    color: var(--muted); display: inline-block;
+  }
+  .accordion-header.open .accordion-icon { transform: rotate(90deg); }
+  .accordion-header .accordion-count {
+    margin-left: auto; font-family: var(--font-body);
+    font-size: 11px; font-weight: 500; color: var(--muted);
+  }
+  .accordion-body { display: none; padding: var(--space-sm) 0 0 0; }
+  .accordion-body.open { display: block; }
+  .accordion-body .progress-grid {
+    margin-top: 0;
+  }
   .chart-card {
     margin-bottom: var(--space-sm);
   }
@@ -723,10 +749,13 @@
     .card-cream, .card-dark, .card-coral { padding: var(--space-md); border-radius: var(--radius-md); }
     .section-label { font-size: 11px; margin-bottom: var(--space-sm); }
     .chart-wrap { height: 160px; }
+    .chart-wrap-sm { height: 120px; }
+    .accordion-header { font-size: 14px; padding: 8px 12px; }
     .status-bar { height: 36px; font-size: 11px; padding: 0 var(--space-md); }
   }
 
   @media (max-width: 480px) {
+    .progress-grid { grid-template-columns: 1fr; }
     .header h1 { font-size: 24px; }
     .nav-group button { padding: 5px 10px; font-size: 11px; }
     .metric-card { padding: var(--space-sm); }
@@ -940,7 +969,7 @@
     </div>
 
     <div class="section-label">Strength Telemetry</div>
-    <div class="progress-grid" id="progress-grid"></div>
+    <div id="progress-accordions"></div>
     <div class="card-cream chart-card">
       <div class="chart-title">Session Volume (kg)</div>
       <div class="chart-desc">Sum of weight × reps across all exercises · thousands of kg</div>
@@ -1002,6 +1031,14 @@ function parseMDTable(md) {
 function estimate1RM(w, r) {
   if (!w || !r || r <= 0 || r >= 37) return null;
   return r === 1 ? w : Math.round(w * (36 / (37 - r)));
+}
+
+function toggleAccordion(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open');
+  btn.classList.toggle('open');
+  btn.setAttribute('aria-expanded', !isOpen);
 }
 
 let youtubeShorts = {};
@@ -1734,89 +1771,161 @@ async function renderProgress() {
     } catch(e) {}
   }
 
-  // Sort exercises by most recent e1rm (descending), then alphabetically
-  const names = Object.keys(exerciseData).sort((a,b) => {
-    const aLast = exerciseData[a][exerciseData[a].length-1];
-    const bLast = exerciseData[b][exerciseData[b].length-1];
-    if (aLast && bLast) return bLast.e1rm - aLast.e1rm;
-    return a.localeCompare(b);
-  });
+  // Muscle group mapping (canonical exercise name → group)
+  const EXERCISE_GROUP = {
+    'Incline Smith Machine Bench Press': 'Chest / Triceps',
+    'Flat Dumbbell Press': 'Chest / Triceps',
+    'Cable Flye (High-to-Low)': 'Chest / Triceps',
+    'Cable Fly (Low-to-High)': 'Chest / Triceps',
+    'Tricep Pushdown (EZ Bar)': 'Chest / Triceps',
+    'Tricep Pushdown (Rope)': 'Chest / Triceps',
+    'Triceps Pushdown (Straight Bar)': 'Chest / Triceps',
+    'Cable Overhead Triceps Extension': 'Chest / Triceps',
+    'Bench Dip': 'Chest / Triceps',
+    'Pec Deck': 'Chest / Triceps',
+    'Close-Grip Bench Press': 'Chest / Triceps',
+    'Pull-Up': 'Back / Biceps',
+    'Dumbbell Row (Single Arm)': 'Back / Biceps',
+    'Lat Pulldown (Close Grip)': 'Back / Biceps',
+    'Lat Pulldown': 'Back / Biceps',
+    'Cable Rear Delt Flye': 'Back / Biceps',
+    'Cable Barbell Curl (EZ Bar)': 'Back / Biceps',
+    'Hammer Curl': 'Back / Biceps',
+    'Seated Cable Row': 'Back / Biceps',
+    'Straight-Arm Pulldown': 'Back / Biceps',
+    'Dumbbell Curl': 'Back / Biceps',
+    'Cable Curl': 'Back / Biceps',
+    'Face Pull': 'Back / Biceps',
+    'Barbell Row': 'Back / Biceps',
+    'Smith Machine Squat': 'Legs / Shoulders',
+    'Romanian Deadlift (BB)': 'Legs / Shoulders',
+    'Leg Extension (Single Leg)': 'Legs / Shoulders',
+    'Leg Extension': 'Legs / Shoulders',
+    'Leg Curl': 'Legs / Shoulders',
+    'Barbell Overhead Press': 'Legs / Shoulders',
+    'Cable Lateral Raise': 'Legs / Shoulders',
+    'Seated Calf Raise': 'Legs / Shoulders',
+    'Dumbbell Shoulder Press': 'Legs / Shoulders',
+    'Dumbbell Lateral Raise': 'Legs / Shoulders',
+    'KB/DB Goblet Squat': 'Legs / Shoulders',
+    'Standing Calf Raise': 'Legs / Shoulders',
+  };
+  const GROUP_ORDER = ['Chest / Triceps', 'Back / Biceps', 'Legs / Shoulders'];
 
-  // Color palette for exercise charts (4 rotating warm tones)
-  const palette = ['#cc785c', '#5db8a6', '#e8a55a', '#8e8b82'];
-  const grid = document.getElementById('progress-grid');
-  let html = '';
-
-  for (let i = 0; i < names.length; i++) {
-    const name = names[i];
-    const points = exerciseData[name];
-    const color = palette[i % palette.length];
-
-    if (points.length < 2) {
-      html += `<div class="card-cream chart-card chart-card-sm">
-        <div class="chart-title">${name}</div>
-        <div class="chart-desc">Est. 1RM · 1 session only</div>
-        <div class="chart-wrap-sm"><div class="single-point">${points[0].e1rm}<span>kg</span></div></div>
-      </div>`;
-    } else {
-      html += `<div class="card-cream chart-card chart-card-sm">
-        <div class="chart-title">${name}</div>
-        <div class="chart-desc">Est. 1RM · ${points.length} sessions · last: ${points[points.length-1].e1rm}kg</div>
-        <div class="chart-wrap-sm"><canvas id="chart-ex-${i}"></canvas></div>
-      </div>`;
-    }
+  // Group exercises
+  const groups = {};
+  for (const name of Object.keys(exerciseData)) {
+    const g = EXERCISE_GROUP[name] || 'Other';
+    if (!groups[g]) groups[g] = [];
+    groups[g].push(name);
   }
-  grid.innerHTML = html;
+  // Sort exercises within each group by most recent e1rm
+  for (const g of Object.keys(groups)) {
+    groups[g].sort((a,b) => {
+      const aLast = exerciseData[a][exerciseData[a].length-1];
+      const bLast = exerciseData[b][exerciseData[b].length-1];
+      if (aLast && bLast) return bLast.e1rm - aLast.e1rm;
+      return a.localeCompare(b);
+    });
+  }
+
+  // Color palette for exercise charts
+  const palette = ['#cc785c', '#5db8a6', '#e8a55a', '#8e8b82'];
+  const container = document.getElementById('progress-accordions');
+  let html = '';
+  let chartIdx = 0;
+
+  for (const groupName of GROUP_ORDER) {
+    const exNames = groups[groupName];
+    if (!exNames || !exNames.length) continue;
+
+    html += `<div class="accordion">`;
+    html += `<button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">`;
+    html += `<span class="accordion-icon">▸</span>`;
+    html += `${groupName}`;
+    html += `<span class="accordion-count">${exNames.length} exercise${exNames.length>1?'s':''}</span>`;
+    html += `</button>`;
+    html += `<div class="accordion-body"><div class="progress-grid">`;
+
+    for (const name of exNames) {
+      const points = exerciseData[name];
+      const color = palette[chartIdx % palette.length];
+
+      if (points.length < 2) {
+        html += `<div class="card-cream chart-card chart-card-sm">`;
+        html += `<div class="chart-title">${name}</div>`;
+        html += `<div class="chart-desc">Est. 1RM · 1 session only</div>`;
+        html += `<div class="chart-wrap-sm"><div class="single-point">${points[0].e1rm}<span>kg</span></div></div>`;
+        html += `</div>`;
+      } else {
+        html += `<div class="card-cream chart-card chart-card-sm">`;
+        html += `<div class="chart-title">${name}</div>`;
+        html += `<div class="chart-desc">Est. 1RM · ${points.length} sessions · last: ${points[points.length-1].e1rm}kg</div>`;
+        html += `<div class="chart-wrap-sm"><canvas id="chart-ex-${chartIdx}"></canvas></div>`;
+        html += `</div>`;
+      }
+      chartIdx++;
+    }
+
+    html += `</div></div></div>`;
+  }
+  container.innerHTML = html;
 
   // Render charts for multi-session exercises
-  for (let i = 0; i < names.length; i++) {
-    const name = names[i];
-    const points = exerciseData[name];
-    if (points.length < 2) continue;
+  chartIdx = 0;
+  for (const groupName of GROUP_ORDER) {
+    const exNames = groups[groupName];
+    if (!exNames) continue;
 
-    const canvas = document.getElementById(`chart-ex-${i}`);
-    if (!canvas) continue;
-    const color = palette[i % palette.length];
+    for (const name of exNames) {
+      const points = exerciseData[name];
+      if (points.length < 2) { chartIdx++; continue; }
 
-    if (charts[`chart-ex-${i}`]) charts[`chart-ex-${i}`].destroy();
+      const canvas = document.getElementById(`chart-ex-${chartIdx}`);
+      chartIdx++;
+      if (!canvas) continue;
+      const color = palette[(chartIdx-1) % palette.length];
 
-    const labels = points.map(p => p.label);
-    const values = points.map(p => p.e1rm);
+      if (charts[`chart-ex-${chartIdx-1}`]) charts[`chart-ex-${chartIdx-1}`].destroy();
 
-    const ctx = canvas.getContext('2d');
-    const g = ctx.createLinearGradient(0,0,0,140);
-    g.addColorStop(0, color + '20');
-    g.addColorStop(1, color + '00');
+      const labels = points.map(p => p.label);
+      const values = points.map(p => p.e1rm);
 
-    charts[`chart-ex-${i}`] = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels,
-        datasets: [{
-          data: values,
-          borderColor: color,
-          backgroundColor: g,
-          borderWidth: 1.5,
-          pointRadius: 3,
-          pointBackgroundColor: color,
-          pointBorderColor: '#faf9f5',
-          pointBorderWidth: 1.5,
-          pointHoverRadius: 5,
-          tension: 0.4,
-          fill: true,
-          spanGaps: false,
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { grid: { color: '#e6dfd8' }, ticks: { color: '#8e8b82', font: { size: 8, family: 'JetBrains Mono' }, maxTicksLimit: 6, maxRotation: 0 }, border: { display: false } },
-          y: { grid: { color: '#e6dfd8' }, ticks: { color: '#8e8b82', font: { size: 8, family: 'JetBrains Mono' }, maxTicksLimit: 4 }, border: { display: false }, beginAtZero: false },
+      const ctx = canvas.getContext('2d');
+      const g = ctx.createLinearGradient(0,0,0,140);
+      g.addColorStop(0, color + '20');
+      g.addColorStop(1, color + '00');
+
+      charts[`chart-ex-${chartIdx-1}`] = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            data: values,
+            borderColor: color,
+            backgroundColor: g,
+            borderWidth: 1.5,
+            pointRadius: 3,
+            pointBackgroundColor: color,
+            pointBorderColor: '#faf9f5',
+            pointBorderWidth: 1.5,
+            pointHoverRadius: 5,
+            tension: 0.4,
+            fill: true,
+            spanGaps: false,
+          }]
         },
-        interaction: { intersect: false, mode: 'index' }
-      }
-    });
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { color: '#e6dfd8' }, ticks: { color: '#8e8b82', font: { size: 8, family: 'JetBrains Mono' }, maxTicksLimit: 6, maxRotation: 0 }, border: { display: false } },
+            y: { grid: { color: '#e6dfd8' }, ticks: { color: '#8e8b82', font: { size: 8, family: 'JetBrains Mono' }, maxTicksLimit: 4 }, border: { display: false }, beginAtZero: false },
+          },
+          interaction: { intersect: false, mode: 'index' }
+        }
+      });
+    }
   }
 
   // Volume chart
