@@ -727,8 +727,8 @@
     .app { padding: var(--space-md) var(--space-sm) 100px; }
     .header { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
     .header h1 { font-size: 28px; letter-spacing: -0.5px; }
-    .nav-group { align-self: flex-start; }
-    .nav-group button { padding: 6px 12px; font-size: 12px; }
+    .nav-group { align-self: stretch; display: flex; }
+    .nav-group button { flex: 1; padding: 10px 16px; font-size: 13px; text-align: center; }
     .refresh-btn { width: 36px; height: 36px; }
     .metrics-row { grid-template-columns: repeat(2, 1fr); }
     .metric-card { padding: var(--space-md); }
@@ -760,7 +760,7 @@
   @media (max-width: 480px) {
     .progress-grid { grid-template-columns: 1fr; }
     .header h1 { font-size: 24px; }
-    .nav-group button { padding: 5px 10px; font-size: 11px; }
+    .nav-group button { flex: 1; padding: 9px 12px; font-size: 12px; text-align: center; }
     .metric-card { padding: var(--space-sm); }
     .metric-card .metric-value { font-size: 18px; }
     .metric-card .metric-label { font-size: 10px; }
