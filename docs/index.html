@@ -932,6 +932,13 @@
 
   <!-- ═══════════ PROGRESS VIEW ═══════════ -->
   <div class="view" id="view-progress">
+    <div class="section-label">Bodyweight</div>
+    <div class="card-cream chart-card" style="margin-bottom:var(--space-lg)">
+      <div class="chart-title">Bodyweight Trend</div>
+      <div class="chart-desc">7-day rolling average · kg</div>
+      <div class="chart-wrap" style="height:200px;"><canvas id="chart-bodyweight"></canvas></div>
+    </div>
+
     <div class="section-label">Strength Telemetry</div>
     <div class="progress-grid" id="progress-grid"></div>
     <div class="card-cream chart-card">
@@ -1578,7 +1585,106 @@ async function renderSession() {
 // RENDER — PROGRESS
 // ═══════════════════════════════════════════════════
 
+async function renderBodyweightChart() {
+  const canvas = document.getElementById('chart-bodyweight');
+  if (!canvas) return;
+
+  try {
+    const md = await fetchText(`${REPO_RAW}/bodyweight.md?t=${Date.now()}`);
+    const points = [];
+    for (const line of md.split('\n')) {
+      const m = line.match(/^\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d.]+)\s*\|/);
+      if (m) {
+        const w = parseFloat(m[2]);
+        if (!isNaN(w)) points.push({ date: m[1], weight: w });
+      }
+    }
+    if (!points.length) return;
+
+    // 7-day rolling average
+    const labels = points.map(p => p.date.slice(5));
+    const raw = points.map(p => p.weight);
+    const avg = raw.map((_, i) => {
+      const slice = raw.slice(Math.max(0, i-6), i+1);
+      return Math.round(slice.reduce((a,b) => a+b, 0) / slice.length * 10) / 10;
+    });
+
+    if (charts['chart-bodyweight']) charts['chart-bodyweight'].destroy();
+
+    const ctx = canvas.getContext('2d');
+    const g = ctx.createLinearGradient(0,0,0,200);
+    g.addColorStop(0, '#cc785c20');
+    g.addColorStop(1, '#cc785c00');
+
+    charts['chart-bodyweight'] = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: '7-day avg',
+            data: avg,
+            borderColor: '#cc785c',
+            backgroundColor: g,
+            borderWidth: 2,
+            pointRadius: 4,
+            pointBackgroundColor: '#cc785c',
+            pointBorderColor: '#faf9f5',
+            pointBorderWidth: 2,
+            tension: 0.4,
+            fill: true,
+            spanGaps: true,
+          },
+          {
+            label: 'Daily',
+            data: raw,
+            borderColor: '#8e8b82',
+            backgroundColor: 'transparent',
+            borderWidth: 1,
+            borderDash: [2, 3],
+            pointRadius: 2,
+            pointBackgroundColor: '#8e8b82',
+            pointBorderColor: '#faf9f5',
+            pointBorderWidth: 1,
+            tension: 0.3,
+            fill: false,
+            spanGaps: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              usePointStyle: true, boxWidth: 8, boxHeight: 8, padding: 16,
+              font: { size: 11, family: 'Inter, sans-serif' },
+              color: '#6c6a64',
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: '#e6dfd8' },
+            ticks: { color: '#8e8b82', font: { size: 9, family: 'JetBrains Mono' }, maxRotation: 0, maxTicksLimit: 12 },
+            border: { display: false }
+          },
+          y: {
+            grid: { color: '#e6dfd8' },
+            ticks: { color: '#8e8b82', font: { size: 9, family: 'JetBrains Mono' }, callback: v => v.toFixed(2) },
+            border: { display: false },
+            title: { display: true, text: 'kg', color: '#8e8b82', font: { size: 9, family: 'Inter, sans-serif' } }
+          },
+        },
+        interaction: { intersect: false, mode: 'index' }
+      }
+    });
+  } catch (e) { /* chart fails silently */ }
+}
+
 async function renderProgress() {
+  renderBodyweightChart();
   const completed = [...allLogs].filter(l => l._index && l._index.status === 'complete' && !l._index.ad_hoc).sort((a,b) => a._index.date.localeCompare(b._index.date));
 
   // Normalize exercise name variants into canonical names
