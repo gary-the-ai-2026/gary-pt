@@ -733,11 +733,14 @@
     .metrics-row { grid-template-columns: repeat(2, 1fr); }
     .metric-card { padding: var(--space-md); }
     .metric-card .metric-value { font-size: 22px; }
-    .cycle-row { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
-    .cycle-ring-cont { width: 90px; height: 90px; }
-    .cycle-ring-svg { width: 90px; height: 90px; }
-    .cycle-ring-center .val { font-size: 20px; }
+    .cycle-row { flex-direction: column; align-items: stretch; gap: var(--space-md); padding: var(--space-sm) 0; }
+    .cycle-ring-cont { width: 80px; height: 80px; align-self: center; }
+    .cycle-ring-svg { width: 80px; height: 80px; }
+    .cycle-ring-center .val { font-size: 18px; }
     .cycle-info .title { font-size: 18px; }
+    .cycle-info .sub { font-size: 12px; margin-bottom: 12px; }
+    .week-dots { gap: 6px; }
+    .week-dot { padding: 5px 8px; font-size: 9px; }
     .active-ex-grid { grid-template-columns: repeat(2, 1fr); }
     .active-ex-name { font-size: 20px; }
     .active-ex-stat .val { font-size: 18px; }
@@ -761,8 +764,12 @@
     .metric-card { padding: var(--space-sm); }
     .metric-card .metric-value { font-size: 18px; }
     .metric-card .metric-label { font-size: 10px; }
-    .cycle-ring-cont { width: 70px; height: 70px; }
-    .cycle-ring-svg { width: 70px; height: 70px; }
+    .cycle-ring-cont { width: 72px; height: 72px; align-self: center; }
+    .cycle-ring-svg { width: 72px; height: 72px; }
+    .cycle-ring-center .val { font-size: 16px; }
+    .cycle-ring-center .lbl { font-size: 8px; }
+    .cycle-info .title { font-size: 16px; }
+    .week-dot { padding: 4px 7px; font-size: 8px; }
     .active-ex-name { font-size: 18px; }
     .active-ex-stat .val { font-size: 16px; }
     .active-ex-stat .lbl { font-size: 9px; }
@@ -874,18 +881,6 @@
     <div class="section-label">Protocols in the Cycle</div>
     <div class="card-cream cycle-protocols-card" id="cycle-protocols">
       <div class="protocol-row" style="justify-content:center;color:var(--muted-soft);font-size:12px;">Loading…</div>
-    </div>
-
-    <div class="section-label">Intelligence</div>
-
-    <div class="card-dark insight-card">
-      <div class="insight-header">
-        <span class="dot"></span>
-        <span>G.A.R.Y Analysis</span>
-      </div>
-      <div class="insight-text" id="insight-text">
-        <span class="cursor-blink"></span>
-      </div>
     </div>
 
     <div class="section-label">Session History</div>
@@ -1468,36 +1463,8 @@ async function renderHub() {
   lines.push(`Next: <span class="hl-coral">${SESSION_NAMES[currentSession]}</span> — ${exs.length} exercises.`);
   if (bench) lines.push(`Incline Bench 1RM: <span class="hl-coral">${bench} kg</span>.`);
   lines.push(`System nominal. ${new Date().toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'short'})}.`);
-  typeInsight(lines.join('<br>'));
 
   renderHistory();
-}
-
-function typeInsight(html) {
-  const el = document.getElementById('insight-text');
-  el.innerHTML = '<span class="cursor-blink"></span>';
-  const parts = html.split(/(<[^>]+>)/g).filter(Boolean);
-  let i = 0;
-  function tick() {
-    if (i >= parts.length) return;
-    const part = parts[i];
-    if (part.startsWith('<')) {
-      el.insertBefore(
-        (() => { const d = document.createElement('span'); d.innerHTML = part; return d.firstChild; })(),
-        el.querySelector('.cursor-blink')
-      );
-      i++; tick();
-    } else {
-      let j = 0;
-      function char() {
-        if (j >= part.length) { i++; tick(); return; }
-        el.insertBefore(document.createTextNode(part[j]), el.querySelector('.cursor-blink'));
-        j++; setTimeout(char, 14 + Math.random()*10);
-      }
-      char();
-    }
-  }
-  tick();
 }
 
 async function renderHistory() {
