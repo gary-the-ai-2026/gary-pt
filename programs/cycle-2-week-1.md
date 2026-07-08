@@ -13,7 +13,7 @@ next_session: legs-shoulders
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Incline Barbell Bench Press | 3 | 52.5kg | 8–10 |
+| 1 | Incline Smith Machine Bench Press | 3 | 67.5kg | 8–10 |
 | 2 | Flat Dumbbell Press | 3 | 24.0kg | 10–12 |
 | 3 | Cable Flye (High-to-Low) | 3 | 16.5kg | 12–15 |
 | 4 | Tricep Pushdown (EZ Bar) | 3 | 27.0kg | 12–15 |
@@ -38,8 +38,8 @@ next_session: legs-shoulders
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Smith Machine Squat | 3 | 60.0kg | 8–10 |
-| 2 | Romanian Deadlift (BB) | 3 | 50.0kg | 8–12 |
+| 1 | Smith Machine Squat | 3 | 75.0kg | 8–10 |
+| 2 | Romanian Deadlift (BB) | 3 | 70.0kg | 8–12 |
 | 3 | Leg Extension (Single Leg) | 3 | 30.0kg | 12–15 |
 | 4 | Leg Curl | 3 | 15.0kg | 12–15 |
 | 5 | Barbell Overhead Press | 3 | 35.0kg | 8–12 |
@@ -52,7 +52,7 @@ next_session: legs-shoulders
 
 | Cycle 2 Exercise | Est. Weight | Based On | Logic |
 |---|---|---|---|
-| Incline Barbell Bench | 50kg | Flat Bench 60kg | ~85% of flat, typical incline deficit |
+| Incline Smith Machine Bench | 67.5kg | Flat Bench 75kg | ~85% of flat + 15kg Smith bar |
 | Flat Dumbbell Press | 24kg | Incline DB 26kg | Flat slightly easier, being conservative |
 | Cable Flye (High-to-Low) | 14kg | Low-to-High 14kg | Same loading, different angle |
 | Tricep Pushdown (EZ Bar) | 42.5kg | Rope Pushdown 42.5kg | EZ curl bar on cable — same movement pattern |
@@ -63,8 +63,8 @@ next_session: legs-shoulders
 | Cable Rear Delt Flye | 10kg/side | Face Pull 32–36kg | Isolation, much lighter than face pull |
 | Cable Barbell Curl (EZ Bar) | 27kg | Cable Curl 27kg | Same exercise — EZ bar for wrist comfort |
 | Hammer Curl | 10kg/side | New movement | No direct C1 data — start conservative |
-| Smith Machine Squat | 60kg | BB Squat 70kg | ~85% of free squat — verify bar counterbalance |
-| Romanian Deadlift (BB) | 50kg | RDL 50kg | Same exercise |
+| Smith Machine Squat | 75kg | BB Squat 85kg | ~85% of free squat + 15kg Smith bar |
+| Romanian Deadlift (BB) | 70kg | RDL 70kg | Same exercise + 20kg bar |
 | Leg Extension (Single Leg) | 30kg | Same exercise | Same exercise |
 | Leg Curl | 15kg | Same exercise | Same exercise |
 | Barbell OHP | 35kg | DB Press 22kg/side | ~80% of total DB load (44kg) |

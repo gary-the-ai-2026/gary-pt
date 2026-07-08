@@ -9,25 +9,25 @@
   "exercises": [
     {
       "num": 1,
-      "name": "Barbell Bench Press",
+      "name": "Smith Machine Bench Press",
       "target_sets": 3,
       "target_reps": "8\u201310",
-      "target_weight_kg": 60.0,
+      "target_weight_kg": 75.0,
       "skipped": false,
       "sets": [
         {
           "set": 1,
-          "weight_kg": 60,
+          "weight_kg": 75,
           "reps": 8
         },
         {
           "set": 2,
-          "weight_kg": 60,
+          "weight_kg": 75,
           "reps": 8
         },
         {
           "set": 3,
-          "weight_kg": 60,
+          "weight_kg": 75,
           "reps": 6
         }
       ]
@@ -110,7 +110,7 @@
       "sets": null
     }
   ],
-  "notes": "Time-constrained \u2014 O/H cable extension and CGBP skipped.",
+  "notes": "Time-constrained \u2014 O/H cable extension and CGBP skipped.\n2026-07-08: Bar weight recalibration \u2014 Smith +15kg, barbell +20kg added to all weights.",
   "finished": "06:30",
   "duration_min": 35
 }

@@ -9,29 +9,136 @@
   "cycle": 1,
   "week": 1,
   "exercises": [
-    {"num": 1, "name": "Barbell Back Squat", "target_sets": 3, "target_reps": "8–10", "target_weight_kg": 70.0, "skipped": false, "sets": [
-      {"set": 1, "weight_kg": 70, "reps": 10},
-      {"set": 2, "weight_kg": 70, "reps": 9},
-      {"set": 3, "weight_kg": 70, "reps": 10}
-    ]},
-    {"num": 2, "name": "Romanian Deadlift (BB)", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 50.0, "skipped": false, "sets": [
-      {"set": 1, "weight_kg": 50, "reps": 12},
-      {"set": 2, "weight_kg": 50, "reps": 10},
-      {"set": 3, "weight_kg": 50, "reps": 10}
-    ]},
-    {"num": 3, "name": "Leg Extension (Single Leg)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 30.0, "skipped": true, "sets": null},
-    {"num": 4, "name": "Leg Curl", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 15.0, "skipped": true, "sets": null},
-    {"num": 5, "name": "Dumbbell Shoulder Press", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 22.5, "skipped": true, "sets": null},
-    {"num": 6, "name": "Dumbbell Lateral Raise", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": [
-      {"set": 1, "weight_kg": 10, "reps": 12},
-      {"set": 2, "weight_kg": 10, "reps": 12},
-      {"set": 3, "weight_kg": 10, "reps": 12}
-    ]},
-    {"num": 7, "name": "Standing Calf Raise (Single Leg)", "target_sets": 3, "target_reps": "15–20", "target_weight_kg": 26.0, "skipped": false, "sets": [
-      {"set": 1, "weight_kg": 26, "reps": 20, "notes": "single leg"},
-      {"set": 2, "weight_kg": 26, "reps": 20, "notes": "single leg"},
-      {"set": 3, "weight_kg": 26, "reps": 20, "notes": "single leg"}
-    ]}
+    {
+      "num": 1,
+      "name": "Smith Machine Squat",
+      "target_sets": 3,
+      "target_reps": "8\u201310",
+      "target_weight_kg": 85.0,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 85,
+          "reps": 10
+        },
+        {
+          "set": 2,
+          "weight_kg": 85,
+          "reps": 9
+        },
+        {
+          "set": 3,
+          "weight_kg": 85,
+          "reps": 10
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "Romanian Deadlift (BB)",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": 70.0,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 70,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 70,
+          "reps": 10
+        },
+        {
+          "set": 3,
+          "weight_kg": 70,
+          "reps": 10
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Leg Extension (Single Leg)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 30.0,
+      "skipped": true,
+      "sets": null
+    },
+    {
+      "num": 4,
+      "name": "Leg Curl",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 15.0,
+      "skipped": true,
+      "sets": null
+    },
+    {
+      "num": 5,
+      "name": "Dumbbell Shoulder Press",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": 22.5,
+      "skipped": true,
+      "sets": null
+    },
+    {
+      "num": 6,
+      "name": "Dumbbell Lateral Raise",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 10.0,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 10,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 10,
+          "reps": 12
+        },
+        {
+          "set": 3,
+          "weight_kg": 10,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "Standing Calf Raise (Single Leg)",
+      "target_sets": 3,
+      "target_reps": "15\u201320",
+      "target_weight_kg": 26.0,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 26,
+          "reps": 20,
+          "notes": "single leg"
+        },
+        {
+          "set": 2,
+          "weight_kg": 26,
+          "reps": 20,
+          "notes": "single leg"
+        },
+        {
+          "set": 3,
+          "weight_kg": 26,
+          "reps": 20,
+          "notes": "single leg"
+        }
+      ]
+    }
   ],
-  "notes": "Truncated session. Order overrides: Lateral Raise and Calf Raise moved ahead. Calf Raise done single-leg at 26kg (substitution from 45kg standard). Leg Extension, Leg Curl, DB Shoulder Press skipped."
+  "notes": "Truncated session. Order overrides: Lateral Raise and Calf Raise moved ahead. Calf Raise done single-leg at 26kg (substitution from 45kg standard). Leg Extension, Leg Curl, DB Shoulder Press skipped.\n2026-07-08: Bar weight recalibration \u2014 Smith +15kg, barbell +20kg added to all weights."
 }
