@@ -820,7 +820,7 @@
       <div class="card-cream metric-card">
         <div class="metric-icon">⚡</div>
         <div class="metric-label">This Week</div>
-        <div class="metric-value teal" id="metric-sessions">-/3</div>
+        <div class="metric-value teal" id="metric-sessions">-/4</div>
         <div class="metric-sub" id="metric-sessions-sub">—</div>
       </div>
       <div class="card-cream metric-card">
@@ -1407,7 +1407,7 @@ async function renderHub() {
   const bench = await getBest1RM('Incline Smith Machine Bench Press');
   const squat = await getBest1RM('Smith Machine Squat');
   const bw = await fetchBodyweight();
-  const cw = Math.min(Math.floor(total/3)+1, 6);
+  const cw = Math.min(Math.floor(total/4)+1, 6);
 
   if (bw.weight) {
     document.getElementById('metric-bw').textContent = bw.weight.toFixed(1);
@@ -1416,7 +1416,7 @@ async function renderHub() {
     document.getElementById('metric-bw').textContent = '--.-';
     document.getElementById('metric-bw-sub').textContent = 'Awaiting weigh-in';
   }
-  document.getElementById('metric-sessions').textContent = `${wks}/3`;
+  document.getElementById('metric-sessions').textContent = `${wks}/4`;
   document.getElementById('metric-sessions-sub').textContent = `${TOTAL_CYCLE - total} sessions remaining`;
   document.getElementById('metric-bench').textContent = bench || '---';
   document.getElementById('metric-bench-sub').textContent = bench ? 'kg · estimated 1RM' : 'Awaiting data';
@@ -1463,8 +1463,8 @@ async function renderHub() {
   // AI insight
   const lines = [];
   if (wks === 0) lines.push('No sessions this week. Say <span class="hl-teal">start session</span> to begin.');
-  else if (wks < 3) lines.push(`<span class="hl-teal">${wks}/3</span> sessions this week. ${3-wks} remaining.`);
-  else lines.push('<span class="hl-teal">3/3</span> sessions. Target met.');
+  else if (wks < 4) lines.push(`<span class="hl-teal">${wks}/4</span> sessions this week. ${4-wks} remaining.`);
+  else lines.push('<span class="hl-teal">4/4</span> sessions. Target met.');
   lines.push(`Next: <span class="hl-coral">${SESSION_NAMES[currentSession]}</span> — ${exs.length} exercises.`);
   if (bench) lines.push(`Incline Bench 1RM: <span class="hl-coral">${bench} kg</span>.`);
   lines.push(`System nominal. ${new Date().toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'short'})}.`);
