@@ -11,16 +11,16 @@
   "Close-Grip Bench Press": 1,
   "Barbell Curl": 1,
   "Barbell Back Squat": 0,
-  "Romanian Deadlift (BB)": 2,
+  "Romanian Deadlift (BB)": 3,
   "Leg Extension": 0,
-  "Leg Curl": 3,
+  "Leg Curl": 4,
   "Dumbbell Shoulder Press": 2,
   "Dumbbell Lateral Raise": 0,
   "Standing Calf Raise": 0,
   "Seated Cable Row (Close)": 1,
   "Face Pull": 0,
   "Cable Barbell Curl": 1,
-  "Leg Extension (Single Leg)": 1,
+  "Leg Extension (Single Leg)": 2,
   "Standing Calf Raise (Single Leg)": 0,
   "Incline Barbell Bench Press": 1,
   "Flat Dumbbell Press": 1,
@@ -31,5 +31,7 @@
   "Dumbbell Row (Single Arm)": 1,
   "Lat Pulldown (Close Grip)": 0,
   "Cable Rear Delt Flye": 0,
-  "Cable Barbell Curl (EZ Bar)": 1
+  "Cable Barbell Curl (EZ Bar)": 1,
+  "Smith Machine Squat": 0,
+  "Barbell Overhead Press": 1
 }
