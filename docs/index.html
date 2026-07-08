@@ -1507,7 +1507,7 @@ async function renderHistory() {
   const BADGES = { 'back-bi': 'badge-back-bi', 'chest-tri': 'badge-chest-tri', 'legs-shoulders': 'badge-legs-shoulders' };
   const NAMES = { 'back-bi': 'Back/Bi', 'chest-tri': 'Chest/Tri', 'legs-shoulders': 'Legs/Shldrs' };
 
-  const recent = allLogs.slice(0, 10);
+  const recent = [...allLogs].sort((a,b) => b._index.date.localeCompare(a._index.date)).slice(0, 15);
   const cards = [];
 
   for (const log of recent) {
