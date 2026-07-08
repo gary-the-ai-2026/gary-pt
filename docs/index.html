@@ -1533,7 +1533,7 @@ async function renderSession() {
   // Fetch session start time for the timer (once per session type per day)
   if (!sessionStartTime || sessionStartType !== currentSession) {
     const meta = await fetchSessionMeta(currentSession);
-    if (meta && meta.started) {
+    if (meta && meta.started && meta.status !== 'complete') {
       sessionStartTime = parseStartedTime(meta.started);
       sessionStartType = currentSession;
     } else {
