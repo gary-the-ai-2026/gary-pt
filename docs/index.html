@@ -1274,8 +1274,8 @@ async function loadProgram() {
       const logUrl = `${REPO_RAW}/logs/${today}-${currentSession}.json?t=${Date.now()}`;
       const logData = await fetchJSON(logUrl);
       if (logData && logData.exercises && logData.exercises.length) {
-        // Use JSON exercises for: ad hoc sessions, resumed/continuation sessions, or any in-progress session
-        const useJSON = logData.ad_hoc || logData.resumed_from || logData.status === 'in_progress';
+        // Use JSON exercises ONLY for ad hoc or resumed sessions — in_progress uses MD program + live log overlay
+        const useJSON = logData.ad_hoc || logData.resumed_from;
         if (useJSON) {
           return logData.exercises.map(e => ({
             num: String(e.num || ''),
