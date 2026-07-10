@@ -1244,6 +1244,8 @@ async function determineNextSession() {
       download_url: `${REPO_RAW}/logs/${e.name}`,
       _index: e
     }));
+    // Sort by date descending — index may not be ordered
+    allLogs.sort((a, b) => (b._index.date || '').localeCompare(a._index.date || ''));
     if (!allLogs.length) return 'chest-tri';
 
     // Check if most recent log is still in progress — if so, that's the current session
@@ -1287,7 +1289,7 @@ async function loadProgram() {
       }
     } catch (e) { /* fall through to MD parser */ }
 
-    const md = await fetchText(`${REPO_RAW}/programs/cycle-1-week-1.md`);
+    const md = await fetchText(`${REPO_RAW}/programs/cycle-2-week-1.md`);
     const sections = md.split('## ');
     const map = { 'chest-tri': 'Chest / Triceps', 'back-bi': 'Back / Biceps', 'legs-shoulders': 'Legs / Shoulders' };
     const target = map[currentSession];
@@ -1307,7 +1309,7 @@ async function loadProgram() {
 async function loadAllProtocols() {
   // Parse the program MD to extract all session types and their exercise lists
   try {
-    const md = await fetchText(`${REPO_RAW}/programs/cycle-1-week-1.md?t=${Date.now()}`);
+    const md = await fetchText(`${REPO_RAW}/programs/cycle-2-week-1.md?t=${Date.now()}`);
     const sections = md.split('## ');
     const mapTarget = { 'chest-tri': 'Chest / Triceps', 'back-bi': 'Back / Biceps', 'legs-shoulders': 'Legs / Shoulders' };
     const protocols = [];
