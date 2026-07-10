@@ -192,8 +192,8 @@
     "name": "2026-07-10-chest-tri.json",
     "date": "2026-07-10",
     "type": "chest-tri",
-    "status": "in_progress",
-    "duration_min": null,
+    "status": "complete",
+    "duration_min": 45,
     "cycle": 2,
     "ad_hoc": false
   }
