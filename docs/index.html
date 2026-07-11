@@ -1297,8 +1297,7 @@ async function loadProgram() {
       if (s.split('\n')[0].trim() === target) {
         const t = parseMDTable(s);
         if (t[0]) return t[0].rows.map(r => {
-          const sp = (r[2]||'').split('×').map(s => s.trim());
-          return { num: r[0]||'', name: r[1]||'', sets: sp[0]||r[2]||'', weight: r[3]||'', reps: sp[1]||'', rest: r[4]||'' };
+          return { num: r[0]||'', name: r[1]||'', sets: r[2]||'', weight: r[3]||'', reps: r[4]||'', rest: r[5]||'' };
         });
       }
     }
@@ -1322,8 +1321,7 @@ async function loadAllProtocols() {
           const t = parseMDTable(s);
           if (t[0]) {
             const exs = t[0].rows.map(r => {
-              const sp = (r[2]||'').split('×').map(s => s.trim());
-              return { num: r[0]||'', name: r[1]||'', sets: sp[0]||r[2]||'', weight: r[3]||'', reps: sp[1]||'', rest: r[4]||'' };
+              return { num: r[0]||'', name: r[1]||'', sets: r[2]||'', weight: r[3]||'', reps: r[4]||'', rest: r[5]||'' };
             });
             protocols.push({
               type: type,
