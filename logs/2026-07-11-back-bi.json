@@ -3,10 +3,15 @@
   "date": "2026-07-11",
   "type": "back-bi",
   "status": "in_progress",
+  "started": "10:01",
   "cycle": 2,
   "week": 1,
   "exercises": [
-    {"num": 1, "name": "Pull-Up", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": null, "skipped": false, "sets": []},
+    {"num": 1, "name": "Pull-Up", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": null, "skipped": false, "sets": [
+      {"set": 1, "weight_kg": null, "reps": 12},
+      {"set": 2, "weight_kg": null, "reps": 6},
+      {"set": 3, "weight_kg": null, "reps": 5}
+    ]},
     {"num": 2, "name": "Dumbbell Row (Single Arm)", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 24.0, "skipped": false, "sets": []},
     {"num": 3, "name": "Lat Pulldown (Close Grip)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 43.5, "skipped": false, "sets": []},
     {"num": 4, "name": "Cable Rear Delt Flye", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 11.5, "skipped": false, "sets": []},
