@@ -1,7 +1,7 @@
 {
   "_description": "YouTube Shorts technique demos for exercise library. Primary source: Renaissance Periodization (Dr. Mike Israetel). Fallback: Jeff Nippard, Squat University.",
-  "_updated": "2026-07-04",
-  "_coverage": "Cycle 2 — 15/19 exercises linked. 4 missing: Flat Dumbbell Press, Bench Dip, Dumbbell Row (Single Arm), Cable Rear Delt Flye.",
+  "_updated": "2026-07-11",
+  "_coverage": "Cycle 2 — 16/19 exercises linked. 3 missing: Bench Dip, Dumbbell Row (Single Arm), Cable Rear Delt Flye.",
   "source_priority": ["Renaissance Periodization", "Jeff Nippard", "Squat University"],
   "aliases": {
     "DB Goblet Squat": "Goblet Squat",
@@ -20,8 +20,9 @@
     "Tricep Pushdown (Straight Bar)": "Tricep Pushdown (Rope)",
     "Tricep Pushdown (EZ Bar)": "Tricep Pushdown (Rope)",
     "Lat Pulldown (Close Grip)": "Lat Pulldown (Wide)",
-    "Flat Dumbbell Press": "Incline Dumbbell Press",
-    "Seated Calf Raise": "Standing Calf Raise"
+    "Seated Calf Raise": "Standing Calf Raise",
+    "Cable Barbell Curl (EZ Bar)": "Barbell Curl",
+    "Incline Smith Machine Bench Press": "Incline Barbell Bench Press"
   },
   "exercises": {
     "Barbell Bench Press": {
@@ -40,9 +41,9 @@
       "title": "How To Get STRONG On Dumbbell Presses"
     },
     "Flat Dumbbell Press": {
-      "url": null,
-      "source": "TBD",
-      "_note": "No RP Short specifically for flat DB press. Aliased to Incline Dumbbell Press — technique is similar."
+      "url": "https://www.youtube.com/shorts/YQ2s_Y7g5Qk",
+      "source": "Renaissance Periodization",
+      "title": "Flat Dumbbell Bench Press"
     },
     "Cable Flye (Low-to-High)": {
       "url": "https://www.youtube.com/shorts/hd_pA-b5puI",
@@ -69,15 +70,10 @@
       "source": "Renaissance Periodization",
       "title": "Close Grip Bench Grip For HUGE Triceps"
     },
-    "Bench Dip (Weighted)": {
-      "url": null,
-      "source": "TBD",
-      "_note": "Removed from cycle per Josh. Now Bench Dip at BW."
-    },
     "Bench Dip": {
       "url": null,
       "source": "TBD",
-      "_note": "Bodyweight bench dip — no RP Short found. Removed weighted variant."
+      "_note": "Bodyweight bench dip — no RP or Nippard technique Short found."
     },
     "Lat Pulldown (Wide)": {
       "url": "https://www.youtube.com/shorts/jhnxJEzX8rY",
@@ -97,12 +93,7 @@
     "Dumbbell Row (Single Arm)": {
       "url": null,
       "source": "TBD",
-      "_note": "No RP technique Short found for single-arm DB row."
-    },
-    "Seated Cable Row (Close)": {
-      "url": null,
-      "source": "TBD",
-      "_note": "No RP or Nippard technique Short found."
+      "_note": "No RP technique Short found for single-arm DB row. Full-length 'One Arm Row Mistakes' (9:45) exists but not a Short."
     },
     "Face Pull": {
       "url": "https://www.youtube.com/shorts/r4uM4JSvu8M",
@@ -112,7 +103,7 @@
     "Cable Rear Delt Flye": {
       "url": null,
       "source": "TBD",
-      "_note": "No RP technique Short found. Similar movement to Face Pull but isolated."
+      "_note": "No RP technique Short found. Similar to Face Pull but isolated. Face Pull Short linked as nearest reference."
     },
     "Barbell Curl": {
       "url": "https://www.youtube.com/shorts/DXTDJbPRl-A",
