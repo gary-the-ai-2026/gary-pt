@@ -201,8 +201,8 @@
     "name": "2026-07-11-back-bi.json",
     "date": "2026-07-11",
     "type": "back-bi",
-    "status": "in_progress",
-    "duration_min": null,
+    "status": "complete",
+    "duration_min": 49,
     "cycle": 2,
     "ad_hoc": false
   }

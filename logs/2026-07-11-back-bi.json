@@ -2,8 +2,10 @@
   "session_id": "2026-07-11-back-bi",
   "date": "2026-07-11",
   "type": "back-bi",
-  "status": "in_progress",
+  "status": "complete",
   "started": "10:01",
+  "finished": "10:50",
+  "duration_min": 49,
   "cycle": 2,
   "week": 1,
   "exercises": [
@@ -32,6 +34,10 @@
       {"set": 2, "weight_kg": 27, "reps": 7},
       {"set": 3, "weight_kg": 27, "reps": 4}
     ]},
-    {"num": 6, "name": "Hammer Curl", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": []}
-  ]
+    {"num": 6, "name": "Hammer Curl", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 10.0, "skipped": false, "sets": [
+      {"set": 1, "weight_kg": 12, "reps": 12},
+      {"set": 2, "weight_kg": 12, "reps": 12}
+    ]}
+  ],
+  "notes": "DB Row: 24×12/12/12 → 26.5kg next. Lat Pulldown: pyramid 41/45/50 — 45 working weight solid. Rear Delt Flye: used 14kg, ramped to 12 reps. EZ Curl: 27×9/7/4 — fading hard, drop to 24.5kg next. Hammer Curl: used 12kg, solid 12×2."
 }
