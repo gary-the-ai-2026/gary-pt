@@ -1,9 +1,10 @@
 {
   "session_type": "legs-shoulders",
   "current_exercise": 2,
-  "current_set": 2,
+  "current_set": 3,
   "log": [
     {"exercise": "Smith Machine Squat", "skipped": true},
-    {"exercise": "Romanian Deadlift (BB)", "set": 1, "weight_kg": 70, "reps": 10}
+    {"exercise": "Romanian Deadlift (BB)", "set": 1, "weight_kg": 70, "reps": 10},
+    {"exercise": "Romanian Deadlift (BB)", "set": 2, "weight_kg": 80, "reps": 10}
   ]
 }
