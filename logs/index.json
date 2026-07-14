@@ -1,5 +1,14 @@
 [
   {
+    "name": "2026-07-14-chest-tri.json",
+    "date": "2026-07-14",
+    "type": "chest-tri",
+    "status": "active",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
+  },
+  {
     "name": "2026-05-28-back-bi.json",
     "date": "2026-05-28",
     "type": "back-bi",
