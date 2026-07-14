@@ -2,8 +2,10 @@
   "session_id": "2026-07-14-chest-tri",
   "date": "2026-07-14",
   "type": "chest-tri",
-  "status": "in_progress",
+  "status": "complete",
   "started": "11:49",
+  "finished": "12:21",
+  "duration_min": 32,
   "cycle": 2,
   "week": 1,
   "exercises": [
@@ -19,10 +21,12 @@
     ]},
     {"num": 3, "name": "Cable Flye (High-to-Low)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 18.0, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 18, "reps": 12},
-      {"set": 2, "weight_kg": 18, "reps": 12}
+      {"set": 2, "weight_kg": 18, "reps": 12},
+      {"set": 3, "weight_kg": 18, "reps": 14}
     ]},
-    {"num": 4, "name": "Tricep Pushdown (Straight Bar)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 42.5, "skipped": false, "sets": []},
-    {"num": 5, "name": "Overhead Cable Extension (Rope)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 25.0, "skipped": false, "sets": []},
-    {"num": 6, "name": "Close-Grip Smith Press", "target_sets": 2, "target_reps": "10–12", "target_weight_kg": 40.0, "skipped": false, "sets": []}
-  ]
+    {"num": 4, "name": "Tricep Pushdown (Straight Bar)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 42.5, "skipped": true, "sets": null},
+    {"num": 5, "name": "Overhead Cable Extension (Rope)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 25.0, "skipped": true, "sets": null},
+    {"num": 6, "name": "Close-Grip Smith Press", "target_sets": 2, "target_reps": "10–12", "target_weight_kg": 40.0, "skipped": true, "sets": null}
+  ],
+  "notes": "Ended after Cable Flye. Tricep Pushdown, OH Extension, Close-Grip skipped. Incline Bench: 65×12, 70×8, 70×7 → repeat 70kg. Flat DB: 24×12/10/12 → repeat 24kg. Cable Flye: 18×12/12/14 → repeat 18kg."
 }
