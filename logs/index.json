@@ -223,5 +223,14 @@
     "duration_min": 36,
     "cycle": 2,
     "ad_hoc": false
+  },
+  {
+    "name": "2026-07-16-back-bi.json",
+    "date": "2026-07-16",
+    "type": "back-bi",
+    "status": "in_progress",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
   }
 ]
