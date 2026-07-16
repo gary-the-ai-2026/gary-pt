@@ -15,7 +15,8 @@
       {"set": 3, "weight_kg": null, "reps": 7}
     ]},
     {"num": 2, "name": "Dumbbell Row (Single Arm)", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 26.5, "skipped": false, "sets": [
-      {"set": 1, "weight_kg": 26, "reps": 12}
+      {"set": 1, "weight_kg": 26, "reps": 12},
+      {"set": 2, "weight_kg": 26, "reps": 12}
     ]},
     {"num": 3, "name": "Lat Pulldown (Close Grip)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 45.0, "skipped": false, "sets": []},
     {"num": 4, "name": "Cable Rear Delt Flye", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 14.0, "skipped": false, "sets": []},
