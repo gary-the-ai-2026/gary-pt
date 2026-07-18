@@ -232,5 +232,14 @@
     "duration_min": null,
     "cycle": 2,
     "ad_hoc": false
+  },
+  {
+    "name": "2026-07-18-legs-shoulders.json",
+    "date": "2026-07-18",
+    "type": "legs-shoulders",
+    "status": "in_progress",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
   }
 ]
