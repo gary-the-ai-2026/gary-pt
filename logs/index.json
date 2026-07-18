@@ -1,14 +1,5 @@
 [
   {
-    "name": "2026-07-14-chest-tri.json",
-    "date": "2026-07-14",
-    "type": "chest-tri",
-    "status": "complete",
-    "duration_min": 32,
-    "cycle": 2,
-    "ad_hoc": false
-  },
-  {
     "name": "2026-05-28-back-bi.json",
     "date": "2026-05-28",
     "type": "back-bi",
@@ -225,10 +216,19 @@
     "ad_hoc": false
   },
   {
+    "name": "2026-07-14-chest-tri.json",
+    "date": "2026-07-14",
+    "type": "chest-tri",
+    "status": "complete",
+    "duration_min": 32,
+    "cycle": 2,
+    "ad_hoc": false
+  },
+  {
     "name": "2026-07-16-back-bi.json",
     "date": "2026-07-16",
     "type": "back-bi",
-    "status": "in_progress",
+    "status": "complete",
     "duration_min": null,
     "cycle": 2,
     "ad_hoc": false
