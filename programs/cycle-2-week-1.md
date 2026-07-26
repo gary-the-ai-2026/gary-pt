@@ -16,7 +16,7 @@ next_session: back-bi
 | 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 |
 | 2 | Flat Dumbbell Press | 3 | 24.0kg | 8–12 |
 | 3 | Cable Flye (High-to-Low) | 3 | 18.0kg | 12–15 |
-| 4 | Tricep Pushdown (Straight Bar) | 3 | 42.5kg | 12–15 |
+| 4 | Tricep Pushdown (EZ Bar) | 3 | 27.0kg | 12–15 |
 | 5 | Overhead Cable Extension (Rope) | 3 | 25.0kg | 12–15 |
 | 6 | Close-Grip Smith Press | 2 | 40.0kg | 10–12 |
 
