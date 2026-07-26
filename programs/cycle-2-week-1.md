@@ -17,7 +17,7 @@ next_session: back-bi
 | 2 | Flat Dumbbell Press | 3 | 24.0kg | 8–12 |
 | 3 | Cable Flye (High-to-Low) | 3 | 18.0kg | 12–15 |
 | 4 | Tricep Pushdown (EZ Bar) | 3 | 27.0kg | 12–15 |
-| 5 | Overhead Cable Extension (Rope) | 3 | 25.0kg | 12–15 |
+| 5 | Overhead Cable Extension (Rope) | 3 | 32.0kg | 12–15 |
 | 6 | Close-Grip Smith Press | 2 | 40.0kg | 10–12 |
 
 ## Back / Biceps
