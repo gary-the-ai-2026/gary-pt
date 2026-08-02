@@ -247,6 +247,25 @@
     "date": "2026-07-26",
     "type": "chest-tri",
     "status": "complete",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-08-01-back-bi.json",
+    "date": "2026-08-01",
+    "type": "back-bi",
+    "status": "complete",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
+  },
+  {
+    "name": "2026-08-03-legs-shoulders.json",
+    "date": "2026-08-03",
+    "type": "legs-shoulders",
+    "status": "in_progress",
+    "duration_min": null,
     "cycle": 2,
     "ad_hoc": false
   }
