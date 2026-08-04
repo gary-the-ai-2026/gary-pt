@@ -268,5 +268,14 @@
     "duration_min": 34,
     "cycle": 2,
     "ad_hoc": false
+  },
+  {
+    "name": "2026-08-04-chest-tri.json",
+    "date": "2026-08-04",
+    "type": "chest-tri",
+    "status": "in_progress",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
   }
 ]
