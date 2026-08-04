@@ -22,7 +22,9 @@
       {"set": 2, "weight_kg": 18, "reps": 15},
       {"set": 3, "weight_kg": 18, "reps": 15}
     ]},
-    {"num": 4, "name": "Tricep Pushdown (EZ Bar)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 27.0, "skipped": false, "sets": []},
+    {"num": 4, "name": "Tricep Pushdown (EZ Bar)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 27.0, "skipped": false, "sets": [
+      {"set": 1, "weight_kg": 27, "reps": 15}
+    ]},
     {"num": 5, "name": "Overhead Cable Extension (Rope)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 32.0, "skipped": false, "sets": []},
     {"num": 6, "name": "Close-Grip Smith Press", "target_sets": 2, "target_reps": "10–12", "target_weight_kg": 40.0, "skipped": false, "sets": []}
   ]
