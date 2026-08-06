@@ -32,8 +32,9 @@
     {"num": 5, "name": "Cable Barbell Curl (EZ Bar)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 24.5, "skipped": true, "sets": []},
     {"num": 6, "name": "Hammer Curl", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 12.0, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 12, "reps": 15},
-      {"set": 2, "weight_kg": 12, "reps": 8}
+      {"set": 2, "weight_kg": 12, "reps": 8},
+      {"set": 3, "weight_kg": 12, "reps": 7}
     ]}
   ],
-  "notes": "EZ Bar Curl skipped. Pull-Ups broke the stall — 12/12/8 vs last session's 10/5/6. DB Row self-selected 26 vs 27 target but consistent 12s. Lat Pulldown ramped 45→50 and finished strong. Rear Delt Flye faded on set 3 (15→12→8). 38 min session."
+  "notes": "EZ Bar Curl skipped. Pull-Ups broke the stall — 12/12/8 vs last session's 10/5/6. DB Row self-selected 26 vs 27 target but consistent 12s. Lat Pulldown ramped 45→50 and finished strong. Rear Delt Flye faded on set 3 (15→12→8). Hammer Curl bonus set 3 added post-session. 38 min session."
 }
