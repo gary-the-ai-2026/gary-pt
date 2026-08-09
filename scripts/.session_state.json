@@ -1,9 +1,9 @@
 {
-  "session_type": null,
+  "session_type": "chest-tri",
   "current_exercise": 0,
   "current_set": 0,
   "log": [],
-  "last_session": "2026-08-06-back-bi",
-  "last_type": "back-bi",
-  "next_type": "legs-shoulders"
+  "last_session": "2026-08-08-legs-shoulders",
+  "last_type": "legs-shoulders",
+  "next_type": "back-bi"
 }

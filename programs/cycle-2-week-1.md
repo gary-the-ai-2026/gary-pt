@@ -14,7 +14,7 @@ next_session: chest-tri
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
 | 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 |
-| 2 | Flat Dumbbell Press | 3 | 24.0kg | 8–12 |
+| 2 | Flat Dumbbell Press | 3 | 26.0kg | 8–12 |
 | 3 | Cable Flye (High-to-Low) | 3 | 20.5kg | 12–15 |
 | 4 | Tricep Pushdown (EZ Bar) | 3 | 29.5kg | 12–15 |
 | 5 | Overhead Cable Extension (Rope) | 3 | 32.0kg | 12–15 |
