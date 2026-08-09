@@ -13,7 +13,8 @@
       {"set": 3, "weight_kg": 65, "reps": 5}
     ]},
     {"num": 2, "name": "Flat Dumbbell Press", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 26.0, "skipped": false, "sets": [
-      {"set": 1, "weight_kg": 26, "reps": 10}
+      {"set": 1, "weight_kg": 26, "reps": 10},
+      {"set": 2, "weight_kg": 26, "reps": 8}
     ]},
     {"num": 3, "name": "Cable Flye (High-to-Low)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 20.5, "skipped": false, "sets": []},
     {"num": 4, "name": "Tricep Pushdown (EZ Bar)", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 29.5, "skipped": false, "sets": []},
