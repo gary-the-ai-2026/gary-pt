@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-07-04
 status: active
-next_session: chest-tri
+next_session: back-bi
 ---
 
 # Cycle 2 — Week 1
@@ -13,12 +13,12 @@ next_session: chest-tri
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 |
-| 2 | Flat Dumbbell Press | 3 | 26.0kg | 8–12 |
+| 1 | Incline Smith Machine Bench Press | 3 | 62.5kg | 8–10 |
+| 2 | Flat Dumbbell Press | 3 | 27.0kg | 8–12 |
 | 3 | Cable Flye (High-to-Low) | 3 | 20.5kg | 12–15 |
-| 4 | Tricep Pushdown (EZ Bar) | 3 | 29.5kg | 12–15 |
-| 5 | Overhead Cable Extension (Rope) | 3 | 32.0kg | 12–15 |
-| 6 | Close-Grip Smith Press | 2 | 40.0kg | 10–12 |
+| 4 | Tricep Pushdown (EZ Bar) | 3 | 30.0kg | 12–15 |
+| 5 | Overhead Cable Extension (Rope) | 3 | 34.5kg | 12–15 |
+| 6 | Close-Grip Smith Press | 2 | 37.5kg | 10–12 |
 
 ## Back / Biceps
 

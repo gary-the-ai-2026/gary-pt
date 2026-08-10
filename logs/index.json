@@ -32,5 +32,5 @@
   {"name": "2026-08-04-chest-tri.json", "date": "2026-08-04", "type": "chest-tri", "status": "complete", "duration_min": null, "cycle": 2, "ad_hoc": false},
   {"name": "2026-08-06-back-bi.json", "date": "2026-08-06", "type": "back-bi", "status": "complete", "duration_min": 38, "cycle": 2, "ad_hoc": false},
   {"name": "2026-08-08-legs-shoulders.json", "date": "2026-08-08", "type": "legs-shoulders", "status": "complete", "duration_min": 50, "cycle": 2, "ad_hoc": false},
-  {"name": "2026-08-10-chest-tri.json", "date": "2026-08-10", "type": "chest-tri", "status": "in_progress", "duration_min": null, "cycle": 2, "ad_hoc": false}
+  {"name": "2026-08-10-chest-tri.json", "date": "2026-08-10", "type": "chest-tri", "status": "complete", "duration_min": null, "cycle": 2, "ad_hoc": false}
 ]

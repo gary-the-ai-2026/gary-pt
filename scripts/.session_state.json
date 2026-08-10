@@ -1,9 +1,9 @@
 {
-  "session_type": "chest-tri",
-  "current_exercise": 6,
-  "current_set": 1,
-  "log": [{"exercise": 1, "set": 1, "weight_kg": 65, "reps": 10}, {"exercise": 1, "set": 2, "weight_kg": 65, "reps": 7}, {"exercise": 1, "set": 3, "weight_kg": 65, "reps": 5}, {"exercise": 2, "set": 1, "weight_kg": 26, "reps": 10}, {"exercise": 2, "set": 2, "weight_kg": 26, "reps": 8}, {"exercise": 2, "set": 3, "weight_kg": 26, "reps": 8}, {"exercise": 3, "set": 1, "weight_kg": 18, "reps": 15}, {"exercise": 3, "set": 2, "weight_kg": 18, "reps": 15}, {"exercise": 3, "set": 3, "weight_kg": 18, "reps": 15}, {"exercise": 4, "set": 1, "weight_kg": 32, "reps": 11}, {"exercise": 4, "set": 2, "weight_kg": 32, "reps": 8}, {"exercise": 4, "set": 3, "weight_kg": 32, "reps": 8}, {"exercise": 5, "set": 1, "weight_kg": 30, "reps": 15}, {"exercise": 5, "set": 2, "weight_kg": 32, "reps": 15}, {"exercise": 5, "set": 3, "weight_kg": 32, "reps": 15}, {"exercise": 6, "set": 1, "weight_kg": 35, "reps": 15}],
-  "last_session": "2026-08-08-legs-shoulders",
-  "last_type": "legs-shoulders",
+  "session_type": null,
+  "current_exercise": 0,
+  "current_set": 0,
+  "log": [],
+  "last_session": "2026-08-10-chest-tri",
+  "last_type": "chest-tri",
   "next_type": "back-bi"
 }
