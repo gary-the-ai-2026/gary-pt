@@ -2,10 +2,13 @@
   "session_id": "2026-08-12-back-bi",
   "date": "2026-08-12",
   "type": "back-bi",
-  "status": "in_progress",
+  "status": "complete",
   "cycle": 2,
   "week": 1,
   "started": "18:24",
+  "finished": "19:16",
+  "duration_min": 52,
+  "notes": "Strong session. Lat Pulldown 50×12/12/12 → 52.5kg. Rear Delt Flye 14×13/13/13 no fade → 16.5kg. DB Row stuck at 26kg, hit all → 27kg (max DB). Pull-Up 10/8/5 → repeat. EZ Bar Curl 27×9/8/7 too heavy → 25.5kg. Hammer Curl skipped.",
   "exercises": [
     {"num": 1, "name": "Pull-Up", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": null, "skipped": false, "sets": [
       {"set": 1, "weight_kg": null, "reps": 10},
@@ -29,8 +32,9 @@
     ]},
     {"num": 5, "name": "Cable Barbell Curl (EZ Bar)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 27.0, "skipped": false, "sets": [
       {"set": 1, "weight_kg": 27, "reps": 9},
-      {"set": 2, "weight_kg": 27, "reps": 8}
+      {"set": 2, "weight_kg": 27, "reps": 8},
+      {"set": 3, "weight_kg": 27, "reps": 7}
     ]},
-    {"num": 6, "name": "Hammer Curl", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 12.0, "skipped": false, "sets": []}
+    {"num": 6, "name": "Hammer Curl", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 12.0, "skipped": true, "sets": []}
   ]
 }

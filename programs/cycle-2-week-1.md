@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-07-04
 status: active
-next_session: back-bi
+next_session: legs-shoulders
 ---
 
 # Cycle 2 — Week 1
@@ -26,9 +26,9 @@ next_session: back-bi
 |---|---|---|---|---|
 | 1 | Pull-Up | 3 | BW | 8–12 |
 | 2 | Dumbbell Row (Single Arm) | 3 | 27.0kg | 8–12 |
-| 3 | Lat Pulldown (Close Grip) | 3 | 50.0kg | 10–12 |
-| 4 | Cable Rear Delt Flye | 3 | 14.0kg | 12–15 |
-| 5 | Cable Barbell Curl (EZ Bar) | 3 | 24.5kg | 10–12 |
+| 3 | Lat Pulldown (Close Grip) | 3 | 52.5kg | 10–12 |
+| 4 | Cable Rear Delt Flye | 3 | 16.5kg | 12–15 |
+| 5 | Cable Barbell Curl (EZ Bar) | 3 | 25.5kg | 10–12 |
 | 6 | Hammer Curl | 2 | 12.0kg | 12–15 |
 
 ## Legs / Shoulders
