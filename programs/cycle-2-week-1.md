@@ -35,10 +35,10 @@ next_session: legs-shoulders
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Barbell Back Squat | 3 | 70.0kg | 8–10 |
-| 2 | Romanian Deadlift (BB) | 3 | 80.0kg | 8–12 |
+| 1 | Barbell Back Squat | 3 | 77.5kg | 8–10 |
+| 2 | Romanian Deadlift (BB) | 3 | 90.0kg | 8–12 |
 | 3 | Leg Extension (Single Leg) | 3 | 32.5kg | 12–15 |
 | 4 | Leg Curl | 3 | 20.0kg | 12–15 |
-| 5 | Barbell Overhead Press | 3 | 30.0kg | 8–12 |
-| 6 | Cable Lateral Raise | 3 | 5.0kg | 12–15 |
+| 5 | Barbell Overhead Press | 3 | 32.5kg | 8–12 |
+| 6 | Cable Lateral Raise | 3 | 8.5kg | 12–15 |
 | 7 | Seated Calf Raise | 3 | 40.0kg | 15–20 |
