@@ -35,7 +35,7 @@ next_session: legs-shoulders
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Barbell Back Squat | 3 | 77.5kg | 8–10 |
+| 1 | Barbell Back Squat | 3 | 80.0kg | 8–10 |
 | 2 | Romanian Deadlift (BB) | 3 | 90.0kg | 8–12 |
 | 3 | Leg Extension (Single Leg) | 3 | 32.5kg | 12–15 |
 | 4 | Leg Curl | 3 | 20.0kg | 12–15 |
