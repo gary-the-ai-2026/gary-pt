@@ -1,8 +1,8 @@
 {
   "session_type": "legs-shoulders",
   "current_exercise": 2,
-  "current_set": 1,
-  "log": [{"exercise": 1, "set": 0, "weight_kg": null, "reps": 0, "skipped": true}, {"exercise": 2, "set": 1, "weight_kg": 90, "reps": 9}],
+  "current_set": 2,
+  "log": [{"exercise": 1, "set": 0, "weight_kg": null, "reps": 0, "skipped": true}, {"exercise": 2, "set": 1, "weight_kg": 90, "reps": 9}, {"exercise": 2, "set": 2, "weight_kg": 90, "reps": 8}],
   "last_session": "2026-08-12-back-bi",
   "last_type": "back-bi",
   "next_type": "chest-tri"
