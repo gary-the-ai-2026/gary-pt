@@ -17,8 +17,13 @@
       "sets": [
         {
           "set": 1,
-          "weight_kg": 65,
+          "weight_kg": 55,
           "reps": 15
+        },
+        {
+          "set": 2,
+          "weight_kg": 65,
+          "reps": 10
         }
       ]
     },
