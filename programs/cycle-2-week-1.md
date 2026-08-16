@@ -15,7 +15,7 @@ next_session: legs-shoulders
 |---|---|---|---|---|
 | 1 | Incline Smith Machine Bench Press | 3 | 62.5kg | 8–10 |
 | 2 | Flat Dumbbell Press | 3 | 27.0kg | 8–12 |
-| 3 | Cable Flye (High-to-Low) | 3 | 20.5kg | 12–15 |
+| 3 | Cable Flye (High-to-Low) | 3 | 23.0kg | 12–15 |
 | 4 | Tricep Pushdown (EZ Bar) | 3 | 30.0kg | 12–15 |
 | 5 | Overhead Cable Extension (Rope) | 3 | 34.5kg | 12–15 |
 | 6 | Close-Grip Smith Press | 2 | 37.5kg | 10–12 |

@@ -2,7 +2,7 @@
   "session_id": "2026-08-17-chest-tri",
   "date": "2026-08-17",
   "type": "chest-tri",
-  "status": "in_progress",
+  "status": "complete",
   "cycle": 2,
   "week": 1,
   "started": "05:53",
@@ -74,6 +74,11 @@
           "set": 2,
           "weight_kg": 23,
           "reps": 13
+        },
+        {
+          "set": 3,
+          "weight_kg": 23,
+          "reps": 14
         }
       ]
     },
@@ -83,7 +88,7 @@
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 30.0,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     },
     {
@@ -92,7 +97,7 @@
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 34.5,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     },
     {
@@ -101,8 +106,11 @@
       "target_sets": 2,
       "target_reps": "10\u201312",
       "target_weight_kg": 37.5,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     }
-  ]
+  ],
+  "finished": "06:29",
+  "duration_min": 36,
+  "notes": "Ended early after Cable Flye (3/6 exercises). Triceps block skipped (Pushdown, OH Cable Ext, Close-Grip Smith). Incline Smith: 55x15 feeler then self-selected 65 (10/5). Flat DB held 26x8x3 at floor. Cable Flye self-selected 23 (vs 20.5 target) 14/13/14 \u2014 ready for 23 next cycle."
 }
