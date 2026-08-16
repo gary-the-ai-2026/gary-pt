@@ -1,7 +1,7 @@
 {
   "session_type": "chest-tri",
   "current_exercise": 2,
-  "current_set": 2,
+  "current_set": 3,
   "log": [
     {
       "exercise": 1,
@@ -24,6 +24,12 @@
     {
       "exercise": 2,
       "set": 1,
+      "weight_kg": 26,
+      "reps": 8
+    },
+    {
+      "exercise": 2,
+      "set": 2,
       "weight_kg": 26,
       "reps": 8
     }
