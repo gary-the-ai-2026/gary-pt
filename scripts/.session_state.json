@@ -1,7 +1,7 @@
 {
   "session_type": "chest-tri",
   "current_exercise": 3,
-  "current_set": 1,
+  "current_set": 2,
   "log": [
     {
       "exercise": 1,
@@ -38,6 +38,12 @@
       "set": 3,
       "weight_kg": 26,
       "reps": 8
+    },
+    {
+      "exercise": 3,
+      "set": 1,
+      "weight_kg": 23,
+      "reps": 14
     }
   ],
   "last_session": "2026-08-15-legs-shoulders",
