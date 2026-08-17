@@ -18,7 +18,7 @@ next_session: legs-shoulders
 | 3 | Cable Flye (High-to-Low) | 3 | 23.0kg | 12–15 |
 | 4 | Tricep Pushdown (EZ Bar) | 3 | 32.0kg | 12–15 |
 | 5 | Overhead Cable Extension (Rope) | 3 | 36.0kg | 12–15 |
-| 6 | Close-Grip Smith Press | 2 | 37.5kg | 10–12 |
+| 6 | Close-Grip Smith Press | 2 | 40.0kg | 10–12 |
 
 ## Back / Biceps
 
