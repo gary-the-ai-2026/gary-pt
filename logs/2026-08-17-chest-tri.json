@@ -139,7 +139,13 @@
       "target_reps": "10\u201312",
       "target_weight_kg": 37.5,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 35,
+          "reps": 15
+        }
+      ]
     }
   ],
   "notes": "Resumed 13:56 to finish triceps block. First half: Incline Smith 55x15/65x10/65x5, Flat DB 26x8x3, Cable Flye 23x14/13/14.",
