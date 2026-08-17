@@ -114,7 +114,13 @@
       "target_reps": "12\u201315",
       "target_weight_kg": 34.5,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 36,
+          "reps": 15
+        }
+      ]
     },
     {
       "num": 6,
