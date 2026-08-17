@@ -2,7 +2,7 @@
   "session_id": "2026-08-17-chest-tri",
   "date": "2026-08-17",
   "type": "chest-tri",
-  "status": "in_progress",
+  "status": "complete",
   "cycle": 2,
   "week": 1,
   "started": "05:53",
@@ -144,10 +144,16 @@
           "set": 1,
           "weight_kg": 35,
           "reps": 15
+        },
+        {
+          "set": 2,
+          "weight_kg": 35,
+          "reps": 15
         }
       ]
     }
   ],
-  "notes": "Resumed 13:56 to finish triceps block. First half: Incline Smith 55x15/65x10/65x5, Flat DB 26x8x3, Cable Flye 23x14/13/14.",
-  "resumed": "13:56"
+  "notes": "Session split: morning 05:53-06:29 (chest), lunch 13:56-14:25 (triceps). Incline Smith 55x15/65x10/65x5 (65 crashed set 3). Flat DB 26x8x3 at floor. Cable Flye self-selected 23 (14/13/14). Pushdown 23/27/32 (15/15/13). OH Cable Ext 36x15x3. Close-Grip Smith 35x15x2. Triceps block self-selected throughout.",
+  "finished": "14:25",
+  "duration_min": 65
 }
