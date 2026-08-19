@@ -1,7 +1,7 @@
 {
   "session_type": "back-bi",
   "current_exercise": 5,
-  "current_set": 1,
+  "current_set": 2,
   "log": [
     {
       "exercise": "Pull-Up",
@@ -78,6 +78,12 @@
     {
       "exercise": "Hammer Curl",
       "set": 1,
+      "weight_kg": 12,
+      "reps": 15
+    },
+    {
+      "exercise": "Hammer Curl",
+      "set": 2,
       "weight_kg": 12,
       "reps": 15
     }
