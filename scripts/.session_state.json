@@ -1,7 +1,7 @@
 {
   "session_type": "back-bi",
   "current_exercise": 3,
-  "current_set": 1,
+  "current_set": 2,
   "log": [
     {
       "exercise": "Pull-Up",
@@ -62,6 +62,12 @@
       "set": 1,
       "weight_kg": 18,
       "reps": 7
+    },
+    {
+      "exercise": "Cable Rear Delt Flye",
+      "set": 2,
+      "weight_kg": 18,
+      "reps": 6
     }
   ],
   "last_session": "2026-08-17-chest-tri",
