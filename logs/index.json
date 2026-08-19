@@ -1,5 +1,14 @@
 [
   {
+    "name": "2026-08-19-back-bi.json",
+    "date": "2026-08-19",
+    "type": "back-bi",
+    "status": "in_progress",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
+  },
+  {
     "name": "2026-08-17-chest-tri.json",
     "date": "2026-08-17",
     "type": "chest-tri",
