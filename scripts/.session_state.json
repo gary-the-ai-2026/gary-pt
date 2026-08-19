@@ -1,7 +1,7 @@
 {
   "session_type": "back-bi",
   "current_exercise": 4,
-  "current_set": 0,
+  "current_set": 1,
   "log": [
     {
       "exercise": "Pull-Up",
@@ -92,6 +92,12 @@
       "set": 3,
       "weight_kg": 12,
       "reps": 12
+    },
+    {
+      "exercise": "Cable Barbell Curl (EZ Bar)",
+      "set": 1,
+      "weight_kg": 23,
+      "reps": 6
     }
   ],
   "last_session": "2026-08-17-chest-tri",
