@@ -1,7 +1,7 @@
 {
   "session_type": "back-bi",
-  "current_exercise": 1,
-  "current_set": 2,
+  "current_exercise": 2,
+  "current_set": 0,
   "log": [
     {
       "exercise": "Pull-Up",
@@ -30,6 +30,12 @@
     {
       "exercise": "Dumbbell Row (Single Arm)",
       "set": 2,
+      "weight_kg": 26,
+      "reps": 12
+    },
+    {
+      "exercise": "Dumbbell Row (Single Arm)",
+      "set": 3,
       "weight_kg": 26,
       "reps": 12
     }
