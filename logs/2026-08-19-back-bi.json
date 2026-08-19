@@ -88,9 +88,15 @@
       "name": "Cable Rear Delt Flye",
       "target_sets": 3,
       "target_reps": "12\u201315",
-      "target_weight_kg": 16.5,
+      "target_weight_kg": 18.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 18,
+          "reps": 7
+        }
+      ]
     },
     {
       "num": 5,
