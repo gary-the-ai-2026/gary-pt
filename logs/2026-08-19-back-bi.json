@@ -63,9 +63,15 @@
       "name": "Lat Pulldown (Close Grip)",
       "target_sets": 3,
       "target_reps": "10\u201312",
-      "target_weight_kg": 52.5,
+      "target_weight_kg": 54.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 54,
+          "reps": 7
+        }
+      ]
     },
     {
       "num": 4,
