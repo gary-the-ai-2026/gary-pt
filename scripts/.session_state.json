@@ -1,7 +1,7 @@
 {
   "session_type": "back-bi",
   "current_exercise": 1,
-  "current_set": 0,
+  "current_set": 1,
   "log": [
     {
       "exercise": "Pull-Up",
@@ -20,6 +20,12 @@
       "set": 3,
       "weight_kg": null,
       "reps": 6
+    },
+    {
+      "exercise": "Dumbbell Row (Single Arm)",
+      "set": 1,
+      "weight_kg": 26,
+      "reps": 12
     }
   ],
   "last_session": "2026-08-17-chest-tri",
