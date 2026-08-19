@@ -6,13 +6,67 @@
   "cycle": 2,
   "week": 1,
   "started": "18:45",
-  "notes": "Calibrated from 12 Aug: Pull-Up repeat (10/8/5), DB Row →27 (max DB), Lat Pulldown →52.5, Rear Delt Flye →16.5, EZ Bar Curl →25.5, Hammer Curl 12.0.",
+  "notes": "Calibrated from 12 Aug: Pull-Up repeat (10/8/5), DB Row \u219227 (max DB), Lat Pulldown \u219252.5, Rear Delt Flye \u219216.5, EZ Bar Curl \u219225.5, Hammer Curl 12.0.",
   "exercises": [
-    {"num": 1, "name": "Pull-Up", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": null, "skipped": false, "sets": []},
-    {"num": 2, "name": "Dumbbell Row (Single Arm)", "target_sets": 3, "target_reps": "8–12", "target_weight_kg": 27.0, "skipped": false, "sets": []},
-    {"num": 3, "name": "Lat Pulldown (Close Grip)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 52.5, "skipped": false, "sets": []},
-    {"num": 4, "name": "Cable Rear Delt Flye", "target_sets": 3, "target_reps": "12–15", "target_weight_kg": 16.5, "skipped": false, "sets": []},
-    {"num": 5, "name": "Cable Barbell Curl (EZ Bar)", "target_sets": 3, "target_reps": "10–12", "target_weight_kg": 25.5, "skipped": false, "sets": []},
-    {"num": 6, "name": "Hammer Curl", "target_sets": 2, "target_reps": "12–15", "target_weight_kg": 12.0, "skipped": false, "sets": []}
+    {
+      "num": 1,
+      "name": "Pull-Up",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": null,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": null,
+          "reps": 13
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "Dumbbell Row (Single Arm)",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": 27.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 3,
+      "name": "Lat Pulldown (Close Grip)",
+      "target_sets": 3,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 52.5,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 4,
+      "name": "Cable Rear Delt Flye",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 16.5,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 5,
+      "name": "Cable Barbell Curl (EZ Bar)",
+      "target_sets": 3,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 25.5,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 6,
+      "name": "Hammer Curl",
+      "target_sets": 2,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 12.0,
+      "skipped": false,
+      "sets": []
+    }
   ]
 }
