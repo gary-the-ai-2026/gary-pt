@@ -1,7 +1,7 @@
 {
   "session_type": "back-bi",
-  "current_exercise": 2,
-  "current_set": 2,
+  "current_exercise": 3,
+  "current_set": 0,
   "log": [
     {
       "exercise": "Pull-Up",
@@ -50,6 +50,12 @@
       "set": 2,
       "weight_kg": 50,
       "reps": 12
+    },
+    {
+      "exercise": "Lat Pulldown (Close Grip)",
+      "set": 3,
+      "weight_kg": 50,
+      "reps": 11
     }
   ],
   "last_session": "2026-08-17-chest-tri",
