@@ -25,6 +25,11 @@
           "set": 2,
           "weight_kg": null,
           "reps": 7
+        },
+        {
+          "set": 3,
+          "weight_kg": null,
+          "reps": 6
         }
       ]
     },
