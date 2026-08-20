@@ -1,9 +1,18 @@
 [
   {
+    "name": "2026-08-21-legs-shoulders.json",
+    "date": "2026-08-21",
+    "type": "legs-shoulders",
+    "status": "in_progress",
+    "duration_min": null,
+    "cycle": 2,
+    "ad_hoc": false
+  },
+  {
     "name": "2026-08-19-back-bi.json",
     "date": "2026-08-19",
     "type": "back-bi",
-    "status": "in_progress",
+    "status": "complete",
     "duration_min": null,
     "cycle": 2,
     "ad_hoc": false
