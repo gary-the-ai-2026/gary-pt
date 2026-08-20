@@ -1,6 +1,6 @@
 {
   "session_type": "legs-shoulders",
-  "current_exercise": 2,
+  "current_exercise": 7,
   "current_set": 1,
   "log": [
     {"exercise": "Barbell Back Squat", "set": 1, "weight_kg": 70, "reps": 12},
@@ -8,7 +8,8 @@
     {"exercise": "Barbell Back Squat", "set": 3, "weight_kg": 80, "reps": 8},
     {"exercise": "Romanian Deadlift (BB)", "set": 1, "weight_kg": 90, "reps": 10},
     {"exercise": "Romanian Deadlift (BB)", "set": 2, "weight_kg": 90, "reps": 10},
-    {"exercise": "Romanian Deadlift (BB)", "set": 3, "weight_kg": 90, "reps": 10}
+    {"exercise": "Romanian Deadlift (BB)", "set": 3, "weight_kg": 90, "reps": 10},
+    {"exercise": "Standing Calf Raise (Single Leg)", "set": 1, "weight_kg": 26, "reps": 30}
   ],
   "last_session": "2026-08-19-back-bi",
   "next_type": "chest-tri"
