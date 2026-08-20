@@ -1006,7 +1006,7 @@ let allLogs = [];
 let charts = {};
 
 async function fetchText(url) {
-  const r = await fetch(url);
+  const r = await fetch(url, {cache: 'no-store'});
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   return r.text();
 }
@@ -1294,7 +1294,7 @@ async function loadProgram() {
       }
     } catch (e) { /* fall through to MD parser */ }
 
-    const md = await fetchText(`${REPO_RAW}/programs/cycle-2-week-1.md`);
+    const md = await fetchText(`${REPO_RAW}/programs/cycle-2-week-1.md?t=${Date.now()}`);
     const sections = md.split('## ');
     const map = { 'chest-tri': 'Chest / Triceps', 'back-bi': 'Back / Biceps', 'legs-shoulders': 'Legs / Shoulders' };
     const target = map[currentSession];
