@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-07-04
 status: active
-next_session: legs-shoulders
+next_session: chest-tri
 ---
 
 # Cycle 2 — Week 1
@@ -37,8 +37,8 @@ next_session: legs-shoulders
 |---|---|---|---|---|
 | 1 | Barbell Back Squat | 3 | 80.0kg | 8–10 |
 | 2 | Romanian Deadlift (BB) | 3 | 90.0kg | 8–12 |
-| 3 | Leg Extension (Single Leg) | 3 | 32.5kg | 12–15 |
-| 4 | Leg Curl | 3 | 20.0kg | 12–15 |
-| 5 | Barbell Overhead Press | 3 | 32.5kg | 8–12 |
+| 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 |
+| 4 | Leg Curl | 3 | 22.5kg | 12–15 |
+| 5 | Barbell Overhead Press | 3 | 30.0kg | 8–12 |
 | 6 | Cable Lateral Raise | 3 | 8.5kg | 12–15 |
-| 7 | Seated Calf Raise | 3 | 40.0kg | 15–20 |
+| 7 | Standing Calf Raise (Single Leg) | 3 | 26.0kg | 15–20 |
