@@ -1,9 +1,11 @@
 {
   "session_type": "legs-shoulders",
-  "current_exercise": 0,
-  "current_set": 2,
+  "current_exercise": 1,
+  "current_set": 1,
   "log": [
-    {"exercise": "Barbell Back Squat", "set": 1, "weight_kg": 70, "reps": 12}
+    {"exercise": "Barbell Back Squat", "set": 1, "weight_kg": 70, "reps": 12},
+    {"exercise": "Barbell Back Squat", "set": 2, "weight_kg": 70, "reps": 12},
+    {"exercise": "Barbell Back Squat", "set": 3, "weight_kg": 80, "reps": 8}
   ],
   "last_session": "2026-08-19-back-bi",
   "next_type": "chest-tri"
