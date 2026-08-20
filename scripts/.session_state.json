@@ -9,7 +9,7 @@
     {"exercise": "Romanian Deadlift (BB)", "set": 1, "weight_kg": 90, "reps": 10},
     {"exercise": "Romanian Deadlift (BB)", "set": 2, "weight_kg": 90, "reps": 10},
     {"exercise": "Romanian Deadlift (BB)", "set": 3, "weight_kg": 90, "reps": 10},
-    {"exercise": "Standing Calf Raise (Single Leg)", "set": 1, "weight_kg": 26, "reps": 30}
+    {"exercise": "Standing Calf Raise (Single Leg)", "set": 1, "weight_kg": 26, "reps": 25}
   ],
   "last_session": "2026-08-19-back-bi",
   "next_type": "chest-tri"
