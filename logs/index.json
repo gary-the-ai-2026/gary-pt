@@ -3,8 +3,8 @@
     "name": "2026-08-22-chest-tri.json",
     "date": "2026-08-22",
     "type": "chest-tri",
-    "status": "in_progress",
-    "duration_min": null,
+    "status": "complete",
+    "duration_min": 45,
     "cycle": 3,
     "ad_hoc": false
   },

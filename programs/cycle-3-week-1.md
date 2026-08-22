@@ -15,8 +15,8 @@ next_session: chest-tri
 |---|---|---|---|---|---|---|
 | 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 | 2–3 min |
 | 2 | Incline Dumbbell Press | 3 | 22.5kg/side | 10–12 | 90 sec |
-| 3 | Cable Flye (Low-to-High) | 3 | 20.5kg | 12–15 | 60 sec |
-| 4 | Tricep Pushdown (Rope) | 3 | 30.0kg | 12–15 | 60 sec |
+| 3 | Cable Flye (Low-to-High) | 3 | 14.0kg | 12–15 | 60 sec |
+| 4 | Tricep Pushdown (Rope) | 3 | 32.0kg | 12–15 | 60 sec |
 | 5 | Skull Crusher (EZ Bar) | 3 | 25.0kg | 10–12 | 90 sec |
 | 6 | Close-Grip Smith Press | 2 | 42.5kg | 10–12 | 90 sec |
 
