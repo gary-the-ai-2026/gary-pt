@@ -2,7 +2,7 @@
   "session_id": "2026-08-22-chest-tri",
   "date": "2026-08-22",
   "type": "chest-tri",
-  "status": "in-progress",
+  "status": "in_progress",
   "cycle": 3,
   "week": 1,
   "started": "15:11",
@@ -18,6 +18,18 @@
         {"set": 1, "weight_kg": 65, "reps": 10},
         {"set": 2, "weight_kg": 65, "reps": 10},
         {"set": 3, "weight_kg": 65, "reps": 6}
+      ]
+    },
+    {
+      "num": 2,
+      "name": "Incline Dumbbell Press",
+      "target_sets": 3,
+      "target_reps": "10–12",
+      "target_weight_kg": 22.5,
+      "skipped": false,
+      "sets": [
+        {"set": 1, "weight_kg": 22, "reps": 10, "side": "each"},
+        {"set": 2, "weight_kg": 22, "reps": 11, "side": "each"}
       ]
     }
   ]
