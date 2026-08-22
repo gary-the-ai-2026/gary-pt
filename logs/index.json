@@ -1,5 +1,14 @@
 [
   {
+    "name": "2026-08-22-chest-tri.json",
+    "date": "2026-08-22",
+    "type": "chest-tri",
+    "status": "in-progress",
+    "duration_min": null,
+    "cycle": 3,
+    "ad_hoc": false
+  },
+  {
     "name": "2026-08-21-legs-shoulders.json",
     "date": "2026-08-21",
     "type": "legs-shoulders",
