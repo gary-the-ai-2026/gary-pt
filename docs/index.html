@@ -998,7 +998,7 @@ const SESSION_NAMES = {
   'back-bi': 'Back / Biceps',
   'legs-shoulders': 'Legs / Shoulders',
 };
-const CURRENT_CYCLE = 2;
+const CURRENT_CYCLE = 3;
 const TOTAL_CYCLE = 18;
 
 let currentSession = null;
@@ -1294,7 +1294,7 @@ async function loadProgram() {
       }
     } catch (e) { /* fall through to MD parser */ }
 
-    const md = await fetchText(`${REPO_RAW}/programs/cycle-2-week-1.md?t=${Date.now()}`);
+    const md = await fetchText(`${REPO_RAW}/programs/cycle-3-week-1.md?t=${Date.now()}`);
     const sections = md.split('## ');
     const map = { 'chest-tri': 'Chest / Triceps', 'back-bi': 'Back / Biceps', 'legs-shoulders': 'Legs / Shoulders' };
     const target = map[currentSession];
@@ -1313,7 +1313,7 @@ async function loadProgram() {
 async function loadAllProtocols() {
   // Parse the program MD to extract all session types and their exercise lists
   try {
-    const md = await fetchText(`${REPO_RAW}/programs/cycle-2-week-1.md?t=${Date.now()}`);
+    const md = await fetchText(`${REPO_RAW}/programs/cycle-3-week-1.md?t=${Date.now()}`);
     const sections = md.split('## ');
     const mapTarget = { 'chest-tri': 'Chest / Triceps', 'back-bi': 'Back / Biceps', 'legs-shoulders': 'Legs / Shoulders' };
     const protocols = [];
