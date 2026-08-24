@@ -3,8 +3,8 @@
     "name": "2026-08-24-back-bi.json",
     "date": "2026-08-24",
     "type": "back-bi",
-    "status": "in_progress",
-    "duration_min": null,
+    "status": "complete",
+    "duration_min": 33,
     "cycle": 3,
     "ad_hoc": false
   },

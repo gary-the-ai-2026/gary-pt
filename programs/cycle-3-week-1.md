@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-08-22
 status: active
-next_session: back-bi
+next_session: legs-shoulders
 ---
 
 # Cycle 3 — Week 1
@@ -25,11 +25,11 @@ next_session: back-bi
 || # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|---|
 | 1 | Pull-Up | 3 | BW | 8–12 | 2 min |
-| 2 | Barbell Row | 3 | 50.0kg | 8–10 | 2 min |
+| 2 | Barbell Row | 3 | 60.0kg | 8–10 | 2 min |
 | 3 | Lat Pulldown (Wide) | 3 | 47.5kg | 8–12 | 90 sec |
-| 4 | Face Pull | 3 | 25.0kg | 12–15 | 60 sec |
+| 4 | Face Pull | 3 | 36.0kg | 12–15 | 60 sec |
 | 5 | Cable Barbell Curl (EZ Bar) | 3 | 25.5kg | 10–12 | 60 sec |
-| 6 | Incline Dumbbell Curl | 3 | 10.0kg/side | 10–12 | 60 sec |
+| 6 | Incline Dumbbell Curl | 3 | 12.0kg/side | 10–12 | 60 sec |
 
 ## Legs / Shoulders
 
@@ -61,10 +61,10 @@ next_session: back-bi
 - **Incline DB Press 22.5kg:** fresh exercise. Flat DB was 26×8×3. Incline is ~15% harder — 22.5 is a conservative start. Move to 25 if sets go clean.
 - **Cable Flye Low-to-High 20.5kg:** swap from High-to-Low (was 23×14/13/14). Low-to-High loads slightly lighter. Expect to calibrate up after session 1.
 - **Skull Crusher 25kg:** fresh exercise. OH Cable Ext was maxed at 36×15. Skull crusher is a different loading curve — 25kg EZ bar is a safe starting point for 10–12 reps.
-- **Barbell Row 50kg:** fresh exercise. DB Row was 26×12 per arm. Barbell row typically loads heavier than one-arm DB; 50kg is a moderate starting weight. Calibrate after first session.
+- **Barbell Row 60kg:** calibrated 24 Aug (50×15 warm-up / 60×9 / 60×10). 50kg estimate was far too light — working weight is 60kg. Next session 62.5kg if sets 2–3 both hit top.
 - **Lat Pulldown Wide 47.5kg:** swap from Close Grip (was 52.5–54). Wide grip is ~10% lighter for most lifters. Expect to calibrate up.
-- **Face Pull 25kg:** fresh exercise. Cable Rear Delt Flye was 16.5–18kg. Face pulls use different leverage; 25kg is a moderate start.
-- **Incline DB Curl 10kg:** fresh exercise. Hammer curl was 12×15/15/12 but incline curl is harder (stretch position). Start at 10kg.
+- **Face Pull 36kg:** calibrated 24 Aug — ramped 27×15 / 32×15 / 36×15, all at top of range. 25kg estimate was very conservative; real working weight is 36kg. Hold at 36 next session and confirm 3 clean sets before bumping.
+- **Incline DB Curl 12kg:** calibrated 24 Aug (10×15 / 12×10 / 12×8). 10kg was light; 12kg is the working weight. Hold at 12 and build the third set into range.
 - **DB Shoulder Press 22.5kg:** revisit from Cycle 1 (was 21.4kg). BB OHP was 30kg in Cycle 2, skipped last session. Slight bump from old DB target.
 - **Seated Calf Raise 40kg:** fresh exercise. Standing SL was 26×25/21. Seated targets soleus, typically loads lighter. 40kg barbell across knees is a starting point.
 - **Squat 82.5kg:** calibrated from 21 Aug (70×12 / 70×12 / 80×8). Last set hit 80×8 — one rep shy of the 8–10 range. Small bump to 82.5kg; if depth suffers, hold at 80 and build reps.

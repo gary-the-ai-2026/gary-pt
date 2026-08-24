@@ -1,40 +1,8 @@
 {
-  "session_type": "back-bi",
-  "current_exercise": 6,
-  "current_set": 2,
-  "log": [
-    {
-      "name": "Pull-Up",
-      "sets": [
-        {"set": 1, "weight_kg": null, "reps": 15},
-        {"set": 2, "weight_kg": null, "reps": 12},
-        {"set": 3, "weight_kg": null, "reps": 7}
-      ]
-    },
-    {
-      "name": "Barbell Row",
-      "sets": [
-        {"set": 1, "weight_kg": 50, "reps": 15},
-        {"set": 2, "weight_kg": 60, "reps": 9},
-        {"set": 3, "weight_kg": 60, "reps": 10}
-      ]
-    },
-    {
-      "name": "Face Pull",
-      "sets": [
-        {"set": 1, "weight_kg": 27, "reps": 15},
-        {"set": 2, "weight_kg": 32, "reps": 15},
-        {"set": 3, "weight_kg": 36, "reps": 15}
-      ]
-    },
-    {
-      "name": "Incline Dumbbell Curl",
-      "sets": [
-        {"set": 1, "weight_kg": 10, "reps": 15, "side": "each"},
-        {"set": 2, "weight_kg": 12, "reps": 10, "side": "each"}
-      ]
-    }
-  ],
-  "last_session": "2026-08-22-chest-tri",
+  "session_type": null,
+  "current_exercise": 0,
+  "current_set": 0,
+  "log": [],
+  "last_session": "2026-08-24-back-bi",
   "next_type": "legs-shoulders"
 }
