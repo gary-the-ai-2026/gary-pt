@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-08-22
 status: active
-next_session: chest-tri
+next_session: back-bi
 ---
 
 # Cycle 3 — Week 1
