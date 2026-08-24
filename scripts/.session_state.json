@@ -1,8 +1,17 @@
 {
   "session_type": "back-bi",
-  "current_exercise": 0,
+  "current_exercise": 1,
   "current_set": 1,
-  "log": [],
+  "log": [
+    {
+      "name": "Pull-Up",
+      "sets": [
+        {"set": 1, "weight_kg": null, "reps": 15},
+        {"set": 2, "weight_kg": null, "reps": 12},
+        {"set": 3, "weight_kg": null, "reps": 7}
+      ]
+    }
+  ],
   "last_session": "2026-08-22-chest-tri",
   "next_type": "legs-shoulders"
 }

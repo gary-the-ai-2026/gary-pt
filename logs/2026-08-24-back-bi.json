@@ -14,7 +14,11 @@
       "target_reps": "8–12",
       "target_weight_kg": null,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {"set": 1, "weight_kg": null, "reps": 15},
+        {"set": 2, "weight_kg": null, "reps": 12},
+        {"set": 3, "weight_kg": null, "reps": 7}
+      ]
     },
     {
       "num": 2,
