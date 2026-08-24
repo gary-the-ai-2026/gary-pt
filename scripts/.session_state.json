@@ -1,7 +1,7 @@
 {
   "session_type": "back-bi",
   "current_exercise": 4,
-  "current_set": 1,
+  "current_set": 2,
   "log": [
     {
       "name": "Pull-Up",
@@ -22,7 +22,8 @@
     {
       "name": "Face Pull",
       "sets": [
-        {"set": 1, "weight_kg": 27, "reps": 15}
+        {"set": 1, "weight_kg": 27, "reps": 15},
+        {"set": 2, "weight_kg": 32, "reps": 15}
       ]
     }
   ],

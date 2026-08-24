@@ -50,7 +50,8 @@
       "target_weight_kg": 27.0,
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 27, "reps": 15}
+        {"set": 1, "weight_kg": 27, "reps": 15},
+        {"set": 2, "weight_kg": 32, "reps": 15}
       ]
     },
     {
