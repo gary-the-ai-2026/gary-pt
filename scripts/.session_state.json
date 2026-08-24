@@ -1,6 +1,6 @@
 {
   "session_type": "back-bi",
-  "current_exercise": 3,
+  "current_exercise": 4,
   "current_set": 1,
   "log": [
     {
@@ -17,6 +17,12 @@
         {"set": 1, "weight_kg": 50, "reps": 15},
         {"set": 2, "weight_kg": 60, "reps": 9},
         {"set": 3, "weight_kg": 60, "reps": 10}
+      ]
+    },
+    {
+      "name": "Face Pull",
+      "sets": [
+        {"set": 1, "weight_kg": 27, "reps": 15}
       ]
     }
   ],
