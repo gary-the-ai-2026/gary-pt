@@ -1,6 +1,6 @@
 {
   "session_type": "back-bi",
-  "current_exercise": 1,
+  "current_exercise": 2,
   "current_set": 1,
   "log": [
     {
@@ -9,6 +9,12 @@
         {"set": 1, "weight_kg": null, "reps": 15},
         {"set": 2, "weight_kg": null, "reps": 12},
         {"set": 3, "weight_kg": null, "reps": 7}
+      ]
+    },
+    {
+      "name": "Barbell Row",
+      "sets": [
+        {"set": 1, "weight_kg": 50, "reps": 15}
       ]
     }
   ],
