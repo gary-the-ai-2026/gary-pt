@@ -29,7 +29,8 @@
       "skipped": false,
       "sets": [
         {"set": 1, "weight_kg": 50, "reps": 15},
-        {"set": 2, "weight_kg": 60, "reps": 9}
+        {"set": 2, "weight_kg": 60, "reps": 9},
+        {"set": 3, "weight_kg": 60, "reps": 10}
       ]
     },
     {
