@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-08-22
 status: active
-next_session: legs-shoulders
+next_session: chest-tri
 ---
 
 # Cycle 3 — Week 1
@@ -33,14 +33,14 @@ next_session: legs-shoulders
 
 ## Legs / Shoulders
 
-|| # | Exercise | Sets | Weight | Reps | Rest |
+| # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|---|
-| 1 | Barbell Back Squat | 3 | 82.5kg | 8–10 | 2–3 min |
-| 2 | Romanian Deadlift (BB) | 3 | 95.0kg | 8–12 | 2 min |
-| 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 | 60 sec |
-| 4 | Leg Curl | 3 | 22.5kg | 12–15 | 60 sec |
+| 1 | Barbell Back Squat | 3 | 85.0kg | 8–10 | 2–3 min |
+| 2 | Romanian Deadlift (BB) | 3 | 90.0kg | 8–12 | 2 min |
+| 3 | Leg Extension (Single Leg) | 3 | 40.0kg | 12–15 | 60 sec |
+| 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
 | 5 | Dumbbell Shoulder Press | 3 | 22.5kg/side | 8–12 | 90 sec |
-| 6 | Dumbbell Lateral Raise | 3 | 12.5kg/side | 12–15 | 60 sec |
+| 6 | Dumbbell Lateral Raise | 3 | 12.0kg/side | 12–15 | 60 sec |
 | 7 | Seated Calf Raise | 3 | 40.0kg | 15–20 | 45 sec |
 
 ---

@@ -3,7 +3,8 @@
     "name": "2026-08-26-legs-shoulders.json",
     "date": "2026-08-26",
     "type": "legs-shoulders",
-    "status": "paused",
+    "status": "complete",
+    "duration_min": 72,
     "cycle": 3,
     "ad_hoc": false
   },
