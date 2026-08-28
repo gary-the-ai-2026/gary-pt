@@ -51,6 +51,12 @@
           "weight_kg": 20,
           "reps": 10,
           "side": "each"
+        },
+        {
+          "set": 3,
+          "weight_kg": 22,
+          "reps": 12,
+          "side": "each"
         }
       ]
     },
