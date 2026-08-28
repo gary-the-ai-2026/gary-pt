@@ -37,9 +37,16 @@
       "name": "Incline Dumbbell Press",
       "target_sets": 3,
       "target_reps": "10\u201312",
-      "target_weight_kg": 22.5,
+      "target_weight_kg": 22.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 22,
+          "reps": 12,
+          "side": "each"
+        }
+      ]
     },
     {
       "num": 3,
