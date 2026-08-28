@@ -90,9 +90,15 @@
       "name": "Tricep Pushdown (Rope)",
       "target_sets": 3,
       "target_reps": "12\u201315",
-      "target_weight_kg": 36.0,
+      "target_weight_kg": 32.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 32,
+          "reps": 15
+        }
+      ]
     },
     {
       "num": 5,
