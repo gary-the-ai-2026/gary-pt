@@ -2,7 +2,7 @@
   "session_id": "2026-08-28-chest-tri",
   "date": "2026-08-28",
   "type": "chest-tri",
-  "status": "in_progress",
+  "status": "complete",
   "cycle": 3,
   "week": 1,
   "started": "18:49",
@@ -95,18 +95,18 @@
       "sets": [
         {
           "set": 1,
-          "weight_kg": 32,
+          "weight_kg": 36,
           "reps": 15
         },
         {
           "set": 2,
-          "weight_kg": 36,
+          "weight_kg": 41,
           "reps": 15
         },
         {
           "set": 3,
           "weight_kg": 41,
-          "reps": 15
+          "reps": 7
         }
       ]
     },
@@ -116,7 +116,7 @@
       "target_sets": 3,
       "target_reps": "10\u201312",
       "target_weight_kg": 25.0,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     },
     {
@@ -125,8 +125,11 @@
       "target_sets": 2,
       "target_reps": "10\u201312",
       "target_weight_kg": 42.5,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     }
-  ]
+  ],
+  "finished": "19:33",
+  "duration_min": 44,
+  "notes": "Self-selected throughout. Incline Smith stalled (65x11/6/5). Incline DB 22x12/20x10/22x12. Cable Flye 14x12/13/13. Tricep Pushdown 36x15/41x15 + bonus 41x7 (first 32x15 set removed per Josh). Ended after tricep; Skull Crusher and Close-Grip skipped (session cut short)."
 }

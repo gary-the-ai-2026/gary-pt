@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-08-22
 status: active
-next_session: chest-tri
+next_session: back-bi
 ---
 
 # Cycle 3 — Week 1
@@ -13,7 +13,7 @@ next_session: chest-tri
 
 || # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|---|
-| 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 | 2–3 min |
+| 1 | Incline Smith Machine Bench Press | 3 | 60.0kg | 8–10 | 2–3 min |
 | 2 | Incline Dumbbell Press | 3 | 22.5kg/side | 10–12 | 90 sec |
 | 3 | Cable Flye (Low-to-High) | 3 | 14.0kg | 12–15 | 60 sec |
 | 4 | Tricep Pushdown (Rope) | 3 | 32.0kg | 12–15 | 60 sec |
@@ -57,7 +57,7 @@ next_session: chest-tri
 
 ## Calibration Notes
 
-- **Incline Smith 65kg:** calibrated from 17 Aug (55×15 / 65×10 / 65×5). Last set crashed at rep 5 — fatigue management across 3 heavy sets is the challenge. If 65 proves too aggressive, drop to 62.5 and build volume.
+- **Incline Smith 60kg:** 65 stalled 28 Aug (11/6/5) — set 1 strong, fatigue crash sets 2-3. Drop to 60 and build volume; flag stall.
 - **Incline DB Press 22.5kg:** fresh exercise. Flat DB was 26×8×3. Incline is ~15% harder — 22.5 is a conservative start. Move to 25 if sets go clean.
 - **Cable Flye Low-to-High 20.5kg:** swap from High-to-Low (was 23×14/13/14). Low-to-High loads slightly lighter. Expect to calibrate up after session 1.
 - **Skull Crusher 25kg:** fresh exercise. OH Cable Ext was maxed at 36×15. Skull crusher is a different loading curve — 25kg EZ bar is a safe starting point for 10–12 reps.
