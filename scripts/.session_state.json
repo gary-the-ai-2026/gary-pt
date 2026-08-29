@@ -5,7 +5,7 @@
   "current_exercise": 0,
   "current_set": 1,
   "exercises": [
-    {"num": 1, "name": "Pull-Up", "target_sets": 3, "target_reps": "8\u201312", "target_weight_kg": null, "sets": []},
+    {"num": 1, "name": "Pull-Up", "target_sets": 3, "target_reps": "8\u201312", "target_weight_kg": null, "sets": [{"set": 1, "weight_kg": null, "reps": 16}]},
     {"num": 2, "name": "Barbell Row", "target_sets": 3, "target_reps": "8\u201310", "target_weight_kg": 60.0, "sets": []},
     {"num": 3, "name": "Lat Pulldown (Wide)", "target_sets": 3, "target_reps": "8\u201312", "target_weight_kg": 47.5, "sets": []},
     {"num": 4, "name": "Face Pull", "target_sets": 3, "target_reps": "12\u201315", "target_weight_kg": 38.5, "sets": []},
