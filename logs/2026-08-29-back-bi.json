@@ -2,10 +2,12 @@
   "session_id": "2026-08-29-back-bi",
   "date": "2026-08-29",
   "type": "back-bi",
-  "status": "in_progress",
+  "status": "complete",
   "cycle": 3,
   "week": 1,
   "started": "12:11",
+  "finished": "13:07",
+  "duration_min": 56,
   "exercises": [
     {
       "num": 1,
