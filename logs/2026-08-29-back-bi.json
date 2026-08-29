@@ -79,7 +79,9 @@
       "target_reps": "10\u201312",
       "target_weight_kg": 12.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {"set": 1, "weight_kg": 12, "reps": 8, "side": "each"}
+      ]
     }
   ],
   "notes": ""
