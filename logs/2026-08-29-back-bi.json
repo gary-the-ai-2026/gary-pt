@@ -55,7 +55,8 @@
       "skipped": false,
       "sets": [
         {"set": 1, "weight_kg": 36, "reps": 15},
-        {"set": 2, "weight_kg": 41, "reps": 14}
+        {"set": 2, "weight_kg": 41, "reps": 14},
+        {"set": 3, "weight_kg": 41, "reps": 14}
       ]
     },
     {
