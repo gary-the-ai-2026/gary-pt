@@ -1,8 +1,16 @@
 {
-  "session_type": null,
+  "chat_id": "-1003949502327",
+  "session_type": "back-bi",
+  "session_name": "Back / Biceps",
   "current_exercise": 0,
-  "current_set": 0,
-  "log": [],
-  "last_session": "2026-08-24-back-bi",
-  "next_type": "legs-shoulders"
+  "current_set": 1,
+  "exercises": [
+    {"num": 1, "name": "Pull-Up", "target_sets": 3, "target_reps": "8\u201312", "target_weight_kg": null, "sets": []},
+    {"num": 2, "name": "Barbell Row", "target_sets": 3, "target_reps": "8\u201310", "target_weight_kg": 60.0, "sets": []},
+    {"num": 3, "name": "Lat Pulldown (Wide)", "target_sets": 3, "target_reps": "8\u201312", "target_weight_kg": 47.5, "sets": []},
+    {"num": 4, "name": "Face Pull", "target_sets": 3, "target_reps": "12\u201315", "target_weight_kg": 38.5, "sets": []},
+    {"num": 5, "name": "Cable Barbell Curl (EZ Bar)", "target_sets": 3, "target_reps": "10\u201312", "target_weight_kg": 25.5, "sets": []},
+    {"num": 6, "name": "Incline Dumbbell Curl", "target_sets": 3, "target_reps": "10\u201312", "target_weight_kg": 12.0, "sets": []}
+  ],
+  "log": {}
 }
