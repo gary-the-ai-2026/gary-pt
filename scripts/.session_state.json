@@ -10,7 +10,7 @@
     {"num": 3, "name": "Lat Pulldown (Wide)", "target_sets": 3, "target_reps": "8\u201312", "target_weight_kg": 47.5, "sets": [{"set": 1, "weight_kg": 45, "reps": 12}, {"set": 2, "weight_kg": 45, "reps": 10}, {"set": 3, "weight_kg": 50, "reps": 8}]},
     {"num": 4, "name": "Face Pull", "target_sets": 3, "target_reps": "12\u201315", "target_weight_kg": 38.5, "sets": [{"set": 1, "weight_kg": 36, "reps": 15}, {"set": 2, "weight_kg": 41, "reps": 14}, {"set": 3, "weight_kg": 41, "reps": 14}]},
     {"num": 5, "name": "Cable Barbell Curl (EZ Bar)", "target_sets": 3, "target_reps": "10\u201312", "target_weight_kg": 25.5, "sets": [{"set": 1, "weight_kg": 23, "reps": 15}, {"set": 2, "weight_kg": 27, "reps": 8}, {"set": 3, "weight_kg": 27, "reps": 6}]},
-    {"num": 6, "name": "Incline Dumbbell Curl", "target_sets": 3, "target_reps": "10\u201312", "target_weight_kg": 12.0, "sets": [{"set": 1, "weight_kg": 12, "reps": 8, "side": "each"}]}
+    {"num": 6, "name": "Incline Dumbbell Curl", "target_sets": 3, "target_reps": "10\u201312", "target_weight_kg": 12.0, "sets": [{"set": 1, "weight_kg": 12, "reps": 8, "side": "each"}, {"set": 2, "weight_kg": 12, "reps": 8, "side": "each"}, {"set": 3, "weight_kg": 12, "reps": 8, "side": "each"}]}
   ],
   "log": {}
 }

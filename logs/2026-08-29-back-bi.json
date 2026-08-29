@@ -80,7 +80,9 @@
       "target_weight_kg": 12.0,
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 12, "reps": 8, "side": "each"}
+        {"set": 1, "weight_kg": 12, "reps": 8, "side": "each"},
+        {"set": 2, "weight_kg": 12, "reps": 8, "side": "each"},
+        {"set": 3, "weight_kg": 12, "reps": 8, "side": "each"}
       ]
     }
   ],
