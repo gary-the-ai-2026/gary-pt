@@ -3,7 +3,7 @@
   "session_type": "legs-shoulders",
   "session_name": "Legs / Shoulders",
   "current_exercise": 2,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -89,6 +89,12 @@
       {
         "weight": 95,
         "reps": 8
+      }
+    ],
+    "Leg Extension (Single Leg)": [
+      {
+        "weight": 40,
+        "reps": 5
       }
     ]
   }
