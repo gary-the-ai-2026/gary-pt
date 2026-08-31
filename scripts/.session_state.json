@@ -2,8 +2,8 @@
   "chat_id": "-1003949502327",
   "session_type": "legs-shoulders",
   "session_name": "Legs / Shoulders",
-  "current_exercise": 2,
-  "current_set": 3,
+  "current_exercise": 3,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -95,6 +95,10 @@
       {
         "weight": 40,
         "reps": 5
+      },
+      {
+        "weight": 35,
+        "reps": 10
       },
       {
         "weight": 35,
