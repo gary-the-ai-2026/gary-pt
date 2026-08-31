@@ -36,7 +36,7 @@ next_session: legs-shoulders
 | # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|---|
 | 1 | Barbell Back Squat | 3 | 85.0kg | 8–10 | 2–3 min |
-| 2 | Romanian Deadlift (BB) | 3 | 90.0kg | 8–12 | 2 min |
+| 2 | Romanian Deadlift (BB) | 3 | 95.0kg | 8–12 | 2 min |
 | 3 | Leg Extension (Single Leg) | 3 | 40.0kg | 12–15 | 60 sec |
 | 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
 | 5 | Dumbbell Shoulder Press | 3 | 22.5kg/side | 8–12 | 90 sec |
@@ -67,8 +67,8 @@ next_session: legs-shoulders
 - **Incline DB Curl 12kg:** calibrated 24 Aug (10×15 / 12×10 / 12×8). 10kg was light; 12kg is the working weight. Hold at 12 and build the third set into range.
 - **DB Shoulder Press 22.5kg:** revisit from Cycle 1 (was 21.4kg). BB OHP was 30kg in Cycle 2, skipped last session. Slight bump from old DB target.
 - **Seated Calf Raise 40kg:** fresh exercise. Standing SL was 26×25/21. Seated targets soleus, typically loads lighter. 40kg barbell across knees is a starting point.
-- **Squat 82.5kg:** calibrated from 21 Aug (70×12 / 70×12 / 80×8). Last set hit 80×8 — one rep shy of the 8–10 range. Small bump to 82.5kg; if depth suffers, hold at 80 and build reps.
-- **RDL 95kg:** calibrated from 21 Aug (90×10×3) — all sets at top of 8–12 range. +5kg progression per rules.
+- **Squat 85kg:** calibrated 26 Aug (80×12×3) — all three sets at 12 (above the 8–10 top). +5kg lower-body progression per rules. If depth suffers at 85, hold at 80 and build reps.
+- **RDL 95kg:** calibrated 26 Aug (90×10×3) — all sets at top of 8–12 range. +5kg progression per rules, now reflected in table above.
 
 ## YouTube Form Library
 
