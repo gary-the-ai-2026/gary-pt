@@ -3,7 +3,7 @@
   "session_type": "legs-shoulders",
   "session_name": "Legs / Shoulders",
   "current_exercise": 1,
-  "current_set": 2,
+  "current_set": 3,
   "exercises": [
     {
       "num": 1,
@@ -78,6 +78,10 @@
       }
     ],
     "Romanian Deadlift (BB)": [
+      {
+        "weight": 95,
+        "reps": 10
+      },
       {
         "weight": 95,
         "reps": 10
