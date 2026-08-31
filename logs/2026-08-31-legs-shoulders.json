@@ -72,6 +72,11 @@
           "set": 1,
           "weight_kg": 40,
           "reps": 5
+        },
+        {
+          "set": 2,
+          "weight_kg": 35,
+          "reps": 10
         }
       ]
     },
