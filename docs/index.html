@@ -521,7 +521,16 @@
   }
   .timer-btn:hover { border-color: var(--coral); color: var(--coral); }
   .timer-btn:active { background: rgba(204,120,92,0.1); }
-  .timer-btn.reset-btn { font-family: var(--font-mono); font-size: 14px; padding: 4px 8px; }
+  .timer-btn.reset-btn { font-family: var(--font-mono); font-size: 14px; padding: 8px 12px; }
+  .timer-btn.start-stop {
+    font-size: 15px; font-weight: 600;
+    padding: 14px 34px;
+    background: var(--coral); border-color: var(--coral);
+    color: #fff; border-radius: 12px;
+    line-height: 1; min-height: 48px;
+  }
+  .timer-btn.start-stop:hover { background: var(--coral-active); border-color: var(--coral-active); color: #fff; }
+  .timer-btn.start-stop:active { background: #8f4a34; }
   .timer-clock {
     font-family: var(--font-mono); font-size: 20px;
     font-weight: 400; font-variant-numeric: tabular-nums;
@@ -905,7 +914,7 @@
         <div class="timer-label">Rest Timer</div>
         <div class="timer-rest-display" id="timer-rest" onclick="toggleRestTimer()">00:00</div>
         <div class="timer-rest-btns">
-          <button class="timer-btn" id="rest-start-btn" onclick="toggleRestTimer()">▶ Start</button>
+          <button class="timer-btn start-stop" id="rest-start-btn" onclick="toggleRestTimer()">▶ Start</button>
           <button class="timer-btn reset-btn" onclick="resetRestTimer()" title="Reset">↺</button>
         </div>
       </div>
@@ -1132,11 +1141,12 @@ function toggleRestTimer() {
 }
 
 function resetRestTimer() {
-  restTimerRunning = false;
-  restTimerStart = null;
+  // Reset counter to zero and immediately resume counting
   restTimerAccum = 0;
-  document.getElementById('timer-rest').classList.remove('running');
-  document.getElementById('rest-start-btn').textContent = '▶ Start';
+  restTimerStart = Date.now();
+  restTimerRunning = true;
+  document.getElementById('timer-rest').classList.add('running');
+  document.getElementById('rest-start-btn').textContent = '⏸ Stop';
   updateRestDisplay();
 }
 
