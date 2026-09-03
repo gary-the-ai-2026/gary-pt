@@ -1,12 +1,12 @@
 {
   "Barbell Bench Press": 5,
-  "Incline Dumbbell Press": 4,
-  "Cable Flye (Low-to-High)": 5,
+  "Incline Dumbbell Press": 5,
+  "Cable Flye (Low-to-High)": 0,
   "Lat Pulldown (Wide)": 5,
   "Barbell Row": 0,
   "Hammer Curl": 1,
   "Renegade Row": 1,
-  "Tricep Pushdown (Rope)": 3,
+  "Tricep Pushdown (Rope)": 4,
   "Overhead Cable Extension": 2,
   "Close-Grip Bench Press": 1,
   "Barbell Curl": 1,
@@ -33,5 +33,6 @@
   "Cable Rear Delt Flye": 0,
   "Cable Barbell Curl (EZ Bar)": 1,
   "Smith Machine Squat": 0,
-  "Barbell Overhead Press": 1
+  "Barbell Overhead Press": 1,
+  "Incline Smith Machine Bench Press": 1
 }
