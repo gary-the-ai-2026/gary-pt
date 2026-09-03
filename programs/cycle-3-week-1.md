@@ -13,10 +13,10 @@ next_session: chest-tri
 
 || # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|---|
-| 1 | Incline Smith Machine Bench Press | 3 | 60.0kg | 8–10 | 2–3 min |
+| 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 | 2–3 min |
 | 2 | Incline Dumbbell Press | 3 | 22.5kg/side | 10–12 | 90 sec |
-| 3 | Cable Flye (Low-to-High) | 3 | 14.0kg | 12–15 | 60 sec |
-| 4 | Tricep Pushdown (Rope) | 3 | 32.0kg | 12–15 | 60 sec |
+| 3 | Cable Flye (Low-to-High) | 3 | 16.0kg | 12–15 | 60 sec |
+| 4 | Tricep Pushdown (Rope) | 3 | 46.0kg | 12–15 | 60 sec |
 | 5 | Skull Crusher (EZ Bar) | 3 | 25.0kg | 10–12 | 90 sec |
 | 6 | Close-Grip Smith Press | 2 | 42.5kg | 10–12 | 90 sec |
 
@@ -57,9 +57,10 @@ next_session: chest-tri
 
 ## Calibration Notes
 
-- **Incline Smith 60kg:** 65 stalled 28 Aug (11/6/5) — set 1 strong, fatigue crash sets 2-3. Drop to 60 and build volume; flag stall.
-- **Incline DB Press 22.5kg:** fresh exercise. Flat DB was 26×8×3. Incline is ~15% harder — 22.5 is a conservative start. Move to 25 if sets go clean.
-- **Cable Flye Low-to-High 20.5kg:** swap from High-to-Low (was 23×14/13/14). Low-to-High loads slightly lighter. Expect to calibrate up after session 1.
+- **Incline Smith 65kg:** stalled 28 Aug (65×11/6/5), then 3 Sep recovered — 55×12 open, then 65×7 / 65×8. Set 3 at top of range. 65 is now the working weight; build sets 2–3 into full range before bumping. Do not read the old 60kg note as current.
+- **Incline DB Press 22.5kg:** 3 Sep 22.5×10 / 22×8 / 22×12. Set 3 clean at top of range on 22. No stall — engine false-positive. Hold 22.5, chase three full sets.
+- **Cable Flye Low-to-High 16kg:** 3 Sep 14×15/15/15 — all three at top. +2.5 per rules, rounded to 16 (cable notch). Next session 16, aim to hold all three at top before bumping. (Note: engine wrote 16.5; using nearest cable stack notch 16.)
+- **Tricep Pushdown (Rope) 46kg:** 3 Sep 41×15 / 46×14 / 46×13 — real mid-session overload straight to 46. This sets today's working weight at 46, not 41. Engine flagged "stall" — FALSE positive, ignore; 46 is the target. Hold 46 and build all three sets into range.
 - **Skull Crusher 25kg:** fresh exercise. OH Cable Ext was maxed at 36×15. Skull crusher is a different loading curve — 25kg EZ bar is a safe starting point for 10–12 reps.
 - **Barbell Row 60kg:** calibrated 24 Aug (50×15 warm-up / 60×9 / 60×10). 50kg estimate was far too light — working weight is 60kg. Next session 62.5kg if sets 2–3 both hit top.
 - **Lat Pulldown Wide 47.5kg:** swap from Close Grip (was 52.5–54). Wide grip is ~10% lighter for most lifters. Expect to calibrate up.
