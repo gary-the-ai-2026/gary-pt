@@ -1,0 +1,88 @@
+{
+  "session_id": "2026-09-07-back-bi",
+  "date": "2026-09-07",
+  "type": "back-bi",
+  "status": "complete",
+  "cycle": 3,
+  "week": 1,
+  "started": "10:33",
+  "finished": "11:17",
+  "duration_min": 44,
+  "notes": "Pull-Up 15/8/8 (set 1 well above range). Barbell Row 60x14 / 65x13 / 65x7 — working weight moved up to 65 this session, set 3 suffered at honest load. Lat Pulldown Wide 45x12/12 / 65x7 — first two clean top-of-range, 65 was an overload grind. Face Pull 36x15x3 — perfect. Cable Barbell Curl 27x12/10/10 — solid at mid/top of range. Called it after cable curl; Incline DB Curl skipped (6 exercises done).",
+  "exercises": [
+    {
+      "num": 1,
+      "name": "Pull-Up",
+      "target_sets": 3,
+      "target_reps": "8-12",
+      "target_weight_kg": null,
+      "skipped": false,
+      "sets": [
+        {"set": 1, "weight_kg": null, "reps": 15},
+        {"set": 2, "weight_kg": null, "reps": 8},
+        {"set": 3, "weight_kg": null, "reps": 8}
+      ]
+    },
+    {
+      "num": 2,
+      "name": "Barbell Row",
+      "target_sets": 3,
+      "target_reps": "8-10",
+      "target_weight_kg": 60,
+      "skipped": false,
+      "sets": [
+        {"set": 1, "weight_kg": 60, "reps": 14},
+        {"set": 2, "weight_kg": 65, "reps": 13},
+        {"set": 3, "weight_kg": 65, "reps": 7}
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Lat Pulldown (Wide)",
+      "target_sets": 3,
+      "target_reps": "8-12",
+      "target_weight_kg": 47.5,
+      "skipped": false,
+      "sets": [
+        {"set": 1, "weight_kg": 45, "reps": 12},
+        {"set": 2, "weight_kg": 45, "reps": 12},
+        {"set": 3, "weight_kg": 65, "reps": 7}
+      ]
+    },
+    {
+      "num": 4,
+      "name": "Face Pull",
+      "target_sets": 3,
+      "target_reps": "12-15",
+      "target_weight_kg": 36,
+      "skipped": false,
+      "sets": [
+        {"set": 1, "weight_kg": 36, "reps": 15},
+        {"set": 2, "weight_kg": 36, "reps": 15},
+        {"set": 3, "weight_kg": 36, "reps": 15}
+      ]
+    },
+    {
+      "num": 5,
+      "name": "Cable Barbell Curl (EZ Bar)",
+      "target_sets": 3,
+      "target_reps": "10-12",
+      "target_weight_kg": 25.5,
+      "skipped": false,
+      "sets": [
+        {"set": 1, "weight_kg": 27, "reps": 12},
+        {"set": 2, "weight_kg": 27, "reps": 10},
+        {"set": 3, "weight_kg": 27, "reps": 10}
+      ]
+    },
+    {
+      "num": 6,
+      "name": "Incline Dumbbell Curl",
+      "target_sets": 3,
+      "target_reps": "10-12",
+      "target_weight_kg": 12,
+      "skipped": true,
+      "sets": []
+    }
+  ]
+}
