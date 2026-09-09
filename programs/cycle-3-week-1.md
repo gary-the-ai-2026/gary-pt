@@ -4,7 +4,7 @@ week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-08-22
 status: active
-next_session: legs-shoulders
+next_session: chest-tri
 ---
 
 # Cycle 3 — Week 1
@@ -68,10 +68,10 @@ next_session: legs-shoulders
 - **Incline DB Curl 12kg:** calibrated 24 Aug (10×15 / 12×10 / 12×8). 10kg was light; 12kg is the working weight. Hold at 12 and build the third set into range.
 - **DB Shoulder Press 22.5kg:** revisit from Cycle 1 (was 21.4kg). BB OHP was 30kg in Cycle 2, skipped last session. Slight bump from old DB target.
 - **Seated Calf Raise 40kg:** fresh exercise. Standing SL was 26×25/21. Seated targets soleus, typically loads lighter. 40kg barbell across knees is a starting point.
-- **Squat 95kg:** calibrated 31 Aug (90×12×3) — three clean sets at top of range. +5kg lower-body progression per rules. Now reflected in table above.
-- **RDL 95kg:** calibrated 31 Aug (95×10/10/8) — sets 1–2 mid-range, set 3 at bottom. Repeat 95; build set 3 toward 10.
+- **Squat 95kg:** calibrated 31 Aug (90×12×3) — three clean sets at top of range. +5kg lower-body progression per rules. Now reflected in table above. **9 Sep:** ran 90 (conservative open) 12/10/12 — all at/over top of 8–10. Hold 95 target; the load is real but he's building the rep count at 90 first.
+- **RDL 95kg:** calibrated 31 Aug (95×10/10/8) — sets 1–2 mid-range, set 3 at bottom. Repeat 95; build set 3 toward 10. **9 Sep:** 90×12/12/12 at top — mission accomplished, set 3 (the former laggard) now clean at 12. Stall cleared (tracker 3→0). Hold 95 target; the volume at 90 is solid groundwork.
 - **Leg Ext 35kg:** recalibrated 31 Aug — 40 was too heavy (5 reps). Worked sets at 35×10/10. Drop from 40 → 35 and build toward 12–15.
-- **Leg Curl 25kg:** calibrated 31 Aug (12/12/10 @25). Sets 1–2 at top, set 3 at floor. Hold 25; graduate to 27.5 when all three hit 12.
+- **Leg Curl 25kg:** calibrated 31 Aug (12/12/10 @25). Sets 1–2 at top, set 3 at floor. Hold 25; graduate to 27.5 when all three hit 12. **9 Sep:** 25×15/10/7 — set 1 at top, fatigue hit sets 2–3. Set 3 (7) below last time's 10 = **2nd consecutive under-bottom stall → swap flagged for next cycle.** Tracker now 5.
 
 ## YouTube Form Library
 
