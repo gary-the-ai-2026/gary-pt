@@ -318,9 +318,10 @@
   .protocol-row .p-dot {
     width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
   }
-  .protocol-row .p-dot.dot-chest-tri { background: var(--coral); }
-  .protocol-row .p-dot.dot-back-bi { background: #6b5e4e; }
-  .protocol-row .p-dot.dot-legs-shoulders { background: var(--success); }
+  .protocol-row .p-dot.dot-upper-a { background: var(--coral); }
+  .protocol-row .p-dot.dot-lower-a { background: var(--success); }
+  .protocol-row .p-dot.dot-upper-b { background: var(--accent-teal); }
+  .protocol-row .p-dot.dot-lower-b { background: var(--accent-amber); }
   .protocol-row .p-name {
     font-size: 13px; font-weight: 500; flex: 1;
     color: var(--ink);
@@ -414,9 +415,10 @@
     padding: 3px 8px; border-radius: 4px;
     white-space: nowrap;
   }
-  .badge-back-bi { background: #e8e0d2; color: #6b5e4e; }
-  .badge-chest-tri { background: #f0dbd3; color: #a9583e; }
-  .badge-legs-shoulders { background: #dce8e0; color: #4a7c5c; }
+  .badge-upper-a { background: #f0dbd3; color: #a9583e; }
+  .badge-lower-a { background: #dce8e0; color: #4a7c5c; }
+  .badge-upper-b { background: #d8ecea; color: #3f6f7a; }
+  .badge-lower-b { background: #f2e3c4; color: #8a6d2f; }
   .history-info { flex: 1; min-width: 0; }
   .history-info .title { font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--ink); }
   .history-info .sub { font-family: var(--font-mono); font-size: 11px; color: var(--muted-soft); margin-top: 2px; }
@@ -870,7 +872,7 @@
       </div>
       <div class="cycle-info">
         <div class="title">Cycle 3</div>
-        <div class="sub" id="cycle-sub">0 of 18 sessions</div>
+        <div class="sub" id="cycle-sub">0 of 24 sessions</div>
         <div class="week-dots" id="week-dots">
           <span class="week-dot">W1</span><span class="week-dot">W2</span>
           <span class="week-dot">W3</span><span class="week-dot">W4</span>
@@ -1006,14 +1008,15 @@
 
 const REPO_RAW = 'https://raw.githubusercontent.com/gary-the-ai-2026/gary-pt/main';
 const REPO_API = 'https://api.github.com/repos/gary-the-ai-2026/gary-pt/contents';
-const SESSION_ROTATION = ['chest-tri', 'back-bi', 'legs-shoulders'];
+const SESSION_ROTATION = ['upper-a', 'lower-a', 'upper-b', 'lower-b'];
 const SESSION_NAMES = {
-  'chest-tri': 'Chest / Triceps',
-  'back-bi': 'Back / Biceps',
-  'legs-shoulders': 'Legs / Shoulders',
+  'upper-a': 'Upper A',
+  'lower-a': 'Lower A',
+  'upper-b': 'Upper B',
+  'lower-b': 'Lower B',
 };
 const CURRENT_CYCLE = 3;
-const TOTAL_CYCLE = 18;
+const TOTAL_CYCLE = 24;
 
 let currentSession = null;
 let allLogs = [];
@@ -1266,7 +1269,7 @@ async function determineNextSession() {
     }));
     // Sort by date descending — index may not be ordered
     allLogs.sort((a, b) => (b._index.date || '').localeCompare(a._index.date || ''));
-    if (!allLogs.length) return 'chest-tri';
+    if (!allLogs.length) return 'upper-a';
 
     // Check if most recent log is still in progress — if so, that's the current session
     try {
@@ -1280,8 +1283,8 @@ async function determineNextSession() {
     const parts = allLogs[0].name.replace('.json', '').split('-');
     const lastType = parts.slice(3).join('-');
     const idx = SESSION_ROTATION.indexOf(lastType);
-    return idx >= 0 ? SESSION_ROTATION[(idx + 1) % 3] : 'back-bi';
-  } catch (e) { return 'chest-tri'; }
+    return idx >= 0 ? SESSION_ROTATION[(idx + 1) % 4] : 'upper-a';
+  } catch (e) { return 'upper-a'; }
 }
 
 async function loadProgram() {
@@ -1311,7 +1314,7 @@ async function loadProgram() {
 
     const md = await fetchText(`${REPO_RAW}/programs/cycle-3-week-1.md?t=${Date.now()}`);
     const sections = md.split('## ');
-    const map = { 'chest-tri': 'Chest / Triceps', 'back-bi': 'Back / Biceps', 'legs-shoulders': 'Legs / Shoulders' };
+    const map = { 'upper-a': 'Upper A', 'lower-a': 'Lower A', 'upper-b': 'Upper B', 'lower-b': 'Lower B' };
     const target = map[currentSession];
     for (const s of sections) {
       if (s.split('\n')[0].trim() === target) {
@@ -1330,7 +1333,7 @@ async function loadAllProtocols() {
   try {
     const md = await fetchText(`${REPO_RAW}/programs/cycle-3-week-1.md?t=${Date.now()}`);
     const sections = md.split('## ');
-    const mapTarget = { 'chest-tri': 'Chest / Triceps', 'back-bi': 'Back / Biceps', 'legs-shoulders': 'Legs / Shoulders' };
+    const mapTarget = { 'upper-a': 'Upper A', 'lower-a': 'Lower A', 'upper-b': 'Upper B', 'lower-b': 'Lower B' };
     const protocols = [];
 
     for (const type of SESSION_ROTATION) {
@@ -1420,7 +1423,7 @@ async function renderHub() {
   const wks = countThisWeek();
   const total = countTotal();
   const bench = await getBest1RM('Incline Smith Machine Bench Press');
-  const squat = await getBest1RM('Smith Machine Squat');
+  const squat = await getBest1RM('Barbell Back Squat');
   const bw = await fetchBodyweight();
   const cw = Math.min(Math.floor(total/4)+1, 6);
 
@@ -1491,8 +1494,8 @@ async function renderHistory() {
   const el = document.getElementById('history-list');
   if (!allLogs.length) { el.innerHTML = '<div class="history-card" style="justify-content:center;color:var(--muted-soft);font-size:12px;">No sessions yet</div>'; return; }
 
-  const BADGES = { 'back-bi': 'badge-back-bi', 'chest-tri': 'badge-chest-tri', 'legs-shoulders': 'badge-legs-shoulders' };
-  const NAMES = { 'back-bi': 'Back/Bi', 'chest-tri': 'Chest/Tri', 'legs-shoulders': 'Legs/Shldrs' };
+  const BADGES = { 'upper-a': 'badge-upper-a', 'lower-a': 'badge-lower-a', 'upper-b': 'badge-upper-b', 'lower-b': 'badge-lower-b' };
+  const NAMES = { 'upper-a': 'Upper A', 'lower-a': 'Lower A', 'upper-b': 'Upper B', 'lower-b': 'Lower B' };
 
   const recent = [...allLogs].sort((a,b) => b._index.date.localeCompare(a._index.date)).slice(0, 15);
   const cards = [];
@@ -1771,6 +1774,8 @@ async function renderProgress() {
     'Flat Dumbbell Press': 'Chest / Triceps',
     'Cable Flye (High-to-Low)': 'Chest / Triceps',
     'Cable Fly (Low-to-High)': 'Chest / Triceps',
+    'Close-Grip Smith Press': 'Chest / Triceps',
+    'Skull Crusher (EZ Bar)': 'Chest / Triceps',
     'Tricep Pushdown (EZ Bar)': 'Chest / Triceps',
     'Tricep Pushdown (Rope)': 'Chest / Triceps',
     'Triceps Pushdown (Straight Bar)': 'Chest / Triceps',
@@ -1799,6 +1804,8 @@ async function renderProgress() {
     'Renegade Row': 'Back / Biceps',
     'Preacher Curl': 'Back / Biceps',
     'Smith Machine Squat': 'Legs / Shoulders',
+    'Barbell Back Squat': 'Legs / Shoulders',
+    'Dumbbell Reverse Lunge': 'Legs / Shoulders',
     'Romanian Deadlift (BB)': 'Legs / Shoulders',
     'Leg Extension (Single Leg)': 'Legs / Shoulders',
     'Leg Extension': 'Legs / Shoulders',

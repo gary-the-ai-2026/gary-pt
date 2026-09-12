@@ -1,47 +1,60 @@
 ---
 cycle: 3
 week: 1
-split: Chest/Tri · Back/Bi · Legs/Shoulders
-created: 2026-08-22
+split: Upper A · Lower A · Upper B · Lower B
+created: 2026-09-12
 status: active
-next_session: chest-tri
+next_session: upper-a
+session_duration: 50
+goal_order: "HYPER_2x_WEEK"
 ---
 
-# Cycle 3 — Week 1
+# Cycle 3 — Week 1 (4-Day Upper/Lower — re-geared 12 Sep 2026)
 
-## Chest / Triceps
+Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B + Lower B, then repeat. Rotating — not tied to weekdays. Next session is always the next in the order below.
 
-|| # | Exercise | Sets | Weight | Reps | Rest |
-|---|---|---|---|---|---|---|
-| 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 | 2–3 min |
-| 2 | Incline Dumbbell Press | 3 | 22.5kg/side | 10–12 | 90 sec |
-| 3 | Cable Flye (Low-to-High) | 3 | 16.0kg | 12–15 | 60 sec |
-| 4 | Tricep Pushdown (Rope) | 3 | 46.0kg | 12–15 | 60 sec |
-| 5 | Skull Crusher (EZ Bar) | 3 | 25.0kg | 10–12 | 90 sec |
-| 6 | Close-Grip Smith Press | 2 | 42.5kg | 10–12 | 90 sec |
-
-## Back / Biceps
-
-|| # | Exercise | Sets | Weight | Reps | Rest |
-|---|---|---|---|---|---|---|
-| 1 | Pull-Up | 3 | BW | 8–12 | 2 min |
-| 2 | Barbell Row | 3 | 60.0kg | 8–10 | 2 min |
-| 3 | Lat Pulldown (Wide) | 3 | 47.5kg | 8–12 | 90 sec |
-| 4 | Face Pull | 3 | 36.0kg | 12–15 | 60 sec |
-| 5 | Cable Barbell Curl (EZ Bar) | 3 | 25.5kg | 10–12 | 60 sec |
-| 6 | Incline Dumbbell Curl | 3 | 12.0kg/side | 10–12 | 60 sec |
-
-## Legs / Shoulders
+## Upper A
 
 | # | Exercise | Sets | Weight | Reps | Rest |
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|
+| 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 | 2–3 min |
+| 2 | Barbell Row | 3 | 60.0kg | 8–10 | 2 min |
+| 3 | Lat Pulldown (Wide) | 3 | 47.5kg | 8–12 | 90 sec |
+| 4 | Cable Flye (Low-to-High) | 3 | 18.0kg | 12–15 | 60 sec |
+| 5 | Dumbbell Lateral Raise | 3 | 12.0kg/side | 12–15 | 60 sec |
+| 6 | Tricep Pushdown (Rope) | 3 | 46.0kg | 12–15 | 60 sec |
+| 7 | Cable Barbell Curl (EZ Bar) | 3 | 25.5kg | 10–12 | 90 sec |
+
+## Lower A
+
+| # | Exercise | Sets | Weight | Reps | Rest |
+|---|---|---|---|---|---|
 | 1 | Barbell Back Squat | 3 | 95.0kg | 8–10 | 2–3 min |
 | 2 | Romanian Deadlift (BB) | 3 | 95.0kg | 8–12 | 2 min |
 | 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 | 60 sec |
 | 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
-| 5 | Dumbbell Shoulder Press | 3 | 22.5kg/side | 8–12 | 90 sec |
-| 6 | Dumbbell Lateral Raise | 3 | 12.0kg/side | 12–15 | 60 sec |
-| 7 | Seated Calf Raise | 3 | 40.0kg | 15–20 | 45 sec |
+| 5 | Seated Calf Raise | 3 | 40.0kg | 15–20 | 45 sec |
+
+## Upper B
+
+| # | Exercise | Sets | Weight | Reps | Rest |
+|---|---|---|---|---|---|
+| 1 | Incline Dumbbell Press | 3 | 22.5kg/side | 10–12 | 90 sec |
+| 2 | Pull-Up | 3 | BW | 8–12 | 2 min |
+| 3 | Close-Grip Smith Press | 3 | 50.0kg | 8–12 | 90 sec |
+| 4 | Face Pull | 3 | 36.0kg | 12–15 | 60 sec |
+| 5 | Skull Crusher (EZ Bar) | 3 | 25.0kg | 10–12 | 90 sec |
+| 6 | Incline Dumbbell Curl | 3 | 12.0kg/side | 10–12 | 60 sec |
+
+## Lower B
+
+| # | Exercise | Sets | Weight | Reps | Rest |
+|---|---|---|---|---|---|
+| 1 | Romanian Deadlift (BB) | 3 | 95.0kg | 8–12 | 2 min |
+| 2 | Dumbbell Reverse Lunge | 3 | 18.0kg/side | 8–10 | 90 sec |
+| 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 | 60 sec |
+| 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
+| 5 | Seated Calf Raise | 3 | 40.0kg | 15–20 | 45 sec |
 
 ---
 
@@ -55,46 +68,44 @@ next_session: chest-tri
 | 2 consecutive stalls on same exercise | Flag for exercise swap next cycle |
 | DB maxed (27kg) + all sets at 15 reps | Add 4th set → then swap to barbell variant |
 
-## Calibration Notes
+## Loading Notes (re-gear 12 Sep 2026)
 
-- **Incline Smith 65kg:** stalled 28 Aug (65×11/6/5), then 3 Sep recovered — 55×12 open, then 65×7 / 65×8. Set 3 at top of range. 65 is now the working weight; build sets 2–3 into full range before bumping. Do not read the old 60kg note as current.
-- **Incline DB Press 22.5kg:** 3 Sep 22.5×10 / 22×8 / 22×12. Set 3 clean at top of range on 22. No stall — engine false-positive. Hold 22.5, chase three full sets.
-- **Cable Flye Low-to-High 16kg:** 3 Sep 14×15/15/15 — all three at top. +2.5 per rules, rounded to 16 (cable notch). Next session 16, aim to hold all three at top before bumping. (Note: engine wrote 16.5; using nearest cable stack notch 16.)
-- **Tricep Pushdown (Rope) 46kg:** 3 Sep 41×15 / 46×14 / 46×13 — real mid-session overload straight to 46. This sets today's working weight at 46, not 41. Engine flagged "stall" — FALSE positive, ignore; 46 is the target. Hold 46 and build all three sets into range.
-- **Skull Crusher 25kg:** fresh exercise. OH Cable Ext was maxed at 36×15. Skull crusher is a different loading curve — 25kg EZ bar is a safe starting point for 10–12 reps.
-- **Barbell Row 60kg:** calibrated 24 Aug (50×15 warm-up / 60×9 / 60×10). 50kg estimate was far too light — working weight is 60kg. Next session 62.5kg if sets 2–3 both hit top.
-- **Lat Pulldown Wide 47.5kg:** swap from Close Grip (was 52.5–54). Wide grip is ~10% lighter for most lifters. Expect to calibrate up.
-- **Face Pull 36kg:** calibrated 24 Aug — ramped 27×15 / 32×15 / 36×15, all at top of range. 25kg estimate was very conservative; real working weight is 36kg. Hold at 36 next session and confirm 3 clean sets before bumping.
-- **Incline DB Curl 12kg:** calibrated 24 Aug (10×15 / 12×10 / 12×8). 10kg was light; 12kg is the working weight. Hold at 12 and build the third set into range.
-- **DB Shoulder Press 22.5kg:** revisit from Cycle 1 (was 21.4kg). BB OHP was 30kg in Cycle 2, skipped last session. Slight bump from old DB target.
-- **Seated Calf Raise 40kg:** fresh exercise. Standing SL was 26×25/21. Seated targets soleus, typically loads lighter. 40kg barbell across knees is a starting point.
-- **Squat 95kg:** calibrated 31 Aug (90×12×3) — three clean sets at top of range. +5kg lower-body progression per rules. Now reflected in table above. **9 Sep:** ran 90 (conservative open) 12/10/12 — all at/over top of 8–10. Hold 95 target; the load is real but he's building the rep count at 90 first.
-- **RDL 95kg:** calibrated 31 Aug (95×10/10/8) — sets 1–2 mid-range, set 3 at bottom. Repeat 95; build set 3 toward 10. **9 Sep:** 90×12/12/12 at top — mission accomplished, set 3 (the former laggard) now clean at 12. Stall cleared (tracker 3→0). Hold 95 target; the volume at 90 is solid groundwork.
-- **Leg Ext 35kg:** recalibrated 31 Aug — 40 was too heavy (5 reps). Worked sets at 35×10/10. Drop from 40 → 35 and build toward 12–15.
-- **Leg Curl 25kg:** calibrated 31 Aug (12/12/10 @25). Sets 1–2 at top, set 3 at floor. Hold 25; graduate to 27.5 when all three hit 12. **9 Sep:** 25×15/10/7 — set 1 at top, fatigue hit sets 2–3. Set 3 (7) below last time's 10 = **2nd consecutive under-bottom stall → swap flagged for next cycle.** Tracker now 5.
+Loads carried from Cycle 3 calibration + 12 Sep actuals:
+
+- **Incline Smith 65kg:** 12 Sep 65×10/9/8 — build sets 2–3 into full range before bumping.
+- **Incline DB Press 22.5kg:** 12 Sep 22×10/11/10 — hold, chase three full sets.
+- **Cable Flye L→H 18kg:** 12 Sep 18×12/11/11 (ran ahead of 16 plan). Hold 18, build to three clean sets.
+- **Tricep Pushdown (Rope) 46kg:** 12 Sep 46×15 (one set). Hold 46.
+- **Close-Grip Smith 50kg:** 12 Sep 50×10 — ahead of the old 42.5 program. Now set at 50.
+- **Barbell Row 60kg:** calibrated 24 Aug (60×9/10). Bump to 62.5 when sets 2–3 both hit top.
+- **Lat Pulldown Wide 47.5kg:** swap from close grip (~10% lighter). Expect to calibrate up.
+- **Face Pull 36kg:** 24 Aug all sets at top. Hold, confirm 3 clean before bumping.
+- **Cable Bar Curl (EZ) 25.5kg, Incline DB Curl 12kg:** carry over unchanged.
+- **Squat 95kg / RDL 95kg:** hold target; building rep counts at 90–95.
+- **Leg Ext SL 35kg:** build toward 12–15 (40 was too heavy, 5 reps).
+- **Leg Curl 25kg:** 9 Sep 25×15/10/7 — set 3 stall. Build; graduate when all three hit 12. **(Swap flagged next cycle.)**
+- **DB Reverse Lunge 18kg:** fresh unilateral for Lower B (5 Sep had no lower-hinge complement). Start 18kg/side, 8–10/leg.
 
 ## YouTube Form Library
-
-See [Cycle 3 — Exercise Videos](#) for vetted form demonstrations.
 
 | # | Exercise | Video |
 |---|---|---|
 | 1 | Incline Smith Machine Bench Press | [TBD] |
-| 2 | Incline Dumbbell Press | [TBD] |
-| 3 | Cable Flye (Low-to-High) | [TBD] |
-| 4 | Tricep Pushdown (Rope) | [TBD] |
-| 5 | Skull Crusher (EZ Bar) | [TBD] |
-| 6 | Close-Grip Smith Press | [TBD] |
-| 7 | Pull-Up | [TBD] |
-| 8 | Barbell Row | [TBD] |
-| 9 | Lat Pulldown (Wide) | [TBD] |
-| 10 | Face Pull | [TBD] |
-| 11 | Cable Barbell Curl (EZ Bar) | [TBD] |
-| 12 | Incline Dumbbell Curl | [TBD] |
-| 13 | Barbell Back Squat | [TBD] |
-| 14 | Romanian Deadlift (BB) | [TBD] |
-| 15 | Leg Extension (Single Leg) | [TBD] |
-| 16 | Leg Curl | [TBD] |
-| 17 | Dumbbell Shoulder Press | [TBD] |
-| 18 | Dumbbell Lateral Raise | [TBD] |
-| 19 | Seated Calf Raise | [TBD] |
+| 2 | Barbell Row | [TBD] |
+| 3 | Lat Pulldown (Wide) | [TBD] |
+| 4 | Cable Flye (Low-to-High) | [TBD] |
+| 5 | Dumbbell Lateral Raise | [TBD] |
+| 6 | Tricep Pushdown (Rope) | [TBD] |
+| 7 | Cable Barbell Curl (EZ Bar) | [TBD] |
+| 8 | Barbell Back Squat | [TBD] |
+| 9 | Romanian Deadlift (BB) | [TBD] |
+| 10 | Leg Extension (Single Leg) | [TBD] |
+| 11 | Leg Curl | [TBD] |
+| 12 | Seated Calf Raise | [TBD] |
+| 13 | Incline Dumbbell Press | [TBD] |
+| 14 | Pull-Up | [TBD] |
+| 15 | Close-Grip Smith Press | [TBD] |
+| 16 | Face Pull | [TBD] |
+| 17 | Skull Crusher (EZ Bar) | [TBD] |
+| 18 | Incline Dumbbell Curl | [TBD] |
+| 19 | Dumbbell Reverse Lunge | [TBD] |

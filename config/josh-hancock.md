@@ -1,24 +1,25 @@
 ---
 name: josh-hancock
 split: CUSTOM
-days_per_week: 3
+days_per_week: 4
 experience: intermediate
 equipment: home_gym_c10
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-09-12
 ---
 
 # Josh Hancock — Training Config
 
 ## Split
 
-**Chest/Triceps · Back/Biceps · Legs/Shoulders** — 3 days per week, rotating.
+**Upper A · Lower A · Upper B · Lower B** — 4 days per week, rotating, each muscle group 2×/week.
 
 | Day | Focus | Primary Muscles |
 |---|---|---|
-| Chest/Tri | Chest, Triceps | Pecs, triceps (all three heads) |
-| Back/Bi | Back, Biceps, Rear Delts | Lats, traps, rhomboids, biceps |
-| Legs/Shoulders | Quads, Hamstrings, Glutes, Shoulders | Full lower body + anterior/lateral delts |
+| Upper A | Chest, Back, Side Delts, Arms | Pecs, lats, rhomboids, side delts, triceps, biceps |
+| Lower A | Quads, Hamstrings, Glutes, Calves | Full lower body |
+| Upper B | Upper Chest, Back, Rear Delts, Arms | Upper pecs, lats, rear delts, triceps, biceps |
+| Lower B | Hamstrings, Glutes, Unilateral, Calves | Posterior chain + unilateral stability |
 
 ## Schedule
 
