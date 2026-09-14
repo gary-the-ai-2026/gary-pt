@@ -5,7 +5,6 @@
     "type": "upper-a",
     "status": "in_progress",
     "cycle": 3,
-    "duration_min": null,
     "ad_hoc": false,
     "resumed_from": null,
     "exercise_count": 7,
