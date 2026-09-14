@@ -148,12 +148,39 @@ def parse_program_section(program_txt, section_key):
     return rows
 
 
-def fundraising_calibrate(e_list, section_key):
-    """Calibrate weights from the most recent same-type completed session log.
+LOWER_BODY = {"squat", "deadlift", "rdl", "romanian", "leg press", "leg extension",
+              "leg curl", "bulgarian", "split squat", "lunge", "calf raise",
+              "hip thrust", "glute bridge", "reverse lunge"}
 
-    For a 4-day split, same-type = same section key. We look up the most recent
-    complete log of this type and use the highest weight from its sets per
-    exercise. Non-NEGOTIABLE per skill: session-derived actuals win over program.
+
+def _is_lower(name: str) -> bool:
+    n = name.lower()
+    return any(sb in n for sb in LOWER_BODY)
+
+
+def _parse_rep_range(reps_str: str):
+    """Return (low, high) from a rep-range string like '8–10' or '12'."""
+    r = str(reps_str or "").replace("\u2013", "-").replace("\u2014", "-").strip()
+    if "-" in r:
+        a, b = r.split("-", 1)
+        lo = int(a.strip()) if a.strip().isdigit() else 8
+        hi = int(b.strip()) if b.strip().isdigit() else lo
+        return lo, hi
+    v = int(r) if r and r.isdigit() else 8
+    return v, v
+
+
+def calibrate_with_progression(e_list, section_key):
+    """Calibrate each exercise from the most recent same-type completed session.
+
+    Non-NEGOTIABLE per skill (progression rules):
+      - Start with the HIGHEST weight from the last same-type session's sets.
+      - All sets at top of rep range  -> +2.5kg (upper) / +5kg (lower)
+      - Some at top, some in range    -> repeat weight
+      - 2+ sets below bottom of range -> -5%
+    Session-derived actuals win over program targets. If no prior same-type
+    session exists, keep the program targets (already calibrated in Loading
+    Notes during cycle generation).
     """
     pat = f"*-{section_key}.json"
     ms = sorted(LOGS.glob(pat), reverse=True)
@@ -168,14 +195,35 @@ def fundraising_calibrate(e_list, section_key):
             continue
     if not prior:
         return e_list  # no prior same-type; keep program targets
+
     pmap = {ex["name"]: ex for ex in prior["exercises"]}
     for ex in e_list:
         p = pmap.get(ex["name"])
         if not p or not p.get("sets"):
             continue
-        weights = [s.get("weight_kg") for s in p["sets"] if s.get("weight_kg")]
-        if weights:
-            ex["target_weight_kg"] = float(max(weights))
+        sets = [s for s in p["sets"] if s.get("reps") is not None and s.get("weight_kg")]
+        if not sets:
+            continue
+        weights = [s.get("weight_kg") for s in sets if s.get("weight_kg")]
+        base = float(max(weights)) if weights else None
+        if base is None:
+            continue
+        lo, hi = _parse_rep_range(ex.get("target_reps"))
+        reps = [int(s.get("reps", 0)) for s in sets]
+        n_top = sum(1 for r in reps if r >= hi)
+        n_below = sum(1 for r in reps if r < lo)
+        n_total = len(reps)
+
+        if n_top == n_total:
+            # All sets at top -> bump (skip bump for bodyweight movements)
+            bump = 5.0 if _is_lower(ex["name"]) else 2.5
+            ex["target_weight_kg"] = round(base + bump, 1)
+        elif n_below >= 2:
+            # 2+ sets below bottom -> -5%
+            ex["target_weight_kg"] = round(base * 0.95, 1)
+        else:
+            # Some at top / some in range -> repeat
+            ex["target_weight_kg"] = base
     return e_list
 
 
@@ -212,7 +260,7 @@ def main():
             pass
 
     exercises = parse_program_section(prog_txt, session_type)
-    exercises = fundraising_calibrate(exercises, session_type)
+    exercises = calibrate_with_progression(exercises, session_type)
 
     log_path = LOGS / f"{today}-{session_type}.json"
 
