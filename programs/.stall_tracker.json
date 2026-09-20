@@ -1,6 +1,6 @@
 {
   "Barbell Bench Press": 5,
-  "Incline Dumbbell Press": 5,
+  "Incline Dumbbell Press": 0,
   "Cable Flye (Low-to-High)": 0,
   "Lat Pulldown (Wide)": 5,
   "Barbell Row": 0,
@@ -27,7 +27,7 @@
   "Cable Flye (High-to-Low)": 0,
   "Tricep Pushdown (EZ Bar)": 1,
   "Bench Dip": 0,
-  "Pull-Up": 1,
+  "Pull-Up": 2,
   "Dumbbell Row (Single Arm)": 1,
   "Lat Pulldown (Close Grip)": 0,
   "Cable Rear Delt Flye": 0,
@@ -35,5 +35,7 @@
   "Smith Machine Squat": 0,
   "Barbell Overhead Press": 1,
   "Incline Smith Machine Bench Press": 1,
-  "Seated Calf Raise": 1
+  "Seated Calf Raise": 1,
+  "Close-Grip Smith Press": 0,
+  "Target Face Pull": 0
 }
