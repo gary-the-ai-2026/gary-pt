@@ -1,8 +1,8 @@
 {
   "session_type": "upper-b",
   "session_name": "UPPER-B",
-  "current_exercise": 0,
-  "current_set": 1,
+  "current_exercise": 2,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -11,7 +11,11 @@
       "target_reps": "10\u201312",
       "target_weight_kg": 22.5,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {"weight_kg": 22, "reps": 12},
+        {"weight_kg": 22, "reps": 12},
+        {"weight_kg": 22, "reps": 12}
+      ]
     },
     {
       "num": 2,
@@ -20,7 +24,11 @@
       "target_reps": "8\u201312",
       "target_weight_kg": null,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {"weight_kg": null, "reps": 12},
+        {"weight_kg": null, "reps": 7},
+        {"weight_kg": null, "reps": 7}
+      ]
     },
     {
       "num": 3,
@@ -29,7 +37,9 @@
       "target_reps": "8\u201312",
       "target_weight_kg": 50.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {"weight_kg": 50, "reps": 15}
+      ]
     },
     {
       "num": 4,
