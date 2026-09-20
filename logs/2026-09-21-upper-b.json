@@ -4,8 +4,8 @@
   "type": "upper-b",
   "status": "complete",
   "started": "06:05",
-  "finished": "06:32",
-  "duration_min": 27,
+  "finished": "06:50",
+  "duration_min": 45,
   "cycle": 3,
   "week": 1,
   "exercises": [
@@ -43,12 +43,14 @@
       "target_weight_kg": 50.0,
       "skipped": false,
       "sets": [
-        {"set": 1, "weight_kg": 50, "reps": 15}
+        {"set": 1, "weight_kg": 50, "reps": 15},
+        {"set": 2, "weight_kg": 50, "reps": 12},
+        {"set": 3, "weight_kg": 50, "reps": 12}
       ]
     },
     {
       "num": 4,
-      "name": "Target Face Pull",
+      "name": "Face Pull",
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 36.0,
@@ -78,5 +80,5 @@
       "sets": []
     }
   ],
-  "notes": "Session ended early after Face Pull — Skull Crusher and Incline DB Curl skipped. Face Pull bumped to 41kg sets 2-3 (15,15)."
+  "notes": "Face Pull bumped to 41kg on sets 2-3. Skull Crusher and Incline DB Curl skipped - ended after Face Pull."
 }
