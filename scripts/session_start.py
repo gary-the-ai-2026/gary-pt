@@ -232,11 +232,50 @@ def run_git(cmd):
     return r.returncode == 0
 
 
+def active_session_info():
+    """Return (display_type, date_yyyy_mm_dd) of an already-active session, or None.
+
+    A session is active if EITHER the state file exists OR index[0] is marked
+    in_progress — never silently start/derive over a live session.
+    """
+    if STATE.exists():
+        try:
+            sd = json.loads(STATE.read_text())
+            if sd.get("session_type"):
+                disp = sd.get("session_name") or " ".join(
+                    w.capitalize() for w in sd["session_type"].split("-"))
+                return disp, sd.get("date", "")
+        except Exception:
+            pass
+    if INDEX.exists():
+        try:
+            entries = json.loads(INDEX.read_text())
+            if entries and entries[0].get("status") == "in_progress":
+                stype = entries[0].get("type", "")
+                disp = " ".join(w.capitalize() for w in stype.split("-")) or "session"
+                return disp, entries[0].get("date", "")
+        except Exception:
+            pass
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--type", choices=ROTATION, default=None)
     args = ap.parse_args()
+
+    active = active_session_info()
+    if active:
+        disp, dstr = active
+        mon = ""
+        if dstr:
+            try:
+                mon = " (" + datetime.strptime(dstr, "%Y-%m-%d").strftime("%d %b") + ")"
+            except Exception:
+                mon = ""
+        print(f'Another session is active: {disp}{mon}. Finish it first — say "finish" to end it, then start again.')
+        return 1
 
     today, now_hm = adl_now()
     prog_file, prog_txt, prog_yaml = find_active_program()
