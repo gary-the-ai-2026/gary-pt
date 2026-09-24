@@ -1,8 +1,11 @@
 {
-  "session_type": "lower-b",
-  "session_name": "LOWER-B",
-  "current_exercise": 0,
-  "current_set": 1,
+  "session_id": "2026-09-24-lower-b",
+  "date": "2026-09-24",
+  "type": "lower-b",
+  "status": "in_progress",
+  "started": "18:28",
+  "cycle": 3,
+  "week": 1,
   "exercises": [
     {
       "num": 1,
@@ -50,5 +53,5 @@
       "sets": []
     }
   ],
-  "log": {}
+  "notes": ""
 }
