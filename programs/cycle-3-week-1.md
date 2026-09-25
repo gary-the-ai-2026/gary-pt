@@ -33,7 +33,7 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 | 2 | Romanian Deadlift (BB) | 3 | 95.0kg | 8–12 | 2 min |
 | 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 | 60 sec |
 | 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
-| 5 | Seated Calf Raise | 3 | 40.0kg | 15–20 | 45 sec |
+| 5 | Standing Single-Leg DB Calf Raise | 3 | 16.0kg | 15–20 | 45 sec |
 
 ## Upper B
 
@@ -54,7 +54,7 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 | 2 | Dumbbell Reverse Lunge | 3 | 18.0kg/side | 8–10 | 90 sec |
 | 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 | 60 sec |
 | 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
-| 5 | Seated Calf Raise | 3 | 40.0kg | 15–20 | 45 sec |
+| 5 | Standing Single-Leg DB Calf Raise | 3 | 16.0kg | 15–20 | 45 sec |
 
 ---
 
@@ -85,6 +85,7 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 - **Leg Ext SL 35kg:** build toward 12–15 (40 was too heavy, 5 reps).
 - **Leg Curl 25kg:** 9 Sep 25×15/10/7 — set 3 stall. Build; graduate when all three hit 12. **(Swap flagged next cycle.)**
 - **DB Reverse Lunge 18kg:** fresh unilateral for Lower B (5 Sep had no lower-hinge complement). Start 18kg/side, 8–10/leg.
+- **Standing Single-Leg DB Calf Raise 16kg:** 24 Sep swap — no seated calf raise machine at Josh's gym. Replaces Seated Calf Raise (40kg) in both Lower A and Lower B. DB unilateral, start 16kg/side, calibrate after first session.
 
 ## YouTube Form Library
 
@@ -101,7 +102,7 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 | 9 | Romanian Deadlift (BB) | [TBD] |
 | 10 | Leg Extension (Single Leg) | [TBD] |
 | 11 | Leg Curl | [TBD] |
-| 12 | Seated Calf Raise | [TBD] |
+| 12 | Standing Single-Leg DB Calf Raise | [TBD] |
 | 13 | Incline Dumbbell Press | [TBD] |
 | 14 | Pull-Up | [TBD] |
 | 15 | Close-Grip Smith Press | [TBD] |
