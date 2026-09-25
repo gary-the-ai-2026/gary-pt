@@ -4,7 +4,7 @@ week: 1
 split: Upper A · Lower A · Upper B · Lower B
 created: 2026-09-12
 status: active
-next_session: lower-b
+next_session: upper-a
 session_duration: 50
 goal_order: "HYPER_2x_WEEK"
 ---
