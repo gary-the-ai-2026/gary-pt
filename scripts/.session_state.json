@@ -1,8 +1,8 @@
 {
   "session_type": "lower-b",
   "session_name": "LOWER-B",
-  "current_exercise": 4,
-  "current_set": 3,
+  "current_exercise": 3,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -105,6 +105,11 @@
           "set": 2,
           "weight_kg": 26,
           "reps": 20
+        },
+        {
+          "set": 3,
+          "weight_kg": 26,
+          "reps": 25
         }
       ]
     }

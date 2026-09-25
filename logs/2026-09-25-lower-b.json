@@ -108,6 +108,11 @@
           "set": 2,
           "weight_kg": 26,
           "reps": 20
+        },
+        {
+          "set": 3,
+          "weight_kg": 26,
+          "reps": 25
         }
       ]
     }
