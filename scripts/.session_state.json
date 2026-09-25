@@ -2,7 +2,7 @@
   "session_type": "lower-b",
   "session_name": "LOWER-B",
   "current_exercise": 1,
-  "current_set": 2,
+  "current_set": 3,
   "exercises": [
     {
       "num": 1,
@@ -39,6 +39,11 @@
       "sets": [
         {
           "set": 1,
+          "weight_kg": 18,
+          "reps": 10
+        },
+        {
+          "set": 2,
           "weight_kg": 18,
           "reps": 10
         }
