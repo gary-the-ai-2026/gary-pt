@@ -2,7 +2,7 @@
   "session_type": "upper-a",
   "session_name": "UPPER-A",
   "current_exercise": 2,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -61,7 +61,13 @@
       "target_reps": "8\u201312",
       "target_weight_kg": 47.5,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 45.0,
+          "reps": 12
+        }
+      ]
     },
     {
       "num": 4,
@@ -126,6 +132,12 @@
       },
       {
         "weight": 65.0,
+        "reps": 12
+      }
+    ],
+    "Lat Pulldown (Wide)": [
+      {
+        "weight": 45.0,
         "reps": 12
       }
     ]
