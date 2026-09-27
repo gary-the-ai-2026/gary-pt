@@ -1,8 +1,8 @@
 {
   "session_type": "upper-a",
   "session_name": "UPPER-A",
-  "current_exercise": 1,
-  "current_set": 3,
+  "current_exercise": 2,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -44,6 +44,11 @@
         },
         {
           "set": 2,
+          "weight_kg": 65.0,
+          "reps": 12
+        },
+        {
+          "set": 3,
           "weight_kg": 65.0,
           "reps": 12
         }
@@ -113,6 +118,10 @@
     "Barbell Row": [
       {
         "weight": 60.0,
+        "reps": 12
+      },
+      {
+        "weight": 65.0,
         "reps": 12
       },
       {
