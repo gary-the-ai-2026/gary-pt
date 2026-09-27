@@ -99,6 +99,11 @@
           "set": 2,
           "weight_kg": 18.0,
           "reps": 12
+        },
+        {
+          "set": 3,
+          "weight_kg": 18.0,
+          "reps": 12
         }
       ]
     },
