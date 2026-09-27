@@ -3,12 +3,13 @@
     "name": "2026-09-27-upper-a.json",
     "date": "2026-09-27",
     "type": "upper-a",
-    "status": "in_progress",
+    "status": "complete",
     "cycle": 3,
+    "duration_min": 53,
     "ad_hoc": false,
     "resumed_from": null,
     "exercise_count": 7,
-    "skipped_count": 0
+    "skipped_count": 2
   },
   {
     "name": "2026-09-25-lower-b.json",
@@ -16,11 +17,11 @@
     "type": "lower-b",
     "status": "complete",
     "cycle": 3,
+    "duration_min": 0,
     "ad_hoc": false,
     "resumed_from": null,
     "exercise_count": 5,
-    "skipped_count": 1,
-    "duration_min": 47
+    "skipped_count": 1
   },
   {
     "name": "2026-09-21-upper-b.json",
@@ -28,7 +29,7 @@
     "type": "upper-b",
     "status": "complete",
     "cycle": 3,
-    "duration_min": 27,
+    "duration_min": 45,
     "ad_hoc": false,
     "resumed_from": null,
     "exercise_count": 6,
