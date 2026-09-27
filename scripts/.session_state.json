@@ -2,7 +2,7 @@
   "session_type": "upper-a",
   "session_name": "UPPER-A",
   "current_exercise": 0,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -11,7 +11,13 @@
       "target_reps": "8\u201310",
       "target_weight_kg": 65.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 65.0,
+          "reps": 12
+        }
+      ]
     },
     {
       "num": 2,
@@ -68,5 +74,12 @@
       "sets": []
     }
   ],
-  "log": {}
+  "log": {
+    "Incline Smith Machine Bench Press": [
+      {
+        "weight": 65.0,
+        "reps": 12
+      }
+    ]
+  }
 }
