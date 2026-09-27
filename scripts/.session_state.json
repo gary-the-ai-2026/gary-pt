@@ -2,7 +2,7 @@
   "session_type": "upper-a",
   "session_name": "UPPER-A",
   "current_exercise": 5,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -125,6 +125,11 @@
           "set": 1,
           "weight_kg": 50.0,
           "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 50.0,
+          "reps": 12
         }
       ]
     },
@@ -201,6 +206,10 @@
       }
     ],
     "Tricep Pushdown (Rope)": [
+      {
+        "weight": 50.0,
+        "reps": 12
+      },
       {
         "weight": 50.0,
         "reps": 12
