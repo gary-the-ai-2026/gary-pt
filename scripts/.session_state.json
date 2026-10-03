@@ -1,8 +1,8 @@
 {
   "session_type": "lower-a",
   "session_name": "LOWER-A",
-  "current_exercise": 2,
-  "current_set": 3,
+  "current_exercise": 3,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -86,7 +86,13 @@
       "target_reps": "12\u201315",
       "target_weight_kg": 25.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 37.5,
+          "reps": 10
+        }
+      ]
     },
     {
       "num": 5,
@@ -139,6 +145,12 @@
       {
         "weight": 37.5,
         "reps": 12
+      }
+    ],
+    "Leg Curl": [
+      {
+        "weight": 37.5,
+        "reps": 10
       }
     ]
   }
