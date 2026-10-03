@@ -2,7 +2,7 @@
   "session_id": "2026-10-03-lower-a",
   "date": "2026-10-03",
   "type": "lower-a",
-  "status": "in_progress",
+  "status": "complete",
   "started": "15:32",
   "cycle": 3,
   "week": 1,
@@ -99,6 +99,11 @@
           "set": 2,
           "weight_kg": 25.0,
           "reps": 11
+        },
+        {
+          "set": 3,
+          "weight_kg": 25.0,
+          "reps": 5
         }
       ]
     },
@@ -112,5 +117,7 @@
       "sets": []
     }
   ],
-  "notes": ""
+  "notes": "Calf raise (ex5) not done - cut short for time.",
+  "finished": "16:17",
+  "duration_min": 45
 }

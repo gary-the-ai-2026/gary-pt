@@ -4,7 +4,7 @@ week: 1
 split: Upper A · Lower A · Upper B · Lower B
 created: 2026-09-12
 status: active
-next_session: upper-a
+next_session: upper-b
 session_duration: 50
 goal_order: "HYPER_2x_WEEK"
 ---
@@ -29,9 +29,9 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 
 | # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|
-| 1 | Barbell Back Squat | 3 | 95.0kg | 8–10 | 2–3 min |
-| 2 | Romanian Deadlift (BB) | 3 | 95.0kg | 8–12 | 2 min |
-| 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 | 60 sec |
+| 1 | Barbell Back Squat | 3 | 90.0kg | 8–10 | 2–3 min |
+| 2 | Romanian Deadlift (BB) | 3 | 100.0kg | 8–12 | 2 min |
+| 3 | Leg Extension (Single Leg) | 3 | 37.5kg | 12–15 | 60 sec |
 | 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
 | 5 | Standing Single-Leg DB Calf Raise | 3 | 26.0kg | 15–20 | 45 sec |
 
@@ -81,9 +81,10 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 - **Lat Pulldown Wide 47.5kg:** swap from close grip (~10% lighter). Expect to calibrate up.
 - **Face Pull 36kg:** 24 Aug all sets at top. Hold, confirm 3 clean before bumping.
 - **Cable Bar Curl (EZ) 25.5kg, Incline DB Curl 12kg:** carry over unchanged.
-- **Squat 95kg / RDL 95kg:** hold target; building rep counts at 90–95.
-- **Leg Ext SL 35kg:** build toward 12–15 (40 was too heavy, 5 reps).
-- **Leg Curl 25kg:** 9 Sep 25×15/10/7 — set 3 stall. Build; graduate when all three hit 12. **(Swap flagged next cycle.)**
+- **Squat 90kg:** 3 Oct 95×6 then back-off 85×10/10 — first set missed range. Dropped program to 90, chase clean 8–10.
+- **RDL 100kg:** 3 Oct 100×10 ×3, all clean. Hold 100, bump 102.5 when all three top out.
+- **Leg Ext SL 37.5kg:** 3 Oct 35×13/15, 37.5×12. Progressed to 37.5, build there.
+- **Leg Curl 25kg:** 9 Sep 25×15/10/7 — set 3 stall. 3 Oct 25×15/11/5 (set 3 cut for time). Build; graduate when all three hit 12. **(Swap flagged next cycle.)**
 - **DB Reverse Lunge 18kg:** fresh unilateral for Lower B (5 Sep had no lower-hinge complement). Start 18kg/side, 8–10/leg.
 - **Standing Single-Leg DB Calf Raise 26kg:** 24 Sep swap — no seated calf raise machine at Josh's gym. Replaces Seated Calf Raise (40kg) in both Lower A and Lower B. DB unilateral. First session actuals 24kg & 26kg × 20/leg — strong, program bumped to 26kg.
 
