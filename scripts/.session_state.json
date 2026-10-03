@@ -1,8 +1,8 @@
 {
   "session_type": "lower-a",
   "session_name": "LOWER-A",
-  "current_exercise": 0,
-  "current_set": 3,
+  "current_exercise": 2,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -61,7 +61,13 @@
       "target_reps": "12\u201315",
       "target_weight_kg": 35.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 35.0,
+          "reps": 13
+        }
+      ]
     },
     {
       "num": 4,
@@ -109,6 +115,12 @@
       {
         "weight": 85.0,
         "reps": 10
+      }
+    ],
+    "Leg Extension (Single Leg)": [
+      {
+        "weight": 35.0,
+        "reps": 13
       }
     ]
   }
