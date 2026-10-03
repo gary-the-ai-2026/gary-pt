@@ -92,8 +92,8 @@
       "sets": [
         {
           "set": 1,
-          "weight_kg": 37.5,
-          "reps": 10
+          "weight_kg": 25.0,
+          "reps": 15
         }
       ]
     },
