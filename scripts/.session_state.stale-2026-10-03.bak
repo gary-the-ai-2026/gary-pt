@@ -1,0 +1,219 @@
+{
+  "session_type": "upper-a",
+  "session_name": "UPPER-A",
+  "current_exercise": 5,
+  "current_set": 2,
+  "exercises": [
+    {
+      "num": 1,
+      "name": "Incline Smith Machine Bench Press",
+      "target_sets": 3,
+      "target_reps": "8\u201310",
+      "target_weight_kg": 65.0,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 65.0,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 65.0,
+          "reps": 12
+        },
+        {
+          "set": 3,
+          "weight_kg": 65.0,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "Barbell Row",
+      "target_sets": 3,
+      "target_reps": "8\u201310",
+      "target_weight_kg": 60.0,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 60.0,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 65.0,
+          "reps": 12
+        },
+        {
+          "set": 3,
+          "weight_kg": 65.0,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Lat Pulldown (Wide)",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": 47.5,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 45.0,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 50.0,
+          "reps": 10
+        },
+        {
+          "set": 3,
+          "weight_kg": 50.0,
+          "reps": 10
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "name": "Cable Flye (Low-to-High)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 18.0,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 18.0,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 18.0,
+          "reps": 12
+        },
+        {
+          "set": 3,
+          "weight_kg": 18.0,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "name": "Dumbbell Lateral Raise",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 12.0,
+      "skipped": true,
+      "sets": null
+    },
+    {
+      "num": 6,
+      "name": "Tricep Pushdown (Rope)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 46.0,
+      "skipped": false,
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 50.0,
+          "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 50.0,
+          "reps": 12
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "Cable Barbell Curl (EZ Bar)",
+      "target_sets": 3,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 25.5,
+      "skipped": false,
+      "sets": []
+    }
+  ],
+  "log": {
+    "Incline Smith Machine Bench Press": [
+      {
+        "weight": 65.0,
+        "reps": 12
+      },
+      {
+        "weight": 65.0,
+        "reps": 12
+      },
+      {
+        "weight": 65.0,
+        "reps": 12
+      }
+    ],
+    "Barbell Row": [
+      {
+        "weight": 60.0,
+        "reps": 12
+      },
+      {
+        "weight": 65.0,
+        "reps": 12
+      },
+      {
+        "weight": 65.0,
+        "reps": 12
+      }
+    ],
+    "Lat Pulldown (Wide)": [
+      {
+        "weight": 45.0,
+        "reps": 12
+      },
+      {
+        "weight": 50.0,
+        "reps": 10
+      },
+      {
+        "weight": 50.0,
+        "reps": 10
+      }
+    ],
+    "Cable Flye (Low-to-High)": [
+      {
+        "weight": 18.0,
+        "reps": 12
+      },
+      {
+        "weight": 18.0,
+        "reps": 12
+      },
+      {
+        "weight": 18.0,
+        "reps": 12
+      }
+    ],
+    "Dumbbell Lateral Raise": [
+      {
+        "skipped": true
+      }
+    ],
+    "Tricep Pushdown (Rope)": [
+      {
+        "weight": 50.0,
+        "reps": 12
+      },
+      {
+        "weight": 50.0,
+        "reps": 12
+      }
+    ]
+  }
+}
