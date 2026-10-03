@@ -2,7 +2,7 @@
   "session_type": "lower-a",
   "session_name": "LOWER-A",
   "current_exercise": 2,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -66,6 +66,11 @@
           "set": 1,
           "weight_kg": 35.0,
           "reps": 13
+        },
+        {
+          "set": 2,
+          "weight_kg": 35.0,
+          "reps": 15
         }
       ]
     },
@@ -121,6 +126,10 @@
       {
         "weight": 35.0,
         "reps": 13
+      },
+      {
+        "weight": 35.0,
+        "reps": 15
       }
     ]
   }
