@@ -1,8 +1,8 @@
 {
   "session_type": "upper-b",
   "session_name": "UPPER-B",
-  "current_exercise": 4,
-  "current_set": 3,
+  "current_exercise": 5,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -87,13 +87,13 @@
     "5": [
       {
         "weight_kg": 50.0,
-        "reps": 14
+        "reps": 8
       }
     ],
     "5": [
       {
         "weight_kg": 50.0,
-        "reps": 8
+        "reps": 5
       }
     ]
   }
