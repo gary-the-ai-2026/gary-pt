@@ -52,7 +52,7 @@ updated: 2026-05-27
 | Tricep Pushdown (Rope) | C10 high pulley, rope | 12–15 | Standard isolation |
 | Tricep Pushdown (Straight Bar) | C10 high pulley, straight bar | 12–15 | Different grip emphasis |
 | Overhead Cable Extension | C10 high pulley, rope | 12–15 | Long head emphasis |
-| Skull Crusher | EZ bar / DBs, flat bench | 10–12 | Long head |
+| Cable Triceps Pushdown | C10 high pulley | 12–15 | Constant-tension pressdown, shoulder-friendly |
 | Single-Arm Cable Kickback | C10 low pulley, single grip | 12–15 | Finisher |
 | Dumbbell Overhead Extension | Single DB, seated | 10–12 | Long head |
 | Bench Dip | Bench, bodyweight | 10–15 | Bodyweight finisher |

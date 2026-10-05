@@ -97,12 +97,17 @@
     },
     {
       "num": 5,
-      "name": "Skull Crusher (EZ Bar)",
+      "name": "Cable Triceps Pushdown",
       "target_sets": 3,
       "target_reps": "10–12",
-      "target_weight_kg": 25.0,
+      "target_weight_kg": 50.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "weight_kg": 50.0,
+          "reps": 14
+        }
+      ]
     },
     {
       "num": 6,

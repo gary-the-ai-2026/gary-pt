@@ -43,7 +43,7 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 | 2 | Pull-Up | 3 | BW | 8–12 | 2 min |
 | 3 | Close-Grip Smith Press | 3 | 50.0kg | 8–12 | 90 sec |
 | 4 | Face Pull | 3 | 36.0kg | 12–15 | 60 sec |
-| 5 | Skull Crusher (EZ Bar) | 3 | 25.0kg | 10–12 | 90 sec |
+| 5 | Cable Triceps Pushdown | 3 | 50.0kg | 10–12 | 60 sec |
 | 6 | Incline Dumbbell Curl | 3 | 12.0kg/side | 10–12 | 60 sec |
 
 ## Lower B
@@ -87,6 +87,7 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 - **Leg Curl 25kg:** 9 Sep 25×15/10/7 — set 3 stall. 3 Oct 25×15/11/5 (set 3 cut for time). Build; graduate when all three hit 12. **(Swap flagged next cycle.)**
 - **DB Reverse Lunge 18kg:** fresh unilateral for Lower B (5 Sep had no lower-hinge complement). Start 18kg/side, 8–10/leg.
 - **Standing Single-Leg DB Calf Raise 26kg:** 24 Sep swap — no seated calf raise machine at Josh's gym. Replaces Seated Calf Raise (40kg) in both Lower A and Lower B. DB unilateral. First session actuals 24kg & 26kg × 20/leg — strong, program bumped to 26kg.
+- **Cable Triceps Pushdown 50kg:** 5 Oct swap — **Skull Crusher (EZ Bar) removed permanently (dodgy shoulder — overhead/behind EZ extension aggravates it).** Replaced with cable triceps pushdown (constant-tension pressdown, shoulder-friendly). First session 50×14. Role: Upper B triceps isolation.
 
 ## YouTube Form Library
 
@@ -108,6 +109,6 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 | 14 | Pull-Up | [TBD] |
 | 15 | Close-Grip Smith Press | [TBD] |
 | 16 | Face Pull | [TBD] |
-| 17 | Skull Crusher (EZ Bar) | [TBD] |
+| 17 | Cable Triceps Pushdown | [TBD] |
 | 18 | Incline Dumbbell Curl | [TBD] |
 | 19 | Dumbbell Reverse Lunge | [TBD] |

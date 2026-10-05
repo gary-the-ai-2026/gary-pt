@@ -2,7 +2,7 @@
   "session_type": "upper-b",
   "session_name": "UPPER-B",
   "current_exercise": 4,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -42,10 +42,10 @@
     },
     {
       "num": 5,
-      "name": "Skull Crusher (EZ Bar)",
+      "name": "Cable Triceps Pushdown",
       "target_sets": 3,
       "target_reps": "10–12",
-      "target_weight_kg": 25.0,
+      "target_weight_kg": 50.0,
       "skipped": false,
       "sets": []
     },
@@ -80,14 +80,14 @@
     ],
     "4": [
       {
-        "weight_kg": 50.0,
-        "reps": 15
-      }
-    ],
-    "4": [
-      {
         "weight_kg": 55.0,
         "reps": 12
+      }
+    ],
+    "5": [
+      {
+        "weight_kg": 50.0,
+        "reps": 14
       }
     ]
   }
