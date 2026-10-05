@@ -18,7 +18,7 @@
   "Dumbbell Lateral Raise": 0,
   "Standing Calf Raise": 0,
   "Seated Cable Row (Close)": 1,
-  "Face Pull": 0,
+  "Face Pull": 1,
   "Cable Barbell Curl": 1,
   "Leg Extension (Single Leg)": 3,
   "Standing Calf Raise (Single Leg)": 0,
@@ -27,7 +27,7 @@
   "Cable Flye (High-to-Low)": 0,
   "Tricep Pushdown (EZ Bar)": 1,
   "Bench Dip": 0,
-  "Pull-Up": 82,
+  "Pull-Up": 83,
   "Dumbbell Row (Single Arm)": 1,
   "Lat Pulldown (Close Grip)": 0,
   "Cable Rear Delt Flye": 0,
@@ -36,6 +36,8 @@
   "Barbell Overhead Press": 1,
   "Incline Smith Machine Bench Press": 0,
   "Seated Calf Raise": 1,
-  "Close-Grip Smith Press": 0,
-  "Target Face Pull": 0
+  "Close-Grip Smith Press": 1,
+  "Target Face Pull": 0,
+  "Cable Triceps Pushdown": 1,
+  "Incline Dumbbell Curl": 1
 }

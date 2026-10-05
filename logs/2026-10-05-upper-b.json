@@ -2,7 +2,7 @@
   "session_id": "2026-10-05-upper-b",
   "date": "2026-10-05",
   "type": "upper-b",
-  "status": "in_progress",
+  "status": "completed",
   "started": "13:59",
   "cycle": 3,
   "week": 1,
@@ -132,6 +132,10 @@
         {
           "weight_kg": 12.0,
           "reps": 10
+        },
+        {
+          "weight_kg": 12.0,
+          "reps": 7
         }
       ]
     }
