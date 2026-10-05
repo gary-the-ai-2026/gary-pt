@@ -80,7 +80,12 @@
       "target_reps": "12–15",
       "target_weight_kg": 43.5,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "weight_kg": 45.0,
+          "reps": 15
+        }
+      ]
     },
     {
       "num": 5,

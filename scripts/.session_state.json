@@ -2,7 +2,7 @@
   "session_type": "upper-b",
   "session_name": "UPPER-B",
   "current_exercise": 3,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -74,14 +74,14 @@
     ],
     "3": [
       {
-        "weight_kg": 50.0,
-        "reps": 15
-      }
-    ],
-    "3": [
-      {
         "weight_kg": 55.0,
         "reps": 11
+      }
+    ],
+    "4": [
+      {
+        "weight_kg": 45.0,
+        "reps": 15
       }
     ]
   }
