@@ -18,7 +18,7 @@
       "name": "Dumbbell Reverse Lunge",
       "target_sets": 3,
       "target_reps": "8\u201310",
-      "target_weight_kg": 25.0,
+      "target_weight_kg": 22.5,
       "skipped": false,
       "sets": []
     },
@@ -27,7 +27,7 @@
       "name": "Leg Extension (Single Leg)",
       "target_sets": 3,
       "target_reps": "12\u201315",
-      "target_weight_kg": 33.2,
+      "target_weight_kg": 37.5,
       "skipped": false,
       "sets": []
     },
