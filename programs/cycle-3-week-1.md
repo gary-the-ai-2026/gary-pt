@@ -17,13 +17,14 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 
 | # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|
-| 1 | Incline Smith Machine Bench Press | 3 | 65.0kg | 8–10 | 2–3 min |
-| 2 | Barbell Row | 3 | 60.0kg | 8–10 | 2 min |
-| 3 | Lat Pulldown (Wide) | 3 | 47.5kg | 8–12 | 90 sec |
-| 4 | Cable Flye (Low-to-High) | 3 | 18.0kg | 12–15 | 60 sec |
-| 5 | Dumbbell Lateral Raise | 3 | 12.0kg/side | 12–15 | 60 sec |
-| 6 | Tricep Pushdown (Rope) | 3 | 46.0kg | 12–15 | 60 sec |
-| 7 | Cable Barbell Curl (EZ Bar) | 3 | 25.5kg | 10–12 | 90 sec |
+| 1 | Barbell Row | 3 | 60.0kg | 8–10 | 2 min |
+| 2 | Lat Pulldown (Wide) | 3 | 47.5kg | 8–12 | 90 sec |
+| 3 | Cable Flye (Low-to-High) | 3 | 18.0kg | 12–15 | 60 sec |
+| 4 | Dumbbell Lateral Raise | 3 | 12.0kg/side | 12–15 | 60 sec |
+| 5 | Tricep Pushdown (Rope) | 3 | 46.0kg | 12–15 | 60 sec |
+| 6 | Cable Barbell Curl (EZ Bar) | 3 | 25.5kg | 10–12 | 90 sec |
+
+*Recalibrated 10 Oct 2026: Incline Smith Bench removed (chest covered by Cable Flye in Upper A + Incline DB Press in Upper B, holds 2×/week).*
 
 ## Lower A
 
@@ -33,7 +34,8 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 | 2 | Romanian Deadlift (BB) | 3 | 100.0kg | 8–12 | 2 min |
 | 3 | Leg Extension (Single Leg) | 3 | 37.5kg | 12–15 | 60 sec |
 | 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
-| 5 | Standing Single-Leg DB Calf Raise | 3 | 26.0kg | 15–20 | 45 sec |
+
+*Recalibrated 10 Oct 2026: Standing Single-Leg DB Calf Raise removed from programmed rotation (optional finisher when time allows — cuts ~4 min/session).*
 
 ## Upper B
 
@@ -41,20 +43,22 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 |---|---|---|---|---|---|
 | 1 | Incline Dumbbell Press | 3 | 22.5kg/side | 10–12 | 90 sec |
 | 2 | Pull-Up | 3 | BW | 8–12 | 2 min |
-| 3 | Close-Grip Smith Press | 3 | 50.0kg | 8–12 | 90 sec |
-| 4 | Face Pull | 3 | 36.0kg | 12–15 | 60 sec |
-| 5 | Cable Triceps Pushdown | 3 | 50.0kg | 10–12 | 60 sec |
-| 6 | Incline Dumbbell Curl | 3 | 12.0kg/side | 10–12 | 60 sec |
+| 3 | Face Pull | 3 | 36.0kg | 12–15 | 60 sec |
+| 4 | Cable Triceps Pushdown | 3 | 50.0kg | 10–12 | 60 sec |
+| 5 | Incline Dumbbell Curl | 3 | 12.0kg/side | 10–12 | 60 sec |
+
+*Recalibrated 10 Oct 2026: Close-Grip Smith Press removed (triceps already covered by Cable Triceps Pushdown; he prefers keeping the cable flye/rear delt work).*
 
 ## Lower B
 
 | # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|
-| 1 | Romanian Deadlift (BB) | 3 | 95.0kg | 8–12 | 2 min |
+| 1 | Romanian Deadlift (BB) | 3 | 100.0kg | 8–12 | 2 min |
 | 2 | Dumbbell Reverse Lunge | 3 | 18.0kg/side | 8–10 | 90 sec |
 | 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 | 60 sec |
 | 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |
-| 5 | Standing Single-Leg DB Calf Raise | 3 | 26.0kg | 15–20 | 45 sec |
+
+*Recalibrated 10 Oct 2026: Standing Single-Leg DB Calf Raise removed from programmed rotation (optional finisher when time allows — cuts ~4 min/session).*
 
 ---
 
@@ -88,6 +92,17 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 - **DB Reverse Lunge 18kg:** fresh unilateral for Lower B (5 Sep had no lower-hinge complement). Start 18kg/side, 8–10/leg.
 - **Standing Single-Leg DB Calf Raise 26kg:** 24 Sep swap — no seated calf raise machine at Josh's gym. Replaces Seated Calf Raise (40kg) in both Lower A and Lower B. DB unilateral. First session actuals 24kg & 26kg × 20/leg — strong, program bumped to 26kg.
 - **Cable Triceps Pushdown 50kg:** 5 Oct swap — **Skull Crusher (EZ Bar) removed permanently (dodgy shoulder — overhead/behind EZ extension aggravates it).** Replaced with cable triceps pushdown (constant-tension pressdown, shoulder-friendly). First session 50×14. Role: Upper B triceps isolation.
+
+## Recalibration (10 Oct 2026)
+
+Sessions were reliably ending just short of the final exercise. Trimmed to protect 2×/week coverage AND fit the real available time (~45 min):
+
+- **Upper A:** Incline Smith Bench removed (6 ex). Chest now via **Cable Flye (Upper A)** + **Incline DB Press (Upper B)** — holds 2×/week.
+- **Upper B:** Close-Grip Smith Press removed (5 ex). Triceps now via **Cable Triceps Pushdown** (Upper B) + **Tricep Pushdown (Rope)** (Upper A) — holds 2×/week.
+- **Lower A & Lower B:** Standing Single-Leg DB Calf Raise removed from programming → **optional finisher** when time allows. Cuts ~4 min/session.
+- **Lower B RDL synced to 100kg** (clean 100×10×3 on 7 Oct — dashboard had been showing stale 95).
+
+Net effect: each session ~8–10 min shorter; every major muscle still trained 2×/week.
 
 ## YouTube Form Library
 
