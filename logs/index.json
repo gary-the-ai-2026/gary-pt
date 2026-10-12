@@ -1,5 +1,14 @@
 [
   {
+    "name": "2026-10-13-lower-a.json",
+    "date": "2026-10-13",
+    "type": "lower-a",
+    "status": "in_progress",
+    "cycle": 3,
+    "duration_min": null,
+    "ad_hoc": false
+  },
+  {
     "name": "2026-10-10-upper-a.json",
     "date": "2026-10-10",
     "type": "upper-a",

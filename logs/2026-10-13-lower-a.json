@@ -1,0 +1,50 @@
+{
+  "session_id": "2026-10-13-lower-a",
+  "date": "2026-10-13",
+  "type": "lower-a",
+  "status": "in_progress",
+  "started": "05:41",
+  "cycle": 3,
+  "week": 1,
+  "exercises": [
+    {
+      "num": 1,
+      "name": "Barbell Back Squat",
+      "target_sets": 3,
+      "target_reps": "8\u201310",
+      "target_weight_kg": 90.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 2,
+      "name": "Romanian Deadlift (BB)",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": 100.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 3,
+      "name": "Leg Extension (Single Leg)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 37.5,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 4,
+      "name": "Leg Curl",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 25.0,
+      "skipped": false,
+      "sets": []
+    }
+  ],
+  "notes": null,
+  "finished": null,
+  "duration_min": null
+}
