@@ -4,7 +4,7 @@ week: 1
 split: Upper A · Lower A · Upper B · Lower B
 created: 2026-09-12
 status: active
-next_session: lower-a
+next_session: upper-b
 session_duration: 50
 goal_order: "HYPER_2x_WEEK"
 ---
@@ -86,9 +86,11 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 - **Face Pull 36kg:** 24 Aug all sets at top. Hold, confirm 3 clean before bumping.
 - **Cable Bar Curl (EZ) 25.5kg, Incline DB Curl 12kg:** carry over unchanged.
 - **Squat 90kg:** 3 Oct 95×6 then back-off 85×10/10 — first set missed range. Dropped program to 90, chase clean 8–10.
+- **Squat 80kg (13 Oct):** Josh self-selected 80 for Lower A — 80×10/10/12, all clean, final set over top. Working level settled 10–12kg below programmed 90; keep program at 90 as an aspiration, calibrate only if 80 stays easy across cycles.
 - **RDL 100kg:** 3 Oct 100×10 ×3, all clean. Hold 100, bump 102.5 when all three top out.
 - **Leg Ext SL 37.5kg:** 3 Oct 35×13/15, 37.5×12. Progressed to 37.5, build there.
 - **Leg Curl 25kg:** 9 Sep 25×15/10/7 — set 3 stall. 3 Oct 25×15/11/5 (set 3 cut for time). Build; graduate when all three hit 12. **(Swap flagged next cycle.)**
+- **Leg Curl 25kg (13 Oct):** 25×14/15/15 — all three sets now past 12, stall cleared. Hold; bump to 27.5kg next Lower A.
 - **DB Reverse Lunge 18kg:** fresh unilateral for Lower B (5 Sep had no lower-hinge complement). Start 18kg/side, 8–10/leg.
 - **Standing Single-Leg DB Calf Raise 26kg:** 24 Sep swap — no seated calf raise machine at Josh's gym. Replaces Seated Calf Raise (40kg) in both Lower A and Lower B. DB unilateral. First session actuals 24kg & 26kg × 20/leg — strong, program bumped to 26kg.
 - **Cable Triceps Pushdown 50kg:** 5 Oct swap — **Skull Crusher (EZ Bar) removed permanently (dodgy shoulder — overhead/behind EZ extension aggravates it).** Replaced with cable triceps pushdown (constant-tension pressdown, shoulder-friendly). First session 50×14. Role: Upper B triceps isolation.
