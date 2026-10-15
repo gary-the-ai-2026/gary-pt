@@ -4,7 +4,7 @@ week: 1
 split: Upper A · Lower A · Upper B · Lower B
 created: 2026-09-12
 status: active
-next_session: upper-b
+next_session: lower-b
 session_duration: 50
 goal_order: "HYPER_2x_WEEK"
 ---
@@ -45,9 +45,10 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 | 2 | Pull-Up | 3 | BW | 8–12 | 2 min |
 | 3 | Face Pull | 3 | 55.0kg | 12–15 | 60 sec |
 | 4 | Cable Triceps Pushdown | 3 | 47.5kg | 10–12 | 60 sec |
-| 5 | Incline Dumbbell Curl | 3 | 12.0kg/side | 10–12 | 60 sec |
+| 5 | Hammer Curl (DB) | 3 | 12.0kg/side | 10–12 | 60 sec |
 
 *Recalibrated 10 Oct 2026: Close-Grip Smith Press removed (triceps already covered by Cable Triceps Pushdown; he prefers keeping the cable flye/rear delt work).*
+*Recalibrated 15 Oct 2026: Incline DB Curl removed (shoulder strain in incline position) → Hammer Curl (DB). Face Pull re-synced to 55kg, Pushdown to 47.5kg (5 Oct actuals).*
 
 ## Lower B
 
@@ -84,7 +85,8 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 - **Barbell Row 60kg:** calibrated 24 Aug (60×9/10). Bump to 62.5 when sets 2–3 both hit top.
 - **Lat Pulldown Wide 47.5kg:** swap from close grip (~10% lighter). Expect to calibrate up.
 - **Face Pull 55kg:** 24 Aug held 36 (all sets top); 5 Oct ran 45×15/50×15/55×12 — well ahead of program. Calibrated to 55.0kg, dashboard re-synced 15 Oct.
-- **Cable Bar Curl (EZ) 25.5kg, Incline DB Curl 12kg:** carry over unchanged.
+- **Cable Bar Curl (EZ) 25.5kg:** carry over unchanged.
+- **Hammer Curl (DB) 12kg (swap 15 Oct):** replaces Incline DB Curl — incline position under load aggravated Josh's shoulder. Neutral-grip hammer curl: zero shoulder strain, hits brachialis. Start 12kg/side, calibrate from actuals.
 - **Squat 90kg:** 3 Oct 95×6 then back-off 85×10/10 — first set missed range. Dropped program to 90, chase clean 8–10.
 - **Squat 80kg (13 Oct):** Josh self-selected 80 for Lower A — 80×10/10/12, all clean, final set over top. Working level settled 10–12kg below programmed 90; keep program at 90 as an aspiration, calibrate only if 80 stays easy across cycles.
 - **RDL 100kg:** 3 Oct 100×10 ×3, all clean. Hold 100, bump 102.5 when all three top out.
@@ -127,5 +129,5 @@ Net effect: each session ~8–10 min shorter; every major muscle still trained 2
 | 15 | Close-Grip Smith Press | [TBD] |
 | 16 | Face Pull | [TBD] |
 | 17 | Cable Triceps Pushdown | [TBD] |
-| 18 | Incline Dumbbell Curl | [TBD] |
+| 18 | Hammer Curl (DB) | [TBD] |
 | 19 | Dumbbell Reverse Lunge | [TBD] |

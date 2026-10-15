@@ -2,7 +2,7 @@
   "session_id": "2026-10-15-upper-b",
   "date": "2026-10-15",
   "type": "upper-b",
-  "status": "in_progress",
+  "status": "complete",
   "started": "17:43",
   "cycle": 3,
   "week": 1,
@@ -110,9 +110,15 @@
         {
           "weight_kg": 14.0,
           "reps": 10
+        },
+        {
+          "weight_kg": 14.0,
+          "reps": 9
         }
       ]
     }
   ],
-  "notes": ""
+  "notes": "Incline DB Press 24x15/26x9/26x6. Pull-Up 15/7/8. Face Pull 45x15/50x15/55x9. Pushdown 50x15/55x9/55x9. Curl 12x15/14x10/14x9. Incline DB Curl aggravates shoulder - removed, swapped for Hammer Curl (DB).",
+  "finished": "18:31",
+  "duration_min": 48
 }

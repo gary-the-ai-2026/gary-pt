@@ -3,12 +3,13 @@
     "name": "2026-10-15-upper-b.json",
     "date": "2026-10-15",
     "type": "upper-b",
-    "status": "in_progress",
+    "status": "complete",
     "cycle": 3,
     "ad_hoc": false,
     "resumed_from": null,
     "exercise_count": 5,
-    "skipped_count": 0
+    "skipped_count": 0,
+    "duration_min": 48
   },
   {
     "name": "2026-10-13-lower-a.json",

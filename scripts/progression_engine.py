@@ -22,7 +22,19 @@ from datetime import datetime, timezone, timedelta
 
 ADL = timezone(timedelta(hours=9, minutes=30))
 REPO = Path("/Users/gary/Projects/gary-pt")
-PROGRAM_FILE = REPO / "programs" / "cycle-1-week-1.md"
+def _find_active_program() -> Path:
+    """Resolve the ACTIVE cycle program (status: active) so progression updates
+    land in the live program, not a stale cycle file (bug found 2026-10-15 —
+    engine was writing to cycle-1 while cycle-3 was active)."""
+    import re as _re
+    for _f in sorted((REPO / "programs").glob("cycle-*.md")):
+        _t = _f.read_text()
+        _m = _re.search(r"^status:\s*(.+)$", _t, _re.M)
+        if _m and _m.group(1).strip().lower() == "active":
+            return _f
+    return REPO / "programs" / "cycle-3-week-1.md"
+
+PROGRAM_FILE = _find_active_program()
 CONFIG_FILE = REPO / "config" / "josh-hancock.md"
 STALL_FILE = REPO / "programs" / ".stall_tracker.json"
 
@@ -218,7 +230,7 @@ def run_progression(latest_log_path: Path = None):
     # Commit
     import os
     os.chdir(REPO)
-    os.system(f"git add programs/cycle-1-week-1.md programs/.stall_tracker.json logs/{log_file.name} 2>/dev/null")
+    os.system(f"git add programs/{PROGRAM_FILE.name} programs/.stall_tracker.json logs/{log_file.name} 2>/dev/null")
     os.system(f"git commit -m 'progression: {session_date} {session_type}' 2>&1")
     os.system("git push origin main 2>&1")
 
