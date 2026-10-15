@@ -188,7 +188,7 @@ def calibrate_with_progression(e_list, section_key):
     for f in ms:
         try:
             d = json.loads(f.read_text())
-            if d.get("status") == "complete" and d.get("exercises"):
+            if d.get("status", "").strip().lower() in ("complete", "completed") and d.get("exercises"):
                 prior = d
                 break
         except Exception:

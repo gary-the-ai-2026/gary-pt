@@ -43,8 +43,8 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 |---|---|---|---|---|---|
 | 1 | Incline Dumbbell Press | 3 | 22.5kg/side | 10–12 | 90 sec |
 | 2 | Pull-Up | 3 | BW | 8–12 | 2 min |
-| 3 | Face Pull | 3 | 36.0kg | 12–15 | 60 sec |
-| 4 | Cable Triceps Pushdown | 3 | 50.0kg | 10–12 | 60 sec |
+| 3 | Face Pull | 3 | 55.0kg | 12–15 | 60 sec |
+| 4 | Cable Triceps Pushdown | 3 | 47.5kg | 10–12 | 60 sec |
 | 5 | Incline Dumbbell Curl | 3 | 12.0kg/side | 10–12 | 60 sec |
 
 *Recalibrated 10 Oct 2026: Close-Grip Smith Press removed (triceps already covered by Cable Triceps Pushdown; he prefers keeping the cable flye/rear delt work).*
@@ -83,7 +83,7 @@ Loads carried from Cycle 3 calibration + 12 Sep actuals:
 - **Close-Grip Smith 50kg:** 12 Sep 50×10 — ahead of the old 42.5 program. Now set at 50.
 - **Barbell Row 60kg:** calibrated 24 Aug (60×9/10). Bump to 62.5 when sets 2–3 both hit top.
 - **Lat Pulldown Wide 47.5kg:** swap from close grip (~10% lighter). Expect to calibrate up.
-- **Face Pull 36kg:** 24 Aug all sets at top. Hold, confirm 3 clean before bumping.
+- **Face Pull 55kg:** 24 Aug held 36 (all sets top); 5 Oct ran 45×15/50×15/55×12 — well ahead of program. Calibrated to 55.0kg, dashboard re-synced 15 Oct.
 - **Cable Bar Curl (EZ) 25.5kg, Incline DB Curl 12kg:** carry over unchanged.
 - **Squat 90kg:** 3 Oct 95×6 then back-off 85×10/10 — first set missed range. Dropped program to 90, chase clean 8–10.
 - **Squat 80kg (13 Oct):** Josh self-selected 80 for Lower A — 80×10/10/12, all clean, final set over top. Working level settled 10–12kg below programmed 90; keep program at 90 as an aspiration, calibrate only if 80 stays easy across cycles.

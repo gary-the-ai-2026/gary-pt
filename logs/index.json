@@ -49,7 +49,7 @@
     "name": "2026-10-05-upper-b.json",
     "date": "2026-10-05",
     "type": "upper-b",
-    "status": "completed",
+    "status": "complete",
     "cycle": 3,
     "duration_min": 0,
     "ad_hoc": false,
