@@ -2,7 +2,7 @@
   "session_type": "lower-b",
   "session_name": "LOWER-B",
   "current_exercise": 0,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -11,7 +11,13 @@
       "target_reps": "8\u201312",
       "target_weight_kg": 100.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 100,
+          "reps": 10
+        }
+      ]
     },
     {
       "num": 2,
@@ -41,5 +47,12 @@
       "sets": []
     }
   ],
-  "log": {}
+  "log": {
+    "Romanian Deadlift (BB)": [
+      {
+        "weight": 100,
+        "reps": 10
+      }
+    ]
+  }
 }
