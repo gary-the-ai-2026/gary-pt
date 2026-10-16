@@ -96,6 +96,11 @@
           "set": 2,
           "weight_kg": 25,
           "reps": 13
+        },
+        {
+          "set": 3,
+          "weight_kg": 25,
+          "reps": 10
         }
       ]
     }
@@ -151,6 +156,10 @@
       {
         "weight": 25,
         "reps": 13
+      },
+      {
+        "weight": 25,
+        "reps": 10
       }
     ]
   }

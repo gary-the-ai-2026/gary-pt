@@ -2,7 +2,7 @@
   "session_id": "2026-10-16-lower-b",
   "date": "2026-10-16",
   "type": "lower-b",
-  "status": "in_progress",
+  "status": "complete",
   "started": "13:58",
   "cycle": 3,
   "week": 1,
@@ -99,9 +99,16 @@
           "set": 2,
           "weight_kg": 25,
           "reps": 13
+        },
+        {
+          "set": 3,
+          "weight_kg": 25,
+          "reps": 10
         }
       ]
     }
   ],
-  "notes": ""
+  "notes": "",
+  "finished": "14:43",
+  "duration_min": 45
 }
