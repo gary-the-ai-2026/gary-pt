@@ -1,0 +1,48 @@
+{
+  "session_id": "2026-10-16-lower-b",
+  "date": "2026-10-16",
+  "type": "lower-b",
+  "status": "in_progress",
+  "started": "13:58",
+  "cycle": 3,
+  "week": 1,
+  "exercises": [
+    {
+      "num": 1,
+      "name": "Romanian Deadlift (BB)",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": 100.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 2,
+      "name": "Dumbbell Reverse Lunge",
+      "target_sets": 3,
+      "target_reps": "8\u201310",
+      "target_weight_kg": 29.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 3,
+      "name": "Leg Extension (Single Leg)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 33.2,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 4,
+      "name": "Leg Curl",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 23.8,
+      "skipped": false,
+      "sets": []
+    }
+  ],
+  "notes": ""
+}
