@@ -126,6 +126,12 @@
           "weight_kg": 54.0,
           "reps": 13,
           "rpe": null
+        },
+        {
+          "set": 2,
+          "weight_kg": 54.0,
+          "reps": 11,
+          "rpe": null
         }
       ]
     },
