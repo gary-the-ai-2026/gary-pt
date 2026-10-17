@@ -1,8 +1,8 @@
 {
   "session_type": "upper-a",
   "session_name": "UPPER-A",
-  "current_exercise": 0,
-  "current_set": 3,
+  "current_exercise": 1,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -14,6 +14,18 @@
       "sets": [
         {
           "set": 1,
+          "weight_kg": 70.0,
+          "reps": 12,
+          "rpe": null
+        },
+        {
+          "set": 2,
+          "weight_kg": 70.0,
+          "reps": 12,
+          "rpe": null
+        },
+        {
+          "set": 3,
           "weight_kg": 70.0,
           "reps": 12,
           "rpe": null
