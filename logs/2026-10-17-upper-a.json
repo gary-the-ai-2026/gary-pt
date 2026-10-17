@@ -98,7 +98,14 @@
       "target_reps": "12–15",
       "target_weight_kg": 11.4,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 12.0,
+          "reps": 12,
+          "rpe": null
+        }
+      ]
     },
     {
       "num": 5,
