@@ -2,7 +2,7 @@
   "session_type": "lower-a",
   "session_name": "LOWER-A",
   "current_exercise": 1,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -33,7 +33,12 @@
       "target_reps": "8–12",
       "target_weight_kg": 100.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "weight": 100.0,
+          "reps": 10
+        }
+      ]
     },
     {
       "num": 3,
@@ -67,6 +72,12 @@
       {
         "weight": 80.0,
         "reps": 12
+      }
+    ],
+    "Romanian Deadlift (BB)": [
+      {
+        "weight": 100.0,
+        "reps": 10
       }
     ]
   }
