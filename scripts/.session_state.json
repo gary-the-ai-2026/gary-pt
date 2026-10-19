@@ -2,7 +2,7 @@
   "session_type": "lower-a",
   "session_name": "LOWER-A",
   "current_exercise": 0,
-  "current_set": 2,
+  "current_set": 3,
   "exercises": [
     {
       "num": 1,
@@ -12,6 +12,10 @@
       "target_weight_kg": 85.0,
       "skipped": false,
       "sets": [
+        {
+          "weight": 80.0,
+          "reps": 12
+        },
         {
           "weight": 80.0,
           "reps": 12
@@ -48,6 +52,10 @@
   ],
   "log": {
     "Barbell Back Squat": [
+      {
+        "weight": 80.0,
+        "reps": 12
+      },
       {
         "weight": 80.0,
         "reps": 12
