@@ -27,11 +27,16 @@ def _find_active_program() -> Path:
     land in the live program, not a stale cycle file (bug found 2026-10-15 —
     engine was writing to cycle-1 while cycle-3 was active)."""
     import re as _re
-    for _f in sorted((REPO / "programs").glob("cycle-*.md")):
+    _cands = []
+    for _f in (REPO / "programs").glob("cycle-*.md"):
         _t = _f.read_text()
         _m = _re.search(r"^status:\s*(.+)$", _t, _re.M)
         if _m and _m.group(1).strip().lower() == "active":
-            return _f
+            # highest cycle number wins — never pick a stale still-"active" old cycle
+            _c = _re.search(r"cycle-(\d+)", _f.name)
+            _cands.append((int(_c.group(1)) if _c else 0, _f))
+    if _cands:
+        return max(_cands, key=lambda x: x[0])[1]
     return REPO / "programs" / "cycle-3-week-1.md"
 
 PROGRAM_FILE = _find_active_program()

@@ -4,7 +4,7 @@ week: 1
 split: Upper A · Lower A · Upper B · Lower B
 created: 2026-09-12
 status: active
-next_session: upper-a
+next_session: upper-b
 session_duration: 50
 goal_order: "HYPER_2x_WEEK"
 ---
@@ -31,7 +31,7 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 
 | # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|
-| 1 | Barbell Back Squat | 3 | 90.0kg | 8–10 | 2–3 min |
+| 1 | Barbell Back Squat | 3 | 85.0kg | 8–10 | 2–3 min |
 | 2 | Romanian Deadlift (BB) | 3 | 100.0kg | 8–12 | 2 min |
 | 3 | Leg Extension (Single Leg) | 3 | 37.5kg | 12–15 | 60 sec |
 | 4 | Leg Curl | 3 | 25.0kg | 12–15 | 60 sec |

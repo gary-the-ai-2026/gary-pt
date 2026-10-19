@@ -3,7 +3,7 @@ cycle: 2
 week: 1
 split: Chest/Tri · Back/Bi · Legs/Shoulders
 created: 2026-07-04
-status: active
+status: inactive
 next_session: chest-tri
 ---
 
@@ -35,7 +35,7 @@ next_session: chest-tri
 
 | # | Exercise | Sets | Weight | Reps |
 |---|---|---|---|---|
-| 1 | Barbell Back Squat | 3 | 90.0kg | 8–10 |
+| 1 | Barbell Back Squat | 3 | 80.0kg | 8–10 |
 | 2 | Romanian Deadlift (BB) | 3 | 90.0kg | 8–12 |
 | 3 | Leg Extension (Single Leg) | 3 | 35.0kg | 12–15 |
 | 4 | Leg Curl | 3 | 22.5kg | 12–15 |
