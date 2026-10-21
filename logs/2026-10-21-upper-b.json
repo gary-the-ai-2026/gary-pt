@@ -94,6 +94,12 @@
           "set": 1,
           "weight_kg": 50,
           "reps": 13
+        },
+        {
+          "set": 2,
+          "weight_kg": 54,
+          "reps": 8,
+          "notes": "raised mid-session"
         }
       ]
     },
