@@ -2,7 +2,7 @@
   "session_id": "2026-10-21-upper-b",
   "date": "2026-10-21",
   "type": "upper-b",
-  "status": "in_progress",
+  "status": "complete",
   "started": "18:40",
   "cycle": 3,
   "week": 1,
@@ -30,7 +30,8 @@
           "weight_kg": 26,
           "reps": 12
         }
-      ]
+      ],
+      "complete": true
     },
     {
       "num": 2,
@@ -55,7 +56,8 @@
           "weight_kg": "BW",
           "reps": 8
         }
-      ]
+      ],
+      "complete": true
     },
     {
       "num": 3,
@@ -80,7 +82,8 @@
           "weight_kg": 55,
           "reps": 12
         }
-      ]
+      ],
+      "complete": true
     },
     {
       "num": 4,
@@ -106,7 +109,8 @@
           "weight_kg": 54,
           "reps": 8
         }
-      ]
+      ],
+      "complete": true
     },
     {
       "num": 5,
@@ -126,9 +130,17 @@
           "weight_kg": 14,
           "reps": 12,
           "notes": "raised mid-session"
+        },
+        {
+          "set": 3,
+          "weight_kg": 14,
+          "reps": 12
         }
-      ]
+      ],
+      "complete": true
     }
   ],
-  "notes": ""
+  "notes": "Cycle 3 W1 Upper B. Incline DB: 12x24 warm-up-ish opener then 26x8/26x12 (Josh confirmed all three as working sets). Pushdown raised 50->54 mid-session. All 5 exercises completed.",
+  "finished": "19:32",
+  "duration_min": 52
 }
