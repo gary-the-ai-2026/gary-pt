@@ -18,7 +18,13 @@
         {
           "set": 1,
           "weight_kg": 12,
-          "reps": 24
+          "reps": 24,
+          "notes": "warm-up"
+        },
+        {
+          "set": 2,
+          "weight_kg": 26,
+          "reps": 8
         }
       ]
     },
