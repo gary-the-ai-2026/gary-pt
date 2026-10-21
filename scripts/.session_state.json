@@ -1,8 +1,8 @@
 {
   "session_type": "upper-b",
   "session_name": "UPPER-B",
-  "current_exercise": 0,
-  "current_set": 4,
+  "current_exercise": 1,
+  "current_set": 1,
   "exercises": [
     {
       "num": 1,
@@ -15,8 +15,7 @@
         {
           "set": 1,
           "weight_kg": 12,
-          "reps": 24,
-          "notes": "warm-up"
+          "reps": 24
         },
         {
           "set": 2,
@@ -28,7 +27,8 @@
           "weight_kg": 26,
           "reps": 12
         }
-      ]
+      ],
+      "complete": true
     },
     {
       "num": 2,
@@ -72,8 +72,7 @@
       {
         "set": 1,
         "weight_kg": 12,
-        "reps": 24,
-        "notes": "warm-up"
+        "reps": 24
       },
       {
         "set": 2,
