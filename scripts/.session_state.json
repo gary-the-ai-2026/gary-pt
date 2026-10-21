@@ -2,7 +2,7 @@
   "session_type": "upper-b",
   "session_name": "UPPER-B",
   "current_exercise": 4,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -116,7 +116,13 @@
       "target_reps": "10\u201312",
       "target_weight_kg": 12.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 12,
+          "reps": 15
+        }
+      ]
     }
   ],
   "log": {
@@ -187,6 +193,13 @@
         "set": 3,
         "weight_kg": 54,
         "reps": 8
+      }
+    ],
+    "Hammer Curl (DB)": [
+      {
+        "set": 1,
+        "weight_kg": 12,
+        "reps": 15
       }
     ]
   }
