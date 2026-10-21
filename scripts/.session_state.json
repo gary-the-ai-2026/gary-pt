@@ -2,7 +2,7 @@
   "session_type": "upper-b",
   "session_name": "UPPER-B",
   "current_exercise": 4,
-  "current_set": 2,
+  "current_set": 3,
   "exercises": [
     {
       "num": 1,
@@ -121,6 +121,12 @@
           "set": 1,
           "weight_kg": 12,
           "reps": 15
+        },
+        {
+          "set": 2,
+          "weight_kg": 14,
+          "reps": 12,
+          "notes": "raised mid-session"
         }
       ]
     }
@@ -200,6 +206,12 @@
         "set": 1,
         "weight_kg": 12,
         "reps": 15
+      },
+      {
+        "set": 2,
+        "weight_kg": 14,
+        "reps": 12,
+        "notes": "raised mid-session"
       }
     ]
   }
