@@ -2,7 +2,7 @@
   "session_type": "upper-a",
   "session_name": "UPPER-A",
   "current_exercise": 0,
-  "current_set": 2,
+  "current_set": 3,
   "exercises": [
     {
       "num": 1,
@@ -14,6 +14,11 @@
       "sets": [
         {
           "set": 1,
+          "weight_kg": 70.0,
+          "reps": 10
+        },
+        {
+          "set": 2,
           "weight_kg": 70.0,
           "reps": 10
         }
@@ -67,6 +72,10 @@
   ],
   "log": {
     "Barbell Row": [
+      {
+        "weight": 70.0,
+        "reps": 10
+      },
       {
         "weight": 70.0,
         "reps": 10
