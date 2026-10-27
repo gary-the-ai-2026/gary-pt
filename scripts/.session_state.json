@@ -2,7 +2,7 @@
   "session_type": "upper-a",
   "session_name": "UPPER-A",
   "current_exercise": 3,
-  "current_set": 2,
+  "current_set": 3,
   "exercises": [
     {
       "num": 1,
@@ -91,6 +91,11 @@
           "set": 1,
           "weight_kg": 12.0,
           "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": 12.0,
+          "reps": 12
         }
       ]
     },
@@ -157,6 +162,10 @@
       }
     ],
     "Dumbbell Lateral Raise": [
+      {
+        "weight": 12.0,
+        "reps": 12
+      },
       {
         "weight": 12.0,
         "reps": 12
