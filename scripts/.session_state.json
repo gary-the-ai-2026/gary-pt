@@ -2,7 +2,7 @@
   "session_type": "upper-a",
   "session_name": "UPPER-A",
   "current_exercise": 2,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -61,7 +61,13 @@
       "target_reps": "12\u201315",
       "target_weight_kg": 18.0,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 18.0,
+          "reps": 15
+        }
+      ]
     },
     {
       "num": 4,
@@ -118,6 +124,12 @@
       {
         "weight": 54.0,
         "reps": 8
+      }
+    ],
+    "Cable Flye (Low-to-High)": [
+      {
+        "weight": 18.0,
+        "reps": 15
       }
     ]
   }
