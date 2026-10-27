@@ -14,7 +14,13 @@
       "target_reps": "8\u201310",
       "target_weight_kg": 72.5,
       "skipped": false,
-      "sets": []
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 70.0,
+          "reps": 10
+        }
+      ]
     },
     {
       "num": 2,
@@ -62,5 +68,5 @@
       "sets": []
     }
   ],
-  "notes": ""
+  "notes": "Lower sessions suspended \u2014 hamstring injury reported 27 Oct; Upper A substituted for Lower B."
 }
