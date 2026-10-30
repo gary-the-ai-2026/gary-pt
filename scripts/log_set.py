@@ -81,6 +81,9 @@ def main():
         msg = (f"SET_LOGGED|{e['name']}|set {len(e['sets'])}/{e['target_sets']}"
                f"|{a.weight}kg x {a.reps}|ex {state['current_exercise']}/{len(exs)}")
 
+    # Persist state
+    STATE.write_text(json.dumps(state, indent=2))
+
     # Navigate the log file for this session
     log_path = REPO / "logs" / f"{state.get('date', '')}-{state['session_type']}.json"
     if not log_path.exists():

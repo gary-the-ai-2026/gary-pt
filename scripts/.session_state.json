@@ -2,7 +2,7 @@
   "session_type": "lower-a",
   "session_name": "LOWER-A (LIGHT) + UPPER",
   "current_exercise": 0,
-  "current_set": 1,
+  "current_set": 2,
   "exercises": [
     {
       "num": 1,
@@ -11,7 +11,13 @@
       "target_reps": "8",
       "target_weight_kg": 60.0,
       "skipped": false,
-      "sets": [],
+      "sets": [
+        {
+          "set": 1,
+          "weight_kg": 45.0,
+          "reps": 12
+        }
+      ],
       "notes": "LIGHT \u2014 hamstring rehab. Stop immediately if the hamstring pulls."
     },
     {
