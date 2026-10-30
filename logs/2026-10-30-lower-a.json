@@ -1,0 +1,82 @@
+{
+  "session_id": "2026-10-30-lower-a",
+  "date": "2026-10-30",
+  "type": "lower-a",
+  "status": "in_progress",
+  "started": "13:53",
+  "cycle": 3,
+  "week": 1,
+  "exercises": [
+    {
+      "num": 1,
+      "name": "Barbell Back Squat",
+      "target_sets": 3,
+      "target_reps": "8",
+      "target_weight_kg": 60.0,
+      "skipped": false,
+      "sets": [],
+      "notes": "LIGHT \u2014 hamstring rehab. Stop immediately if the hamstring pulls."
+    },
+    {
+      "num": 2,
+      "name": "Leg Extension (Single Leg)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 35.0,
+      "skipped": false,
+      "sets": [],
+      "notes": "Quad isolation \u2014 zero hamstring involvement."
+    },
+    {
+      "num": 3,
+      "name": "Lat Pulldown (Neutral Grip)",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": 45.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 4,
+      "name": "Cable Flye (Low-to-High)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 18.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 5,
+      "name": "Dumbbell Lateral Raise",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 12.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 6,
+      "name": "Tricep Pushdown (Rope)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 50.0,
+      "skipped": false,
+      "sets": [],
+      "notes": "Rolled over from 27 Oct Upper A (not performed)."
+    },
+    {
+      "num": 7,
+      "name": "Cable Barbell Curl (EZ Bar)",
+      "target_sets": 3,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 25.5,
+      "skipped": false,
+      "sets": [],
+      "notes": "Rolled over from 27 Oct Upper A (not performed)."
+    }
+  ],
+  "notes": "MODIFIED SESSION \u2014 hamstring rehab (reported 27 Oct). Lower work light, quad-dominant only: RDL, DB Reverse Lunge and Leg Curl all omitted. No progression engine at close (submaximal loads must not move program weights). Substituted lower-a for rotation slot.",
+  "modified_session": true,
+  "modification": "hamstring_rehab_light_lower",
+  "progression_skipped": true
+}

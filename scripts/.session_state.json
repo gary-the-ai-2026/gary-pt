@@ -1,184 +1,78 @@
 {
-  "session_type": "upper-a",
-  "session_name": "UPPER-A",
-  "current_exercise": 4,
+  "session_type": "lower-a",
+  "session_name": "LOWER-A (LIGHT) + UPPER",
+  "current_exercise": 0,
   "current_set": 1,
   "exercises": [
     {
       "num": 1,
-      "name": "Barbell Row",
+      "name": "Barbell Back Squat",
       "target_sets": 3,
-      "target_reps": "8\u201310",
-      "target_weight_kg": 72.5,
+      "target_reps": "8",
+      "target_weight_kg": 60.0,
       "skipped": false,
-      "sets": [
-        {
-          "set": 1,
-          "weight_kg": 70.0,
-          "reps": 10
-        },
-        {
-          "set": 2,
-          "weight_kg": 70.0,
-          "reps": 10
-        },
-        {
-          "set": 3,
-          "weight_kg": 70.0,
-          "reps": 10
-        }
-      ]
+      "sets": [],
+      "notes": "LIGHT \u2014 hamstring rehab. Stop immediately if the hamstring pulls."
     },
     {
       "num": 2,
+      "name": "Leg Extension (Single Leg)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 35.0,
+      "skipped": false,
+      "sets": [],
+      "notes": "Quad isolation \u2014 zero hamstring involvement."
+    },
+    {
+      "num": 3,
       "name": "Lat Pulldown (Neutral Grip)",
       "target_sets": 3,
       "target_reps": "8\u201312",
       "target_weight_kg": 45.0,
       "skipped": false,
-      "sets": [
-        {
-          "set": 1,
-          "weight_kg": 45.0,
-          "reps": 12
-        },
-        {
-          "set": 2,
-          "weight_kg": 50.0,
-          "reps": 10
-        },
-        {
-          "set": 3,
-          "weight_kg": 54.0,
-          "reps": 8
-        }
-      ]
+      "sets": []
     },
     {
-      "num": 3,
+      "num": 4,
       "name": "Cable Flye (Low-to-High)",
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 18.0,
       "skipped": false,
-      "sets": [
-        {
-          "set": 1,
-          "weight_kg": 18.0,
-          "reps": 15
-        },
-        {
-          "set": 2,
-          "weight_kg": 18.0,
-          "reps": 15
-        },
-        {
-          "set": 3,
-          "weight_kg": 18.0,
-          "reps": 10
-        }
-      ]
+      "sets": []
     },
     {
-      "num": 4,
+      "num": 5,
       "name": "Dumbbell Lateral Raise",
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 12.0,
       "skipped": false,
-      "sets": [
-        {
-          "set": 1,
-          "weight_kg": 12.0,
-          "reps": 12
-        },
-        {
-          "set": 2,
-          "weight_kg": 12.0,
-          "reps": 12
-        },
-        {
-          "set": 3,
-          "weight_kg": 12.0,
-          "reps": 10
-        }
-      ]
-    },
-    {
-      "num": 5,
-      "name": "Tricep Pushdown (Rope)",
-      "target_sets": 3,
-      "target_reps": "12\u201315",
-      "target_weight_kg": 51.3,
-      "skipped": false,
       "sets": []
     },
     {
       "num": 6,
+      "name": "Tricep Pushdown (Rope)",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 50.0,
+      "skipped": false,
+      "sets": [],
+      "notes": "Rolled over from 27 Oct Upper A (not performed)."
+    },
+    {
+      "num": 7,
       "name": "Cable Barbell Curl (EZ Bar)",
       "target_sets": 3,
       "target_reps": "10\u201312",
       "target_weight_kg": 25.5,
       "skipped": false,
-      "sets": []
+      "sets": [],
+      "notes": "Rolled over from 27 Oct Upper A (not performed)."
     }
   ],
-  "log": {
-    "Barbell Row": [
-      {
-        "weight": 70.0,
-        "reps": 10
-      },
-      {
-        "weight": 70.0,
-        "reps": 10
-      },
-      {
-        "weight": 70.0,
-        "reps": 10
-      }
-    ],
-    "Lat Pulldown (Neutral Grip)": [
-      {
-        "weight": 45.0,
-        "reps": 12
-      },
-      {
-        "weight": 50.0,
-        "reps": 10
-      },
-      {
-        "weight": 54.0,
-        "reps": 8
-      }
-    ],
-    "Cable Flye (Low-to-High)": [
-      {
-        "weight": 18.0,
-        "reps": 15
-      },
-      {
-        "weight": 18.0,
-        "reps": 15
-      },
-      {
-        "weight": 18.0,
-        "reps": 10
-      }
-    ],
-    "Dumbbell Lateral Raise": [
-      {
-        "weight": 12.0,
-        "reps": 12
-      },
-      {
-        "weight": 12.0,
-        "reps": 12
-      },
-      {
-        "weight": 12.0,
-        "reps": 10
-      }
-    ]
-  }
+  "log": {},
+  "modified_session": true,
+  "modification": "hamstring_rehab_light_lower"
 }
