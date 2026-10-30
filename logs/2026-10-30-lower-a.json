@@ -2,7 +2,7 @@
   "session_id": "2026-10-30-lower-a",
   "date": "2026-10-30",
   "type": "lower-a",
-  "status": "in_progress",
+  "status": "complete",
   "started": "13:53",
   "cycle": 3,
   "week": 1,
@@ -93,7 +93,7 @@
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 18.0,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     },
     {
@@ -102,7 +102,7 @@
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 12.0,
-      "skipped": false,
+      "skipped": true,
       "sets": []
     },
     {
@@ -111,7 +111,7 @@
       "target_sets": 3,
       "target_reps": "12\u201315",
       "target_weight_kg": 50.0,
-      "skipped": false,
+      "skipped": true,
       "sets": [],
       "notes": "Rolled over from 27 Oct Upper A (not performed)."
     },
@@ -121,13 +121,15 @@
       "target_sets": 3,
       "target_reps": "10\u201312",
       "target_weight_kg": 25.5,
-      "skipped": false,
+      "skipped": true,
       "sets": [],
       "notes": "Rolled over from 27 Oct Upper A (not performed)."
     }
   ],
-  "notes": "MODIFIED SESSION \u2014 hamstring rehab (reported 27 Oct). Lower work light, quad-dominant only: RDL, DB Reverse Lunge and Leg Curl all omitted. No progression engine at close (submaximal loads must not move program weights). Substituted lower-a for rotation slot.",
+  "notes": "MODIFIED SESSION \u2014 hamstring rehab (reported 27 Oct). Lower work light, quad-dominant only: RDL, DB Reverse Lunge and Leg Curl all omitted. No progression engine at close (submaximal loads must not move program weights). Substituted lower-a for rotation slot. | Closed 30 Oct 14:56 (63 min) - ended early at Josh's call. Cable Flye, Lateral Raise, Tricep Pushdown, Cable Curl not performed -> skipped. Progression engine NOT run (submaximal rehab loads). Manual progression applied for the upper work that WAS performed: Lat Pulldown (Neutral Grip) 50x12/12/12 all sets at top -> program 45.0 -> 52.5kg. Leg work held at program values (rehab-light by design).",
   "modified_session": true,
   "modification": "hamstring_rehab_light_lower",
-  "progression_skipped": true
+  "progression_skipped": true,
+  "completed": "14:56",
+  "duration_min": 63
 }

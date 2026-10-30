@@ -18,13 +18,14 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 | # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|
 | 1 | Barbell Row | 3 | 75.0kg | 8–10 | 2 min |
-| 2 | Lat Pulldown (Neutral Grip) | 3 | 45.0kg | 8–12 | 90 sec |
+| 2 | Lat Pulldown (Neutral Grip) | 3 | 52.5kg | 8–12 | 90 sec |
 | 3 | Cable Flye (Low-to-High) | 3 | 18.0kg | 12–15 | 60 sec |
 | 4 | Dumbbell Lateral Raise | 3 | 12.0kg/side | 12–15 | 60 sec |
 | 5 | Tricep Pushdown (Rope) | 3 | 50.0kg | 12–15 | 60 sec |
 | 6 | Cable Barbell Curl (EZ Bar) | 3 | 25.5kg | 10–12 | 90 sec |
 
 *Recalibrated 10 Oct 2026: Incline Smith Bench removed (chest covered by Cable Flye in Upper A + Incline DB Press in Upper B, holds 2×/week).*
+*Recalibrated 30 Oct 2026: Lat Pulldown (Neutral Grip) 45→50→52.5 — 50×12/12/12 all sets at top of range (30 Oct, modified lower-a session); program bumped to 52.5kg.*
 *Recalibrated 17 Oct 2026: Lat Pulldown (Wide) rotated → Lat Pulldown (Neutral Grip) after 8 stalled sessions at 50kg (flat 12/10/10 tendency). Neutral grip freshens the plane and eases shoulder strain; start 45kg, calibrate from actuals. Tricep Pushdown (Rope) re-baselined to 50.0kg — the engine's −5% was computed from an unreliable 27kg reading; 27 Sep 50×12×3 was clean, so we build from there rather than the inconsistent 54kg stack read.*
 
 ## Lower A
