@@ -2,7 +2,7 @@
   "session_type": "lower-a",
   "session_name": "LOWER-A (LIGHT) + UPPER",
   "current_exercise": 1,
-  "current_set": 2,
+  "current_set": 3,
   "exercises": [
     {
       "num": 1,
@@ -41,6 +41,12 @@
         {
           "set": 1,
           "weight_kg": 25.0,
+          "reps": 15,
+          "notes": "single leg"
+        },
+        {
+          "set": 2,
+          "weight_kg": 35.0,
           "reps": 15,
           "notes": "single leg"
         }
