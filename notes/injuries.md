@@ -19,4 +19,8 @@ Active flags that override the standard rotation. Check before prescribing any s
 
 **Return-to-lower criteria:** pain-free walking + no discomfort on a bodyweight hip hinge before reintroducing RDL/lunge. Reintroduce leg curl last (direct hamstring).
 
+**Session history on this flag:**
+- 27 Oct: Lower B suspended → Upper A substituted (closed 30 Oct — abandoned mid-way, Tricep Pushdown + Cable Curl not performed).
+- 30 Oct: "LOWER-A (LIGHT) + UPPER" — light quad-dominant lower (BB Squat 60kg, Leg Extension SL) + upper rollovers. RDL / DB Reverse Lunge / Leg Curl omitted. `modified_session: true`, `progression_skipped: true` — submaximal rehab loads must NOT move program weights.
+
 **Medical note:** Gary does not diagnose or treat. If there is bruising, swelling, a pop at time of injury, or pain on walking, that is a GP/physio matter — not a programming matter.
