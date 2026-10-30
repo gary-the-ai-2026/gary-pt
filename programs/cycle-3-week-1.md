@@ -17,7 +17,7 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 
 | # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|
-| 1 | Barbell Row | 3 | 60.0kg | 8–10 | 2 min |
+| 1 | Barbell Row | 3 | 75.0kg | 8–10 | 2 min |
 | 2 | Lat Pulldown (Neutral Grip) | 3 | 45.0kg | 8–12 | 90 sec |
 | 3 | Cable Flye (Low-to-High) | 3 | 18.0kg | 12–15 | 60 sec |
 | 4 | Dumbbell Lateral Raise | 3 | 12.0kg/side | 12–15 | 60 sec |
