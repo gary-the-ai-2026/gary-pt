@@ -1,0 +1,57 @@
+{
+  "session_id": "2026-10-31-upper-b",
+  "date": "2026-10-31",
+  "type": "upper-b",
+  "status": "in_progress",
+  "started": "14:49",
+  "cycle": 3,
+  "week": 1,
+  "exercises": [
+    {
+      "num": 1,
+      "name": "Incline Dumbbell Press",
+      "target_sets": 3,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 26.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 2,
+      "name": "Pull-Up",
+      "target_sets": 3,
+      "target_reps": "8\u201312",
+      "target_weight_kg": null,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 3,
+      "name": "Face Pull",
+      "target_sets": 3,
+      "target_reps": "12\u201315",
+      "target_weight_kg": 55.0,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 4,
+      "name": "Cable Triceps Pushdown",
+      "target_sets": 3,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 51.3,
+      "skipped": false,
+      "sets": []
+    },
+    {
+      "num": 5,
+      "name": "Hammer Curl (DB)",
+      "target_sets": 3,
+      "target_reps": "10\u201312",
+      "target_weight_kg": 16.5,
+      "skipped": false,
+      "sets": []
+    }
+  ],
+  "notes": ""
+}

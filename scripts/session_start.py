@@ -201,13 +201,22 @@ def calibrate_with_progression(e_list, section_key):
         p = pmap.get(ex["name"])
         if not p or not p.get("sets"):
             continue
-        sets = [s for s in p["sets"] if s.get("reps") is not None and s.get("weight_kg")]
+        # Coerce weights to float; skip non-numeric entries (e.g. bodyweight
+        # movements logged as "BW") -- these must not break calibration.
+        sets = []
+        for s in p["sets"]:
+            if s.get("reps") is None:
+                continue
+            try:
+                w = float(s.get("weight_kg"))
+            except (TypeError, ValueError):
+                continue
+            if w <= 0:
+                continue
+            sets.append({**s, "weight_kg": w})
         if not sets:
             continue
-        weights = [s.get("weight_kg") for s in sets if s.get("weight_kg")]
-        base = float(max(weights)) if weights else None
-        if base is None:
-            continue
+        base = max(s["weight_kg"] for s in sets)
         lo, hi = _parse_rep_range(ex.get("target_reps"))
         reps = [int(s.get("reps", 0)) for s in sets]
         n_top = sum(1 for r in reps if r >= hi)

@@ -1,5 +1,16 @@
 [
   {
+    "name": "2026-10-31-upper-b.json",
+    "date": "2026-10-31",
+    "type": "upper-b",
+    "status": "in_progress",
+    "cycle": 3,
+    "ad_hoc": false,
+    "resumed_from": null,
+    "exercise_count": 5,
+    "skipped_count": 0
+  },
+  {
     "name": "2026-10-30-lower-a.json",
     "date": "2026-10-30",
     "type": "lower-a",
