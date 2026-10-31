@@ -24,6 +24,14 @@ REPO = Path("/Users/gary/Projects/gary-pt")
 STATE = REPO / "scripts" / ".session_state.json"
 
 
+def parse_weight(v):
+    """Accept a number, or a bodyweight marker (BW) -- stored verbatim."""
+    v = str(v).strip()
+    if v.upper() in ("BW", "BODYWEIGHT", "B.W."):
+        return "BW"
+    return float(v)
+
+
 def load():
     if not STATE.exists():
         sys.exit("No active session (no .session_state.json).")
@@ -32,7 +40,7 @@ def load():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("weight", nargs="?", type=float)
+    ap.add_argument("weight", nargs="?", type=parse_weight)
     ap.add_argument("reps", nargs="?", type=int)
     ap.add_argument("--skip", action="store_true")
     ap.add_argument("--status", action="store_true")
@@ -69,6 +77,7 @@ def main():
     else:
         if a.weight is None or a.reps is None:
             sys.exit("Need <weight_kg> <reps> (or --skip / --status).")
+        wlabel = f"{a.weight}kg" if isinstance(a.weight, (int, float)) else str(a.weight)
         s = {"set": len(e["sets"]) + 1, "weight_kg": a.weight, "reps": a.reps}
         if a.note:
             s["notes"] = a.note
@@ -79,7 +88,7 @@ def main():
             state["current_exercise"] = i + 1
             state["current_set"] = 1
         msg = (f"SET_LOGGED|{e['name']}|set {len(e['sets'])}/{e['target_sets']}"
-               f"|{a.weight}kg x {a.reps}|ex {state['current_exercise']}/{len(exs)}")
+               f"|{wlabel} x {a.reps}|ex {state['current_exercise']}/{len(exs)}")
 
     # Persist state
     STATE.write_text(json.dumps(state, indent=2))
