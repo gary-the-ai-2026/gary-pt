@@ -2,7 +2,7 @@
   "session_id": "2026-10-31-upper-b",
   "date": "2026-10-31",
   "type": "upper-b",
-  "status": "in_progress",
+  "status": "complete",
   "started": "14:49",
   "cycle": 3,
   "week": 1,
@@ -133,5 +133,8 @@
       ]
     }
   ],
-  "notes": ""
+  "notes": "| Closed 31 Oct 15:37 (48 min). Actuals: Incline DB Press 26x12/8/8 (2 under floor -> back off); Pull-Up BW 12/8/8; Face Pull 54x12/13/15 (self-selected 54, top set 15); Cable Triceps Pushdown 54x11/10/7 (self-selected 54, held vs 21 Oct 8/8); Hammer Curl 16x11/8/8 (16 too heavy, back off).",
+  "completed": "15:37",
+  "finished": "15:37",
+  "duration_min": 48
 }

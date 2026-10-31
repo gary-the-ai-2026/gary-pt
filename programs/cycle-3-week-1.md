@@ -43,11 +43,11 @@ Every muscle group trained **twice per week**. Upper A + Lower A, then Upper B +
 
 | # | Exercise | Sets | Weight | Reps | Rest |
 |---|---|---|---|---|---|
-| 1 | Incline Dumbbell Press | 3 | 26.0kg/side | 10–12 | 90 sec |
+| 1 | Incline Dumbbell Press | 3 | 24.7kg/side | 10–12 | 90 sec |
 | 2 | Pull-Up | 3 | BW | 8–12 | 2 min |
 | 3 | Face Pull | 3 | 55.0kg | 12–15 | 60 sec |
 | 4 | Cable Triceps Pushdown | 3 | 50.0kg | 10–12 | 60 sec |
-| 5 | Hammer Curl (DB) | 3 | 14.0kg/side | 10–12 | 60 sec |
+| 5 | Hammer Curl (DB) | 3 | 15.7kg/side | 10–12 | 60 sec |
 
 *Recalibrated 10 Oct 2026: Close-Grip Smith Press removed (triceps already covered by Cable Triceps Pushdown; he prefers keeping the cable flye/rear delt work).*
 *Recalibrated 15 Oct 2026: Incline DB Curl removed (shoulder strain in incline position) → Hammer Curl (DB). Face Pull re-synced to 55kg, Pushdown to 47.5kg (5 Oct actuals).*
