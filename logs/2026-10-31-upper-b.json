@@ -44,6 +44,11 @@
           "set": 1,
           "weight_kg": "BW",
           "reps": 12
+        },
+        {
+          "set": 2,
+          "weight_kg": "BW",
+          "reps": 8
         }
       ]
     },
